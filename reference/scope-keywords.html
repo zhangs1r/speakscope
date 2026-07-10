@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SCoPE 论文关键词汇表 · SpeakScope</title>
+<link rel="stylesheet" href="../shared/theme.css">
+<style>
+  body { background: var(--paper-light); }
+  .page { max-width: 880px; margin: 0 auto; padding: var(--space-10) var(--space-6); }
+  h1 { font-family: var(--font-serif); }
+  .back { display: inline-block; margin-bottom: var(--space-6); color: var(--accent); text-decoration: none; font-size: var(--text-sm); }
+  .back:hover { text-decoration: underline; }
+  table { width: 100%; border-collapse: collapse; margin: var(--space-6) 0; font-size: var(--text-sm); }
+  th { background: var(--paper); text-align: left; padding: var(--space-3) var(--space-4); border-bottom: 2px solid var(--accent-light); font-weight: 600; }
+  td { padding: var(--space-3) var(--space-4); border-bottom: 1px solid var(--border-light); vertical-align: top; }
+  tr:hover td { background: var(--paper); }
+  .keyword { font-weight: 700; color: var(--ink); }
+  .pron { font-size: var(--text-xs); color: var(--ink-40); font-style: italic; }
+  .pos { display: inline-block; padding: 0.1rem 0.5rem; border-radius: 4px; background: var(--accent-dim); font-size: 0.7rem; color: var(--accent-deep); font-weight: 600; }
+  .category-tag { display: inline-block; padding: 0.15rem 0.6rem; border-radius: 999px; font-size: 0.7rem; font-weight: 600; margin-right: 0.3rem; }
+  .tag-method { background: #E3F0E4; color: #2D6A4F; }
+  .tag-metric { background: #E0E7F5; color: #3B5A9C; }
+  .tag-domain { background: #F5E6D3; color: #8B5E3C; }
+  .tag-model { background: #F0E6F5; color: #7B4A8B; }
+  .section-title { font-size: var(--text-xl); font-family: var(--font-serif); margin: var(--space-8) 0 var(--space-4); padding-bottom: var(--space-2); border-bottom: 1px solid var(--border); }
+  .example { font-style: italic; color: var(--ink-60); font-size: var(--text-sm); }
+  .tip-box { background: var(--paper); border-left: 4px solid var(--accent); padding: var(--space-4); border-radius: 0 8px 8px 0; margin: var(--space-4) 0; }
+  .tip-box strong { color: var(--accent-deep); }
+</style>
+</head>
+<body>
+<div class="page">
+  <a class="back" href="../index.html">← 返回 SpeakScope 主页</a>
+  <h1>🔬 SCoPE 论文关键词汇表</h1>
+  <p style="color:var(--ink-60);margin-bottom:var(--space-6);">按论文模块分组，标注发音提示和例句，方便 oral presentation 前反复朗读。</p>
+
+  <!-- ═══ 核心概念 ═══ -->
+  <h2 class="section-title">📌 核心概念</h2>
+  <table>
+    <tr><th>关键词</th><th>发音提示</th><th>在论文中的含义</th><th>例句</th></tr>
+    <tr>
+      <td><span class="keyword">SCoPE</span> <span class="pos">n.</span></td>
+      <td class="pron">/skoʊp/</td>
+      <td>Structured and Constrained Prompting Extractor（论文提出的框架名称）</td>
+      <td class="example">"We propose SCoPE, a systematic prompting framework for chemical information extraction."</td>
+    </tr>
+    <tr>
+      <td><span class="keyword">Prompt Engineering</span> <span class="pos">n.</span></td>
+      <td class="pron">/prɑːmpt ˌendʒɪˈnɪrɪŋ/</td>
+      <td>提示工程——设计输入指令以引导 LLM 输出的技术</td>
+      <td class="example">"SCoPE is a systematic prompt engineering architecture for complex text parsing."</td>
+    </tr>
+    <tr>
+      <td><span class="keyword">Information Extraction</span> <span class="pos">n.</span></td>
+      <td class="pron">/ˌɪnfərˈmeɪʃən ɪkˈstrækʃən/</td>
+      <td>信息提取——从非结构化文本中自动提取结构化数据</td>
+      <td class="example">"This paper focuses on information extraction from unstructured chemical texts."</td>
+    </tr>
+    <tr>
+      <td><span class="keyword">Unstructured Text</span> <span class="pos">n.</span></td>
+      <td class="pron">/ʌnˈstrʌktʃərd tekst/</td>
+      <td>非结构化文本——无固定格式的自然语言文本</td>
+      <td class="example">"Our framework parses complex unstructured texts into standardized entities."</td>
+    </tr>
+  </table>
+
+  <!-- ═══ 6 个核心字段 ═══ -->
+  <h2 class="section-title">📋 6 个核心提取字段</h2>
+  <table>
+    <tr><th>字段名</th><th>发音</th><th>说明</th><th>例句</th></tr>
+    <tr>
+      <td><span class="keyword">Name</span></td>
+      <td class="pron">/neɪm/</td>
+      <td>物质的中文名称（如"阿昔莫司"）</td>
+      <td class="example">"The Name field extracts the Chinese name of the substance."</td>
+    </tr>
+    <tr>
+      <td><span class="keyword">English Name</span></td>
+      <td class="pron">/ˈɪŋɡlɪʃ neɪm/</td>
+      <td>物质的英文名称</td>
+      <td class="example">"The English Name is extracted when available in the text."</td>
+    </tr>
+    <tr>
+      <td><span class="keyword">Chemical Formula</span></td>
+      <td class="pron">/ˈkemɪkəl ˈfɔːrmjələ/</td>
+      <td>化学式或组成（如 5-methylpyrazine-2-carboxylic acid 4-oxide）</td>
+      <td class="example">"The model extracts the Chemical Formula from the raw text."</td>
+    </tr>
+    <tr>
+      <td><span class="keyword">CAS Number</span></td>
+      <td class="pron">/kæs ˈnʌmbər/</td>
+      <td>Chemical Abstracts Service 登记号——化学物质的唯一标识</td>
+      <td class="example">"CAS Number serves as a unique identifier for chemical substances."</td>
+    </tr>
+    <tr>
+      <td><span class="keyword">Category or Function</span></td>
+      <td class="pron">/ˈkætəɡɔːri ɔːr ˈfʌŋkʃən/</td>
+      <td>类别或功能描述——用动词-名词结构引导</td>
+      <td class="example">"Category or Function is evaluated using ROUGE-L due to its descriptive nature."</td>
+    </tr>
+    <tr>
+      <td><span class="keyword">Relative Molecular Mass</span></td>
+      <td class="pron">/ˈrelətɪv məˈlekjələr mæs/</td>
+      <td>相对分子质量</td>
+      <td class="example">"Relative Molecular Mass shows near-saturation performance across all models."</td>
+    </tr>
+  </table>
+
+  <!-- ═══ 方法论词汇 ═══ -->
+  <h2 class="section-title">⚙️ 方法论关键词</h2>
+  <table>
+    <tr><th>关键词</th><th>发音/词性</th><th>含义</th><th>例句</th></tr>
+    <tr>
+      <td><span class="keyword">Zero-Inference Strategy</span> <span class="tag-domain">strategy</span></td>
+      <td class="pron">/ˈzɪroʊ ˈɪnfərəns ˈstrætədʒi/</td>
+      <td>零推断策略——文本中未提及的字段赋值为"None"，防止模型胡编</td>
+      <td class="example">"The Zero-Inference strategy prevents hallucination by assigning None to unmentioned fields."</td>
+    </tr>
+    <tr>
+      <td><span class="keyword">Verb-Noun Guided Structure</span> <span class="tag-domain">rule</span></td>
+      <td class="pron">/vɜːrb naʊn ˈɡaɪdɪd ˈstrʌktʃər/</td>
+      <td>动词-名词引导结构——功能描述必须以"动词+名词"格式输出</td>
+      <td class="example">"We mandate a Verb-Noun guided structure for functional descriptions."</td>
+    </tr>
+    <tr>
+      <td><span class="keyword">One-shot Learning</span> <span class="tag-method">method</span></td>
+      <td class="pron">/wʌn ʃɑːt ˈlɜːrnɪŋ/</td>
+      <td>单样本学习——提供一个输入-输出范例来引导模型</td>
+      <td class="example">"One-shot learning establishes intuitive logical mappings for the model."</td>
+    </tr>
+    <tr>
+      <td><span class="keyword">In-Context Learning (ICL)</span> <span class="tag-method">method</span></td>
+      <td class="pron">/ɪn ˈkɑːntekst ˈlɜːrnɪŋ/</td>
+      <td>上下文学习——通过示例而非微调来引导模型行为</td>
+      <td class="example">"Moonshot-v1-8k demonstrates stable ICL capabilities under one-shot prompting."</td>
+    </tr>
+    <tr>
+      <td><span class="keyword">Hallucination</span> <span class="pos">n.</span></td>
+      <td class="pron">/həˌluːsɪˈneɪʃən/</td>
+      <td>幻觉——模型生成不基于输入的事实性错误信息</td>
+      <td class="example">"Our framework mitigates information hallucination through explicit constraints."</td>
+    </tr>
+    <tr>
+      <td><span class="keyword">Boundary Blurring</span> <span class="pos">n.</span></td>
+      <td class="pron">/ˈbaʊndəri ˈblɜːrɪŋ/</td>
+      <td>边界模糊——模型在长文本中难以区分不同实体字段</td>
+      <td class="example">"Boundary blurring is a common bottleneck in complex extraction tasks."</td>
+    </tr>
+  </table>
+
+  <!-- ═══ 评估指标 ═══ -->
+  <h2 class="section-title">📊 评估指标</h2>
+  <table>
+    <tr><th>关键词</th><th>发音</th><th>含义</th></tr>
+    <tr>
+      <td><span class="keyword">Exact Match</span> <span class="tag-metric">metric</span></td>
+      <td class="pron">/ɪɡˈzækt mætʃ/</td>
+      <td>精确匹配——预测值与真实值必须完全一致</td>
+    </tr>
+    <tr>
+      <td><span class="keyword">ROUGE-L</span> <span class="tag-metric">metric</span></td>
+      <td class="pron">/ruːʒ ɛl/</td>
+      <td>基于最长公共子序列（LCS）的召回率评估指标</td>
+    </tr>
+    <tr>
+      <td><span class="keyword">Global Comprehensive Score (S<sub>global</sub>)</span></td>
+      <td class="pron">/ˈɡloʊbl̩ ˌkɑːmprɪˈhensɪv skɔːr/</td>
+      <td>全局综合评分——6 个字段平均分，论文最终得分 77.56%</td>
+    </tr>
+    <tr>
+      <td><span class="keyword">Ablation Study</span> <span class="tag-method">method</span></td>
+      <td class="pron">/əˈbleɪʃən ˈstʌdi/</td>
+      <td>消融研究——逐步移除模块以评估各组件贡献</td>
+    </tr>
+  </table>
+
+  <!-- ═══ 模型名称 ═══ -->
+  <h2 class="section-title">🤖 模型名称（注意发音！）</h2>
+  <table>
+    <tr><th>模型</th><th>发音</th><th>说明</th></tr>
+    <tr>
+      <td><span class="keyword">Moonshot-v1-8k</span></td>
+      <td class="pron">/ˈmuːnʃɑːt viː wʌn eɪt keɪ/</td>
+      <td>论文选用的基座模型，8192 token 上下文</td>
+    </tr>
+    <tr>
+      <td><span class="keyword">DeepSeek-V3.2</span></td>
+      <td class="pron">/diːp siːk viː θriː pɔɪnt tuː/</td>
+      <td>对比模型之一</td>
+    </tr>
+    <tr>
+      <td><span class="keyword">Qwen-Plus</span></td>
+      <td class="pron">/ˈtʃuːwən plʌs/</td>
+      <td>对比模型之一（注意：Qwen 读作"丘文"）</td>
+    </tr>
+    <tr>
+      <td><span class="keyword">GLM-4-Flash</span></td>
+      <td class="pron">/dʒiː ɛl em fɔːr flæʃ/</td>
+      <td>对比模型之一</td>
+    </tr>
+  </table>
+
+  <div class="tip-box">
+    <strong>💡 练习建议：</strong> 打开元宝 AI 口语陪练，对它说："Let me practice reading the key terms from my paper SCoPE." 然后逐个朗读以上词汇，让 AI 纠正你的发音。每列至少读三遍。
+  </div>
+
+  <div style="margin-top:var(--space-10);padding-top:var(--space-6);border-top:1px solid var(--border);text-align:center;color:var(--ink-40);font-size:var(--text-sm);">
+    SpeakScope · <a href="../index.html">返回主页</a>
+  </div>
+</div>
+</body>
+</html>

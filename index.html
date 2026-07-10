@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SpeakScope · 英语口语备战</title>
+<link rel="stylesheet" href="shared/theme.css">
+<script src="data/course-catalog.js"></script>
+<style>
+  .hero {
+    background: linear-gradient(135deg, var(--paper-light) 0%, var(--paper) 100%);
+    border-bottom: 1px solid var(--border);
+    padding: var(--space-20) var(--space-8) var(--space-12);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: auto -180px -180px auto;
+    width: 520px;
+    height: 520px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(204, 120, 92, 0.18) 0%, rgba(204, 120, 92, 0) 68%);
+    pointer-events: none;
+  }
+  .hero .inner,
+  .section .inner {
+    max-width: var(--content-width);
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(280px, 0.85fr);
+    gap: var(--space-10);
+    align-items: start;
+  }
+  .hero-copy .badge,
+  .group-pill,
+  .collection-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: 0.3rem 0.9rem;
+    border-radius: 999px;
+    background: var(--accent-dim);
+    color: var(--accent-deep);
+    font-size: var(--text-xs);
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .hero-copy h1 {
+    font-size: var(--text-6xl);
+    margin: var(--space-5) 0 var(--space-4);
+    letter-spacing: -0.03em;
+  }
+  .hero-copy h1 .accent { color: var(--accent); }
+  .hero-copy .subtitle {
+    font-family: var(--font-serif);
+    font-size: var(--text-lg);
+    line-height: 1.7;
+    color: var(--ink-60);
+    max-width: 820px;
+  }
+  .hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    margin-top: var(--space-7);
+  }
+  .hero-meta span,
+  .collection-meta span,
+  .group-meta span {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: 0.45rem 0.8rem;
+    border-radius: 6px;
+    background: var(--paper);
+    border: 1px solid var(--border-light);
+    font-size: var(--text-sm);
+    color: var(--ink-60);
+  }
+  .hero-feature-box {
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: var(--space-6);
+    font-size: var(--text-sm);
+    line-height: 1.7;
+  }
+  .hero-feature-box strong { color: var(--accent-deep); }
+
+  /*** Sections ***/
+  .section { padding: var(--space-14) var(--space-8); }
+  .section-title {
+    font-family: var(--font-serif);
+    font-size: var(--text-2xl);
+    margin-bottom: var(--space-2);
+  }
+  .section-desc {
+    color: var(--ink-60);
+    margin-bottom: var(--space-8);
+    max-width: 640px;
+    line-height: 1.6;
+  }
+
+  /*** Group Card ***/
+  .group-card {
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: var(--space-7);
+    margin-bottom: var(--space-8);
+  }
+  .group-card:last-child { margin-bottom: 0; }
+  .group-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    margin-bottom: var(--space-6);
+  }
+  .group-header .emoji { font-size: 2rem; }
+  .group-header h2 {
+    font-family: var(--font-serif);
+    font-size: var(--text-2xl);
+    margin: 0;
+  }
+  .group-header .group-meta { display: flex; gap: var(--space-2); flex-wrap: wrap; }
+  .group-desc {
+    color: var(--ink-60);
+    font-size: var(--text-sm);
+    margin-top: var(--space-1);
+    line-height: 1.6;
+  }
+
+  /*** Collection (Source Block) ***/
+  .collection-block {
+    background: var(--paper-light);
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    padding: var(--space-5);
+    margin-bottom: var(--space-5);
+  }
+  .collection-header {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-4);
+    cursor: pointer;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+  .collection-header .emoji { font-size: 1.6rem; line-height: 1.2; }
+  .collection-header h3 {
+    font-family: var(--font-serif);
+    font-size: var(--text-lg);
+    margin: 0 0 0.15rem;
+  }
+  .collection-header .subtitle {
+    font-size: var(--text-sm);
+    color: var(--ink-60);
+  }
+  .collection-header .collection-meta {
+    display: flex;
+    gap: var(--space-2);
+    margin-top: var(--space-2);
+    flex-wrap: wrap;
+  }
+  .collection-toggle {
+    margin-left: auto;
+    font-size: 1.2rem;
+    color: var(--ink-40);
+    transition: transform 0.2s;
+    flex-shrink: 0;
+  }
+  .collection-block.open .collection-toggle { transform: rotate(180deg); }
+
+  .lesson-list {
+    display: none;
+    margin-top: var(--space-4);
+    border-top: 1px solid var(--border-light);
+    padding-top: var(--space-4);
+  }
+  .collection-block.open .lesson-list { display: block; }
+
+  /*** Lesson Item ***/
+  .lesson-item {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: var(--space-4);
+    align-items: start;
+    padding: var(--space-3) var(--space-4);
+    border-radius: 8px;
+    text-decoration: none;
+    color: inherit;
+    transition: background 0.15s;
+  }
+  .lesson-item:hover { background: var(--border-light); }
+  .lesson-item .emoji { font-size: 1.4rem; line-height: 1.4; }
+  .lesson-item .title { font-weight: 600; font-size: var(--text-base); }
+  .lesson-item .subtitle {
+    font-size: var(--text-sm);
+    color: var(--ink-60);
+  }
+  .lesson-item .duration {
+    font-size: var(--text-xs);
+    color: var(--ink-40);
+    white-space: nowrap;
+    padding-top: 0.2rem;
+  }
+  .lesson-item .tags {
+    display: flex;
+    gap: var(--space-2);
+    margin-top: var(--space-1);
+  }
+
+  /*** Quick Reference Cards ***/
+  .ref-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: var(--space-4);
+  }
+  .ref-card {
+    display: block;
+    background: var(--paper);
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    padding: var(--space-5);
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .ref-card:hover {
+    border-color: var(--accent-light);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+  .ref-card .emoji { font-size: 1.6rem; }
+  .ref-card h4 { margin: var(--space-2) 0 var(--space-1); font-size: var(--text-base); }
+  .ref-card p {
+    font-size: var(--text-sm);
+    color: var(--ink-60);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  /*** Footer ***/
+  .site-footer {
+    border-top: 1px solid var(--border);
+    padding: var(--space-8);
+    text-align: center;
+    font-size: var(--text-sm);
+    color: var(--ink-40);
+  }
+  .site-footer a { color: var(--accent); text-decoration: none; }
+
+  @media (max-width: 720px) {
+    .hero-grid { grid-template-columns: 1fr; }
+    .hero { padding: var(--space-12) var(--space-4) var(--space-8); }
+    .hero-copy h1 { font-size: var(--text-4xl); }
+    .section { padding: var(--space-8) var(--space-4); }
+    .lesson-item { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══ Hero ═══ -->
+<header class="hero">
+  <div class="inner">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <span class="badge">🎤 口语备战系统</span>
+        <h1>Speak<span class="accent">Scope</span></h1>
+        <p class="subtitle">
+          从 IAI 2026 英文 oral presentation 出发，用 4 周时间集中突破会议口语，之后转入长期口语能力提升。
+          每一课都配好了与 AI 陪练的配合方案。
+        </p>
+        <div class="hero-meta">
+          <span>📅 目标：<strong>8.19</strong> 沈阳 · IAI 2026</span>
+          <span>📄 论文：<strong>SCoPE</strong> Prompting Framework</span>
+          <span id="countdown">⏳ 加载倒计时中...</span>
+        </div>
+      </div>
+      <div class="hero-feature-box">
+        <strong>🗓️ 备战路线</strong><br>
+        <span style="font-size:0.9rem;display:block;margin-top:0.5rem;">
+        <strong style="color:var(--ink)">① 稿子落地</strong> ← 现在 → 7月底<br>
+        <strong style="color:var(--ink)">② 逐段排练</strong> ← 7月底 → 8月初<br>
+        <strong style="color:var(--ink)">③ Q&A 预演</strong> ← 8月初 → 会前<br>
+        <strong style="color:var(--ink)">④ 全真彩排</strong> ← 会前 3 天
+        </span>
+        <div style="margin-top:0.7rem;font-size:0.85rem;color:var(--ink-60);">
+          🎧 配合元宝 AI 口语陪练使用
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ═══ Course List (rendered by JS) ═══ -->
+<main id="app"></main>
+
+<!-- ═══ References ═══ -->
+<section class="section" style="background:var(--paper-light);border-top:1px solid var(--border);" id="references-section">
+  <div class="inner">
+    <h2 class="section-title">📖 速查与工具箱</h2>
+    <p class="section-desc">高频用语、关键词汇、发音提示——上台前随时翻看。</p>
+    <div class="ref-grid" id="ref-grid"></div>
+  </div>
+</section>
+
+<!-- ═══ Footer ═══ -->
+<footer class="site-footer">
+  <p>
+    SpeakScope · 为 IAI 2026 备战 ·
+    <a href="https://github.com/zhangs1r/speakscope" target="_blank" rel="noopener">GitHub</a>
+  </p>
+</footer>
+
+<script>
+(function () {
+  const D = window.SPEAKSCOPE_DATA;
+  if (!D) return;
+
+  // ─── 倒计时 ───
+  const deadline = new Date('2026-08-19T09:00:00+08:00');
+  function updateCountdown() {
+    const now = new Date();
+    const diff = deadline - now;
+    if (diff <= 0) { document.getElementById('countdown').textContent = '🎯 就是今天！'; return; }
+    const days = Math.floor(diff / 86400000);
+    const hours = Math.floor((diff % 86400000) / 3600000);
+    document.getElementById('countdown').textContent = `⏳ 倒计时 ${days} 天 ${hours} 小时`;
+  }
+  updateCountdown();
+  setInterval(updateCountdown, 60000);
+
+  // ─── 渲染主页 ───
+  const app = document.getElementById('app');
+
+  // Group → Collection → Lessons
+  D.groups.forEach(group => {
+    const groupCols = D.collections.filter(c => c.groupId === group.id);
+    if (!groupCols.length) return;
+
+    const groupEl = document.createElement('section');
+    groupEl.className = 'section';
+    groupEl.style.cssText = 'padding-bottom:0;';
+    if (group.id === 'reference') groupEl.style.display = 'none';
+
+    let html = `<div class="inner"><div class="group-card">`;
+    html += `<div class="group-header">
+      <span class="emoji">${group.emoji}</span>
+      <div>
+        <h2>${group.title}</h2>
+        <div class="group-meta">${group.meta.map(m => `<span>${m}</span>`).join('')}</div>
+        <div class="group-desc">${group.description}</div>
+      </div>
+    </div>`;
+
+    groupCols.forEach(col => {
+      const colLessons = D.lessons.filter(l => l.collection === col.id);
+      if (!colLessons.length) return;
+
+      const quickOpen = col.quickOpen || '';
+      html += `<div class="collection-block open">
+        <div class="collection-header" onclick="this.parentNode.classList.toggle('open')">
+          <span class="emoji">${col.emoji || '📚'}</span>
+          <div>
+            <h3>${col.title}</h3>
+            <div class="subtitle">${col.subtitle}</div>
+            <div class="collection-meta">${col.meta.map(m => `<span>${m}</span>`).join('')}</div>
+          </div>
+          <span class="collection-toggle">▾</span>
+        </div>
+        <div class="lesson-list">`;
+
+      colLessons.forEach((lesson, i) => {
+        const tags = lesson.tags ? lesson.tags.map(t => `<span class="collection-tag">${t}</span>`).join('') : '';
+        html += `<a class="lesson-item" href="${lesson.path}">
+          <span class="emoji">${lesson.emoji}</span>
+          <div>
+            <div class="title">${lesson.title}</div>
+            <div class="subtitle">${lesson.subtitle}</div>
+            <div class="tags">${tags}</div>
+          </div>
+          <div class="duration">${lesson.duration}</div>
+        </a>`;
+      });
+
+      html += `</div></div>`;
+    });
+
+    html += `</div></div>`;
+    groupEl.innerHTML = html;
+    app.appendChild(groupEl);
+  });
+
+  // ─── 渲染 Reference ───
+  const refGrid = document.getElementById('ref-grid');
+  if (D.references) {
+    D.references.forEach(ref => {
+      const card = document.createElement('a');
+      card.href = ref.path;
+      card.className = 'ref-card';
+      card.innerHTML = `
+        <div class="emoji">${ref.emoji}</div>
+        <h4>${ref.title}</h4>
+        <p>${ref.description}</p>
+      `;
+      refGrid.appendChild(card);
+    });
+  }
+})();
+</script>
+</body>
+</html>

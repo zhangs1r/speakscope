@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>会议英语高频工具箱 · SpeakScope</title>
+<link rel="stylesheet" href="../shared/theme.css">
+<style>
+  body { background: var(--paper-light); }
+  .page { max-width: 880px; margin: 0 auto; padding: var(--space-10) var(--space-6); }
+  h1 { font-family: var(--font-serif); }
+  .back { display: inline-block; margin-bottom: var(--space-6); color: var(--accent); text-decoration: none; font-size: var(--text-sm); }
+  .back:hover { text-decoration: underline; }
+  .phrase-block { background: var(--paper); border: 1px solid var(--border); border-radius: 8px; padding: var(--space-5); margin-bottom: var(--space-5); }
+  .phrase-block h3 { margin: 0 0 var(--space-2); font-family: var(--font-serif); font-size: var(--text-lg); }
+  .phrase-block .scene { font-size: var(--text-sm); color: var(--ink-60); margin-bottom: var(--space-3); }
+  .phrase-item { padding: var(--space-2) 0; border-bottom: 1px solid var(--border-light); }
+  .phrase-item:last-child { border-bottom: none; }
+  .phrase-item .en { font-weight: 600; }
+  .phrase-item .cn { font-size: var(--text-sm); color: var(--ink-60); margin-top: 0.1rem; }
+  .phrase-item .usage { font-size: var(--text-xs); color: var(--ink-40); font-style: italic; }
+  .tag-usage { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 4px; font-size: 0.7rem; font-weight: 600; margin-left: 0.3rem; }
+  .tag-power { background: #E3F0E4; color: #2D6A4F; }
+  .tag-weak { background: #F5E6D3; color: #8B5E3C; }
+  .tip-box { background: var(--paper); border-left: 4px solid var(--accent); padding: var(--space-4); border-radius: 0 8px 8px 0; margin: var(--space-4) 0; }
+  .tip-box strong { color: var(--accent-deep); }
+</style>
+</head>
+<body>
+<div class="page">
+  <a class="back" href="../index.html">← 返回 SpeakScope 主页</a>
+  <h1>🎯 会议英语高频工具箱</h1>
+  <p style="color:var(--ink-60);margin-bottom:var(--space-6);">Oral presentation 从开场到 Q&A 的高频句式。每个场景选 2-3 句练熟，不要贪多。</p>
+
+  <!-- 自我介绍 -->
+  <div class="phrase-block">
+    <h3>☀️ 开场自我介绍</h3>
+    <div class="scene">走上讲台，面向观众的第一句话</div>
+    <div class="phrase-item">
+      <div class="en">Good morning, everyone. My name is Jianqiang Zhang, and I'm from Jiangnan University.</div>
+      <div class="cn">大家早上好。我叫张建强，来自江南大学。</div>
+      <div class="usage">最稳妥的开场</div>
+    </div>
+    <div class="phrase-item">
+      <div class="en">Thank you, Chair. It's a great honor to be here today to present our work on SCoPE.</div>
+      <div class="cn">谢谢主席。很荣幸今天在这里向大家介绍我们的工作——SCoPE。</div>
+      <div class="usage">有主持人介绍环节时用</div>
+    </div>
+    <div class="phrase-item">
+      <div class="en">Good afternoon. I'm here today to talk about a prompting framework for chemical information extraction.</div>
+      <div class="cn">下午好。我今天要讲的是一个用于化学品信息提取的提示框架。</div>
+      <div class="usage">简洁直入版</div>
+    </div>
+  </div>
+
+  <!-- 引出问题 -->
+  <div class="phrase-block">
+    <h3>🎯 引出问题 / 研究动机</h3>
+    <div class="scene">说明"为什么我们要做这件事"</div>
+    <div class="phrase-item">
+      <div class="en">So, what's the problem we're trying to solve?</div>
+      <div class="cn">那么，我们要解决的问题是什么？</div>
+      <div class="usage">设问引入</div>
+    </div>
+    <div class="phrase-item">
+      <div class="en">Traditional customs inspection relies heavily on lab testing, which is time-consuming and costly.</div>
+      <div class="cn">传统的海关检测严重依赖实验室测试，既耗时又昂贵。</div>
+      <div class="usage">指出痛点</div>
+    </div>
+    <div class="phrase-item">
+      <div class="en">This creates an urgent need for an informatics-driven approach to extract key information from unstructured text.</div>
+      <div class="cn">这就产生了对信息学驱动方法从非结构化文本中提取关键信息的迫切需求。</div>
+      <div class="usage">引出需求</div>
+    </div>
+  </div>
+
+  <!-- 过渡到方法 -->
+  <div class="phrase-block">
+    <h3>🔄 过渡到方法与框架</h3>
+    <div class="scene">讲完问题后，自然过渡到"我们是怎么解决的"</div>
+    <div class="phrase-item">
+      <div class="en">To address these challenges, we propose the SCoPE framework — a Structured and Constrained Prompting Extractor.</div>
+      <div class="cn">为应对这些挑战，我们提出了 SCoPE 框架。</div>
+      <div class="usage">亮出框架名称时放慢语速，每个首字母重读</div>
+    </div>
+    <div class="phrase-item">
+      <div class="en">Let me walk you through the overall architecture.</div>
+      <div class="cn">让我带大家看一下整体架构。</div>
+      <div class="usage">引出架构图</div>
+    </div>
+    <div class="phrase-item">
+      <div class="en">The framework consists of four key modules: task description, field definitions, processing rules, and output examples.</div>
+      <div class="cn">该框架由四个关键模块组成：任务描述、字段定义、处理规则和输出示例。</div>
+      <div class="usage">列举模块时配合手势或 PPT 动画</div>
+    </div>
+  </div>
+
+  <!-- 数据展示 -->
+  <div class="phrase-block">
+    <h3>📊 展示实验结果</h3>
+    <div class="scene">这是 presentation 的核心</div>
+    <div class="phrase-item">
+      <div class="en">As shown in Figure 3, Moonshot-v1-8k achieves the highest global comprehensive score of 77.56%.</div>
+      <div class="cn">如图 3 所示，Moonshot-v1-8k 取得了最高的全局综合评分 77.56%。</div>
+      <div class="usage">指图时用手势对着 PPT 对应位置</div>
+    </div>
+    <div class="phrase-item">
+      <div class="en">We observe a significant performance improvement of 23.45% from the Baseline to the Partial Prompt.</div>
+      <div class="cn">从 Baseline 到 Partial Prompt，我们观察到 23.45% 的显著性能提升。</div>
+      <div class="usage">强调关键数字</div>
+    </div>
+    <div class="phrase-item">
+      <div class="en">Notably, the Full Prompt reduces the standard deviation to only 0.13%, demonstrating exceptional robustness.</div>
+      <div class="cn">值得注意的是，Full Prompt 将标准差降低到仅 0.13%，展现了卓越的鲁棒性。</div>
+      <div class="usage">高级词汇：exceptional /ɪkˈsepʃənl/</div>
+    </div>
+    <div class="phrase-item">
+      <div class="en">In this table, you can see a side-by-side comparison between the model output and human annotation.</div>
+      <div class="cn">在这个表中，你们可以看到模型输出与人工标注的并列对比。</div>
+      <div class="usage">引出 Table I</div>
+    </div>
+  </div>
+
+  <!-- 转折/对比 -->
+  <div class="phrase-block">
+    <h3>⚡ 转折与对比</h3>
+    <div class="scene">当有例外情况或不同模型对比时</div>
+    <div class="phrase-item">
+      <div class="en">However, we noticed an interesting anomaly in the Chemical Formula field under the Partial Prompt.</div>
+      <div class="cn">然而，我们注意到 Partial Prompt 下 Chemical Formula 字段出现了一个有趣的异常。</div>
+      <div class="usage">引出消融中的反常现象</div>
+    </div>
+    <div class="phrase-item">
+      <div class="en">While DeepSeek-V3.2 shows an advantage in Chemical Formula, Moonshot-v1-8k performs better overall.</div>
+      <div class="cn">虽然 DeepSeek-V3.2 在化学式上有优势，但 Moonshot-v1-8k 整体表现更好。</div>
+      <div class="usage">公平对比：先肯定对方优势，再说自己的</div>
+    </div>
+  </div>
+
+  <!-- 结束语 -->
+  <div class="phrase-block">
+    <h3>🎬 总结与结束语</h3>
+    <div class="scene">收束 presentation，留下印象</div>
+    <div class="phrase-item">
+      <div class="en">In summary, the SCoPE framework achieves robust extraction performance on unstructured chemical texts.</div>
+      <div class="cn">总结一下，SCoPE 框架在非结构化化学文本上取得了稳健的提取性能。</div>
+      <div class="usage">标准的总结句式</div>
+    </div>
+    <div class="phrase-item">
+      <div class="en">To put it simply: with SCoPE, we turn messy text into structured, usable data.</div>
+      <div class="cn">简单说：有了 SCoPE，我们把杂乱文本变成了结构化、可用的数据。</div>
+      <div class="usage">一页一句话总结，让观众记住核心信息</div>
+    </div>
+    <div class="phrase-item">
+      <div class="en">Thank you for your attention. I'd be happy to take any questions.</div>
+      <div class="cn">感谢各位的聆听。我很乐意回答问题。</div>
+      <div class="usage">最稳妥的结束方式</div>
+    </div>
+  </div>
+
+  <!-- Q&A -->
+  <div class="phrase-block">
+    <h3>❓ Q&A 应对</h3>
+    <div class="scene">被提问时不要慌，用这些句式争取思考时间</div>
+    <div class="phrase-item">
+      <div class="en">That's a great question. Thank you.</div>
+      <div class="cn">这是个好问题。谢谢。</div>
+      <div class="usage">万能开头，给自己 2 秒思考</div>
+    </div>
+    <div class="phrase-item">
+      <div class="en">If I understand your question correctly, you're asking about...</div>
+      <div class="cn">如果我没理解错的话，您是在问……</div>
+      <div class="usage">确认问题，避免答非所问</div>
+    </div>
+    <div class="phrase-item">
+      <div class="en">That's a very relevant point. Let me address that.</div>
+      <div class="cn">这一点提得很好。我来回答一下。</div>
+      <div class="usage">肯定提问者，营造友好氛围</div>
+    </div>
+    <div class="phrase-item">
+      <div class="en">That's an interesting question. To be honest, that's something we haven't fully explored yet, but it's definitely on our roadmap.</div>
+      <div class="cn">这是个有趣的问题。老实说，这方面我们还没有深入探索，但它肯定在我们的计划中。</div>
+      <div class="usage">诚实回答不了解的问题，比尴尬地编答案好</div>
+    </div>
+  </div>
+
+  <!-- 时间管理 -->
+  <div class="phrase-block">
+    <h3>⏰ 时间管理 / 被提醒时</h3>
+    <div class="scene">时间快到了或被提醒时保持从容</div>
+    <div class="phrase-item">
+      <div class="en">I see we're running short on time, so let me quickly summarize the key takeaway.</div>
+      <div class="cn">我看到时间不多了，让我快速总结一下关键要点。</div>
+      <div class="usage">看到时间提醒时自然过渡</div>
+    </div>
+    <div class="phrase-item">
+      <div class="en">Let me skip ahead to the most important result.</div>
+      <div class="cn">让我直接跳到最重要的结果。</div>
+      <div class="usage">被提醒时间时跳过非关键内容</div>
+    </div>
+  </div>
+
+  <div class="tip-box">
+    <strong>💡 练习建议：</strong> 
+    每天选 2-3 个场景，对着 AI 陪练练这些句子。不要死记硬背，而是：
+    <ol style="margin:var(--space-2) 0;padding-left:var(--space-5);">
+      <li>先读一遍原句</li>
+      <li>用自己的话改写一遍</li>
+      <li>让 AI 纠错</li>
+      <li>再完整讲一遍</li>
+    </ol>
+  </div>
+
+  <div style="margin-top:var(--space-10);padding-top:var(--space-6);border-top:1px solid var(--border);text-align:center;color:var(--ink-40);font-size:var(--text-sm);">
+    SpeakScope · <a href="../index.html">返回主页</a>
+  </div>
+</div>
+</body>
+</html>
