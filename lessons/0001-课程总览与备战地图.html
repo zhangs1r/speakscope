@@ -81,7 +81,13 @@ function playAudio(src, btnId) {
     <span>🏷️ 总览</span>
   </div>
 
-  <div class="content">
+  <div class="callout">
+    <strong>🧩 先修建议</strong><br>
+    本课程假设你已经理解了 SCoPE 论文的内容。如果还没读过论文，建议先学 <a href="https://zhangs1r.github.io/paperlesson/" target="_blank" style="color:var(--accent);">PaperLesson 中的 SCoPE 精读课程（0095-0099）</a>，再回来练口语。<br>
+    这样你在练关键词和句式的时候，知道自己在说什么。
+  </div>
+
+  <div class="callout">
 
     <h2>🎯 这门课是给谁用的</h2>
     <p>这门课程是为你——<strong>IAI 2026 oral presentation 的报告者</strong>——量身设计的。</p>
@@ -195,43 +201,43 @@ function playAudio(src, btnId) {
     <table>
       <tr><th>关键词</th><th>发音（IPA）</th><th>中文含义</th><th>在讲稿里怎么用</th></tr>
       <tr>
-        <td><div class="word-cell">SCoPE<button class="play-btn" id="pb-scope" onclick="playAudio('keyword-scope.mp3','pb-scope')">🔊</button></div></td><td><span class="pron">/skoʊp/</span></td><td>论文提出的框架名称</td>
+        <td><div class="word-cell">🔵 SCoPE<button class="play-btn" id="pb-scope" onclick="playAudio('keyword-scope.mp3','pb-scope')">🔊</button></div></td><td><span class="pron">/skoʊp/</span></td><td>论文提出的框架名称</td>
         <td>"We propose SCoPE, a prompting framework for chemical information extraction."</td>
       </tr>
       <tr>
-        <td><div class="word-cell">Prompt Engineering<button class="play-btn" id="pb-prompt" onclick="playAudio('keyword-prompt-engineering.mp3','pb-prompt')">🔊</button></div></td><td><span class="pron">/prɑːmpt ˌendʒɪˈnɪrɪŋ/</span></td><td>提示工程</td>
+        <td><div class="word-cell">🔵 Prompt Engineering<button class="play-btn" id="pb-prompt" onclick="playAudio('keyword-prompt-engineering.mp3','pb-prompt')">🔊</button></div></td><td><span class="pron">/prɑːmpt ˌendʒɪˈnɪrɪŋ/</span></td><td>提示工程</td>
         <td>"SCoPE is a systematic prompt engineering architecture."</td>
       </tr>
       <tr>
-        <td><div class="word-cell">Information Extraction<button class="play-btn" id="pb-info-ext" onclick="playAudio('keyword-info-extraction.mp3','pb-info-ext')">🔊</button></div></td><td><span class="pron">/ˌɪnfərˈmeɪʃən ɪkˈstrækʃən/</span></td><td>信息提取</td>
+        <td><div class="word-cell">🔵 Information Extraction<button class="play-btn" id="pb-info-ext" onclick="playAudio('keyword-info-extraction.mp3','pb-info-ext')">🔊</button></div></td><td><span class="pron">/ˌɪnfərˈmeɪʃən ɪkˈstrækʃən/</span></td><td>信息提取</td>
         <td>"This paper focuses on information extraction from unstructured text."</td>
       </tr>
       <tr>
-        <td><div class="word-cell">Unstructured Text<button class="play-btn" id="pb-unstr" onclick="playAudio('keyword-unstructured-text.mp3','pb-unstr')">🔊</button></div></td><td><span class="pron">/ʌnˈstrʌktʃərd tekst/</span></td><td>非结构化文本</td>
+        <td><div class="word-cell">🟡 Unstructured Text<button class="play-btn" id="pb-unstr" onclick="playAudio('keyword-unstructured-text.mp3','pb-unstr')">🔊</button></div></td><td><span class="pron">/ʌnˈstrʌktʃərd tekst/</span></td><td>非结构化文本</td>
         <td>"Our framework parses complex unstructured texts into standardized entities."</td>
       </tr>
       <tr>
-        <td><div class="word-cell">Hallucination<button class="play-btn" id="pb-hallu" onclick="playAudio('keyword-hallucination.mp3','pb-hallu')">🔊</button></div></td><td><span class="pron">/həˌluːsɪˈneɪʃən/</span></td><td>幻觉（模型胡编）</td>
+        <td><div class="word-cell">🔵 Hallucination<button class="play-btn" id="pb-hallu" onclick="playAudio('keyword-hallucination.mp3','pb-hallu')">🔊</button></div></td><td><span class="pron">/həˌluːsɪˈneɪʃən/</span></td><td>幻觉（模型胡编）</td>
         <td>"Our framework mitigates information hallucination through explicit constraints."</td>
       </tr>
       <tr>
-        <td><div class="word-cell">Boundary Blurring<button class="play-btn" id="pb-bound" onclick="playAudio('keyword-boundary-blurring.mp3','pb-bound')">🔊</button></div></td><td><span class="pron">/ˈbaʊndəri ˈblɜːrɪŋ/</span></td><td>边界模糊</td>
+        <td><div class="word-cell">🟡 Boundary Blurring<button class="play-btn" id="pb-bound" onclick="playAudio('keyword-boundary-blurring.mp3','pb-bound')">🔊</button></div></td><td><span class="pron">/ˈbaʊndəri ˈblɜːrɪŋ/</span></td><td>边界模糊</td>
         <td>"Boundary blurring is a common bottleneck in complex extraction tasks."</td>
       </tr>
       <tr>
-        <td><div class="word-cell">Zero-Inference Strategy<button class="play-btn" id="pb-zero" onclick="playAudio('keyword-zero-inference.mp3','pb-zero')">🔊</button></div></td><td><span class="pron">/ˈzɪroʊ ˈɪnfərəns ˈstrætədʒi/</span></td><td>零推断策略</td>
+        <td><div class="word-cell">🟡 Zero-Inference Strategy<button class="play-btn" id="pb-zero" onclick="playAudio('keyword-zero-inference.mp3','pb-zero')">🔊</button></div></td><td><span class="pron">/ˈzɪroʊ ˈɪnfərəns ˈstrætədʒi/</span></td><td>零推断策略</td>
         <td>"The zero-inference strategy prevents hallucination by assigning None to unmentioned fields."</td>
       </tr>
       <tr>
-        <td><div class="word-cell">Verb-Noun Guided Structure<button class="play-btn" id="pb-verb" onclick="playAudio('keyword-verb-noun.mp3','pb-verb')">🔊</button></div></td><td><span class="pron">/vɜːrb naʊn ˈɡaɪdɪd ˈstrʌktʃər/</span></td><td>动词-名词引导结构</td>
+        <td><div class="word-cell">🟡 Verb-Noun Guided Structure<button class="play-btn" id="pb-verb" onclick="playAudio('keyword-verb-noun.mp3','pb-verb')">🔊</button></div></td><td><span class="pron">/vɜːrb naʊn ˈɡaɪdɪd ˈstrʌktʃər/</span></td><td>动词-名词引导结构</td>
         <td>"We mandate a Verb-Noun guided structure for functional descriptions."</td>
       </tr>
       <tr>
-        <td><div class="word-cell">Ablation Study<button class="play-btn" id="pb-ablate" onclick="playAudio('keyword-ablation-study.mp3','pb-ablate')">🔊</button></div></td><td><span class="pron">/əˈbleɪʃən ˈstʌdi/</span></td><td>消融研究</td>
+        <td><div class="word-cell">🟡 Ablation Study<button class="play-btn" id="pb-ablate" onclick="playAudio('keyword-ablation-study.mp3','pb-ablate')">🔊</button></div></td><td><span class="pron">/əˈbleɪʃən ˈstʌdi/</span></td><td>消融研究</td>
         <td>"The ablation study validates the contribution of each module."</td>
       </tr>
       <tr>
-        <td><div class="word-cell">Global Comprehensive Score<button class="play-btn" id="pb-global" onclick="playAudio('keyword-global-score.mp3','pb-global')">🔊</button></div></td><td><span class="pron">/ˈɡloʊbl̩ ˌkɑːmprɪˈhensɪv skɔːr/</span></td><td>全局综合评分</td>
+        <td><div class="word-cell">🔵 Global Comprehensive Score<button class="play-btn" id="pb-global" onclick="playAudio('keyword-global-score.mp3','pb-global')">🔊</button></div></td><td><span class="pron">/ˈɡloʊbl̩ ˌkɑːmprɪˈhensɪv skɔːr/</span></td><td>全局综合评分</td>
         <td>"Our model achieves a global comprehensive score of 77.56%."</td>
       </tr>
     </table>
