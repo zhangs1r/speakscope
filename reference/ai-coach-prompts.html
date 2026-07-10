@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 陪练指令模板库 · SpeakScope</title>
+<link rel="stylesheet" href="../shared/theme.css">
+<style>
+  body { background: var(--paper-light); }
+  .page { max-width: 880px; margin: 0 auto; padding: var(--space-10) var(--space-6); }
+  h1 { font-family: var(--font-serif); }
+  .back { display: inline-block; margin-bottom: var(--space-6); color: var(--accent); text-decoration: none; font-size: var(--text-sm); }
+  .back:hover { text-decoration: underline; }
+
+  .coach-card {
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    margin-bottom: var(--space-6);
+    transition: box-shadow .15s;
+  }
+  .coach-card:hover { box-shadow: var(--shadow-md); }
+  .coach-card h2 {
+    font-family: var(--font-serif);
+    font-size: var(--text-2xl);
+    margin: 0 0 var(--space-1);
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+  }
+  .coach-card .cn-desc {
+    color: var(--ink-60);
+    font-size: var(--text-sm);
+    margin-bottom: var(--space-4);
+    line-height: 1.6;
+  }
+  .prompt-label {
+    font-size: var(--text-xs);
+    font-weight: 600;
+    color: var(--accent-deep);
+    text-transform: uppercase;
+    letter-spacing: .03em;
+    margin-bottom: var(--space-2);
+  }
+  .prompt-box {
+    background: var(--code-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: var(--space-4);
+    position: relative;
+    margin-bottom: var(--space-3);
+  }
+  .prompt-text {
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    line-height: 1.6;
+    white-space: pre-wrap;
+    word-break: break-word;
+    margin: 0;
+    padding-right: 60px;
+  }
+  .copy-btn {
+    position: absolute;
+    top: var(--space-2);
+    right: var(--space-2);
+    background: var(--accent);
+    color: white;
+    border: none;
+    border-radius: var(--radius-sm);
+    padding: 3px 10px;
+    font-size: var(--text-xs);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background .15s;
+    font-family: var(--font-sans);
+  }
+  .copy-btn:hover { background: var(--accent-deep); }
+  .copy-btn.copied { background: var(--success); }
+  .scene-box {
+    background: var(--accent-dim);
+    border-radius: var(--radius-md);
+    padding: var(--space-3) var(--space-4);
+    font-size: var(--text-sm);
+    color: var(--ink-80);
+    margin-top: var(--space-2);
+  }
+  .scene-box strong { color: var(--accent-deep); }
+  .scene-box code {
+    background: transparent;
+    font-family: var(--font-mono);
+    font-size: .85em;
+  }
+  .tip-section {
+    margin-top: var(--space-8);
+    padding: var(--space-6);
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+  }
+  .tip-section h3 { margin-top: 0; }
+  .tip-section li { margin-bottom: var(--space-2); }
+  .tip-section code {
+    background: var(--code-bg);
+    padding: .1em .35em;
+    border-radius: 3px;
+    font-family: var(--font-mono);
+    font-size: .85em;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <a class="back" href="../index.html">← 返回 SpeakScope 主页</a>
+  <h1>🤖 AI 陪练指令模板库</h1>
+  <p style="color:var(--ink-60);margin-bottom:var(--space-6);">
+    把 AI（元宝、ChatGPT、Claude 等）变成你的专属口语陪练。以下 5 种用法覆盖演讲准备各阶段，
+    直接复制英文 Prompt 发给 AI 即可开始练习。
+  </p>
+
+  <!-- 1. 润色师 Polisher -->
+  <div class="coach-card">
+    <h2>✍️ 润色师 <span style="font-size:0.6em;color:var(--ink-40);font-weight:400;">Polisher</span></h2>
+    <div class="cn-desc">
+      把你的英文讲稿草稿发给 AI，让它逐句润色：保持学术严谨的同时让表达更自然流畅。
+      适合写完初稿后做一轮打磨，也可以让 AI 给出多个版本供你选择。
+    </div>
+    <div class="prompt-label">📋 英文 Prompt 模板（一键复制）</div>
+    <div class="prompt-box">
+      <pre class="prompt-text">I am preparing an oral presentation for an international academic conference. Please act as my language polishing coach.
+
+Here is my draft script. Polish it to sound more natural and fluent while keeping the academic tone appropriate for a formal conference presentation.
+
+Requirements:
+1. Improve word choice — replace vague or awkward expressions with more precise ones
+2. Smooth out sentence flow — break long sentences, fix run-ons
+3. Keep technical terms unchanged
+4. If a sentence is too long for speaking, suggest a shorter alternative
+5. Provide a brief explanation (1-2 sentences) for at least 3 of your changes so I can learn from them
+
+My draft:
+[在此粘贴你的讲稿草稿]</pre>
+      <button class="copy-btn" onclick="copyPrompt(this)">📋 复制</button>
+    </div>
+    <div class="scene-box">
+      <strong>💡 使用场景示例：</strong>
+      你刚写完会议 opening 的初稿："We have done a research on this topic." →
+      让 AI 润色后可能变成 "We conducted a systematic investigation into this topic."，
+      同时解释为什么 done → conducted 更正式、research → investigation 更具体。
+    </div>
+  </div>
+
+  <!-- 2. 纠音师 Pronunciation Coach -->
+  <div class="coach-card">
+    <h2>🎙️ 纠音师 <span style="font-size:0.6em;color:var(--ink-40);font-weight:400;">Pronunciation Coach</span></h2>
+    <div class="cn-desc">
+      针对讲稿中让你吃不准发音的单词或句子，让 AI 给出音标、重音提示和发音技巧。
+      也可以发一段录音转写文本，让 AI 指出常见的发音错误模式。
+    </div>
+    <div class="prompt-label">📋 英文 Prompt 模板（一键复制）</div>
+    <div class="prompt-box">
+      <pre class="prompt-text">I am preparing an English oral presentation and need pronunciation coaching. Please act as my pronunciation coach.
+
+For the words and sentences I provide below, please:
+
+1. Transcribe each word in IPA (International Phonetic Alphabet)
+2. Mark the primary stress with ˈ before the stressed syllable
+3. Highlight any sounds that are commonly mispronounced by Chinese/Asian Mandarin speakers
+4. For sentences, mark the sentence stress (which words should be emphasized)
+5. Provide a slow-motion breakdown: how to pronounce the word syllable by syllable
+6. Give me one "shadowing tip" — a trick to make the pronunciation easier to remember
+
+Words/sentences to practice:
+[在此粘贴你的单词或句子]</pre>
+      <button class="copy-btn" onclick="copyPrompt(this)">📋 复制</button>
+    </div>
+    <div class="scene-box">
+      <strong>💡 使用场景示例：</strong>
+      你不确定 <code>extraction</code> 怎么读 → 让 AI 给出 /ɪkˈstrækʃən/，指出 /str/ 连读技巧、
+      中国学生容易把 /æ/ 发成 /ɛ/ 的问题，并提供慢速分解：<code>ex·trac·tion</code>。
+    </div>
+  </div>
+
+  <!-- 3. 模拟观众 Practice Audience -->
+  <div class="coach-card">
+    <h2>👥 模拟观众 <span style="font-size:0.6em;color:var(--ink-40);font-weight:400;">Practice Audience</span></h2>
+    <div class="cn-desc">
+      完整地对着 AI 讲一遍你的 presentation（或其中一段），然后让 AI 从观众角度给反馈：
+      语速是否合适、逻辑是否清晰、哪些地方容易走神、哪里可以加手势或停顿。
+    </div>
+    <div class="prompt-label">📋 英文 Prompt 模板（一键复制）</div>
+    <div class="prompt-box">
+      <pre class="prompt-text">I am going to deliver my presentation script to you. Please act as an attentive audience member at an academic conference. After I finish, give me structured feedback on the following aspects:
+
+1. Clarity (1-10): Was the main message clear? Did anything confuse you?
+2. Pace (1-10): Was the speaking speed appropriate? Where should I slow down or speed up?
+3. Energy (1-10): Did I sound engaging? Where did my voice become monotonous?
+4. Structure: Was the logical flow easy to follow? Any missing transitions?
+5. Specific suggestions: Point out 2-3 concrete improvements I can make
+6. One thing I did well: Reinforce one strength I should keep
+
+Here is my script. After reading it, please acknowledge that you're ready, and I will deliver it to you.
+
+My script:
+[在此粘贴你的完整讲稿]</pre>
+      <button class="copy-btn" onclick="copyPrompt(this)">📋 复制</button>
+    </div>
+    <div class="scene-box">
+      <strong>💡 使用场景示例：</strong>
+      练完 opening 段落后问 AI："I just said the script above. My main concern is whether the
+      transition from 'problem' to 'solution' feels natural." → AI 会重点关注衔接部分，
+      指出你是否用了 clear signposting（如 "To address these challenges..."）。
+    </div>
+  </div>
+
+  <!-- 4. 刁难提问者 Challenge Q&A -->
+  <div class="coach-card">
+    <h2>⚡ 刁难提问者 <span style="font-size:0.6em;color:var(--ink-40);font-weight:400;">Challenge Q&A</span></h2>
+    <div class="cn-desc">
+      在 Q&A 预演阶段，让 AI 扮演领域专家，根据你的论文内容提出尖锐问题。
+      建议先准备好你的论文摘要/方法部分，让 AI 充分理解背景后再开始对练。
+    </div>
+    <div class="prompt-label">📋 英文 Prompt 模板（一键复制）</div>
+    <div class="prompt-box">
+      <pre class="prompt-text">I am preparing for the Q&A session of my conference presentation. Please role-play as a senior researcher in the field of natural language processing and information extraction.
+
+Here is my paper abstract and methodology overview:
+[在此粘贴你的论文摘要和方法概述]
+
+Now, please:
+1. Generate 5 challenging questions that a domain expert might ask during the Q&A
+2. Questions should probe limitations, assumptions, edge cases, and comparisons with alternative approaches
+3. For each question, also provide a hint on what the asker is really looking for (the "deep need" behind the question)
+4. Rank the questions by difficulty (★ to ★★★)
+5. After I answer each question, give me feedback on my response: was it convincing? What did I miss?
+
+Start by asking me the first question one at a time.</pre>
+      <button class="copy-btn" onclick="copyPrompt(this)">📋 复制</button>
+    </div>
+    <div class="scene-box">
+      <strong>💡 使用场景示例：</strong>
+      AI 可能问："How does your SCoPE framework handle out-of-vocabulary chemical compounds
+      that weren't seen during prompting?" → 你需要准备 "We designed the task description
+      to be format-agnostic..." 这样的回答。AI 还会追问你的逻辑漏洞。
+    </div>
+  </div>
+
+  <!-- 5. 时间管家 Time Keeper -->
+  <div class="coach-card">
+    <h2>⏱️ 时间管家 <span style="font-size:0.6em;color:var(--ink-40);font-weight:400;">Time Keeper</span></h2>
+    <div class="cn-desc">
+      在正式演练前，用 AI 计算你的讲稿时长。粘贴讲稿后 AI 会按正常语速估算时长，
+      并给出提速建议：哪些部分可以精简、哪些过渡句可以缩短。
+    </div>
+    <div class="prompt-label">📋 英文 Prompt 模板（一键复制）</div>
+    <div class="prompt-box">
+      <pre class="prompt-text">I have a 15-minute time slot for my conference presentation. Please act as my time keeper.
+
+Here is my full presentation script. Please:
+
+1. Estimate the speaking time for each section (opening, problem statement, method, experiments, conclusion)
+2. Calculate the total estimated duration at normal speaking pace (~140 words/min)
+3. If the total exceeds 14 minutes (leaving 1 minute buffer), suggest where to cut
+4. If the total exceeds 16 minutes, mark sections that must be cut or condensed
+5. Identify 3 sentences that can be said more concisely without losing meaning
+6. For each section, provide a "30-second summary" version — the absolute minimum I need to say if I'm running late
+7. Highlight any section where I spend more time than its importance warrants (time allocation advice)
+
+My script:
+[在此粘贴你的完整讲稿]</pre>
+      <button class="copy-btn" onclick="copyPrompt(this)">📋 复制</button>
+    </div>
+    <div class="scene-box">
+      <strong>💡 使用场景示例：</strong>
+      你的讲稿共 2200 词 → AI 算出约 15.7 分钟（超标了）。它建议将实验部分的
+      详细描述缩短为只说关键结果："On the test dataset, SCoPE achieved 77.56% overall score —
+      a 23.45% improvement over the baseline." 而不是逐条罗列所有数据。
+    </div>
+  </div>
+
+  <!-- 使用技巧 -->
+  <div class="tip-section">
+    <h3>💎 使用建议</h3>
+    <ul>
+      <li><strong>按阶段使用：</strong>写稿 → 用润色师；逐句打磨 → 用纠音师；完整试讲 → 用模拟观众；Q&A 准备 → 用刁难提问者；最终演练 → 用时间管家</li>
+      <li><strong>中英结合：</strong>如果英文 Prompt 有看不懂的部分，可以直接用中文追问 AI，它理解上下文后会继续用英文帮你练</li>
+      <li><strong>一键复制：</strong>点击每个 Prompt 模板右上角的 "📋 复制" 按钮，即可将纯英文指令复制到剪贴板，直接粘贴发给元宝 AI 或任何大语言模型</li>
+      <li><strong>替换占位符：</strong>模板中 <code>[在此粘贴...]</code> 的部分需要替换为你的实际内容</li>
+    </ul>
+  </div>
+
+  <div style="margin-top:var(--space-10);padding-top:var(--space-6);border-top:1px solid var(--border);text-align:center;color:var(--ink-40);font-size:var(--text-sm);">
+    SpeakScope · <a href="../index.html">返回主页</a>
+  </div>
+</div>
+
+<script>
+function copyPrompt(btn) {
+  const box = btn.parentElement;
+  const text = box.querySelector('.prompt-text').textContent.trim();
+  navigator.clipboard.writeText(text).then(() => {
+    btn.textContent = '✅ 已复制';
+    btn.classList.add('copied');
+    setTimeout(() => {
+      btn.textContent = '📋 复制';
+      btn.classList.remove('copied');
+    }, 2000);
+  }).catch(() => {
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    btn.textContent = '✅ 已复制';
+    btn.classList.add('copied');
+    setTimeout(() => {
+      btn.textContent = '📋 复制';
+      btn.classList.remove('copied');
+    }, 2000);
+  });
+}
+</script>
+</body>
+</html>

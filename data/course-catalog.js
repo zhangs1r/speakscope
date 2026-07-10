@@ -53,7 +53,8 @@ window.SPEAKSCOPE_DATA = {
   ],
   references: [
     { path: "reference/scope-keywords.html", title: "SCoPE 论文关键词汇表", emoji: "🔬", description: "论文核心术语中英对照 + 发音提示 + 例句，适合 oral presentation 前熟记。" },
-    { path: "reference/conference-phrases.html", title: "会议英语高频工具箱", emoji: "🎯", description: "开场白、过渡句、数据展示、Q&A 应对等 oral presentation 高频句式速查。" }
+    { path: "reference/conference-phrases.html", title: "会议英语高频工具箱", emoji: "🎯", description: "开场白、过渡句、数据展示、Q&A 应对等 oral presentation 高频句式速查。" },
+    { path: "reference/ai-coach-prompts.html", title: "AI 陪练指令模板库", emoji: "🤖", description: "5 种 AI 陪练用法：润色、纠音、模拟观众、刁难提问、时间管理。一键复制 Prompt 模板。", new: true }
   ],
   learningRecords: [],
   siteLinks: [
