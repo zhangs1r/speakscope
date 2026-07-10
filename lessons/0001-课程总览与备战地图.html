@@ -154,69 +154,166 @@
       <tr><td>🎯 时间控制</td><td>完整讲一遍，看总时长是否符合要求</td><td>±1 分钟内</td></tr>
     </table>
 
-    <h2>📚 本课程提供什么</h2>
-    <p>这个 SpeakScope 项目会持续产出以下内容：</p>
+    <h2>📌 现在就开始：SCoPE 关键词汇跟读</h2>
+    <p>打开元宝 AI 口语陪练，说 <strong>"Please help me practice the key terms from my paper SCoPE"</strong>，然后跟着下面的列表逐词朗读。让 AI 纠正你的发音。</p>
+
+    <h3>🔬 论文核心术语</h3>
     <table>
-      <tr><th>内容类型</th><th>位置</th><th>说明</th></tr>
-      <tr><td>📖 课程页（Lesson）</td><td><code>lessons/</code></td><td>每节课一个 HTML，跟着学、跟着练</td></tr>
-      <tr><td>🔬 关键词汇表</td><td><code>reference/scope-keywords.html</code></td><td>论文核心术语中英对照 + 发音 + 例句</td></tr>
-      <tr><td>🎯 高频工具箱</td><td><code>reference/conference-phrases.html</code></td><td>Oral 各环节句式模板</td></tr>
-      <tr><td>⚡ Hermes Skill</td><td>（Hermes 系统内）</td><td>以后在任何对话中说"帮我加一节口语课"，agent 会自动按流程工作</td></tr>
+      <tr><th>关键词</th><th>发音（IPA）</th><th>中文含义</th><th>在讲稿里怎么用</th></tr>
+      <tr>
+        <td>SCoPE</td><td>/skoʊp/</td><td>论文提出的框架名称</td>
+        <td>"We propose SCoPE, a prompting framework for chemical information extraction."</td>
+      </tr>
+      <tr>
+        <td>Prompt Engineering</td><td>/prɑːmpt ˌendʒɪˈnɪrɪŋ/</td><td>提示工程</td>
+        <td>"SCoPE is a systematic prompt engineering architecture."</td>
+      </tr>
+      <tr>
+        <td>Information Extraction</td><td>/ˌɪnfərˈmeɪʃən ɪkˈstrækʃən/</td><td>信息提取</td>
+        <td>"This paper focuses on information extraction from unstructured text."</td>
+      </tr>
+      <tr>
+        <td>Unstructured Text</td><td>/ʌnˈstrʌktʃərd tekst/</td><td>非结构化文本</td>
+        <td>"Our framework parses complex unstructured texts into standardized entities."</td>
+      </tr>
+      <tr>
+        <td>Hallucination</td><td>/həˌluːsɪˈneɪʃən/</td><td>幻觉（模型胡编）</td>
+        <td>"Our framework mitigates information hallucination through explicit constraints."</td>
+      </tr>
+      <tr>
+        <td>Boundary Blurring</td><td>/ˈbaʊndəri ˈblɜːrɪŋ/</td><td>边界模糊</td>
+        <td>"Boundary blurring is a common bottleneck in complex extraction tasks."</td>
+      </tr>
+      <tr>
+        <td>Zero-Inference Strategy</td><td>/ˈzɪroʊ ˈɪnfərəns ˈstrætədʒi/</td><td>零推断策略</td>
+        <td>"The zero-inference strategy prevents hallucination by assigning None to unmentioned fields."</td>
+      </tr>
+      <tr>
+        <td>Verb-Noun Guided Structure</td><td>/vɜːrb naʊn ˈɡaɪdɪd ˈstrʌktʃər/</td><td>动词-名词引导结构</td>
+        <td>"We mandate a Verb-Noun guided structure for functional descriptions."</td>
+      </tr>
+      <tr>
+        <td>Ablation Study</td><td>/əˈbleɪʃən ˈstʌdi/</td><td>消融研究</td>
+        <td>"The ablation study validates the contribution of each module."</td>
+      </tr>
+      <tr>
+        <td>Global Comprehensive Score</td><td>/ˈɡloʊbl̩ ˌkɑːmprɪˈhensɪv skɔːr/</td><td>全局综合评分</td>
+        <td>"Our model achieves a global comprehensive score of 77.56%."</td>
+      </tr>
     </table>
 
-    <h2>📌 现在做什么？</h2>
-    <p>读完这节课后，你的第一步是：</p>
-    <ol>
-      <li>打开 <a href="scope-keywords.html" style="color:var(--accent);">SCoPE 论文关键词汇表</a>，把那些术语朗读一遍</li>
-      <li>打开元宝 AI 陪练，说：<strong>"Let's practice reading key terms from my paper."</strong></li>
-      <li>让 AI 纠正你的发音，重点关注：<em>extraction /ɪkˈstrækʃən/、hallucination /həˌluːsɪˈneɪʃən/、formula /ˈfɔːrmjələ/</em></li>
-    </ol>
-    <p>下一节课我们会开始写你的开场白和 Introduction 部分的英文讲稿。</p>
+    <h3>🤖 模型名称（注意容易读错）</h3>
+    <table>
+      <tr><th>模型</th><th>正确发音</th><th>说明</th></tr>
+      <tr><td>Moonshot-v1-8k</td><td>/ˈmuːnʃɑːt viː wʌn eɪt keɪ/</td><td>论文选用的基座模型</td></tr>
+      <tr><td>DeepSeek-V3.2</td><td>/diːp siːk viː θriː pɔɪnt tuː/</td><td>对比模型</td></tr>
+      <tr><td>Qwen-Plus</td><td>/ˈtʃuːwən plʌs/</td><td>对比模型（注意不是"奎恩"，是"丘文"）</td></tr>
+      <tr><td>GLM-4-Flash</td><td>/dʒiː ɛl em fɔːr flæʃ/</td><td>对比模型</td></tr>
+    </table>
 
-    <h2>✏️ 课后练习</h2>
+    <div class="tip-box">
+      <strong>💡 练习方法：</strong><br>
+      ① 先读英文单词 → ② 再读整个例句 → ③ AI 纠正后重复 3 遍 → ④ 换下一个词<br>
+      关键词汇不用全背，优先练熟你 presentation 里一定会说到的那些。
+    </div>
+
+    <h2>🎯 会议高频句式（直接练）</h2>
+    <p>以下是你 oral presentation 每个环节最可能用到的句子。每个场景选 2-3 句练到顺口。</p>
+
+    <h3>☀️ 开场自我介绍</h3>
+    <table>
+      <tr><th>英文</th><th>中文</th><th>使用场景</th></tr>
+      <tr><td>Good morning, everyone. My name is Jianqiang Zhang, and I'm from Jiangnan University.</td><td>大家早上好。我叫张建强，来自江南大学。</td><td>最稳妥的开场</td></tr>
+      <tr><td>Thank you, Chair. It's a great honor to be here today to present our work on SCoPE.</td><td>谢谢主席。很荣幸今天在这里介绍我们的工作——SCoPE。</td><td>有主持人介绍环节</td></tr>
+      <tr><td>Good afternoon. I'm here today to talk about a prompting framework for chemical information extraction.</td><td>下午好。我今天要讲的是一个用于化学品信息提取的提示框架。</td><td>简洁直入</td></tr>
+    </table>
+
+    <h3>🎯 引出问题 / 研究动机</h3>
+    <table>
+      <tr><th>英文</th><th>中文</th></tr>
+      <tr><td><strong>So, what's the problem we're trying to solve?</strong></td><td>那么，我们要解决的问题是什么？</td></tr>
+      <tr><td>Traditional customs inspection relies heavily on lab testing, which is <strong>time-consuming and costly</strong>.</td><td>传统的海关检测严重依赖实验室测试，既耗时又昂贵。</td></tr>
+      <tr><td>This creates an urgent need for an <strong>informatics-driven approach</strong>.</td><td>这就产生了对信息学驱动方法的迫切需求。</td></tr>
+    </table>
+
+    <h3>🔄 过渡到方法 / 框架</h3>
+    <table>
+      <tr><th>英文</th><th>中文</th></tr>
+      <tr><td>To address these challenges, we propose <strong>the SCoPE framework</strong>.</td><td>为应对这些挑战，我们提出了 SCoPE 框架。</td></tr>
+      <tr><td>Let me <strong>walk you through</strong> the overall architecture.</td><td>让我带大家看一下整体架构。</td></tr>
+      <tr><td>The framework consists of <strong>four key modules</strong>: task description, field definitions, processing rules, and output examples.</td><td>该框架由四个关键模块组成。</td></tr>
+    </table>
+
+    <h3>📊 展示实验结果</h3>
+    <table>
+      <tr><th>英文</th><th>中文</th></tr>
+      <tr><td>As shown in Figure 3, Moonshot-v1-8k achieves <strong>the highest score of 77.56%</strong>.</td><td>如图 3 所示，Moonshot-v1-8k 取得了最高分 77.56%。</td></tr>
+      <tr><td>We observe a <strong>significant improvement of 23.45%</strong> from Baseline to Partial Prompt.</td><td>从 Baseline 到 Partial Prompt，我们观察到 23.45% 的显著提升。</td></tr>
+      <tr><td>The Full Prompt reduces the standard deviation to <strong>only 0.13%</strong>.</td><td>Full Prompt 将标准差降低到仅 0.13%。</td></tr>
+    </table>
+
+    <h3>🎬 总结 + Q&A 应对</h3>
+    <table>
+      <tr><th>英文</th><th>中文</th></tr>
+      <tr><td><strong>In summary</strong>, the SCoPE framework achieves robust extraction performance.</td><td>总结一下，SCoPE 框架取得了稳健的提取性能。</td></tr>
+      <tr><td>Thank you for your attention. <strong>I'd be happy to take any questions.</strong></td><td>感谢各位聆听。我很乐意回答问题。</td></tr>
+      <tr><td>That's a <strong>great question</strong>. Thank you.</td><td>这是个好问题。谢谢。（给自己 2 秒思考）</td></tr>
+      <tr><td>If I understand your question correctly, you're asking about…</td><td>如果我没理解错的话，您是在问……</td></tr>
+    </table>
+
+    <div class="tip-box">
+      <strong>💡 练习方法：</strong> 每个场景选 2-3 句，对着 AI 陪练说：<em>"Let me practice my opening for the presentation."</em> 然后读一遍，让 AI 纠正发音和语调。练熟了再换下一组。
+    </div>
+
+    <h2>✏️ 这节课的练习</h2>
 
     <details class="exercise-box">
-      <summary>📝 练习 1：自我介绍（30 秒版）</summary>
+      <summary>📝 练习 1：自我介绍 + 论文标题（30 秒）</summary>
       <div class="answer">
-        <p>用英文口头做一段 30 秒的自我介绍，包含：</p>
-        <ul>
-          <li>你的名字（Jianqiang Zhang）</li>
-          <li>你的学校（Jiangnan University）</li>
-          <li>你的论文标题（SCoPE: A Prompting Framework for Chemical Information Extraction）</li>
-        </ul>
-        <p>对着 AI 陪练讲，让它帮你录音并回放。听自己的声音一开始可能会不习惯，但这是最有用的练习。</p>
+        <p>用英文口头说一段 30 秒的自我介绍，包含你的名字、学校和论文标题。</p>
+        <p><strong>对着 AI 这么说：</strong> "Please listen to my self-introduction and correct my pronunciation."</p>
         <p><strong>参考答案：</strong></p>
         <p>Good morning, everyone. My name is Jianqiang Zhang, from Jiangnan University. Today I'm going to present our work titled "SCoPE: A Prompting Framework for Chemical Information Extraction."</p>
+        <p>录下来回听一遍——第一次听自己说英语会不习惯，但这是最快进步的方法。</p>
       </div>
     </details>
 
     <details class="exercise-box">
-      <summary>🗣️ 练习 2：关键词跟读</summary>
+      <summary>🗣️ 练习 2：论文关键词跟读（10 个词）</summary>
       <div class="answer">
-        <p>以下 5 个词是你在做 presentation 时一定会说到的。每个词大声读 5 遍：</p>
+        <p>从上面的关键词表里，重点练这 3 个最容易读错的：</p>
         <ol>
-          <li><strong>extraction</strong> /ɪkˈstrækʃən/</li>
-          <li><strong>framework</strong> /ˈfreɪmwɜːrk/</li>
-          <li><strong>chemical</strong> /ˈkemɪkəl/</li>
-          <li><strong>evaluation</strong> /ɪˌvæljuˈeɪʃən/</li>
-          <li><strong>comprehensive</strong> /ˌkɑːmprɪˈhensɪv/</li>
+          <li><strong>extraction</strong> /ɪkˈstrækʃən/（注意不是 /ek-/，第一个音节是 /ɪk/）</li>
+          <li><strong>hallucination</strong> /həˌluːsɪˈneɪʃən/（重音在倒数第二个音节 /neɪ/）</li>
+          <li><strong>comprehensive</strong> /ˌkɑːmprɪˈhensɪv/（注意 /hens/ 不是 /henz/）</li>
         </ol>
-        <p>让 AI 陪练帮你判断每个词的发音是否准确。</p>
+        <p>每个词对 AI 说 3 遍，让它帮你判断哪个读得不对。</p>
       </div>
     </details>
 
     <details class="exercise-box">
-      <summary>📋 练习 3：制定你的个人计划</summary>
+      <summary>🎤 练习 3：开场白一口气顺下来</summary>
       <div class="answer">
-        <p>根据上面的周计划，结合你自己的实际情况写下：</p>
+        <p>把下面这段连起来读顺：</p>
+        <p><em>"Good morning, everyone. My name is Jianqiang Zhang, from Jiangnan University. Today I'm here to present our work on SCoPE — a Structured and Constrained Prompting Extractor for chemical information extraction. So, what's the problem we're trying to solve? Traditional customs inspection relies heavily on lab testing, which is time-consuming and costly. To address this, we propose SCoPE, a systematic prompting framework."</em></p>
+        <p>对 AI 说："Please listen to my opening and tell me where I need to improve."</p>
+      </div>
+    </details>
+
+    <details class="exercise-box">
+      <summary>📋 练习 4：制定你的个人备战计划</summary>
+      <div class="answer">
+        <p>根据上面的周计划，自己定下来：</p>
         <ul>
-          <li>你每天什么时间练习？</li>
+          <li>你每天什么时间练？</li>
           <li>每次练多久？</li>
           <li>跟导师线上过一遍定在几号？</li>
         </ul>
-        <p>把这些写下来，贴在你能看到的地方。</p>
+        <p>写下来贴在能看到的地方。</p>
       </div>
     </details>
+
+    <p style="margin-top:var(--space-6);"><strong>下一课预告：</strong> 第 0002 课我们会开始写你 oral presentation 的开场白 & Introduction 部分英文讲稿，逐句打磨。</p>
 
   </div>
 
