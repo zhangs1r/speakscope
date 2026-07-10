@@ -34,7 +34,41 @@
   table { width: 100%; border-collapse: collapse; margin: var(--space-4) 0; font-size: var(--text-sm); }
   th { background: var(--paper); text-align: left; padding: var(--space-2) var(--space-3); border-bottom: 2px solid var(--accent-light); }
   td { padding: var(--space-2) var(--space-3); border-bottom: 1px solid var(--border-light); }
+  .play-btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    background: var(--paper); border: 1px solid var(--accent-light);
+    border-radius: 4px; cursor: pointer; font-size: 0.75rem;
+    width: 1.6rem; height: 1.6rem; margin-left: 0.4rem; flex-shrink: 0;
+    transition: background 0.15s, transform 0.1s;
+    vertical-align: middle; line-height: 1;
+  }
+  .play-btn:hover { background: var(--accent-dim); transform: scale(1.1); }
+  .play-btn:active { transform: scale(0.95); }
+  .play-btn.playing { background: #c8e6c9; border-color: var(--success); }
+  .word-cell { display: flex; align-items: center; gap: 0.3rem; flex-wrap: wrap; }
+  .pron { font-size: var(--text-xs); color: var(--ink-40); font-style: italic; }
+  .phrase-en { font-weight: 600; }
+  .phrase-cn { font-size: var(--text-sm); color: var(--ink-60); }
 </style>
+<script>
+const player = new Audio();
+let currentBtn = null;
+function playAudio(src, btnId) {
+  const btn = document.getElementById(btnId);
+  if (btn && btn.classList.contains('playing')) {
+    player.pause();
+    player.currentTime = 0;
+    btn.classList.remove('playing');
+    currentBtn = null;
+    return;
+  }
+  if (currentBtn) currentBtn.classList.remove('playing');
+  player.src = 'assets/audio/' + src;
+  player.play();
+  if (btn) { btn.classList.add('playing'); currentBtn = btn; }
+  player.onended = () => { if (btn) btn.classList.remove('playing'); currentBtn = null; };
+}
+</script>
 </head>
 <body>
 <div class="lesson">
@@ -161,43 +195,43 @@
     <table>
       <tr><th>关键词</th><th>发音（IPA）</th><th>中文含义</th><th>在讲稿里怎么用</th></tr>
       <tr>
-        <td>SCoPE</td><td>/skoʊp/</td><td>论文提出的框架名称</td>
+        <td><div class="word-cell">SCoPE<button class="play-btn" id="pb-scope" onclick="playAudio('keyword-scope.mp3','pb-scope')">🔊</button></div></td><td><span class="pron">/skoʊp/</span></td><td>论文提出的框架名称</td>
         <td>"We propose SCoPE, a prompting framework for chemical information extraction."</td>
       </tr>
       <tr>
-        <td>Prompt Engineering</td><td>/prɑːmpt ˌendʒɪˈnɪrɪŋ/</td><td>提示工程</td>
+        <td><div class="word-cell">Prompt Engineering<button class="play-btn" id="pb-prompt" onclick="playAudio('keyword-prompt-engineering.mp3','pb-prompt')">🔊</button></div></td><td><span class="pron">/prɑːmpt ˌendʒɪˈnɪrɪŋ/</span></td><td>提示工程</td>
         <td>"SCoPE is a systematic prompt engineering architecture."</td>
       </tr>
       <tr>
-        <td>Information Extraction</td><td>/ˌɪnfərˈmeɪʃən ɪkˈstrækʃən/</td><td>信息提取</td>
+        <td><div class="word-cell">Information Extraction<button class="play-btn" id="pb-info-ext" onclick="playAudio('keyword-info-extraction.mp3','pb-info-ext')">🔊</button></div></td><td><span class="pron">/ˌɪnfərˈmeɪʃən ɪkˈstrækʃən/</span></td><td>信息提取</td>
         <td>"This paper focuses on information extraction from unstructured text."</td>
       </tr>
       <tr>
-        <td>Unstructured Text</td><td>/ʌnˈstrʌktʃərd tekst/</td><td>非结构化文本</td>
+        <td><div class="word-cell">Unstructured Text<button class="play-btn" id="pb-unstr" onclick="playAudio('keyword-unstructured-text.mp3','pb-unstr')">🔊</button></div></td><td><span class="pron">/ʌnˈstrʌktʃərd tekst/</span></td><td>非结构化文本</td>
         <td>"Our framework parses complex unstructured texts into standardized entities."</td>
       </tr>
       <tr>
-        <td>Hallucination</td><td>/həˌluːsɪˈneɪʃən/</td><td>幻觉（模型胡编）</td>
+        <td><div class="word-cell">Hallucination<button class="play-btn" id="pb-hallu" onclick="playAudio('keyword-hallucination.mp3','pb-hallu')">🔊</button></div></td><td><span class="pron">/həˌluːsɪˈneɪʃən/</span></td><td>幻觉（模型胡编）</td>
         <td>"Our framework mitigates information hallucination through explicit constraints."</td>
       </tr>
       <tr>
-        <td>Boundary Blurring</td><td>/ˈbaʊndəri ˈblɜːrɪŋ/</td><td>边界模糊</td>
+        <td><div class="word-cell">Boundary Blurring<button class="play-btn" id="pb-bound" onclick="playAudio('keyword-boundary-blurring.mp3','pb-bound')">🔊</button></div></td><td><span class="pron">/ˈbaʊndəri ˈblɜːrɪŋ/</span></td><td>边界模糊</td>
         <td>"Boundary blurring is a common bottleneck in complex extraction tasks."</td>
       </tr>
       <tr>
-        <td>Zero-Inference Strategy</td><td>/ˈzɪroʊ ˈɪnfərəns ˈstrætədʒi/</td><td>零推断策略</td>
+        <td><div class="word-cell">Zero-Inference Strategy<button class="play-btn" id="pb-zero" onclick="playAudio('keyword-zero-inference.mp3','pb-zero')">🔊</button></div></td><td><span class="pron">/ˈzɪroʊ ˈɪnfərəns ˈstrætədʒi/</span></td><td>零推断策略</td>
         <td>"The zero-inference strategy prevents hallucination by assigning None to unmentioned fields."</td>
       </tr>
       <tr>
-        <td>Verb-Noun Guided Structure</td><td>/vɜːrb naʊn ˈɡaɪdɪd ˈstrʌktʃər/</td><td>动词-名词引导结构</td>
+        <td><div class="word-cell">Verb-Noun Guided Structure<button class="play-btn" id="pb-verb" onclick="playAudio('keyword-verb-noun.mp3','pb-verb')">🔊</button></div></td><td><span class="pron">/vɜːrb naʊn ˈɡaɪdɪd ˈstrʌktʃər/</span></td><td>动词-名词引导结构</td>
         <td>"We mandate a Verb-Noun guided structure for functional descriptions."</td>
       </tr>
       <tr>
-        <td>Ablation Study</td><td>/əˈbleɪʃən ˈstʌdi/</td><td>消融研究</td>
+        <td><div class="word-cell">Ablation Study<button class="play-btn" id="pb-ablate" onclick="playAudio('keyword-ablation-study.mp3','pb-ablate')">🔊</button></div></td><td><span class="pron">/əˈbleɪʃən ˈstʌdi/</span></td><td>消融研究</td>
         <td>"The ablation study validates the contribution of each module."</td>
       </tr>
       <tr>
-        <td>Global Comprehensive Score</td><td>/ˈɡloʊbl̩ ˌkɑːmprɪˈhensɪv skɔːr/</td><td>全局综合评分</td>
+        <td><div class="word-cell">Global Comprehensive Score<button class="play-btn" id="pb-global" onclick="playAudio('keyword-global-score.mp3','pb-global')">🔊</button></div></td><td><span class="pron">/ˈɡloʊbl̩ ˌkɑːmprɪˈhensɪv skɔːr/</span></td><td>全局综合评分</td>
         <td>"Our model achieves a global comprehensive score of 77.56%."</td>
       </tr>
     </table>
@@ -205,10 +239,10 @@
     <h3>🤖 模型名称（注意容易读错）</h3>
     <table>
       <tr><th>模型</th><th>正确发音</th><th>说明</th></tr>
-      <tr><td>Moonshot-v1-8k</td><td>/ˈmuːnʃɑːt viː wʌn eɪt keɪ/</td><td>论文选用的基座模型</td></tr>
-      <tr><td>DeepSeek-V3.2</td><td>/diːp siːk viː θriː pɔɪnt tuː/</td><td>对比模型</td></tr>
-      <tr><td>Qwen-Plus</td><td>/ˈtʃuːwən plʌs/</td><td>对比模型（注意不是"奎恩"，是"丘文"）</td></tr>
-      <tr><td>GLM-4-Flash</td><td>/dʒiː ɛl em fɔːr flæʃ/</td><td>对比模型</td></tr>
+      <tr><td><div class="word-cell">Moonshot-v1-8k<button class="play-btn" id="pb-moonshot" onclick="playAudio('model-moonshot.mp3','pb-moonshot')">🔊</button></div></td><td><span class="pron">/ˈmuːnʃɑːt viː wʌn eɪt keɪ/</span></td><td>论文选用的基座模型</td></tr>
+      <tr><td><div class="word-cell">DeepSeek-V3.2<button class="play-btn" id="pb-deepseek" onclick="playAudio('model-deepseek.mp3','pb-deepseek')">🔊</button></div></td><td><span class="pron">/diːp siːk viː θriː pɔɪnt tuː/</span></td><td>对比模型</td></tr>
+      <tr><td><div class="word-cell">Qwen-Plus<button class="play-btn" id="pb-qwen" onclick="playAudio('model-qwen.mp3','pb-qwen')">🔊</button></div></td><td><span class="pron">/ˈtʃuːwən plʌs/</span></td><td>对比模型（注意不是"奎恩"，是"丘文"）</td></tr>
+      <tr><td><div class="word-cell">GLM-4-Flash<button class="play-btn" id="pb-glm" onclick="playAudio('model-glm.mp3','pb-glm')">🔊</button></div></td><td><span class="pron">/dʒiː ɛl em fɔːr flæʃ/</span></td><td>对比模型</td></tr>
     </table>
 
     <div class="tip-box">
@@ -223,42 +257,42 @@
     <h3>☀️ 开场自我介绍</h3>
     <table>
       <tr><th>英文</th><th>中文</th><th>使用场景</th></tr>
-      <tr><td>Good morning, everyone. My name is Jianqiang Zhang, and I'm from Jiangnan University.</td><td>大家早上好。我叫张建强，来自江南大学。</td><td>最稳妥的开场</td></tr>
-      <tr><td>Thank you, Chair. It's a great honor to be here today to present our work on SCoPE.</td><td>谢谢主席。很荣幸今天在这里介绍我们的工作——SCoPE。</td><td>有主持人介绍环节</td></tr>
-      <tr><td>Good afternoon. I'm here today to talk about a prompting framework for chemical information extraction.</td><td>下午好。我今天要讲的是一个用于化学品信息提取的提示框架。</td><td>简洁直入</td></tr>
+      <tr><td><div class="word-cell">Good morning, everyone. My name is Jianqiang Zhang, and I'm from Jiangnan University.<button class="play-btn" id="pb-o1" onclick="playAudio('phrase-opening-1.mp3','pb-o1')">🔊</button></div></td><td>大家早上好。我叫张建强，来自江南大学。</td><td>最稳妥的开场</td></tr>
+      <tr><td><div class="word-cell">Thank you, Chair. It's a great honor to be here today to present our work on SCoPE.<button class="play-btn" id="pb-o2" onclick="playAudio('phrase-opening-2.mp3','pb-o2')">🔊</button></div></td><td>谢谢主席。很荣幸今天在这里介绍我们的工作——SCoPE。</td><td>有主持人介绍环节</td></tr>
+      <tr><td><div class="word-cell">Good afternoon. I'm here today to talk about a prompting framework for chemical information extraction.<button class="play-btn" id="pb-o3" onclick="playAudio('phrase-opening-3.mp3','pb-o3')">🔊</button></div></td><td>下午好。我今天要讲的是一个用于化学品信息提取的提示框架。</td><td>简洁直入</td></tr>
     </table>
 
     <h3>🎯 引出问题 / 研究动机</h3>
     <table>
       <tr><th>英文</th><th>中文</th></tr>
-      <tr><td><strong>So, what's the problem we're trying to solve?</strong></td><td>那么，我们要解决的问题是什么？</td></tr>
-      <tr><td>Traditional customs inspection relies heavily on lab testing, which is <strong>time-consuming and costly</strong>.</td><td>传统的海关检测严重依赖实验室测试，既耗时又昂贵。</td></tr>
-      <tr><td>This creates an urgent need for an <strong>informatics-driven approach</strong>.</td><td>这就产生了对信息学驱动方法的迫切需求。</td></tr>
+      <tr><td><div class="word-cell"><strong>So, what's the problem we're trying to solve?</strong><button class="play-btn" id="pb-m1" onclick="playAudio('phrase-motivation-1.mp3','pb-m1')">🔊</button></div></td><td>那么，我们要解决的问题是什么？</td></tr>
+      <tr><td><div class="word-cell">Traditional customs inspection relies heavily on lab testing, which is <strong>time-consuming and costly</strong>.<button class="play-btn" id="pb-m2" onclick="playAudio('phrase-motivation-2.mp3','pb-m2')">🔊</button></div></td><td>传统的海关检测严重依赖实验室测试，既耗时又昂贵。</td></tr>
+      <tr><td><div class="word-cell">This creates an urgent need for an <strong>informatics-driven approach</strong>.<button class="play-btn" id="pb-m3" onclick="playAudio('phrase-motivation-3.mp3','pb-m3')">🔊</button></div></td><td>这就产生了对信息学驱动方法的迫切需求。</td></tr>
     </table>
 
     <h3>🔄 过渡到方法 / 框架</h3>
     <table>
       <tr><th>英文</th><th>中文</th></tr>
-      <tr><td>To address these challenges, we propose <strong>the SCoPE framework</strong>.</td><td>为应对这些挑战，我们提出了 SCoPE 框架。</td></tr>
-      <tr><td>Let me <strong>walk you through</strong> the overall architecture.</td><td>让我带大家看一下整体架构。</td></tr>
-      <tr><td>The framework consists of <strong>four key modules</strong>: task description, field definitions, processing rules, and output examples.</td><td>该框架由四个关键模块组成。</td></tr>
+      <tr><td><div class="word-cell">To address these challenges, we propose <strong>the SCoPE framework</strong>.<button class="play-btn" id="pb-t1" onclick="playAudio('phrase-transition-1.mp3','pb-t1')">🔊</button></div></td><td>为应对这些挑战，我们提出了 SCoPE 框架。</td></tr>
+      <tr><td><div class="word-cell">Let me <strong>walk you through</strong> the overall architecture.<button class="play-btn" id="pb-t2" onclick="playAudio('phrase-transition-2.mp3','pb-t2')">🔊</button></div></td><td>让我带大家看一下整体架构。</td></tr>
+      <tr><td><div class="word-cell">The framework consists of <strong>four key modules</strong>: task description, field definitions, processing rules, and output examples.<button class="play-btn" id="pb-t3" onclick="playAudio('phrase-transition-3.mp3','pb-t3')">🔊</button></div></td><td>该框架由四个关键模块组成。</td></tr>
     </table>
 
     <h3>📊 展示实验结果</h3>
     <table>
       <tr><th>英文</th><th>中文</th></tr>
-      <tr><td>As shown in Figure 3, Moonshot-v1-8k achieves <strong>the highest score of 77.56%</strong>.</td><td>如图 3 所示，Moonshot-v1-8k 取得了最高分 77.56%。</td></tr>
-      <tr><td>We observe a <strong>significant improvement of 23.45%</strong> from Baseline to Partial Prompt.</td><td>从 Baseline 到 Partial Prompt，我们观察到 23.45% 的显著提升。</td></tr>
-      <tr><td>The Full Prompt reduces the standard deviation to <strong>only 0.13%</strong>.</td><td>Full Prompt 将标准差降低到仅 0.13%。</td></tr>
+      <tr><td><div class="word-cell">As shown in Figure 3, Moonshot-v1-8k achieves <strong>the highest score of 77.56%</strong>.<button class="play-btn" id="pb-r1" onclick="playAudio('phrase-results-1.mp3','pb-r1')">🔊</button></div></td><td>如图 3 所示，Moonshot-v1-8k 取得了最高分 77.56%。</td></tr>
+      <tr><td><div class="word-cell">We observe a <strong>significant improvement of 23.45%</strong> from Baseline to Partial Prompt.<button class="play-btn" id="pb-r2" onclick="playAudio('phrase-results-2.mp3','pb-r2')">🔊</button></div></td><td>从 Baseline 到 Partial Prompt，我们观察到 23.45% 的显著提升。</td></tr>
+      <tr><td><div class="word-cell">The Full Prompt reduces the standard deviation to <strong>only 0.13%</strong>.<button class="play-btn" id="pb-r3" onclick="playAudio('phrase-results-3.mp3','pb-r3')">🔊</button></div></td><td>Full Prompt 将标准差降低到仅 0.13%。</td></tr>
     </table>
 
     <h3>🎬 总结 + Q&A 应对</h3>
     <table>
       <tr><th>英文</th><th>中文</th></tr>
-      <tr><td><strong>In summary</strong>, the SCoPE framework achieves robust extraction performance.</td><td>总结一下，SCoPE 框架取得了稳健的提取性能。</td></tr>
-      <tr><td>Thank you for your attention. <strong>I'd be happy to take any questions.</strong></td><td>感谢各位聆听。我很乐意回答问题。</td></tr>
-      <tr><td>That's a <strong>great question</strong>. Thank you.</td><td>这是个好问题。谢谢。（给自己 2 秒思考）</td></tr>
-      <tr><td>If I understand your question correctly, you're asking about…</td><td>如果我没理解错的话，您是在问……</td></tr>
+      <tr><td><div class="word-cell"><strong>In summary</strong>, the SCoPE framework achieves robust extraction performance.<button class="play-btn" id="pb-c1" onclick="playAudio('phrase-closing-1.mp3','pb-c1')">🔊</button></div></td><td>总结一下，SCoPE 框架取得了稳健的提取性能。</td></tr>
+      <tr><td><div class="word-cell">Thank you for your attention. <strong>I'd be happy to take any questions.</strong><button class="play-btn" id="pb-c2" onclick="playAudio('phrase-closing-2.mp3','pb-c2')">🔊</button></div></td><td>感谢各位聆听。我很乐意回答问题。</td></tr>
+      <tr><td><div class="word-cell">That's a <strong>great question</strong>. Thank you.<button class="play-btn" id="pb-q1" onclick="playAudio('phrase-qa-1.mp3','pb-q1')">🔊</button></div></td><td>这是个好问题。谢谢。（给自己 2 秒思考）</td></tr>
+      <tr><td><div class="word-cell">If I understand your question correctly, you're asking about…<button class="play-btn" id="pb-q2" onclick="playAudio('phrase-qa-2.mp3','pb-q2')">🔊</button></div></td><td>如果我没理解错的话，您是在问……</td></tr>
     </table>
 
     <div class="tip-box">
@@ -294,8 +328,10 @@
     <details class="exercise-box">
       <summary>🎤 练习 3：开场白一口气顺下来</summary>
       <div class="answer">
-        <p>把下面这段连起来读顺：</p>
-        <p><em>"Good morning, everyone. My name is Jianqiang Zhang, from Jiangnan University. Today I'm here to present our work on SCoPE — a Structured and Constrained Prompting Extractor for chemical information extraction. So, what's the problem we're trying to solve? Traditional customs inspection relies heavily on lab testing, which is time-consuming and costly. To address this, we propose SCoPE, a systematic prompting framework."</em></p>
+        <p>把下面这段连起来读顺（点击 🔊 听一遍标准发音再跟读）：</p>
+        <div class="word-cell" style="margin-bottom:var(--space-3);">
+          <em>"Good morning, everyone. My name is Jianqiang Zhang, from Jiangnan University. Today I'm here to present our work on SCoPE — a Structured and Constrained Prompting Extractor for chemical information extraction. So, what's the problem we're trying to solve? Traditional customs inspection relies heavily on lab testing, which is time-consuming and costly. To address this, we propose SCoPE, a systematic prompting framework."</em>
+          <button class="play-btn" id="pb-full" onclick="playAudio('practice-full-opening.mp3','pb-full')" title="点击播放整段示范发音">🔊</button>
         <p>对 AI 说："Please listen to my opening and tell me where I need to improve."</p>
       </div>
     </details>
