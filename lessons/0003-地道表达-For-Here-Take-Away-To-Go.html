@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 0003 课：For here / Take away / To go · 地道表达 #2 · SpeakScope</title>
+<link rel="stylesheet" href="../shared/theme.css">
+<style>
+  body { background: var(--paper-light); }
+  .lesson { max-width: 880px; margin: 0 auto; padding: var(--space-8) var(--space-6); }
+  .lesson h1 { font-family: var(--font-serif); font-size: var(--text-4xl); margin-bottom: 0.2rem; }
+  .lesson .subtitle { font-size: var(--text-lg); color: var(--ink-60); font-family: var(--font-serif); }
+  .lesson .meta { display: flex; gap: var(--space-3); margin: var(--space-4) 0 var(--space-8); flex-wrap: wrap; }
+  .lesson .meta span { padding: 0.3rem 0.8rem; border-radius: 6px; background: var(--paper); border: 1px solid var(--border-light); font-size: var(--text-sm); color: var(--ink-60); }
+  .lesson .content { line-height: 1.8; font-size: var(--text-base); }
+  .lesson .content h2 { font-family: var(--font-serif); margin: var(--space-8) 0 var(--space-4); padding-bottom: var(--space-1); border-bottom: 1px solid var(--border); }
+  .lesson .content h3 { font-family: var(--font-serif); margin: var(--space-6) 0 var(--space-3); }
+  .back { display: inline-block; margin-bottom: var(--space-6); color: var(--accent); text-decoration: none; font-size: var(--text-sm); }
+  .back:hover { text-decoration: underline; }
+  .expression-card {
+    background: var(--paper); border: 1px solid var(--border); border-radius: 12px;
+    padding: var(--space-6); margin: var(--space-5) 0;
+    border-left: 4px solid var(--accent);
+  }
+  .expression-card .en-big { font-size: var(--text-2xl); font-weight: 700; font-family: var(--font-serif); }
+  .expression-card .pron { font-size: var(--text-sm); color: var(--ink-40); }
+  .expression-card .cn { font-size: var(--text-base); color: var(--ink-80); margin-top: var(--space-2); }
+  .comparison-table { width: 100%; border-collapse: collapse; margin: var(--space-5) 0; font-size: var(--text-sm); }
+  .comparison-table th { background: var(--paper); text-align: left; padding: var(--space-3); border-bottom: 2px solid var(--accent-light); font-family: var(--font-serif); }
+  .comparison-table td { padding: var(--space-3); border-bottom: 1px solid var(--border-light); vertical-align: top; }
+  .comparison-table .highlight { background: rgba(204,120,92,0.08); }
+  .scene-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: var(--space-4); margin: var(--space-5) 0; }
+  .scene-card { background: var(--paper); border: 1px solid var(--border); border-radius: 8px; padding: var(--space-5); }
+  .scene-card .scene-label { font-size: var(--text-xs); font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: var(--space-2); }
+  .scene-card .scene-en { font-weight: 600; font-size: var(--text-sm); line-height: 1.6; }
+  .scene-card .scene-cn { font-size: var(--text-sm); color: var(--ink-60); margin-top: var(--space-1); line-height: 1.6; }
+  .tip-box { background: var(--paper); border-left: 4px solid var(--accent); padding: var(--space-4); border-radius: 0 8px 8px 0; margin: var(--space-5) 0; }
+  .tip-box strong { color: var(--accent-deep); }
+  .callout { background: var(--paper); border: 1px solid var(--border); border-radius: 8px; padding: var(--space-5); margin: var(--space-5) 0; }
+  .callout strong { color: var(--accent-deep); }
+  .exercise-box { border: 1px solid var(--border); border-radius: 8px; padding: var(--space-5); margin: var(--space-6) 0; background: var(--paper); }
+  .exercise-box summary { cursor: pointer; font-weight: 600; color: var(--accent-deep); font-size: var(--text-base); }
+  .exercise-box .answer { margin-top: var(--space-4); padding-top: var(--space-4); border-top: 1px solid var(--border-light); }
+  .dialogue-box { background: var(--paper); border: 1px solid var(--border); border-radius: 8px; padding: var(--space-5); margin: var(--space-4) 0; font-size: var(--text-sm); line-height: 2; }
+  .dialogue-box .customer { color: var(--accent-deep); }
+  .dialogue-box .staff { color: var(--ink-80); }
+  .footer-nav { margin-top: var(--space-10); padding-top: var(--space-6); border-top: 1px solid var(--border); display: flex; justify-content: space-between; font-size: var(--text-sm); }
+  .footer-nav a { color: var(--accent); text-decoration: none; }
+  .footer-nav a:hover { text-decoration: underline; }
+  .play-btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    background: var(--paper); border: 1px solid var(--accent-light);
+    border-radius: 4px; cursor: pointer; font-size: 0.75rem;
+    width: 1.6rem; height: 1.6rem; margin-left: 0.4rem; flex-shrink: 0;
+    transition: background 0.15s, transform 0.1s;
+    vertical-align: middle; line-height: 1;
+  }
+  .play-btn:hover { background: var(--accent-dim); transform: scale(1.1); }
+  .play-btn:active { transform: scale(0.95); }
+  .play-btn.playing { background: #c8e6c9; border-color: var(--success); }
+  .word-cell { display: flex; align-items: center; gap: 0.3rem; flex-wrap: wrap; }
+  .pron { font-size: var(--text-xs); color: var(--ink-40); font-style: italic; }
+  .phrase-en { font-weight: 600; }
+  .level-tag { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 4px; font-size: 0.7rem; font-weight: 600; margin-right: 0.3rem; }
+  .level-must { background: #dbeafe; color: #1e40af; }
+  .level-nice { background: #fef3c7; color: #92400e; }
+  .region-tag { display: inline-block; padding: 0.1rem 0.4rem; border-radius: 3px; font-size: 0.65rem; font-weight: 600; margin-left: 0.3rem; }
+  .region-uk { background: #e0e7ff; color: #3730a3; }
+  .region-us { background: #dbeafe; color: #1e40af; }
+  .region-both { background: #d1fae5; color: #065f46; }
+</style>
+<script>
+const player = new Audio();
+let currentBtn = null;
+function playAudio(src, btnId) {
+  const btn = document.getElementById(btnId);
+  if (btn && btn.classList.contains('playing')) {
+    player.pause();
+    player.currentTime = 0;
+    btn.classList.remove('playing');
+    currentBtn = null;
+    return;
+  }
+  if (currentBtn) currentBtn.classList.remove('playing');
+  player.src = 'assets/audio/' + src;
+  player.play();
+  if (btn) { btn.classList.add('playing'); currentBtn = btn; }
+  player.onended = () => { if (btn) btn.classList.remove('playing'); currentBtn = null; };
+}
+</script>
+</head>
+<body>
+<div class="lesson">
+
+  <a class="back" href="../index.html">← 返回 SpeakScope 主页</a>
+  <h1>🍽️ 地道表达 #2：在国外吃饭——"For here"、"Take away"、"To go"</h1>
+  <div class="subtitle">当你在国外餐厅想打包但不会说时——这节就是来填这个坑的</div>
+  <div class="meta">
+    <span>⏱ 20 分钟</span>
+    <span>📅 日常口语 · 地道表达</span>
+    <span>🏷️ 餐厅英语</span>
+  </div>
+
+  <div class="content">
+
+    <!-- ====== 开篇引入 ====== -->
+    <h2>🎬 这个故事你一定遇到过</h2>
+
+    <div class="callout">
+      <strong>真实场景：</strong><br>
+      博主在意大利佛罗伦萨的一家餐厅吃饭，吃不完想打包——但脑子里冒出的第一句话是 "Can I pack?"，又觉得不对劲。<br><br>
+      评论区最高赞的回答简单直接：<br>
+      <span style="font-size:var(--text-lg); font-weight:600;">"For here = 堂食"</span><br>
+      <span style="font-size:var(--text-lg); font-weight:600;">"Take away = 打包带走"</span><br>
+      <span style="font-size:var(--text-lg); color:var(--ink-60);">还有人说：</span><br>
+      <span style="font-size:var(--text-lg); font-weight:600;">"To go" 也可以</span>
+    </div>
+
+    <p>这三个词（或者说三组表达）到底有什么区别？什么场合用哪个？这节给你彻底讲透。</p>
+
+    <p><strong>学完这节课，你就能：</strong></p>
+    <ul style="margin-left:var(--space-5); line-height:2;">
+      <li>✅ 在国外餐厅顺利点餐 + 从容说"打包"</li>
+      <li>✅ 分清 "for here" / "take away" / "to go" 的区别和使用场景</li>
+      <li>✅ 掌握完整的点餐—结账—打包对话链</li>
+    </ul>
+
+    <!-- ====== 核心表达对比表 ====== -->
+    <h2>🔑 核心表达对比</h2>
+    <p>这三组表达都关于"在哪儿吃"，但用法和地域偏好有微妙差异。这张表一目了然：</p>
+
+    <table class="comparison-table">
+      <tr>
+        <th style="width:20%;">表达</th>
+        <th style="width:20%;">意思</th>
+        <th style="width:20%;">使用地区</th>
+        <th style="width:40%;">典型场景</th>
+      </tr>
+      <tr class="highlight">
+        <td><strong>For here</strong><button class="play-btn" id="pb-fh" onclick="playAudio('keyword-for-here.mp3','pb-fh')">🔊</button></td>
+        <td>堂食（在这儿吃）</td>
+        <td><span class="region-tag region-both">通用</span></td>
+        <td>店员问 "For here or to go?" 时回答 "For here, please."</td>
+      </tr>
+      <tr>
+        <td><strong>Take away</strong><button class="play-btn" id="pb-ta" onclick="playAudio('keyword-take-away.mp3','pb-ta')">🔊</button></td>
+        <td>打包带走（外卖）</td>
+        <td><span class="region-tag region-uk">🇬🇧 英式</span><span class="region-tag region-both">也通用</span></td>
+        <td>"I'd like a take away, please." 在英国快餐店最自然</td>
+      </tr>
+      <tr class="highlight">
+        <td><strong>To go</strong><button class="play-btn" id="pb-tg" onclick="playAudio('keyword-to-go.mp3','pb-tg')">🔊</button></td>
+        <td>打包带走</td>
+        <td><span class="region-tag region-us">🇺🇸 美式</span></td>
+        <td>"Can I get this to go?" 美国最常用，全球也基本都能懂</td>
+      </tr>
+      <tr>
+        <td><strong>Dine in</strong><button class="play-btn" id="pb-di" onclick="playAudio('keyword-dine-in.mp3','pb-di')">🔊</button></td>
+        <td>堂食（较正式）</td>
+        <td><span class="region-tag region-both">通用</span></td>
+        <td>用于正式场合："Will you be dining in or taking away?"</td>
+      </tr>
+      <tr class="highlight">
+        <td><strong>Doggy bag</strong><button class="play-btn" id="pb-db" onclick="playAudio('keyword-doggy-bag.mp3','pb-db')">🔊</button></td>
+        <td>打包袋（剩菜）</td>
+        <td><span class="region-tag region-both">通用</span></td>
+        <td>"Could I have a doggy bag?" —— 专指把没吃完的饭菜打包带走</td>
+      </tr>
+    </table>
+
+    <div class="tip-box">
+      <strong>🌍 地域贴士：</strong>
+      在英国和澳洲，快餐店问的是 "For here or take away?"；在美国则是 "For here or to go?"。<br>
+      如果你不确定在哪个国家——<strong>说 "to go" 最安全</strong>，全世界连锁快餐店都听得懂。<br>
+      但要注意：<strong>"take away" 和 "to go" 的区别不在意思上，在地域习惯上。</strong>
+    </div>
+
+    <!-- ====== 三个关键区别 ====== -->
+    <h2>🧩 三个最容易搞混的点</h2>
+
+    <div class="scene-grid">
+      <div class="scene-card">
+        <div class="scene-label">1️⃣ "Take away" vs "To go"</div>
+        <div class="scene-en"><strong>意思完全一样</strong>，区别只在地域：</div>
+        <div class="scene-cn">
+          🇬🇧 英国 / 澳洲：<strong>take away</strong><br>
+          🇺🇸 美国 / 加拿大：<strong>to go</strong><br>
+          🌏 其他国家：两者都能懂
+        </div>
+      </div>
+      <div class="scene-card">
+        <div class="scene-label">2️⃣ "Pack" 为什么不对</div>
+        <div class="scene-en">"Can I pack?" 不是母语者会说的。</div>
+        <div class="scene-cn">
+          <em>Pack</em> 是"把东西装进箱子里"的感觉。<br>
+          食物打包正确的动词是 <strong>get</strong> 或 <strong>have</strong>：<br>
+          "Can I <strong>get</strong> this to go?"
+        </div>
+      </div>
+      <div class="scene-card">
+        <div class="scene-label">3️⃣ "Doggy bag" 的用法</div>
+        <div class="scene-en">注意！doggy bag 特指 <strong>吃不完剩下的</strong>。</div>
+        <div class="scene-cn">
+          如果你刚点完餐就说 "I'd like a doggy bag"，店员会觉得奇怪——你还没吃呢。<br>
+          正确时机：<strong>吃完后</strong>对服务员说：<br>
+          "Could I have a doggy bag for the leftovers?"
+        </div>
+      </div>
+    </div>
+
+    <!-- ====== 点餐全流程 ====== -->
+    <h2>🗣️ 实战对话：从点餐到打包</h2>
+    <p>下面这个对话覆盖了从点餐到打包的完整链条，每个环节都用了这节课的表达。先听再跟读：</p>
+
+    <h3>场景一：快餐店点餐</h3>
+    <div class="dialogue-box">
+      <div class="word-cell">
+        <button class="play-btn" id="pb-order" onclick="playAudio('practice-restaurant-order.mp3','pb-order')">🔊 播放对话</button>
+      </div>
+      <p><span class="staff">👩‍💼 Staff:</span> Hi, what can I get for you today?</p>
+      <p><span class="customer">🧑 Customer:</span> Hi! I'll have a burger and fries, please.</p>
+      <p><span class="staff">👩‍💼 Staff:</span> <strong>For here or to go?</strong></p>
+      <p><span class="customer">🧑 Customer:</span> <strong>For here, please.</strong></p>
+      <p><span class="staff">👩‍💼 Staff:</span> Great, that'll be twelve fifty.</p>
+    </div>
+
+    <h3>场景二：正餐后打包剩菜</h3>
+    <div class="dialogue-box">
+      <div class="word-cell">
+        <button class="play-btn" id="pb-doggy" onclick="playAudio('practice-doggy-bag-dialogue.mp3','pb-doggy')">🔊 播放对话</button>
+      </div>
+      <p><span class="customer">🧑 Customer:</span> Excuse me, <strong>could I get a doggy bag for the leftovers?</strong></p>
+      <p><span class="staff">👩‍💼 Staff:</span> Sure, let me grab you one.</p>
+      <p><span class="customer">🧑 Customer:</span> Thanks so much!</p>
+    </div>
+
+    <div class="tip-box">
+      <strong>💡 关键句型记好了：</strong><br>
+      "Excuse me, could I get a <strong>doggy bag</strong> for the leftovers?"<br>
+      或者更直接的：<br>
+      "Could you wrap this up? I'd like to <strong>take it away</strong>."<br>
+      或者：<br>
+      "Can I get the rest <strong>to go</strong>?"
+    </div>
+
+    <!-- ====== 不同场景一句话 ====== -->
+    <h2>🎯 一句话解决一个场景</h2>
+    <p>下面是不同场景下你最可能用到的一句话——记牢这几句就够了：</p>
+
+    <div class="scene-grid">
+      <div class="scene-card">
+        <div class="scene-label">🏪 店员问你</div>
+        <div class="word-cell">
+          <span class="scene-en">"For here or to go?"</span>
+          <button class="play-btn" id="pb-q1" onclick="playAudio('phrase-for-here-or-togo.mp3','pb-q1')">🔊</button>
+        </div>
+        <div class="scene-cn">在这儿吃还是带走？——点餐时最常被问的话</div>
+      </div>
+      <div class="scene-card">
+        <div class="scene-label">➡️ 你要带走</div>
+        <div class="word-cell">
+          <span class="scene-en">"Can I get this to go, please?"</span>
+          <button class="play-btn" id="pb-q2" onclick="playAudio('phrase-can-i-get-to-go.mp3','pb-q2')">🔊</button>
+        </div>
+        <div class="scene-cn">这个能帮我打包吗？（美国最地道）</div>
+      </div>
+      <div class="scene-card">
+        <div class="scene-label">🇬🇧 在英国说</div>
+        <div class="word-cell">
+          <span class="scene-en">"I'd like a take away, please."</span>
+          <button class="play-btn" id="pb-q3" onclick="playAudio('phrase-take-away-please.mp3','pb-q3')">🔊</button>
+        </div>
+        <div class="scene-cn">我要打包带走（英式）</div>
+      </div>
+      <div class="scene-card">
+        <div class="scene-label">🏠 你要堂食</div>
+        <div class="word-cell">
+          <span class="scene-en">"I'd like to dine in."</span>
+          <button class="play-btn" id="pb-q4" onclick="playAudio('phrase-dine-in.mp3','pb-q4')">🔊</button>
+        </div>
+        <div class="scene-cn">我要在这儿吃（较正式）</div>
+      </div>
+      <div class="scene-card">
+        <div class="scene-label">🛍️ 打包剩菜</div>
+        <div class="word-cell">
+          <span class="scene-en">"Could I have a doggy bag?"</span>
+          <button class="play-btn" id="pb-q5" onclick="playAudio('phrase-doggy-bag.mp3','pb-q5')">🔊</button>
+        </div>
+        <div class="scene-cn">能帮我打包剩菜吗？（专指吃不完的）</div>
+      </div>
+    </div>
+
+    <!-- ====== 课后练习 ====== -->
+    <h2>✍️ 课后练习</h2>
+
+    <details class="exercise-box">
+      <summary>📝 练习一：场景匹配</summary>
+      <div class="answer">
+        <p>选对的话填入空格：</p>
+        <p style="text-align:center; margin:var(--space-3) 0;">
+          <em>to go &nbsp;·&nbsp; for here &nbsp;·&nbsp; take away &nbsp;·&nbsp; doggy bag</em>
+        </p>
+        <ol style="margin:var(--space-3) 0 var(--space-3) var(--space-5); line-height:2.5;">
+          <li>A: "For here or ______?" &nbsp; B: "______, please." （在美国）</li>
+          <li>A: "For here or ______?" &nbsp; B: "______, please." （在英国）</li>
+          <li>"Could I have a ______ for the leftovers?"</li>
+          <li>店员说 "Dine in or take away?" 你想堂食，怎么回答？—— "<strong>______</strong>."</li>
+        </ol>
+        <p><strong>参考答案：</strong></p>
+        <ol style="margin:var(--space-2) 0 0 var(--space-5); line-height:2; font-style:italic;">
+          <li>to go / For here</li>
+          <li>take away / For here</li>
+          <li>doggy bag</li>
+          <li>Dine in / For here</li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="exercise-box">
+      <summary>🎯 练习二：AI 陪练模拟点餐</summary>
+      <div class="answer">
+        <p><strong>打开 AI 陪练，复制这段 Prompt：</strong></p>
+        <div style="background:var(--code-bg, #F0EDE6); border-radius:6px; padding:var(--space-4); margin:var(--space-3) 0; font-size:var(--text-sm);">
+          "Let's role play. You are a restaurant staff at a fast food chain in the US. I am a customer. You start by asking for my order, then ask 'for here or to go?' I will respond naturally using the phrases from today's lesson (for here, to go, doggy bag). After the role play, please give me feedback on whether I used the expressions correctly and naturally."
+        </div>
+        <p><strong>产出目标：</strong>角色扮演一次完整的点餐→堂食→打包流程，AI 反馈"natural and correct"。</p>
+        <p style="margin-top:var(--space-2); font-size:var(--text-sm); color:var(--ink-60);">
+          💡 如果觉得自己还不熟，先对着 TTS 跟读 3-5 遍再找 AI 练。
+        </p>
+      </div>
+    </details>
+
+    <details class="exercise-box">
+      <summary>📋 练习三：快速反应（中→英）</summary>
+      <div class="answer">
+        <p>看到中文，说出英文：</p>
+        <ol style="margin:var(--space-3) 0 var(--space-3) var(--space-5); line-height:2.5;">
+          <li>"在这儿吃还是带走？"（美国店员问）</li>
+          <li>"这个我打包带走。"（你在美国说）</li>
+          <li>"能吃个打包袋吗？我想把剩菜带走。"</li>
+          <li>"我要堂食。"</li>
+        </ol>
+        <p><strong>参考答案：</strong></p>
+        <ol style="margin:var(--space-2) 0 0 var(--space-5); line-height:2; font-style:italic;">
+          <li>"For here or to go?"</li>
+          <li>"Can I get this to go, please?"</li>
+          <li>"Could I have a doggy bag for the leftovers?"</li>
+          <li>"For here, please." / "I'd like to dine in."</li>
+        </ol>
+      </div>
+    </details>
+
+    <!-- ====== 总结 ====== -->
+    <h2>🧠 一句话记住</h2>
+    <div class="callout">
+      <span style="font-size:var(--text-lg);">
+        🍔 点餐时 <strong>for here</strong>（堂食）或 <strong>to go</strong>（带走）<br>
+        🥡 吃不完要袋子说 <strong>doggy bag</strong><br>
+        🌍 记住地域差异：🇺🇸 <em>to go</em> / 🇬🇧 <em>take away</em>
+      </span>
+    </div>
+
+    <p style="font-size:var(--text-sm); color:var(--ink-60); margin-top:var(--space-3);">
+      📌 这节课的知识点已更新到「<a href="../reference/daily-expressions-cheatsheet.html" style="color:var(--accent);">日常地道表达速查表</a>」，随时翻看。
+    </p>
+
+  </div><!-- /content -->
+
+  <!-- ====== 底部导航 ====== -->
+  <div class="footer-nav">
+    <a href="0002-地道表达-Keep-Tabs-On.html">← 上一课：Keep tabs on</a>
+    <a href="../index.html">🏠 回到主页</a>
+    <span style="color:var(--ink-20);">下一课：即将发布 →</span>
+  </div>
+
+</div>
+</body>
+</html>

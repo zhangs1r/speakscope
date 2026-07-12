@@ -70,6 +70,17 @@ window.SPEAKSCOPE_DATA = {
       duration: "20 分钟",
       tags: ["地道表达", "高频短语", "keep tabs on"],
       description: "从真实全英文工作场景学会「keep tabs on something to make sure something」这个万能结构——工作汇报、日常聊天都能用。含 TTS 跟读音频。"
+    },
+    {
+      id: "0003",
+      path: "lessons/0003-地道表达-For-Here-Take-Away-To-Go.html",
+      collection: "daily-expressions",
+      title: "地道表达 #2：For here / Take away / To go",
+      subtitle: "在国外餐厅想打包但不会说？这节给你讲透",
+      emoji: "🍽️",
+      duration: "20 分钟",
+      tags: ["地道表达", "餐厅英语", "for here", "to go"],
+      description: "「for here = 堂食」「take away = 打包带走」「to go 也可以」——从一张小红书截图出发，彻底搞懂在国外餐厅点餐打包的所有英语表达。含 TTS 跟读音频。"
     }
   ],
   references: [
