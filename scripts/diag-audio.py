@@ -31,13 +31,13 @@ def extract_displayed_and_audio_text(html, lesson_id):
         
         # Get the displayed English text - find the .en div
         preceding = html[max(0,pos-3000):pos]
-        en_match = re.search(r'class="en">(.*?)</div>\s*<button', preceding, re.DOTALL)
+        en_matches = re.findall(r'class="en">(.*?)</div>\s*<button', preceding, re.DOTALL)
         
-        if not en_match:
+        if not en_matches:
             issues.append((audio_file, btn_id, "NO_EN_DIV", "Could not find .en div"))
             continue
         
-        raw_text = en_match.group(1)
+        raw_text = en_matches[-1]
         
         # Check for HTML entities
         entities = re.findall(r'&[a-z]+;', raw_text)

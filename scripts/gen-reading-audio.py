@@ -50,11 +50,10 @@ def extract_paragraphs(html_path):
         
         # Look backwards for the closest .en div
         preceding = html[max(0,pos-3000):pos]
-        en_match = re.search(r'class="en">(.*?)</div>\s*<button', preceding, re.DOTALL)
+        en_matches = re.findall(r'class="en">(.*?)</div>\s*<button', preceding, re.DOTALL)
         
-        if en_match:
-            # Strip HTML tags but keep spaces
-            text = re.sub(r'<[^>]+>', ' ', en_match.group(1))
+        if en_matches:
+            text = re.sub(r'<[^>]+>', ' ', en_matches[-1])  # take the LAST .en (closest to button)
             # Decode HTML entities: &mdash; → —  &amp; → &  etc.
             text = html_mod.unescape(text)
             text = re.sub(r'\s+', ' ', text).strip()
