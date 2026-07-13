@@ -2,7 +2,7 @@
 """Batch generate audio for full-text guided reading lessons.
 Reads each lesson HTML, extracts text from each paragraph, generates audio.
 """
-import subprocess, os, re, sys
+import subprocess, os, re, sys, html as html_mod
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 LESSONS_DIR = os.path.expanduser("~/speakscope/lessons")
@@ -53,9 +53,11 @@ def extract_paragraphs(html_path):
         en_match = re.search(r'class="en">(.*?)</div>\s*<button', preceding, re.DOTALL)
         
         if en_match:
-            text = re.sub(r'<[^>]+>', '', en_match.group(1))
+            # Strip HTML tags but keep spaces
+            text = re.sub(r'<[^>]+>', ' ', en_match.group(1))
+            # Decode HTML entities: &mdash; → —  &amp; → &  etc.
+            text = html_mod.unescape(text)
             text = re.sub(r'\s+', ' ', text).strip()
-            text = text[:500]  # cap length
             if text:
                 items.append((audio_file, text))
                 continue
