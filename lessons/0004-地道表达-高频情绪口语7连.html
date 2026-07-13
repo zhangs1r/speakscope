@@ -65,6 +65,19 @@
   .exercise-box summary { cursor: pointer; font-weight: 600; color: var(--accent-deep); font-size: var(--text-base); }
   .exercise-box .answer { margin-top: var(--space-4); padding-top: var(--space-4); border-top: 1px solid var(--border-light); }
 
+  .play-btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    background: var(--paper); border: 1px solid var(--accent-light);
+    border-radius: 4px; cursor: pointer; font-size: 0.75rem;
+    width: 1.6rem; height: 1.6rem; margin-left: 0.4rem; flex-shrink: 0;
+    transition: background 0.15s, transform 0.1s;
+    vertical-align: middle; line-height: 1;
+  }
+  .play-btn:hover { background: var(--accent-dim); transform: scale(1.1); }
+  .play-btn:active { transform: scale(0.95); }
+  .play-btn.playing { background: #c8e6c9; border-color: var(--success); }
+  .word-cell { display: flex; align-items: center; gap: 0.3rem; flex-wrap: wrap; }
+
   .footer-nav { margin-top: var(--space-10); padding-top: var(--space-6); border-top: 1px solid var(--border); display: flex; justify-content: space-between; font-size: var(--text-sm); }
   .footer-nav a { color: var(--accent); text-decoration: none; }
   .footer-nav a:hover { text-decoration: underline; }
@@ -93,6 +106,25 @@
   .dialog-box .dialog-line .speaker { font-weight: 600; color: var(--accent-deep); }
   .dialog-box .dialog-line.cn { color: var(--ink-60); font-size: var(--text-xs); margin-left: var(--space-5); }
 </style>
+<script>
+const player = new Audio();
+let currentBtn = null;
+function playAudio(src, btnId) {
+  const btn = document.getElementById(btnId);
+  if (btn && btn.classList.contains('playing')) {
+    player.pause();
+    player.currentTime = 0;
+    btn.classList.remove('playing');
+    currentBtn = null;
+    return;
+  }
+  if (currentBtn) currentBtn.classList.remove('playing');
+  player.src = 'assets/audio/' + src;
+  player.play();
+  if (btn) { btn.classList.add('playing'); currentBtn = btn; }
+  player.onended = () => { if (btn) btn.classList.remove('playing'); currentBtn = null; };
+}
+</script>
 </head>
 <body>
 <div class="lesson">
@@ -138,14 +170,20 @@
           <span class="phrase-num">1</span>
           <span class="cn-source">我知道了 <span class="arrow">→</span></span>
         </div>
-        <div class="en-target">I got it. / Got it.</div>
+        <div class="word-cell">
+          <span class="en-target">I got it. / Got it.</span>
+          <button class="play-btn" id="pb-gotit" onclick="playAudio('keyword-got-it.mp3','pb-gotit')">🔊</button>
+        </div>
         <div class="pron">/aɪ ɡɑːt ɪt/ /ɡɑːt ɪt/</div>
         <div class="usage">
           <span class="level-tag level-must">🔵 必会</span>
           最自然的"我明白了"。注意是 <strong>got</strong> 不是 <strong>understand</strong>。"I understand" 更像正式场合或书面语，日常对话里母语者几乎都说 "I got it" 或 "Got it"。单说 "Got it." 更简短更常见。
         </div>
         <div class="example-box">
-          <div class="ex-en">A: You need to save the file before closing it. <br> B: Got it. Thanks.</div>
+          <div class="word-cell">
+            <span class="ex-en">A: You need to save the file before closing it. <br> B: Got it. Thanks.</span>
+            <button class="play-btn" id="pb-gotit-ex" onclick="playAudio('phrase-got-it-example.mp3','pb-gotit-ex')">🔊</button>
+          </div>
           <div class="ex-cn">A: 关之前要先保存文件。B: 明白了，谢谢。</div>
           <div class="ex-meta">📌 注意：这个对话里用 "I understand" 会显得太正式，像在跟老板汇报</div>
         </div>
@@ -157,14 +195,20 @@
           <span class="phrase-num">2</span>
           <span class="cn-source">让我试试 <span class="arrow">→</span></span>
         </div>
-        <div class="en-target">Let me try it. / Let me try.</div>
+        <div class="word-cell">
+          <span class="en-target">Let me try it. / Let me try.</span>
+          <button class="play-btn" id="pb-letmetry" onclick="playAudio('keyword-let-me-try.mp3','pb-letmetry')">🔊</button>
+        </div>
         <div class="pron">/let miː traɪ ɪt/</div>
         <div class="usage">
           <span class="level-tag level-must">🔵 必会</span>
           视频里是 "Let me try it." 和 "Let me try." 两个版本。<strong>"Let me try."</strong>（不加 it）更利落，更常在口语里出现。你还可能听到 <strong>"Let me give it a shot."</strong> 或 <strong>"Let me have a go."</strong>——跟"让我试试看"的感觉一模一样。
         </div>
         <div class="example-box">
-          <div class="ex-en">A: This game is tricky. <br> B: Let me try.</div>
+          <div class="word-cell">
+            <span class="ex-en">A: This game is tricky. <br> B: Let me try.</span>
+            <button class="play-btn" id="pb-letmetry-ex" onclick="playAudio('phrase-let-me-try-example.mp3','pb-letmetry-ex')">🔊</button>
+          </div>
           <div class="ex-cn">A: 这个游戏有点难。B: 让我试试。</div>
           <div class="ex-meta">💡 更地道的进阶：<em>"Let me give it a shot."</em>——你可以在朋友说"这个好难"的时候接这句</div>
         </div>
@@ -176,7 +220,10 @@
           <span class="phrase-num">3</span>
           <span class="cn-source">谁在乎呢？ <span class="arrow">→</span></span>
         </div>
-        <div class="en-target">Who cares?</div>
+        <div class="word-cell">
+          <span class="en-target">Who cares?</span>
+          <button class="play-btn" id="pb-whocares" onclick="playAudio('keyword-who-cares.mp3','pb-whocares')">🔊</button>
+        </div>
         <div class="pron">/huː kɛrz/</div>
         <div class="usage">
           <span class="level-tag level-pop">🟣 高频</span>
@@ -184,7 +231,10 @@
           <strong>⚠️ 注意语气：</strong>用错了容易显得冷漠。建议在朋友间轻松话题上用。
         </div>
         <div class="example-box">
-          <div class="ex-en">A: Someone said my outfit is weird. <br> B: Who cares? You look great.</div>
+          <div class="word-cell">
+            <span class="ex-en">A: Someone said my outfit is weird. <br> B: Who cares? You look great.</span>
+            <button class="play-btn" id="pb-whocares-ex" onclick="playAudio('phrase-who-cares-example.mp3','pb-whocares-ex')">🔊</button>
+          </div>
           <div class="ex-cn">A: 有人说我穿得奇怪。B: 谁在乎啊？你很好看。</div>
           <div class="ex-meta">💡 这个是"安慰版"，语气是轻松的。如果语气变重，就可能变成"关我啥事"</div>
         </div>
@@ -196,7 +246,10 @@
           <span class="phrase-num">4</span>
           <span class="cn-source">那又怎样？ <span class="arrow">→</span></span>
         </div>
-        <div class="en-target">So what?</div>
+        <div class="word-cell">
+          <span class="en-target">So what?</span>
+          <button class="play-btn" id="pb-sowhat" onclick="playAudio('keyword-so-what.mp3','pb-sowhat')">🔊</button>
+        </div>
         <div class="pron">/soʊ wʌt/</div>
         <div class="usage">
           <span class="level-tag level-pop">🟣 高频</span>
@@ -204,7 +257,10 @@
           朋友间开玩笑："I'm older than you." → "So what? I'm taller."
         </div>
         <div class="example-box">
-          <div class="ex-en">A: I got a promotion before you did. <br> B: So what? I'm working on something better.</div>
+          <div class="word-cell">
+            <span class="ex-en">A: I got a promotion before you did. <br> B: So what? I'm working on something better.</span>
+            <button class="play-btn" id="pb-sowhat-ex" onclick="playAudio('phrase-so-what-example.mp3','pb-sowhat-ex')">🔊</button>
+          </div>
           <div class="ex-cn">A: 我比你早升职了。B: 那又怎样？我在做一个更好的项目。</div>
           <div class="ex-meta">📌 So what 可以是轻松的回怼，也可以是认真的反驳——除非你很确定对方在开玩笑，否则慎用</div>
         </div>
@@ -216,7 +272,10 @@
           <span class="phrase-num">5</span>
           <span class="cn-source">绝对不行 <span class="arrow">→</span></span>
         </div>
-        <div class="en-target">No way.</div>
+        <div class="word-cell">
+          <span class="en-target">No way.</span>
+          <button class="play-btn" id="pb-noway" onclick="playAudio('keyword-no-way.mp3','pb-noway')">🔊</button>
+        </div>
         <div class="pron">/noʊ weɪ/</div>
         <div class="usage">
           <span class="level-tag level-must">🔵 必会</span>
@@ -226,9 +285,12 @@
           区别方式：拒绝时语气<strong>短促、坚定</strong>；惊讶时声音<strong>上扬、拖长</strong>（Noooo way!）。
         </div>
         <div class="example-box">
-          <div class="ex-en" style="margin-bottom:var(--space-2);">
-            <span style="background:var(--accent-dim); padding:0.1rem 0.4rem; border-radius:3px;">拒绝用法</span><br>
-            A: Can I borrow your car for the weekend? <br> B: No way. You don't even have a license.
+          <div class="word-cell">
+            <span class="ex-en" style="margin-bottom:var(--space-2);">
+              <span style="background:var(--accent-dim); padding:0.1rem 0.4rem; border-radius:3px;">拒绝用法</span><br>
+              A: Can I borrow your car for the weekend? <br> B: No way. You don't even have a license.
+            </span>
+            <button class="play-btn" id="pb-noway-ex" onclick="playAudio('phrase-no-way-example.mp3','pb-noway-ex')">🔊</button>
           </div>
           <div class="ex-cn">A: 我能借你的车过周末吗？B: 没门。你连驾照都没有。</div>
           <div style="margin-top:var(--space-3);">
@@ -247,7 +309,10 @@
           <span class="phrase-num">6</span>
           <span class="cn-source">我请客 <span class="arrow">→</span></span>
         </div>
-        <div class="en-target">It's on me. / It's my treat.</div>
+        <div class="word-cell">
+          <span class="en-target">It's on me. / It's my treat.</span>
+          <button class="play-btn" id="pb-itsonme" onclick="playAudio('keyword-its-on-me.mp3','pb-itsonme')">🔊</button>
+        </div>
         <div class="pron">/ɪts ɑːn miː/ /ɪts maɪ triːt/</div>
         <div class="usage">
           <span class="level-tag level-gold">🟡 高频实用</span>
@@ -256,7 +321,10 @@
           <strong>注意！</strong>不要直译"我请客"为 "I invite you"——这在英语里是"我邀请你（来某场合）"，不是"我来买单"。
         </div>
         <div class="example-box">
-          <div class="ex-en">(At the restaurant, when the bill comes) <br> A: How much do I owe? <br> B: No, no — it's on me today. You got it last time.</div>
+          <div class="word-cell">
+            <span class="ex-en">(At the restaurant, when the bill comes) <br> A: How much do I owe? <br> B: No, no — it's on me today. You got it last time.</span>
+            <button class="play-btn" id="pb-itsonme-ex" onclick="playAudio('phrase-its-on-me-example.mp3','pb-itsonme-ex')">🔊</button>
+          </div>
           <div class="ex-cn">（餐厅结账时）A: 我该付多少？B: 不用不用，今天我请。上次你请的。</div>
           <div class="ex-meta">💡 结账时说 "It's on me" 同时做个"别动"的手势，非常自然</div>
         </div>
@@ -268,7 +336,10 @@
           <span class="phrase-num">7</span>
           <span class="cn-source">不要紧 <span class="arrow">→</span></span>
         </div>
-        <div class="en-target">No biggie.</div>
+        <div class="word-cell">
+          <span class="en-target">No biggie.</span>
+          <button class="play-btn" id="pb-nobiggie" onclick="playAudio('keyword-no-biggie.mp3','pb-nobiggie')">🔊</button>
+        </div>
         <div class="pron">/noʊ ˈbɪɡ.i/</div>
         <div class="usage">
           <span class="level-tag level-gold">🟡 高频实用</span>
@@ -285,7 +356,10 @@
           <tr><td><strong>Never mind.</strong></td><td>收回/算了</td><td>你问了个问题对方没听清，你说"Never mind"→"没事，算了"</td></tr>
         </table>
         <div class="example-box" style="margin-top:var(--space-3);">
-          <div class="ex-en">A: Sorry I'm 5 minutes late! <br> B: No biggie! We just ordered coffee.</div>
+          <div class="word-cell">
+            <span class="ex-en">A: Sorry I'm 5 minutes late! <br> B: No biggie! We just ordered coffee.</span>
+            <button class="play-btn" id="pb-nobiggie-ex" onclick="playAudio('phrase-no-biggie-example.mp3','pb-nobiggie-ex')">🔊</button>
+          </div>
           <div class="ex-cn">A: 对不起我迟到了5分钟！B: 没事儿！我们刚点了咖啡。</div>
           <div class="ex-meta">💡 "No biggie" 年轻人最爱用，跟中老年长辈说 "No worries" 或 "No problem" 更得体</div>
         </div>
@@ -425,6 +499,10 @@
       <div class="answer">
         <p><strong>下面这些句子，先看完理解，然后出声读三遍：</strong></p>
         <div style="background:var(--code-bg); border-radius:6px; padding:var(--space-4); margin:var(--space-3) 0; font-size:var(--text-sm); line-height:2;">
+          <div class="word-cell" style="margin-bottom:var(--space-3);">
+            <span><strong>🎧 7 个表达连读示范：</strong></span>
+            <button class="play-btn" id="pb-pron-drill" onclick="playAudio('practice-7exp-pronunciation.mp3','pb-pron-drill')">🔊</button>
+          </div>
           <p><strong>第一遍：慢读，注意每个音的完整性</strong></p>
           <p>Got it. → /ɡɑːt ɪt/<br>
           Let me try. → /let miː traɪ/<br>
