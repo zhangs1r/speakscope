@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 0023 课：Ch.X 被遗忘的革命（上） · Animal Farm · SpeakScope</title>
+<link rel="stylesheet" href="../shared/theme.css">
+<style>
+  body { background: var(--paper-light); }
+  .lesson { max-width: 880px; margin: 0 auto; padding: var(--space-8) var(--space-6); }
+  .lesson h1 { font-family: var(--font-serif); font-size: var(--text-4xl); margin-bottom: 0.2rem; }
+  .lesson .subtitle { font-size: var(--text-lg); color: var(--ink-60); font-family: var(--font-serif); }
+  .lesson .meta { display: flex; gap: var(--space-3); margin: var(--space-4) 0 var(--space-8); flex-wrap: wrap; }
+  .lesson .meta span { padding: 0.3rem 0.8rem; border-radius: 6px; background: var(--paper); border: 1px solid var(--border-light); font-size: var(--text-sm); color: var(--ink-60); }
+  .lesson .content { line-height: 1.8; font-size: var(--text-base); }
+  .lesson .content h2 { font-family: var(--font-serif); margin: var(--space-8) 0 var(--space-4); padding-bottom: var(--space-1); border-bottom: 1px solid var(--border); }
+  .back { display: inline-block; margin-bottom: var(--space-6); color: var(--accent); text-decoration: none; font-size: var(--text-sm); }
+  .back:hover { text-decoration: underline; }
+  .line-block { margin: var(--space-6) 0; }
+  .line-block .en { font-family: var(--font-serif); font-size: var(--text-base); line-height: 1.9; color: var(--ink); }
+  .line-block .cn { font-size: var(--text-sm); color: var(--ink-60); margin-top: var(--space-2); padding-left: var(--space-1); border-left: 3px solid var(--accent-light); padding-left: var(--space-3); }
+  .line-block .note { font-size: var(--text-sm); color: var(--accent-deep); margin-top: var(--space-2); padding: var(--space-2) var(--space-3); background: var(--accent-dim); border-radius: 6px; }
+  .line-block .play-cell { display: flex; align-items: flex-start; gap: 0.4rem; margin-top: var(--space-1); }
+  .line-block .play-cell .en { flex: 1; }
+  hr.line-split { border: none; border-top: 1px solid var(--border-light); margin: var(--space-3) 0; }
+  .play-btn { display: inline-flex; align-items: center; justify-content: center; background: var(--paper); border: 1px solid var(--accent-light); border-radius: 4px; cursor: pointer; font-size: 0.75rem; width: 1.6rem; height: 1.6rem; flex-shrink: 0; transition: background 0.15s, transform 0.1s; vertical-align: middle; line-height: 1; }
+  .play-btn:hover { background: var(--accent-dim); transform: scale(1.1); }
+  .play-btn:active { transform: scale(0.95); }
+  .play-btn.playing { background: #c8e6c9; border-color: var(--success); }
+  .highlight { background: #dbeafe; padding: 0.1rem 0.2rem; border-radius: 2px; }
+  .highlight-y { background: #fef3c7; padding: 0.1rem 0.2rem; border-radius: 2px; }
+  .footer-nav { margin-top: var(--space-10); padding-top: var(--space-6); border-top: 1px solid var(--border); display: flex; justify-content: space-between; font-size: var(--text-sm); }
+  .footer-nav a { color: var(--accent); text-decoration: none; }
+  .footer-nav a:hover { text-decoration: underline; }
+  .pre-box { background: var(--accent-dim); border-radius: 8px; padding: var(--space-4); margin: var(--space-5) 0; border: 1px dashed var(--accent-light); }
+  .pre-box strong { color: var(--accent-deep); }
+  .callout { background: var(--paper); border: 1px solid var(--border); border-radius: 8px; padding: var(--space-5); margin: var(--space-5) 0; }
+  .callout strong { color: var(--accent-deep); }
+  .commandment-box { background: #fef3c7; border: 2px solid #d97706; border-radius: 8px; padding: var(--space-5); margin: var(--space-5) 0; text-align: center; font-family: var(--font-serif); font-size: var(--text-lg); line-height: 1.6; }
+  .commandment-box .old-line { text-decoration: line-through; color: #991b1b; }
+</style>
+<script>
+const player = new Audio();
+let currentBtn = null;
+function playAudio(src, btnId) {
+  const btn = document.getElementById(btnId);
+  if (btn && btn.classList.contains('playing')) { player.pause(); player.currentTime = 0; btn.classList.remove('playing'); currentBtn = null; return; }
+  if (currentBtn) currentBtn.classList.remove('playing');
+  player.src = 'assets/audio/animal-farm/' + src; player.play();
+  if (btn) { btn.classList.add('playing'); currentBtn = btn; }
+  player.onended = () => { if (btn) btn.classList.remove('playing'); currentBtn = null; };
+}
+</script>
+</head>
+<body>
+<div class="lesson">
+
+  <a class="back" href="../index.html">← 返回 SpeakScope 主页</a>
+  <h1>📖 Ch.X 被遗忘的革命（上）</h1>
+  <div class="subtitle">Chapter X Part 1: Forgotten — 岁月流逝，革命被遗忘，猪学会用后腿走路</div>
+  <div class="meta">
+    <span>⏱ 25-30 分钟</span>
+    <span>📚 英文原著 · Animal Farm · 全文带读</span>
+    <span>🏷️ Ch.X · 全文带读</span>
+  </div>
+
+  <div class="content">
+
+    <!-- ====== 读前激活 ====== -->
+    <div class="pre-box">
+      <strong>🎬 在读之前</strong><br>
+      前三章我们见证了革命的背叛。最后一章——时光快进好多年。当年的革命者有的死了，有的老了，有的被遗忘了。农场呢？越来越富裕了，但动物们呢？<br><br>
+      <strong>带着这些问题读：</strong>
+      <ul style="margin-left:var(--space-5); margin-top:var(--space-2); line-height:2;">
+        <li>❓ 谁还记得革命前的日子？谁被遗忘了？</li>
+        <li>❓ 农场富了，动物富了吗？钱去哪儿了？</li>
+        <li>❓ 羊群学的"新歌"是什么？为什么需要"隐私"？</li>
+        <li>❓ 当 Clover 看到猪用后腿走路时——她的反应是什么？</li>
+      </ul>
+    </div>
+
+    <!-- ====== 原文带读 ====== -->
+    <h2>📖 原文带读</h2>
+    <p style="font-size:var(--text-sm); color:var(--ink-60);">逐段阅读，每段都有 英文原文 → 🔊 点听 → 中文翻译 → 注释。跟着节奏慢慢来。</p>
+
+    <!-- 段落 1：岁月流逝 -->
+    <div class="line-block">
+      <div class="play-cell">
+        <div class="en">Years passed. The seasons came and went, the short animal lives fled by. A time came when there was no one who remembered the old days before the Rebellion, except Clover, Benjamin, Moses the raven, and a number of the pigs.</div>
+        <button class="play-btn" id="pb-1" onclick="playAudio('0023-p1.mp3','pb-1')">🔊</button>
+      </div>
+      <div class="cn">岁月流逝。季节来了又去，动物短暂的生命飞逝而过。终于到了这样一个时刻——除了 Clover、Benjamin、渡鸦 Moses 和少数几头猪之外，再也没有动物记得起义前的日子了。</div>
+      <div class="note">💡 最后一章的开头冷峻而苍凉。"short animal lives"——动物的一生在历史面前转瞬即逝。记住历史的人正在一个个消失。</div>
+    </div>
+
+    <hr class="line-split">
+
+    <!-- 段落 2：物是人非 -->
+    <div class="line-block">
+      <div class="play-cell">
+        <div class="en">Muriel was dead; Bluebell, Jessie, and Pincher were dead. Jones too was dead—he had died in an <span class="highlight">inebriates</span>' home in another part of the country. Snowball was forgotten. Boxer was forgotten, except by the few who had known him. Clover was an old stout mare now, stiff in the joints and with a tendency to <span class="highlight">rheumy</span> eyes. She was two years past the retiring age, but in fact no animal had ever actually retired. The talk of setting aside a corner of the pasture for <span class="highlight">superannuated</span> animals had long since been dropped. Napoleon was now a mature boar of twenty-four stone. Squealer was so fat that he could with difficulty see out of his eyes. Only old Benjamin was much the same as ever, except for being a little greyer about the muzzle, and, since Boxer's death, more <span class="highlight">morose</span> and <span class="highlight">taciturn</span> than ever.</div>
+        <button class="play-btn" id="pb-2" onclick="playAudio('0023-p2.mp3','pb-2')">🔊</button>
+      </div>
+      <div class="cn">Muriel 死了；Bluebell、Jessie、Pincher 都死了。Jones 也死了——他死在英格兰另一头的酒鬼收容所里。Snowball 被遗忘了。Boxer 被遗忘了——除了少数几个认识他的人。Clover 现在是一匹又老又胖的母马，关节僵硬，眼睛容易流泪。她已经过了退休年龄两年了，但实际上从来没有动物真正退休。关于在牧场角落给年老动物留一块地的讨论早就被搁置了。Napoleon 现在是一头成熟的公猪，重达二十四英石。Squealer 胖得几乎看不见眼睛。只有老 Benjamin 几乎没变——除了口鼻部更灰白了，而且自从 Boxer 死后，比以往更加阴郁沉默。</div>
+      <div class="note">💡 <strong>inebriate</strong>（酒鬼），<strong>rheumy</strong>（流泪/多分泌物的），<strong>superannuated</strong>（年老退休的），<strong>morose</strong>（阴郁的），<strong>taciturn</strong>（沉默寡言的）。Orwell 用一连串词勾勒出衰败的图景。所有人几乎都死了——革命一代正在消亡。</div>
+    </div>
+
+    <hr class="line-split">
+
+    <!-- 段落 3：新一代 -->
+    <div class="line-block">
+      <div class="play-cell">
+        <div class="en">There were many more creatures on the farm now, though the increase was not so great as had been expected in earlier years. Many animals had been born to whom the Rebellion was only a dim tradition, passed on by word of mouth, and others had been bought who had never heard mention of such a thing before their arrival. The farm possessed three horses now besides Clover. They were fine upstanding beasts, willing workers and good comrades, but very stupid. None of them proved able to learn the alphabet beyond the letter B. They accepted everything that they were told about the Rebellion and the principles of Animalism, especially from Clover, for whom they had an almost <span class="highlight">filial</span> respect; but it was doubtful whether they understood very much of it.</div>
+        <button class="play-btn" id="pb-3" onclick="playAudio('0023-p3.mp3','pb-3')">🔊</button>
+      </div>
+      <div class="cn">现在农场上的动物比从前多了，虽然增长没有早期预期的那么快。许多新出生的动物——起义对他们而言只是口头相传的模糊传统；其他买来的动物甚至在来到农场之前从未听说过这件事。农场除了 Clover 之外现在有三匹马。它们是高大正直的牲口，愿意干活、是好同志，但非常愚蠢。它们中没有一匹能学会字母表里 A 以外的字母。它们接受了一切听说的关于起义和动物主义原则的故事——尤其是从 Clover 那里听来的，它们对她怀着近乎子女般的尊敬；但很难说它们真正理解了其中多少。</div>
+      <div class="note">💡 <strong>filial</strong>（子女的）——新一代动物对革命历史只有"模糊的传说"，它们"非常愚蠢"——这意味着如果猪想篡改历史，没有人会发现。革命传统正在消亡。</div>
+    </div>
+
+    <hr class="line-split">
+
+    <!-- 段落 4：农场富了 -->
+    <div class="line-block">
+      <div class="play-cell">
+        <div class="en">The farm was more prosperous now, and better organised: it had even been enlarged by two fields which had been bought from Mr. Pilkington. The windmill had been successfully completed at last, and the farm possessed a <span class="highlight">threshing</span> machine and a hay elevator of its own, and various new buildings had been added to it. Whymper had bought himself a dogcart. The windmill, however, had not after all been used for generating electrical power. It was used for milling corn, and brought in a handsome money profit. The animals were hard at work building yet another windmill; when that one was finished, so it was said, the <span class="highlight">dynamos</span> would be installed. But the luxuries of which Snowball had once taught the animals to dream, the stalls with electric light and hot and cold water, and the three-day week, were no longer talked about. Napoleon had denounced such ideas as contrary to the spirit of Animalism. The truest happiness, he said, lay in working hard and living <span class="highlight">frugally</span>.</div>
+        <button class="play-btn" id="pb-4" onclick="playAudio('0023-p4.mp3','pb-4')">🔊</button>
+      </div>
+      <div class="cn">农场现在更繁荣了，组织得也更好了——还从 Pilkington 先生那里买了两块地扩大了面积。风车终于成功建成了，农场有了自己的打谷机和干草升降机，还加盖了各种新建筑。Whymper 给自己买了一辆双轮马车。然而风车并没有被用来发电——它被用来磨玉米，带来了可观的现金收益。动物们正在辛勤地建造另一座风车；等那座建好了，据说就会装发电机。但 Snowball 曾经教动物们梦想过的奢侈品——带电灯和冷热水的马厩、每周工作三天——已经没有人再提了。Napoleon 谴责这些想法违背了动物主义的精神。他说，真正的幸福在于努力工作和节俭生活。</div>
+      <div class="note">💡 <strong>threshing</strong>（打谷），<strong>dynamos</strong>（发电机），<strong>frugally</strong>（节俭地）。革命承诺的"三天工作制"被重新定义为违背动物主义——统治阶层总是把底层的苦难美化为美德。风车终于建成了，但它只用来赚钱——不是为动物，而是为猪。</div>
+    </div>
+
+    <hr class="line-split">
+
+    <!-- 段落 5：富了谁？ -->
+    <div class="line-block">
+      <div class="play-cell">
+        <div class="en">Somehow it seemed as though the farm had grown richer without making the animals themselves any richer—except, of course, for the pigs and the dogs. Perhaps this was partly because there were so many pigs and so many dogs. It was not that these creatures did not work, after their fashion. There was, as Squealer was never tired of explaining, endless work in the supervision and organisation of the farm. Much of this work was of a kind that the other animals were too ignorant to understand. For example, Squealer told them that the pigs had to expend enormous labours every day upon mysterious things called "files," "reports," "minutes," and "<span class="highlight">memoranda</span>." These were large sheets of paper which had to be closely covered with writing, and as soon as they were so covered, they were <span class="highlight">burnt in the furnace</span>. This was of the highest importance for the welfare of the farm, Squealer said. But still, neither pigs nor dogs produced any food by their own labour; and there were very many of them, and their appetites were always good.</div>
+        <button class="play-btn" id="pb-5" onclick="playAudio('0023-p5.mp3','pb-5')">🔊</button>
+      </div>
+      <div class="cn">不知怎的，农场似乎变富了，但动物们自己并没有变富——当然，猪和狗除外。也许部分原因在于猪和狗实在太多了。并不是说这些家伙不干活——按它们的方式。正如 Squealer 不厌其烦地解释的那样，农场的监督和组织工作无穷无尽。这些工作中的大部分，其他动物太无知了，无法理解。比如 Squealer 告诉他们，猪们每天都要在名为"文件"、"报告"、"纪要"和"备忘录"的神秘事物上耗费巨大的劳力。这些都是大张的纸，必须在上面密密麻麻地写满字，一旦写满了，就把它们扔进炉子里烧掉。这对农场的福祉至关重要，Squealer 说。但尽管如此，猪和狗都不靠自己的劳动生产任何食物——而它们数量很多，胃口也一直很好。</div>
+      <div class="note">💡 <strong>memoranda</strong>（备忘录）。猪们写满了文件就烧掉——这是 Orwell 对官僚主义的绝妙讽刺。无用的文书工作被包装成"对农场福祉至关重要"的脑力劳动。写完了就烧，意味着这些文件从未被用来做任何实际的事。</div>
+    </div>
+
+    <hr class="line-split">
+
+    <!-- 段落 6：动物的生活 -->
+    <div class="line-block">
+      <div class="play-cell">
+        <div class="en">As for the others, their life, so far as they knew, was as it had always been. They were generally hungry, they slept on straw, they drank from the pool, they laboured in the fields; in winter they were troubled by the cold, and in summer by the flies. Sometimes the older ones among them racked their dim memories and tried to determine whether in the early days of the Rebellion, when Jones's expulsion was still recent, things had been better or worse than now. They could not remember. There was nothing with which they could compare their present lives: they had nothing to go upon except Squealer's lists of figures, which invariably demonstrated that everything was getting better and better. The animals found the problem <span class="highlight">insoluble</span>; in any case, they had little time for speculating on such things now. Only old Benjamin professed to remember every detail of his long life and to know that things never had been, nor ever could be much better or much worse—hunger, hardship, and disappointment being, so he said, the unalterable law of life.</div>
+        <button class="play-btn" id="pb-6" onclick="playAudio('0023-p6.mp3','pb-6')">🔊</button>
+      </div>
+      <div class="cn">至于其他动物，据他们所知，生活和过去没什么两样。他们总是饿着肚子，睡在稻草上，喝池塘里的水，在田里劳作；冬天受冻，夏天被苍蝇困扰。偶尔年老一些的动物费力地搜索模糊的记忆，试图判断：起义初年——Jones 刚被赶走的时候——日子比现在好还是坏。他们想不起来了。他们没有任何东西可以用来比较现在的生活：他们唯一能依据的只有 Squealer 的数据清单——而这些清单无一例外地证明一切都在变得更好。动物们发现这个问题无法解决；更何况，他们现在也没多少时间琢磨这种事了。只有老 Benjamin 声称记得漫长一生中的每一个细节，并且知道事情从来不会变好太多，也不会变坏太多——饥饿、艰辛和失望，他说，是生命中不可改变的法则。</div>
+      <div class="note">💡 <strong>insoluble</strong>（无法解决的）。这是全书最悲伤的段落之一——动物们已经无法比较了。记忆被饥饿和时间吞噬了。Benjamin 的犬儒主义被证明是最准确的预言：一切都没有改变。</div>
+    </div>
+
+    <hr class="line-split">
+
+    <!-- 段落 7：永不放弃希望 -->
+    <div class="line-block">
+      <div class="play-cell">
+        <div class="en">And yet the animals never gave up hope. More, they never lost, even for an instant, their sense of honour and privilege in being members of Animal Farm. They were still the only farm in the whole county—in all England!—owned and operated by animals. Not one of them, not even the youngest, not even the newcomers who had been brought from farms ten or twenty miles away, ever ceased to marvel at that. And when they heard the gun booming and saw the green flag fluttering at the masthead, their hearts swelled with <span class="highlight">imperishable</span> pride, and the talk turned always towards the old heroic days, the expulsion of Jones, the writing of the Seven Commandments, the great battles in which the human invaders had been defeated. None of the old dreams had been abandoned. ... Even the tune of 'Beasts of England' was perhaps hummed secretly here and there: at any rate, it was a fact that every animal on the farm knew it, though no one would have dared to sing it aloud. ... No creature among them went upon two legs. No creature called any other creature "Master." All animals were equal.</div>
+        <button class="play-btn" id="pb-7" onclick="playAudio('0023-p7.mp3','pb-7')">🔊</button>
+      </div>
+      <div class="cn">然而动物们从未放弃希望。不仅如此，他们从未——哪怕一瞬间——失去作为动物农场一员的自豪感和荣誉感。他们仍然是整个郡——全英格兰！——唯一由动物拥有和经营的农场。没有一只动物——哪怕最年轻的、哪怕从十英里或二十英里外买来的新动物——会不对这一点感到惊叹。每当他们听到炮声轰鸣、看到绿旗在旗杆上飘扬，心里就涌起不灭的自豪感，话题总会回到那些英雄的岁月——赶走 Jones、写下七诫、击败人类入侵者的伟大战役。没有放弃过任何一个旧的梦想。……甚至《英格兰的牲畜》的调子可能还在各处被人秘密哼唱：无论如何，事实上农场里的每一只动物都会唱——虽然没有人敢大声唱出来。……他们之中没有一个用两条腿走路。没有任何动物称呼另一个动物为"主人"。所有动物都是平等的。</div>
+      <div class="note">💡 <strong>imperishable</strong>（不朽的）。这段充满反讽——动物们坚信自己"没有主人"，坚信自己"是平等的"，但读者知道事实恰恰相反。Orwell 让读者看到信仰和现实之间的鸿沟。"No creature went upon two legs"——下一段就会发生。</div>
+    </div>
+
+    <hr class="line-split">
+
+    <!-- 段落 8：羊群学新歌 -->
+    <div class="line-block">
+      <div class="play-cell">
+        <div class="en">One day in early summer Squealer ordered the sheep to follow him, and led them out to a piece of waste ground at the other end of the farm, which had become overgrown with birch saplings. The sheep spent the whole day there browsing at the leaves under Squealer's supervision. In the evening he returned to the farmhouse himself, but, as it was warm weather, told the sheep to stay where they were. It ended by their remaining there for a whole week, during which time the other animals saw nothing of them. Squealer was with them for the greater part of every day. He was, he said, teaching them to sing a new song, for which privacy was needed.</div>
+        <button class="play-btn" id="pb-8" onclick="playAudio('0023-p8.mp3','pb-8')">🔊</button>
+      </div>
+      <div class="cn">初夏的一天，Squealer 命令羊群跟着他，带他们到了农场另一端一片长满桦树苗的荒地上。羊群在 Squealer 的监督下在那里吃了一天树叶。晚上他自己回了农舍，但因为天气暖和，他让羊群留在原地。结果羊群在那里待了整整一周——其间其他动物完全见不到它们。Squealer 每天大部分时间都和它们在一起。他说，他在教它们唱一首新歌——这需要隐私。</div>
+      <div class="note">💡 "隐私"需要"隐私"来学一首"新歌"——这显然不是什么好事。Squealer 在秘密排练——为即将到来的宣传做准备。</div>
+    </div>
+
+    <hr class="line-split">
+
+    <!-- 段落 9：猪用后腿走路！ -->
+    <div class="line-block">
+      <div class="play-cell">
+        <div class="en">It was just after the sheep had returned, on a pleasant evening when the animals had finished work and were making their way back to the farm buildings, that the terrified neighing of a horse sounded from the yard. Startled, the animals stopped in their tracks. It was Clover's voice. She neighed again, and all the animals broke into a gallop and rushed into the yard. Then they saw what Clover had seen.</div>
+        <button class="play-btn" id="pb-9" onclick="playAudio('0023-p9.mp3','pb-9')">🔊</button>
+      </div>
+      <div class="cn">就在羊群归来后不久，一个宜人的傍晚，动物们干完活正往农舍走——院子传来一声惊恐的马嘶。动物们惊得停住了脚步。那是 Clover 的声音。她又嘶了一声，所有动物飞奔进院子。然后他们看到了 Clover 看到的东西。</div>
+    </div>
+
+    <hr class="line-split">
+
+    <div class="line-block">
+      <div class="play-cell">
+        <div class="en">It was a pig walking on his hind legs.</div>
+        <button class="play-btn" id="pb-10" onclick="playAudio('0023-p10.mp3','pb-10')">🔊</button>
+      </div>
+      <div class="cn">是一头猪在用后腿走路。</div>
+      <div class="note">💡 这句话在原文中独立成段——这是全书最重要的转折点之一。用后腿走路 = 猪把自己当成了人。革命原则的核心——"No creature goes upon two legs"——被当面打破了。</div>
+    </div>
+
+    <hr class="line-split">
+
+    <div class="line-block">
+      <div class="play-cell">
+        <div class="en">Yes, it was Squealer. A little awkwardly, as though not quite used to supporting his considerable bulk in that position, but with perfect balance, he was strolling across the yard. And a moment later, out from the door of the farmhouse came a long file of pigs, all walking on their hind legs. Some did it better than others, one or two were even a trifle unsteady and looked as though they would have liked the support of a stick, but every one of them made his way right round the yard successfully. And finally there was a tremendous baying of dogs and a shrill crowing from the black cockerel, and out came Napoleon himself, <span class="highlight">majestically</span> upright, casting haughty glances from side to side, and with his dogs <span class="highlight">gambolling</span> round him.</div>
+        <button class="play-btn" id="pb-11" onclick="playAudio('0023-p11.mp3','pb-11')">🔊</button>
+      </div>
+      <div class="cn">没错，是 Squealer。他有点笨拙——好像还不习惯用这个姿势支撑自己庞大的身躯——但平衡极好，正穿过院子闲庭信步。片刻之后，农舍门里走出一长队猪——全部用后腿走路。有些走得比较好，有一两头甚至有点摇摇晃晃，似乎需要一根拐杖的支撑——但每一头都成功地绕着院子走了一圈。最后，随着一阵洪亮的狗吠和黑色公鸡的尖啼，Napoleon 本人出来了——威严地直立着，傲慢地左顾右盼，他的狗在他周围欢跳。</div>
+      <div class="note">💡 <strong>majestically</strong>（威严地），<strong>gambolling</strong>（欢跳）。Napoleon 的出场如同皇帝巡游。注意 Orwell 的遣词——"majestically upright"——猪们用后腿走路被描述得像是一种高贵的成就，但它实际上是革命的彻底背叛。</div>
+    </div>
+
+    <hr class="line-split">
+
+    <!-- 段落 12：Napoleon 拿着鞭子 -->
+    <div class="line-block">
+      <div class="play-cell">
+        <div class="en">He carried a whip in his <span class="highlight">trotter</span>.</div>
+        <button class="play-btn" id="pb-12" onclick="playAudio('0023-p12.mp3','pb-12')">🔊</button>
+      </div>
+      <div class="cn">他的猪蹄里握着一根鞭子。</div>
+      <div class="note">💡 同样独立成段。鞭子——曾经是 Jones 压迫动物的工具。现在猪握住了它。这是最后一个禁忌的打破：革命的目标之一，就是不再有动物被鞭打。</div>
+    </div>
+
+    <hr class="line-split">
+
+    <!-- 段落 13：沉默 -->
+    <div class="line-block">
+      <div class="play-cell">
+        <div class="en">There was a deadly silence. Amazed, terrified, huddling together, the animals watched the long line of pigs march slowly round the yard. It was as though the world had turned upside-down. Then there came a moment when the first shock had worn off and when, in spite of everything—in spite of their terror of the dogs, and of the habit, developed through long years, of never complaining, never criticising, no matter what happened—they might have uttered some word of protest. But just at that moment, as though at a signal, all the sheep burst out into a tremendous bleating of—</div>
+        <button class="play-btn" id="pb-13" onclick="playAudio('0023-p13.mp3','pb-13')">🔊</button>
+      </div>
+      <div class="cn">死一般的寂静。动物们震惊、恐惧、挤作一团，看着长长一排猪慢慢绕场行走。世界仿佛颠倒了。有那么一刻——当最初的震惊消退、当尽管一切——尽管他们对狗的恐惧、尽管多年养成的对任何事都不抱怨不批评的习惯——他们或许本可以发出抗议的声音。但就在那一瞬间，仿佛接到了信号，所有的羊突然爆发出巨大的咩咩声——</div>
+    </div>
+
+    <hr class="line-split">
+
+    <div class="line-block">
+      <div class="play-cell">
+        <div class="en">"Four legs good, two legs <span class="highlight-y">BETTER</span>! Four legs good, two legs BETTER! Four legs good, two legs BETTER!"</div>
+        <button class="play-btn" id="pb-14" onclick="playAudio('0023-p14.mp3','pb-14')">🔊</button>
+      </div>
+      <div class="cn">"四条腿好，两条腿<strong>更好</strong>！四条腿好，两条腿更好！四条腿好，两条腿更好！"</div>
+      <div class="note">💡 这就是 Squealer 教的新歌。革命时期的口号是"Four legs good, two legs bad"——现在改成了"两条腿更好"。羊群（盲目追随者）再次充当了压制异议的工具。这一刻没有任何动物敢于抗议。</div>
+    </div>
+
+    <hr class="line-split">
+
+    <div class="line-block">
+      <div class="play-cell">
+        <div class="en">It went on for five minutes without stopping. And by the time the sheep had quieted down, the chance to utter any protest had passed, for the pigs had marched back into the farmhouse.</div>
+        <button class="play-btn" id="pb-15" onclick="playAudio('0023-p15.mp3','pb-15')">🔊</button>
+      </div>
+      <div class="cn">羊群的叫声持续了整整五分钟。等它们安静下来，抗议的机会已经过去了——因为猪们已经列队走回了农舍。</div>
+    </div>
+
+    <hr class="line-split">
+
+    <!-- 段落 16：Benjamin 读七诫 -->
+    <div class="line-block">
+      <div class="play-cell">
+        <div class="en">Benjamin felt a nose nuzzling at his shoulder. He looked round. It was Clover. Her old eyes looked dimmer than ever. Without saying anything, she tugged gently at his mane and led him round to the end of the big barn, where the Seven Commandments were written. For a minute or two they stood gazing at the tatted wall with its white lettering.</div>
+        <button class="play-btn" id="pb-16" onclick="playAudio('0023-p16.mp3','pb-16')">🔊</button>
+      </div>
+      <div class="cn">Benjamin 感到有鼻子在蹭他的肩膀。他回头一看，是 Clover。她苍老的眼睛比以往更加浑浊。她一言不发，轻轻拽着他的鬃毛，带他绕到大谷仓的尽头——那里写着七诫。他们站着凝视那面斑驳的墙壁和墙上的白色字迹，好一阵子没有说话。</div>
+    </div>
+
+    <hr class="line-split">
+
+    <div class="line-block">
+      <div class="play-cell">
+        <div class="en">"My sight is failing," she said finally. "Even when I was young I could not have read what was written there. But it appears to me that that wall looks different. Are the Seven Commandments the same as they used to be, Benjamin?"</div>
+        <button class="play-btn" id="pb-17" onclick="playAudio('0023-p17.mp3','pb-17')">🔊</button>
+      </div>
+      <div class="cn">"我的视力不行了，"她终于开口。"就算年轻的时候我也读不清上面写了什么。但我感觉那面墙看起来不一样了。七诫还是以前的七诫吗，Benjamin？"</div>
+    </div>
+
+    <hr class="line-split">
+
+    <div class="line-block">
+      <div class="play-cell">
+        <div class="en">For once Benjamin consented to break his rule, and he read out to her what was written on the wall. There was nothing there now except a single Commandment. It ran:</div>
+        <button class="play-btn" id="pb-18" onclick="playAudio('0023-p18.mp3','pb-18')">🔊</button>
+      </div>
+      <div class="cn">这一次 Benjamin 破例打破了沉默，他给 Clover 读出了墙上的字。现在那里只剩下一道诫命。上面写着：</div>
+    </div>
+
+    <hr class="line-split">
+
+    <!-- 段落 19：最著名的句子 -->
+    <div class="commandment-box">
+      <strong>ALL ANIMALS ARE EQUAL</strong><br>
+      <strong style="font-size: 1.1em;">BUT SOME ANIMALS ARE MORE EQUAL THAN OTHERS</strong>
+    </div>
+
+    <div class="line-block">
+      <div class="note">💡 这是全书最著名、最有力、最讽刺的一句话。七条诫命被不断修改（"No animal shall drink alcohol" → 加上 "to excess"；"No animal shall sleep in a bed" → 加上 "with sheets"），最终浓缩为这一句话。它完整地概括了全书主题：革命承诺的平等被彻底背叛。"All animals are equal, but some are more equal than others"已经成为英语中形容"伪平等"的经典表达。</div>
+    </div>
+
+    <hr class="line-split">
+
+    <!-- 段落 20：一切都变得不奇怪了 -->
+    <div class="line-block">
+      <div class="play-cell">
+        <div class="en">After that it did not seem strange when next day the pigs who were supervising the work of the farm all carried whips in their trotters. It did not seem strange to learn that the pigs had bought themselves a wireless set, were arranging to install a telephone, and had taken out subscriptions to 'John Bull', 'Tit-Bits', and the 'Daily Mirror'. It did not seem strange when Napoleon was seen strolling in the farmhouse garden with a pipe in his mouth—no, not even when the pigs took Mr. Jones's clothes out of the wardrobes and put them on, Napoleon himself appearing in a black coat, <span class="highlight">ratcatcher</span> breeches, and leather leggings, while his favourite sow appeared in the watered silk dress which Mrs. Jones had been used to wearing on Sundays.</div>
+        <button class="play-btn" id="pb-19" onclick="playAudio('0023-p19.mp3','pb-19')">🔊</button>
+      </div>
+      <div class="cn">在那之后，第二天监督农场工作的猪们都握着鞭子——这已经不再让人觉得奇怪了。听说猪们给自己买了收音机、正在安装电话、订阅了《约翰牛》、《趣闻》和《每日镜报》——这也不奇怪了。看到 Napoleon 叼着烟斗在农舍花园里散步——不奇怪了。甚至猪们从衣柜里拿出 Jones 先生的衣服穿上——Napoleon 自己穿着黑色外套、猎鼠裤和皮护腿，而他最心爱的母猪穿着 Mrs. Jones 周日穿过的波纹绸裙——这也不奇怪了。</div>
+      <div class="note">💡 <strong>ratcatcher</strong>（猎鼠用的——一种紧身马裤）。注意 Orwell 的递进结构——"It did not seem strange"重复了四次。第一次是鞭子，最后一次是猪穿人的衣服。每一次"不奇怪"都代表着革命原则的进一步沦丧。当一切都不再奇怪时，压迫就完成了"正常化"。</div>
+    </div>
+
+    <hr class="line-split">
+
+    <!-- ====== 总结 ====== -->
+    <div class="callout">
+      <strong>🤔 章节总结</strong><br><br>
+      Ch.X 上半部分展现了革命如何彻底回到原点：<br><br>
+      <strong>历史被遗忘：</strong>新一代动物不知道起义，Boxer 被遗忘，Jones 死了<br>
+      <strong>回到原点：</strong>猪用后腿走路、握着鞭子、穿着人的衣服<br>
+      <strong>七诫变成了一条：</strong>"All animals are equal, but some are more equal than others"<br>
+      <strong>语言被重置：</strong>"Four legs good, two legs BETTER"——连口号都改变了<br><br>
+      请注意这段漫长的铺垫——Ch.X 的前三分之二都在写岁月流逝和细微的变化，然后突然用"一头猪在用后腿走路"给了读者一记重拳。这是 Orwell 叙事节奏的杰作。<br><br>
+      <strong>历史映射：</strong>苏联革命从"废除死刑"到斯大林的大清洗——每一次"微小的妥协"最终累积成了完整暴政。
+    </div>
+
+    <!-- ====== 预告 ====== -->
+    <div class="callout" style="background: var(--accent-dim); border-color: var(--accent);">
+      <strong>➡️ 下一课预告：</strong><br>
+      全书的最后一节——人类来参观农场了。Napoleon 和 Pilkington 干杯、打牌。然后窗外的动物们看到了一个令人毛骨悚然的景象：<strong>猪和人的脸，已经无法区分了。</strong>
+    </div>
+
+  </div><!-- /content -->
+
+  <div class="footer-nav">
+    <span><a href="0022-AnimalFarm-Ch9-P2-Knacker.html">← 上一课：Ch.IX 屠马人</a></span>
+    <a href="../index.html">返回主页</a>
+    <span><a href="0024-AnimalFarm-Ch10-P2-Final.html">下一课：Ch.X 全书终章 →</a></span>
+  </div>
+
+</div>
+<script src="../shared/lesson-tools.js"></script>
+</body>
+</html>

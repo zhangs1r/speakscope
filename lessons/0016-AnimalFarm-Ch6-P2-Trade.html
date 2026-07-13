@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 0016 课：Ch.VI 与人类交易 · Animal Farm · SpeakScope</title>
+<link rel="stylesheet" href="../shared/theme.css">
+<style>
+  body { background: var(--paper-light); }
+  .lesson { max-width: 880px; margin: 0 auto; padding: var(--space-8) var(--space-6); }
+  .lesson h1 { font-family: var(--font-serif); font-size: var(--text-4xl); margin-bottom: 0.2rem; }
+  .lesson .subtitle { font-size: var(--text-lg); color: var(--ink-60); font-family: var(--font-serif); }
+  .lesson .meta { display: flex; gap: var(--space-3); margin: var(--space-4) 0 var(--space-8); flex-wrap: wrap; }
+  .lesson .meta span { padding: 0.3rem 0.8rem; border-radius: 6px; background: var(--paper); border: 1px solid var(--border-light); font-size: var(--text-sm); color: var(--ink-60); }
+  .lesson .content { line-height: 1.8; font-size: var(--text-base); }
+  .lesson .content h2 { font-family: var(--font-serif); margin: var(--space-8) 0 var(--space-4); padding-bottom: var(--space-1); border-bottom: 1px solid var(--border); }
+  .back { display: inline-block; margin-bottom: var(--space-6); color: var(--accent); text-decoration: none; font-size: var(--text-sm); }
+  .back:hover { text-decoration: underline; }
+
+  /* Full-text guided reading block */
+  .line-block { margin: var(--space-6) 0; }
+  .line-block .en { font-family: var(--font-serif); font-size: var(--text-base); line-height: 1.9; color: var(--ink); }
+  .line-block .cn { font-size: var(--text-sm); color: var(--ink-60); margin-top: var(--space-2); padding-left: var(--space-1); border-left: 3px solid var(--accent-light); padding-left: var(--space-3); }
+  .line-block .note { font-size: var(--text-sm); color: var(--accent-deep); margin-top: var(--space-2); padding: var(--space-2) var(--space-3); background: var(--accent-dim); border-radius: 6px; }
+  .line-block .play-cell { display: flex; align-items: flex-start; gap: 0.4rem; margin-top: var(--space-1); }
+  .line-block .play-cell .en { flex: 1; }
+
+  hr.line-split { border: none; border-top: 1px solid var(--border-light); margin: var(--space-3) 0; }
+
+  .play-btn { display: inline-flex; align-items: center; justify-content: center; background: var(--paper); border: 1px solid var(--accent-light); border-radius: 4px; cursor: pointer; font-size: 0.75rem; width: 1.6rem; height: 1.6rem; flex-shrink: 0; transition: background 0.15s, transform 0.1s; vertical-align: middle; line-height: 1; }
+  .play-btn:hover { background: var(--accent-dim); transform: scale(1.1); }
+  .play-btn:active { transform: scale(0.95); }
+  .play-btn.playing { background: #c8e6c9; border-color: var(--success); }
+
+  .highlight { background: #dbeafe; padding: 0.1rem 0.2rem; border-radius: 2px; }
+  .highlight-y { background: #fef3c7; padding: 0.1rem 0.2rem; border-radius: 2px; }
+
+  .footer-nav { margin-top: var(--space-10); padding-top: var(--space-6); border-top: 1px solid var(--border); display: flex; justify-content: space-between; font-size: var(--text-sm); }
+  .footer-nav a { color: var(--accent); text-decoration: none; }
+  .footer-nav a:hover { text-decoration: underline; }
+
+  .pre-box { background: var(--accent-dim); border-radius: 8px; padding: var(--space-4); margin: var(--space-5) 0; border: 1px dashed var(--accent-light); }
+  .pre-box strong { color: var(--accent-deep); }
+  .callout { background: var(--paper); border: 1px solid var(--border); border-radius: 8px; padding: var(--space-5); margin: var(--space-5) 0; }
+  .callout strong { color: var(--accent-deep); }
+</style>
+<script>
+const player = new Audio();
+let currentBtn = null;
+function playAudio(src, btnId) {
+  const btn = document.getElementById(btnId);
+  if (btn && btn.classList.contains('playing')) { player.pause(); player.currentTime = 0; btn.classList.remove('playing'); currentBtn = null; return; }
+  if (currentBtn) currentBtn.classList.remove('playing');
+  player.src = 'assets/audio/animal-farm/' + src; player.play();
+  if (btn) { btn.classList.add('playing'); currentBtn = btn; }
+  player.onended = () => { if (btn) btn.classList.remove('playing'); currentBtn = null; };
+}
+</script>
+</head>
+<body>
+<div class="lesson">
+
+  <a class="back" href="../index.html">← 返回 SpeakScope 主页</a>
+  <h1>📖 Ch.VI 与人类交易（下）</h1>
+  <div class="subtitle">Chapter VI Part 2: Trade — 猪搬进农舍，风车倒塌</div>
+  <div class="meta">
+    <span>⏱ 25-30 分钟</span>
+    <span>📚 英文原著 · Animal Farm · 全文带读</span>
+    <span>🏷️ Ch.VI · 全文带读</span>
+  </div>
+
+  <div class="content">
+
+    <!-- ====== 读前激活 ====== -->
+    <div class="pre-box">
+      <strong>🎬 在读之前</strong><br>
+      上一部分我们看到动物们拼命工作建风车、Napoleon 取消集会、猪开始掌权。这一部分将发生一件曾经绝对不可能的事——Animal Farm 要和人类做交易了。<br><br>
+      <strong>带着这些问题读：</strong>
+      <ul style="margin-left:var(--space-5); margin-top:var(--space-2); line-height:2;">
+        <li>❓ 动物们真的记得「禁止与人类交易」的决议吗？那为什么他们又相信没这回事？</li>
+        <li>❓ 猪搬进农舍、睡床——Squealer 是怎么辩护的？四诫被改了什么？</li>
+        <li>❓ 风车到底是怎么倒的？Napoleon 是怎么利用这件事的？</li>
+      </ul>
+    </div>
+
+    <!-- ====== 全文带读 ====== -->
+    <h2>📖 原文带读</h2>
+    <p style="font-size:var(--text-sm); color:var(--ink-60);">逐段阅读，每段都有 英文原文 → 🔊 点听 → 中文翻译 → 注释。跟着节奏慢慢来。</p>
+
+    <!-- 段落 1：Napoleon 宣布与人类交易 -->
+    <div class="line-block">
+      <div class="play-cell">
+        <div class="en">One Sunday morning, when the animals assembled to receive their orders, Napoleon announced that he had decided upon a new policy. From now onwards Animal Farm would engage in <span class="highlight">trade</span> with the neighbouring farms: not, of course, for any commercial purpose, but simply in order to obtain certain materials which were urgently necessary. The needs of the windmill must <span class="highlight">override</span> everything else, he said. He was therefore making arrangements to sell a stack of hay and part of the current year's wheat crop, and later on, if more money were needed, it would have to be made up by the sale of eggs, for which there was always a market in Willingdon. The hens, said Napoleon, should welcome this sacrifice as their own special contribution towards the building of the windmill.</div>
+        <button class="play-btn" id="pb-1" onclick="playAudio('0016-p1.mp3','pb-1')">🔊</button>
+      </div>
+      <div class="cn">一个星期天早晨，动物们集合接受命令时，Napoleon 宣布了他决定的一项新政策。从现在起，Animal Farm 将与邻近农场开展贸易——当然不是为了任何商业目的，仅仅是为了获得某些急需的材料。风车的需求必须压倒一切，他说。因此他正在安排出售一垛干草和今年收成的一部分小麦，以后如果还需要更多钱，就得靠卖鸡蛋来凑——Willingdon 的市场对鸡蛋一直有需求。Napoleon 说，母鸡们应该欢迎这个牺牲，作为她们对风车建设的特殊贡献。</div>
+      <div class="note">💡 <strong>关键转折点。</strong> 曾经革命的第一批决议之一就是"绝不与人类打交道、绝不交易、绝不用钱"。Napoleon 用"风车需求压倒一切"来合理化这个根本性的背叛。注意"of course, not for any commercial purpose"——典型的 Orwell 式反讽。</div>
+    </div>
+
+    <hr class="line-split">
+
+    <!-- 段落 2：动物们的隐约不安 -->
+    <div class="line-block">
+      <div class="play-cell">
+        <div class="en">Once again the animals were conscious of a vague <span class="highlight">uneasiness</span>. Never to have any dealings with human beings, never to engage in trade, never to make use of money—had not these been among the earliest resolutions passed at that first triumphant Meeting after Jones was expelled? All the animals remembered passing such resolutions: or at least they thought that they remembered it. The four young pigs who had protested when Napoleon abolished the Meetings raised their voices <span class="highlight">timidly</span>, but they were promptly silenced by a tremendous growling from the dogs. Then, as usual, the sheep broke into "Four legs good, two legs bad!" and the momentary awkwardness was smoothed over. Finally Napoleon raised his <span class="highlight">trotter</span> for silence and announced that he had already made all the arrangements. There would be no need for any of the animals to come in contact with human beings, which would clearly be most undesirable. He intended to take the whole burden upon his own shoulders. A Mr. Whymper, a solicitor living in Willingdon, had agreed to act as <span class="highlight">intermediary</span> between Animal Farm and the outside world, and would visit the farm every Monday morning to receive his instructions. Napoleon ended his speech with his usual cry of "Long live Animal Farm!" and after the singing of 'Beasts of England' the animals were dismissed.</div>
+        <button class="play-btn" id="pb-2" onclick="playAudio('0016-p2.mp3','pb-2')">🔊</button>
+      </div>
+      <div class="cn">动物们再次感到一种隐约的不安。绝不与人类打交道、绝不从事交易、绝不动用金钱——这不正是 Jones 被赶走后第一次大会上通过的最早决议之一吗？所有动物都记得通过了这样的决议——或者说，他们以为他们记得。那四头在 Napoleon 取消集会时抗议过的年轻猪怯生生地发出了声音，但立刻被狗的巨大咆哮声压了下去。接着，像往常一样，羊群爆发出"四条腿好，两条腿坏！"，短暂的尴尬就被抚平了。最后 Napoleon 抬起蹄子要求安静，宣布他已经做好了所有安排。任何动物都不需要与人类接触——那显然是最不可取的。他打算独自承担这个重担。Willingdon 的一位叫 Whymper 的律师已同意担任 Animal Farm 和外部世界之间的中间人，每周一早上来农场接受指示。Napoleon 以他一贯的"Animal Farm 万岁！"结束了讲话，唱完《Beasts of England》后动物们就散去了。</div>
+      <div class="note">💡 <strong>记忆的模糊性。</strong> "all the animals remembered... or at least they thought that they remembered"——Orwell 精准地描绘了集体记忆如何在不记录的情况下被篡改。这是极权主义控制叙事的第一步。Whymper 这个角色的名字暗示了"whimper"（呜咽）——一个可悲的、受雇于人的小角色。</div>
+    </div>
+
+    <hr class="line-split">
+
+    <!-- 段落 3：Squealer 的诡辩 -->
+    <div class="line-block">
+      <div class="play-cell">
+        <div class="en">Afterwards Squealer made a round of the farm and set the animals' minds at rest. He assured them that the resolution against engaging in trade and using money had never been passed, or even suggested. It was pure imagination, probably <span class="highlight">traceable</span> in the beginning to lies circulated by Snowball. A few animals still felt faintly doubtful, but Squealer asked them <span class="highlight">shrewdly</span>, "Are you certain that this is not something that you have dreamed, comrades? Have you any record of such a resolution? Is it written down anywhere?" And since it was certainly true that nothing of the kind existed in writing, the animals were satisfied that they had been mistaken.</div>
+        <button class="play-btn" id="pb-3" onclick="playAudio('0016-p3.mp3','pb-3')">🔊</button>
+      </div>
+      <div class="cn">之后 Squealer 在农场转了一圈，让动物们安心。他向他们保证，反对从事贸易和使用金钱的决议从未被通过过，甚至从未被提出过。这纯粹是想象，可能最早可以追溯到 Snowball 散布的谎言。少数动物仍然隐约感到怀疑，但 Squealer 精明地问他们："同志们，你们确定这不是你们梦到的东西吗？你们有这种决议的记录吗？哪里有书面记载吗？"既然确实没有任何书面文件存在，动物们就满意地相信是自己搞错了。</div>
+      <div class="note">💡 <strong>经典的极权话语术。</strong> "没有书面记录就等于没发生过"——这是对历史虚无主义的极致讽刺。注意 Orwell 用 <strong>shrewdly</strong>（精明地）来形容 Squealer——他不是在澄清事实，而是在操纵心理。</div>
+    </div>
+
+    <hr class="line-split">
+
+    <!-- 段落 4：Whymper 来访 -->
+    <div class="line-block">
+      <div class="play-cell">
+        <div class="en">Every Monday Mr. Whymper visited the farm as had been arranged. He was a <span class="highlight">sly-looking</span> little man with side whiskers, a solicitor in a very small way of business, but sharp enough to have realised earlier than anyone else that Animal Farm would need a <span class="highlight">broker</span> and that the <span class="highlight">commissions</span> would be worth having. The animals watched his coming and going with a kind of dread, and avoided him as much as possible. Nevertheless, the sight of Napoleon, on all fours, delivering orders to Whymper, who stood on two legs, roused their pride and partly reconciled them to the new arrangement. Their relations with the human race were now not quite the same as they had been before. The human beings did not hate Animal Farm any less now that it was prospering; indeed, they hated it more than ever. Every human being held it as an article of faith that the farm would go bankrupt sooner or later, and, above all, that the windmill would be a failure. They would meet in the public-houses and prove to one another by means of diagrams that the windmill was bound to fall down, or that if it did stand up, then that it would never work. And yet, against their will, they had developed a certain respect for the efficiency with which the animals were managing their own affairs. One symptom of this was that they had begun to call Animal Farm by its proper name and ceased to pretend that it was called the Manor Farm. They had also dropped their championship of Jones, who had given up hope of getting his farm back and gone to live in another part of the county. Except through Whymper, there was as yet no contact between Animal Farm and the outside world, but there were constant rumours that Napoleon was about to enter into a definite business agreement either with Mr. Pilkington of Foxwood or with Mr. Frederick of Pinchfield—but never, it was noticed, with both simultaneously.</div>
+        <button class="play-btn" id="pb-4" onclick="playAudio('0016-p4.mp3','pb-4')">🔊</button>
+      </div>
+      <div class="cn">每个周一 Whymper 先生按安排来农场。他是一个看起来狡猾的小个子男人，留着连鬓胡子，是个生意很小的律师——但也足够精明，比别人更早意识到 Animal Farm 需要一个中间人，而且佣金会是一笔划算的买卖。动物们带着一种恐惧看着他来来往往，尽可能避开他。然而，看到 Napoleon 用四肢走路向站着的 Whymper 发号施令，激发了他们的自豪感，部分地使他们接受了这个新安排。他们与人类的关系已经和以前不一样了。人类并没有因为 Animal Farm 的繁荣而减少敌意——事实上，他们比以往更恨它。每个人类都深信农场迟早会破产，尤其是风车一定会失败。他们会在酒馆里聚会，用图表互相证明风车一定会倒塌——或者就算立起来了也永远不会运转。然而，不情愿地，他们对动物管理自己事务的效率产生了一定的尊重。一个表现是：他们开始用 Animal Farm 的真名称呼它，不再假装它叫 Manor Farm。他们也放弃了对 Jones 的支持——Jones 已经放弃了夺回农场的希望，搬到了郡里的其他地方。除了通过 Whymper，Animal Farm 与外界仍然没有接触，但一直有传言说 Napoleon 即将与 Foxwood 的 Pilkington 先生或 Pinchfield 的 Frederick 先生签订明确的商业协议——但人们注意到，从未同时与两者都签。</div>
+      <div class="note">💡 <strong>微妙的讽刺。</strong> 人类开始尊重 Animal Farm——但这份尊重恰恰来源于动物们背叛了自己的革命原则（与人类交易）。Pilkington 和 Frederick 代表英国资本家（Foxwood 代表老牌贵族，Pinchfield 代表新兴工业家），Napoleon 在两者间摇摆——影射斯大林在西方资本主义势力之间的周旋。</div>
+    </div>
+
+    <hr class="line-split">
+
+    <!-- 段落 5：猪搬进农舍 -->
+    <div class="line-block">
+      <div class="play-cell">
+        <div class="en">It was about this time that the pigs suddenly moved into the farmhouse and took up their residence there. Again the animals seemed to remember that a resolution against this had been passed in the early days, and again Squealer was able to convince them that this was not the case. It was absolutely necessary, he said, that the pigs, who were the brains of the farm, should have a quiet place to work in. It was also more suited to the <span class="highlight">dignity</span> of the Leader (for of late he had taken to speaking of Napoleon under the title of "Leader") to live in a house than in a mere <span class="highlight">sty</span>. Nevertheless, some of the animals were disturbed when they heard that the pigs not only took their meals in the kitchen and used the drawing-room as a <span class="highlight">recreation room</span>, but also slept in the beds. Boxer passed it off as usual with "Napoleon is always right!", but Clover, who thought she remembered a definite <span class="highlight">ruling</span> against beds, went to the end of the barn and tried to puzzle out the Seven Commandments which were inscribed there. Finding herself unable to read more than individual letters, she fetched Muriel.</div>
+        <button class="play-btn" id="pb-5" onclick="playAudio('0016-p5.mp3','pb-5')">🔊</button>
+      </div>
+      <div class="cn">大概就在这个时候，猪突然搬进了农舍并在那里定居。动物们似乎又记得早期通过过一项反对此事的决议——Squealer 再次让他们相信并非如此。他说，猪是农场的大脑，绝对需要一个安静的地方工作。领袖住在房子里而不是仅仅一个猪圈里，也更符合他的尊严（最近他开始用"领袖"这个头衔称呼 Napoleon）。然而，当动物们听说猪不仅在厨房吃饭、把客厅当娱乐室、还睡在床上的时候，一些动物感到不安。Boxer 像往常一样用"Napoleon 永远是对的！"来搪塞过去，但 Clover——她认为她记得有一条明确禁止床的规定——跑到谷仓尽头试图辨认刻在那里的七诫。她发现自己只能认出单个字母，于是叫来了 Muriel。</div>
+      <div class="note">💡 <strong>权力的生活化。</strong> "Leader"这个称呼的出现标志着个人崇拜的正式化。Clover 发现了问题但她不识字——这是动物们悲剧的核心：他们没有能力监督统治者。而 Boxer 的"Napoleon is always right"已经成为条件反射。</div>
+    </div>
+
+    <hr class="line-split">
+
+    <!-- 段落 6：四诫被篡改 -->
+    <div class="line-block">
+      <div class="play-cell">
+        <div class="en">"Muriel," she said, "read me the Fourth Commandment. Does it not say something about never sleeping in a bed?"<br><br>With some difficulty Muriel spelt it out.<br><br>"It says, 'No animal shall sleep in a bed with <span class="highlight">sheets</span>,'" she announced finally.<br><br>Curiously enough, Clover had not remembered that the Fourth Commandment mentioned sheets; but as it was there on the wall, it must have done so. And Squealer, who happened to be passing at this moment, attended by two or three dogs, was able to put the whole matter in its proper perspective.<br><br>"You have heard then, comrades," he said, "that we pigs now sleep in the beds of the farmhouse? And why not? You did not suppose, surely, that there was ever a ruling against beds? A bed merely means a place to sleep in. A pile of straw in a stall is a bed, <span class="highlight">properly regarded</span>. The rule was against sheets, which are a human invention. We have removed the sheets from the farmhouse beds, and sleep between blankets. And very comfortable beds they are too! But not more comfortable than we need, I can tell you, comrades, with all the brainwork we have to do nowadays. You would not rob us of our <span class="highlight">repose</span>, would you, comrades? You would not have us too tired to carry out our duties? Surely none of you wishes to see Jones back?"<br><br>The animals reassured him on this point immediately, and no more was said about the pigs sleeping in the farmhouse beds. And when, some days afterwards, it was announced that from now on the pigs would get up an hour later in the mornings than the other animals, no complaint was made about that either.</div>
+        <button class="play-btn" id="pb-6" onclick="playAudio('0016-p6.mp3','pb-6')">🔊</button>
+      </div>
+      <div class="cn">"Muriel，"她说，"给我读第四条诫命。它是不是说永远不能睡在床上？"<br><br>Muriel 费了很大劲才拼读出来。<br><br>"上面说：'任何动物不得睡在<strong>有床单的</strong>床上，'"她最终宣布道。<br><br>奇怪的是，Clover 不记得第四条诫命提到了床单；但既然墙上确实这么写着，那就一定是这样。恰巧路过的 Squealer 由两三条狗陪同着，能够把这整件事放在"正确的视角"中。<br><br>"同志们，你们已经听说了，"他说，"我们猪现在睡在农舍的床上。为什么不行呢？你们当然不会认为有过禁止床的规定吧？床仅仅意味着睡觉的地方。马厩里的一堆稻草就是一张床——<strong>从适当的角度看</strong>。那条规矩是针对床单的，床单是人类发明的东西。我们已经把农舍床上的床单撤掉了，睡在毯子之间。而且这些床非常舒适！但也不比我们需要的更舒适——我告诉你们，同志们，考虑到我们现在要做的大量脑力工作。你们不会剥夺我们的休息吧，同志们？你们不会让我们累得无法履行职责吧？你们之中当然没有人希望看到 Jones 回来吧？"<br><br>动物们立刻在这一点上向他保证，于是不再提猪睡在农舍床上的事了。几天后，当宣布从现在起猪早上比其他动物晚起一小时时，也没有任何抱怨。</div>
+      <div class="note">💡 <strong>七诫的第一次实际篡改。</strong> "No animal shall sleep in a bed with sheets"——实际上原始版本应该是"No animal shall sleep in a bed"。"properly regarded"和最终反问"you don't want Jones back, do you?"是 Squealer 最常用的两种话术：重新定义概念 + 制造恐惧选择。</div>
+    </div>
+
+    <hr class="line-split">
+
+    <!-- 段落 7：秋天到——风车快完工了 -->
+    <div class="line-block">
+      <div class="play-cell">
+        <div class="en">By the autumn the animals were tired but happy. They had had a hard year, and after the sale of part of the hay and corn, the stores of food for the winter were none too plentiful, but the windmill <span class="highlight">compensated</span> for everything. It was almost half built now. After the harvest there was a stretch of clear dry weather, and the animals toiled harder than ever, thinking it well worth while to <span class="highlight">plod</span> to and fro all day with blocks of stone if by doing so they could raise the walls another foot. Boxer would even come out at nights and work for an hour or two on his own by the light of the harvest moon. In their spare moments the animals would walk round and round the half-finished mill, admiring the strength and <span class="highlight">perpendicularity</span> of its walls and marvelling that they should ever have been able to build anything so <span class="highlight">imposing</span>. Only old Benjamin refused to grow enthusiastic about the windmill, though, as usual, he would utter nothing beyond the <span class="highlight">cryptic</span> remark that donkeys live a long time.</div>
+        <button class="play-btn" id="pb-7" onclick="playAudio('0016-p7.mp3','pb-7')">🔊</button>
+      </div>
+      <div class="cn">到了秋天，动物们疲惫但快乐。他们经历了一年的艰辛，卖掉一部分干草和谷物后冬天的储备并不充裕，但风车弥补了一切。它现在已经建了将近一半了。收获之后有一段晴朗干燥的天气，动物们比以往更卖力地劳作——觉得如果能用石块把墙再垒高一英尺，整天来回搬运石块完全值得。Boxer 甚至晚上还会出来，借着收获季节的月光独自干上一两个小时。空闲时动物们会绕着半完工的风车走来走去，赞叹墙壁的坚固和垂直，惊叹它们竟然能建造出如此宏伟的东西。只有老 Benjamin 始终对风车提不起热情——不过，像往常一样，他除了那句神秘的"驴活得久"之外什么也不多说。</div>
+      <div class="note">💡 <strong>Benjamin 的预言。</strong> "donkeys live a long time"——意思是"我活得够久，见过太多这种事了"。Benjamin 看透了一切但不说破，这是全书最令人心碎的角色特质之一。</div>
+    </div>
+
+    <hr class="line-split">
+
+    <!-- 段落 8：十一月狂风——风车倒塌 -->
+    <div class="line-block">
+      <div class="play-cell">
+        <div class="en">November came, with raging south-west winds. Building had to stop because it was now too wet to mix the cement. Finally there came a night when the <span class="highlight">gale</span> was so violent that the farm buildings rocked on their <span class="highlight">foundations</span> and several <span class="highlight">tiles</span> were blown off the roof of the barn. The hens woke up squawking with terror because they had all dreamed simultaneously of hearing a gun go off in the distance. In the morning the animals came out of their stalls to find that the flagstaff had been blown down and an elm tree at the foot of the orchard had been <span class="highlight">plucked up like a radish</span>. They had just noticed this when a cry of despair broke from every animal's throat. A terrible sight had met their eyes. The windmill was in ruins.</div>
+        <button class="play-btn" id="pb-8" onclick="playAudio('0016-p8.mp3','pb-8')">🔊</button>
+      </div>
+      <div class="cn">十一月来了，伴随着猛烈的西南风。建造工作不得不停止，因为天气太湿无法搅拌水泥。终于，有一夜狂风如此猛烈，农场建筑在地基上摇晃，谷仓屋顶的好几片瓦被吹飞。母鸡们惊恐地尖叫着醒来——她们全都同时梦到了远处传来的枪声。早上，动物们从厩舍出来，发现旗杆被吹倒了，果园脚下的一棵榆树被连根拔起，仿佛一根萝卜。他们刚注意到这个，就从每个动物的喉咙里爆发出绝望的哭喊。一个恐怖的景象映入他们的眼帘——风车成了一片废墟。</div>
+      <div class="note">💡 <strong>希区柯克式的铺垫。</strong> 母鸡们全都梦到远处的枪声——这种集体心理暗示为后面的事件埋下了伏笔。Orwell 用"plucked up like a radish"这个简单的比喻，生动地展现了自然力量的狂暴。</div>
+    </div>
+
+    <hr class="line-split">
+
+    <!-- 段落 9：Napoleon 指责 Snowball -->
+    <div class="line-block">
+      <div class="play-cell">
+        <div class="en">With one accord they dashed down to the spot. Napoleon, who seldom moved out of a walk, raced ahead of them all. Yes, there it lay, the fruit of all their struggles, levelled to its foundations, the stones they had broken and carried so laboriously scattered all around. Unable at first to speak, they stood gazing mournfully at the litter of fallen stone. Napoleon paced to and fro in silence, occasionally snuffing at the ground. His tail had grown rigid and twitched sharply from side to side, a sign in him of intense mental activity. Suddenly he halted as though his mind were made up.<br><br>"Comrades," he said quietly, "do you know who is responsible for this? Do you know the enemy who has come in the night and overthrown our windmill? SNOWBALL!" he suddenly roared in a voice of thunder. "Snowball has done this thing! In sheer <span class="highlight">malignity</span>, thinking to set back our plans and avenge himself for his <span class="highlight">ignominious</span> expulsion, this <span class="highlight">traitor</span> has crept here under cover of night and destroyed our work of nearly a year. Comrades, here and now I pronounce the death sentence upon Snowball. 'Animal Hero, Second Class,' and half a bushel of apples to any animal who brings him to justice. A full bushel to anyone who captures him alive!"<br><br>The animals were shocked beyond measure to learn that even Snowball could be guilty of such an action. There was a cry of indignation, and everyone began thinking out ways of catching Snowball if he should ever come back. Almost immediately the footprints of a pig were discovered in the grass at a little distance from the knoll. They could only be traced for a few yards, but appeared to lead to a hole in the hedge. Napoleon snuffed deeply at them and pronounced them to be Snowball's. He gave it as his opinion that Snowball had probably come from the direction of Foxwood Farm.</div>
+        <button class="play-btn" id="pb-9" onclick="playAudio('0016-p9.mp3','pb-9')">🔊</button>
+      </div>
+      <div class="cn">动物们不约而同地冲下坡。Napoleon——平时从来不走快——跑在了所有人的前面。是的，它就躺在那儿——他们所有努力的果实，被夷为平地，他们辛苦打碎和搬运的石块散落在四处。起初说不出话来，他们站着悲伤地凝视着碎石。Napoleon 沉默地踱来踱去，偶尔在地上嗅闻。他的尾巴变得僵硬，急促地左右抽动——这是他高强度思维活动的信号。突然他停了下来，仿佛下定了决心。<br><br>"同志们，"他平静地说，"你们知道谁该为这件事负责吗？你们知道那个在夜里爬进来推翻我们风车的敌人是谁吗？<strong>SNOWBALL！</strong>"他突然用雷鸣般的声音咆哮道。"Snowball 干了这事！纯粹出于恶毒，想拖慢我们的计划、为他被耻辱地驱逐而复仇，这个叛徒趁着夜色爬了进来，毁了我们将近一年的劳动。同志们，我在此宣布对 Snowball 的死刑判决。任何动物将他捉拿归案的——授予'动物英雄二级勋章'加半蒲式耳苹果。活捉的——一整蒲式耳！"<br><br>动物们得知连 Snowball 也能做出这种事来，震惊得无以复加。愤怒的呼声四起，每个人都在想如果 Snowball 回来要怎么抓住他。几乎马上就发现在小丘不远处的草丛中有猪的脚印。脚印只能追踪几码远，但似乎通向篱笆上的一个洞。Napoleon 深深地嗅了嗅它们，断言那就是 Snowball 的脚印。他发表意见说 Snowball 很可能来自 Foxwood 农场方向。</div>
+      <div class="note">💡 <strong>替罪羊机制的完美演示。</strong> 风车倒塌的真正原因很可能是自然风暴加上建造质量问题——但 Napoleon 需要一个人来承担责任。注意：脚印"及时出现"、Napoleon "断言"是 Snowball 的——一切都是编排好的。这是斯大林大清洗审问秀的文学化呈现：制造敌人、提供"证据"、宣布惩罚。</div>
+    </div>
+
+    <hr class="line-split">
+
+    <!-- 段落 10：重建开始 -->
+    <div class="line-block">
+      <div class="play-cell">
+        <div class="en">"No more delays, comrades!" cried Napoleon when the footprints had been examined. "There is work to be done. This very morning we begin rebuilding the windmill, and we will build all through the winter, rain or shine. We will teach this <span class="highlight">miserable</span> traitor that he cannot undo our work so easily. Remember, comrades, there must be no alteration in our plans: they shall be carried out to the day. Forward, comrades! Long live the windmill! Long live Animal Farm!"</div>
+        <button class="play-btn" id="pb-10" onclick="playAudio('0016-p10.mp3','pb-10')">🔊</button>
+      </div>
+      <div class="cn">"不要再拖延了，同志们！"检查完脚印后 Napoleon 喊道。"有工作要做。今天早上我们就开始重建风车，整个冬天都要建，风雨无阻。我们要让这个可怜的叛徒知道，他不能这么轻易地毁掉我们的工作。记住，同志们，我们的计划不能有任何改变：必须如期完成。前进，同志们！风车万岁！Animal Farm 万岁！"</div>
+      <div class="note">💡 这一章以 Napoleon 的激励性演讲作结。但是——读者应该已经清楚地看到：革命的原则正在一个接一个地被抛弃。与人类交易、睡床、使用金钱、虚假指控——每一个都是七诫的违反。然而动物们仍然相信"Napoleon is always right"。Orwell 的讽刺在这章达到了新的高度。</div>
+    </div>
+
+    <hr class="line-split">
+
+    <div class="callout">
+      <strong>🤔 你发现了吗？</strong><br>
+      第六章发生了 <strong>三件标志性事件</strong>，每一件都是 Animal Farm 革命理想被侵蚀的里程碑：<br><br>
+      <strong>① 与人类交易</strong> —— 七诫中"绝不与人类打交道"被遗忘<br>
+      <strong>② 猪搬进农舍睡床</strong> —— 七诫被物理篡改（"with sheets"）<br>
+      <strong>③ Snowball 被诬陷</strong> —— 制造替罪羊的机制正式启动<br><br>
+      这三件事为后面的大清洗铺平了道路。
+    </div>
+
+    <!-- ====== 下节预告 ====== -->
+    <div class="callout" style="background: var(--accent-dim); border-color: var(--accent);">
+      <strong>➡️ 下一节预告：</strong><br>
+      严冬降临，食物短缺到几乎要饿死的程度——动物农场进入了最艰难的时期。Napoleon 用沙子伪装粮食欺骗 Whymper，母鸡们为保护鸡蛋而造反……下一课 <strong>Ch.VII Part 1: Famine</strong> 继续读。
+    </div>
+
+  </div><!-- /content -->
+
+  <div class="footer-nav">
+    <span><a href="0015-AnimalFarm-Ch6-P1-Windmill.html">← Ch.VI 建风车</a></span>
+    <a href="../index.html">返回主页</a>
+    <span><a href="0017-AnimalFarm-Ch7-P1-Famine.html">下一课：Ch.VII 饥荒 →</a></span>
+  </div>
+
+</div>
+<script src="../shared/lesson-tools.js"></script>
+</body>
+</html>

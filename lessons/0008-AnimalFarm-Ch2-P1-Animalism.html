@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 0008 课：Ch.II Animalism 的诞生 · Animal Farm · SpeakScope</title>
+<link rel="stylesheet" href="../shared/theme.css">
+<style>
+  body { background: var(--paper-light); }
+  .lesson { max-width: 880px; margin: 0 auto; padding: var(--space-8) var(--space-6); }
+  .lesson h1 { font-family: var(--font-serif); font-size: var(--text-4xl); margin-bottom: 0.2rem; }
+  .lesson .subtitle { font-size: var(--text-lg); color: var(--ink-60); font-family: var(--font-serif); }
+  .lesson .meta { display: flex; gap: var(--space-3); margin: var(--space-4) 0 var(--space-8); flex-wrap: wrap; }
+  .lesson .meta span { padding: 0.3rem 0.8rem; border-radius: 6px; background: var(--paper); border: 1px solid var(--border-light); font-size: var(--text-sm); color: var(--ink-60); }
+  .lesson .content { line-height: 1.8; font-size: var(--text-base); }
+  .lesson .content h2 { font-family: var(--font-serif); margin: var(--space-8) 0 var(--space-4); padding-bottom: var(--space-1); border-bottom: 1px solid var(--border); }
+  .back { display: inline-block; margin-bottom: var(--space-6); color: var(--accent); text-decoration: none; font-size: var(--text-sm); }
+  .back:hover { text-decoration: underline; }
+
+  /* Full-text guided reading block */
+  .line-block { margin: var(--space-6) 0; }
+  .line-block .en { font-family: var(--font-serif); font-size: var(--text-base); line-height: 1.9; color: var(--ink); }
+  .line-block .cn { font-size: var(--text-sm); color: var(--ink-60); margin-top: var(--space-2); padding-left: var(--space-1); border-left: 3px solid var(--accent-light); padding-left: var(--space-3); }
+  .line-block .note { font-size: var(--text-sm); color: var(--accent-deep); margin-top: var(--space-2); padding: var(--space-2) var(--space-3); background: var(--accent-dim); border-radius: 6px; }
+  .line-block .play-cell { display: flex; align-items: flex-start; gap: 0.4rem; margin-top: var(--space-1); }
+  .line-block .play-cell .en { flex: 1; }
+
+  hr.line-split { border: none; border-top: 1px solid var(--border-light); margin: var(--space-3) 0; }
+
+  .play-btn { display: inline-flex; align-items: center; justify-content: center; background: var(--paper); border: 1px solid var(--accent-light); border-radius: 4px; cursor: pointer; font-size: 0.75rem; width: 1.6rem; height: 1.6rem; flex-shrink: 0; transition: background 0.15s, transform 0.1s; vertical-align: middle; line-height: 1; }
+  .play-btn:hover { background: var(--accent-dim); transform: scale(1.1); }
+  .play-btn:active { transform: scale(0.95); }
+  .play-btn.playing { background: #c8e6c9; border-color: var(--success); }
+
+  .highlight { background: #dbeafe; padding: 0.1rem 0.2rem; border-radius: 2px; }
+  .highlight-y { background: #fef3c7; padding: 0.1rem 0.2rem; border-radius: 2px; }
+
+  .footer-nav { margin-top: var(--space-10); padding-top: var(--space-6); border-top: 1px solid var(--border); display: flex; justify-content: space-between; font-size: var(--text-sm); }
+  .footer-nav a { color: var(--accent); text-decoration: none; }
+  .footer-nav a:hover { text-decoration: underline; }
+
+  .pre-box { background: var(--accent-dim); border-radius: 8px; padding: var(--space-4); margin: var(--space-5) 0; border: 1px dashed var(--accent-light); }
+  .pre-box strong { color: var(--accent-deep); }
+</style>
+<script>
+const player = new Audio();
+let currentBtn = null;
+function playAudio(src, btnId) {
+  const btn = document.getElementById(btnId);
+  if (btn && btn.classList.contains('playing')) { player.pause(); player.currentTime = 0; btn.classList.remove('playing'); currentBtn = null; return; }
+  if (currentBtn) currentBtn.classList.remove('playing');
+  player.src = 'assets/audio/animal-farm/' + src; player.play();
+  if (btn) { btn.classList.add('playing'); currentBtn = btn; }
+  player.onended = () => { if (btn) btn.classList.remove('playing'); currentBtn = null; };
+}
+</script>
+</head>
+<body>
+<div class="lesson">
+
+  <a class="back" href="../index.html">← 返回 SpeakScope 主页</a>
+  <h1>📖 Ch.II Animalism 的诞生（上）</h1>
+  <div class="subtitle">Chapter II Part 1: The Rise of Animalism — 先知去世，三巨头登场</div>
+  <div class="meta">
+    <span>⏱ 25-30 分钟</span>
+    <span>📚 英文原著 · Animal Farm · 全文带读</span>
+    <span>🏷️ Ch.II · 全文带读</span>
+  </div>
+
+  <div class="content">
+
+    <!-- ====== 读前激活 ====== -->
+    <div class="pre-box">
+      <strong>🎬 在读之前</strong><br>
+      Ch.I 以 Major 的演讲和枪声结束。进入 Ch.II，故事出现了关键转折——先知去世了，谁来接班？<br><br>
+      <strong>带着这些问题读：</strong>
+      <ul style="margin-left:var(--space-5); margin-top:var(--space-2); line-height:2;">
+        <li>❓ Major 死后，谁接管了革命的理论工作？这三头猪各自有什么特点？</li>
+        <li>❓ 动物们对 Animalism 的态度是统一的吗？哪些动物提出了怀疑？</li>
+        <li>❓ Moses 的"Sugarcandy Mountain"故事有什么作用？和 Major 的"革命许诺"有何相似之处？</li>
+        <li>❓ Boxer 和 Clover 为什么是全盘接受的"最佳弟子"？这预示了什么？</li>
+      </ul>
+    </div>
+
+    <!-- ====== 全文带读 ====== -->
+    <h2>📖 原文带读</h2>
+    <p style="font-size:var(--text-sm); color:var(--ink-60);">逐段阅读，每段都有 英文原文 → 🔊 点听 → 中文翻译 → 注释。跟着节奏慢慢来。</p>
+
+    <!-- 段落 1：Major 去世 -->
+    <div class="line-block">
+      <div class="play-cell">
+        <div class="en">Three nights later old Major died peacefully in his sleep. His body was buried at the foot of the orchard.</div>
+        <button class="play-btn" id="pb-1" onclick="playAudio('0008-p1.mp3','pb-1')">🔊</button>
+      </div>
+      <div class="cn">三夜之后，老 Major 在睡梦中安详离世。他的遗体被埋葬在果园脚下。</div>
+      <div class="note">💡 <strong>极简的过渡：</strong> 短短两句话，一代革命先知退场。注意"<strong>peacefully in his sleep</strong>"（在睡眠中安详离世）——对于在演讲中预言了" cruel knife"（残忍屠刀）的猪来说，这已经是难得的好结局了。埋葬在"<strong>the foot of the orchard</strong>"（果园脚下）暗示他长眠于他所热爱的土地。</div>
+    </div>
+
+    <hr class="line-split">
+
+    <!-- 段落 2：秘密活动 + 三猪登场 -->
+    <div class="line-block">
+      <div class="play-cell">
+        <div class="en">This was early in March. During the next three months there was much secret activity. Major's speech had given to the more intelligent animals on the farm a completely new outlook on life. They did not know when the Rebellion predicted by Major would take place, they had no reason for thinking that it would be within their own lifetime, but they saw clearly that it was their duty to prepare for it. The work of teaching and organising the others fell naturally upon the pigs, who were generally recognised as being the cleverest of the animals. <span class="highlight">Pre-eminent</span> among the pigs were two young boars named <span class="highlight">Snowball</span> and <span class="highlight">Napoleon</span>, whom Mr. Jones was breeding up for sale. Napoleon was a large, rather fierce-looking <span class="highlight">Berkshire</span> boar, the only Berkshire on the farm, not much of a talker, but with a reputation for getting his own way. Snowball was a more <span class="highlight">vivacious</span> pig than Napoleon, quicker in speech and more inventive, but was not considered to have the same depth of character. All the other male pigs on the farm were porkers. The best known among them was a small fat pig named <span class="highlight">Squealer</span>, with very round cheeks, twinkling eyes, nimble movements, and a shrill voice. He was a brilliant talker, and when he was arguing some difficult point he had a way of skipping from side to side and whisking his tail which was somehow very persuasive. The others said of Squealer that he could <span class="highlight">turn black into white</span>.</div>
+        <button class="play-btn" id="pb-2" onclick="playAudio('0008-p2.mp3','pb-2')">🔊</button>
+      </div>
+      <div class="cn">那是三月初。接下来的三个月里，有很多秘密活动。Major 的演讲给了农场里较聪明的动物一个全新的人生观。他们不知道 Major 预言的反抗何时发生，也没有理由认为会在他们有生之年到来，但他们清楚地看到了自己的责任——为之做准备。教导和组织其他动物的任务自然落到了猪身上——大家公认猪是最聪明的。<span class="highlight">最杰出的</span> 猪是两头年轻的公猪——<span class="highlight">Snowball</span>（雪球）和 <span class="highlight">Napoleon</span>（拿破仑）——Jones 先生正在养肥它们准备出售。Napoleon 是一头体型庞大、长相凶猛的 <span class="highlight">伯克夏</span> 公猪——农场里唯一的伯克夏猪——话不多，但以"凡事都要按他的意思来"著称。Snowball 比 Napoleon 更 <span class="highlight">活泼</span>，口齿更伶俐、更有创造力，但被认为"不够深沉"。所有其他公猪都是肉猪。其中最有名的是 <span class="highlight">Squealer</span>（尖嗓子）——一头小胖猪，圆脸颊、眼睛闪闪发亮、动作敏捷、声音尖细。他是个出色的演说家，在论证难点时会在原地跳来跳去、甩着尾巴——这种姿态不知怎么很有说服力。其他猪说 Squealer 能 <span class="highlight">把黑的说成白的</span>。</div>
+      <div class="note">💡 <strong>三巨头登场——全书最重要的角色介绍！</strong><br>
+      • <strong>Napoleon</strong>（拿破仑）——名字暗示了独裁野心：话少、固执、有统治欲望。<br>
+      • <strong>Snowball</strong>（雪球）——更聪明、更有灵感，是理想主义的革命家，但"不够深沉"暗示了他政治上的天真。<br>
+      • <strong>Squealer</strong>（尖嗓子）——宣传家原型（对标 Mobutu、Goebbels 等）。"<strong>turn black into white</strong>"（把黑的说成白的）是 Orwell 对宣传机器最经典的讽刺。<br>
+      注意"<strong>fell naturally upon the pigs</strong>"（自然落到了猪身上）——这个"naturally"隐藏了全书最大的问题：凭什么猪天然就是领导者？</div>
+    </div>
+
+    <hr class="line-split">
+
+    <!-- 段落 3：Animalism 教义 + 怀疑声音 -->
+    <div class="line-block">
+      <div class="play-cell">
+        <div class="en">These three had elaborated old Major's teachings into a complete system of thought, to which they gave the name of <span class="highlight">Animalism</span>. Several nights a week, after Mr. Jones was asleep, they held secret meetings in the barn and expounded the principles of Animalism to the others. At the beginning they met with much <span class="highlight">stupidity and apathy</span>. Some of the animals talked of the duty of loyalty to Mr. Jones, whom they referred to as "Master," or made elementary remarks such as "Mr. Jones feeds us. If he were gone, we should starve to death." Others asked such questions as "Why should we care what happens after we are dead?" or "If this Rebellion is to happen anyway, what difference does it make whether we work for it or not?", and the pigs had great difficulty in making them see that this was contrary to the spirit of Animalism. The stupidest questions of all were asked by <span class="highlight">Mollie</span>, the white mare. The very first question she asked Snowball was: "Will there still be sugar after the Rebellion?"</div>
+        <button class="play-btn" id="pb-3" onclick="playAudio('0008-p3.mp3','pb-3')">🔊</button>
+      </div>
+      <div class="cn">这三头猪把老 Major 的教诲精心发展成了一整套思想体系，命名为 <span class="highlight">Animalism</span>（动物主义）。每周有几个晚上，等 Jones 先生睡着后，他们在谷仓里秘密集会，向其他动物阐述 Animalism 的原理。一开始他们遇到了大量的 <span class="highlight">愚钝和漠然</span>。有些动物说什么应该效忠 Jones 先生（称之为"主人"），还有些动物提出天真的说法比如"Jones 先生喂养我们，他走了我们得饿死"。另一些则问："我们死了以后的事，管它做什么？"或者"反正造反早晚会来，我们参不参与有什么区别？"——猪们费了很大劲才让他们明白这与 Animalism 的精神相悖。所有问题中最蠢的来自那匹白色母马 <span class="highlight">Mollie</span>。她问 Snowball 的第一个问题就是："造反之后，还有糖吃吗？"</div>
+      <div class="note">💡 <strong>政治启蒙的困难：</strong> 革命在群众中遇到的冷淡和愚蠢——"<strong>stupidity and apathy</strong>"——是政治启蒙运动的核心张力。注意 Orwell 对群众反应的描写既有同情也有嘲讽。"<strong>Why should we care what happens after we are dead?</strong>"（死后管它洪水滔天）和"<strong>Will there still be sugar?</strong>"（还有糖吗？）是两种不同的革命冷漠。Mollie 的问题在全书中反复被引用作为"小资产阶级意识"的绝佳例证。</div>
+    </div>
+
+    <hr class="line-split">
+
+    <!-- 段落 4：Mollie 和糖 -->
+    <div class="line-block">
+      <div class="play-cell">
+        <div class="en">"No," said Snowball firmly. "We have no means of making sugar on this farm. Besides, you do not need sugar. You will have all the oats and hay you want."<br><br>"And shall I still be allowed to wear ribbons in my mane?" asked Mollie.<br><br>"Comrade," said Snowball, "those ribbons that you are so devoted to are the badge of slavery. Can you not understand that liberty is worth more than ribbons?"<br><br>Mollie agreed, but she did not sound very convinced.</div>
+        <button class="play-btn" id="pb-4" onclick="playAudio('0008-p4.mp3','pb-4')">🔊</button>
+      </div>
+      <div class="cn">"不，" Snowball 坚定地说，"我们农场没办法制糖。而且你不需要糖。你想要多少燕麦和干草都行。"<br><br>"那我还可以在鬃毛上扎缎带吗？" Mollie 问。<br><br>"同志，" Snowball 说，"你那么钟爱的那些缎带，是奴隶的徽章。你难道不明白，自由比缎带更有价值吗？"<br><br>Mollie 表示同意——但她听起来并不怎么信服。</div>
+      <div class="note">💡 <strong>Mollie 的悲剧雏形：</strong> 这是全书最精彩的人物对白之一。Mollie 关心的只有糖和缎带——革命忽略了"微观个体的欲望"。Snowball 的回答充满了革命理想主义（自由比缎带贵重），但无法回答一个朴素的追问：如果革命后连糖都没有了，这革命对 Mollie 有什么好处？"<strong>badge of slavery</strong>"（奴隶的徽章）是革命话语的典型表述——把个人的审美追求升级为政治错误。Mollie"<strong>did not sound very convinced</strong>"——这是最微妙的描写。</div>
+    </div>
+
+    <hr class="line-split">
+
+    <!-- 段落 5：Moses 和 Sugarcandy Mountain -->
+    <div class="line-block">
+      <div class="play-cell">
+        <div class="en">The pigs had an even harder struggle to counteract the lies put about by Moses, the tame <span class="highlight">raven</span>. Moses, who was Mr. Jones's especial pet, was a spy and a tale-bearer, but he was also a clever talker. He claimed to know of the existence of a mysterious country called <span class="highlight">Sugarcandy Mountain</span>, to which all animals went when they died. It was situated somewhere up in the sky, a little distance beyond the clouds, Moses said. In Sugarcandy Mountain it was Sunday seven days a week, clover was in season all the year round, and lump sugar and linseed cake grew on the hedges. The animals hated Moses because he told tales and did no work, but some of them believed in Sugarcandy Mountain, and the pigs had to argue very hard to persuade them that there was no such place.</div>
+        <button class="play-btn" id="pb-5" onclick="playAudio('0008-p5.mp3','pb-5')">🔊</button>
+      </div>
+      <div class="cn">猪们面对着一个更艰难的挑战——抵制 Moses（那只驯养的 <span class="highlight">渡鸦</span>）撒布的谎言。Moses 是 Jones 先生的特别宠物，是个告密者和传闲话的，但他也是个能说会道的家伙。他声称知道一个叫 <span class="highlight">Sugarcandy Mountain</span>（糖果山）的神秘国度的存在——所有动物死后都会去那里。Moses 说，那地方在云层之上不远处的天空里。在糖果山，每周七天都是礼拜天，三叶草全年当季，方糖和亚麻饼长在树篱上。动物们讨厌 Moses 因为他告密而且不干活，但有些动物相信糖果山的存在——猪们不得不费尽口舌说服他们根本没有这个地方。</div>
+      <div class="note">💡 <strong>宗教的隐喻：</strong> Moses（摩西）这个名字是赤裸裸的宗教影射——圣经中摩西带领以色列人出埃及，最终却只能遥望应许之地而不得进入。Sugarcandy Mountain 显然是"<strong>天堂/来世报偿</strong>"的寓言——革命许诺了此世的解放，宗教许诺了来世的幸福。注意 Orwell 的讽刺：Moses 是"<strong>a spy and a tale-bearer</strong>"（告密者兼传舌者），但他作为一个"巧舌如簧"的骗子，在功能上与 Squealer 殊途同归——都是通过语言操控他人。</div>
+    </div>
+
+    <hr class="line-split">
+
+    <!-- 段落 6：Boxer 和 Clover —— 忠诚的弟子 -->
+    <div class="line-block">
+      <div class="play-cell">
+        <div class="en">Their most faithful disciples were the two cart-horses, <span class="highlight">Boxer</span> and <span class="highlight">Clover</span>. These two had great difficulty in thinking anything out for themselves, but having once accepted the pigs as their teachers, they absorbed everything that they were told, and passed it on to the other animals by simple arguments. They were unfailing in their attendance at the secret meetings in the barn, and led the singing of 'Beasts of England', with which the meetings always ended.</div>
+        <button class="play-btn" id="pb-6" onclick="playAudio('0008-p6.mp3','pb-6')">🔊</button>
+      </div>
+      <div class="cn">他们最忠实的信徒是两匹拉车的大马——<span class="highlight">Boxer</span>（拳击手）和 <span class="highlight">Clover</span>（三叶草）。这两匹马在独立思考方面非常困难，但一旦接受了猪作为导师，他们就把听到的一切全盘吸收，并用简单的论证传递给了其他动物。他们从不缺席谷仓的秘密集会，并带领合唱每次集会的收场曲——《Beasts of England》。</div>
+      <div class="note">💡 <strong>关键警告：</strong> "These two had great difficulty in thinking anything out for themselves"——这句话是 <strong>全书最重要的伏笔之一</strong>。Boxer 和 Clover 代表了善良但缺乏批判性思维的大众。他们对猪的信任是绝对的，也是危险的。Boxer 后来那句著名的口号 "<strong>I will work harder!</strong>"（我会更努力干！）正是从这种无条件信任中生长出来的悲剧。</div>
+    </div>
+
+    <!-- ====== 章节预告 ====== -->
+    <div class="callout" style="background: var(--accent-dim); border-color: var(--accent);">
+      <strong>➡️ 下一节预告：</strong><br>
+      Animalism 的种子已经播下——三巨头完成理论建构，Moses 的"糖果山"和 Major 的"革命天堂"在争夺动物的灵魂。但谁也没想到，革命来得比预想中快得多……下一节讲 Ch.II 后半段：<strong>造反——意外发生的革命</strong>。
+    </div>
+
+  </div><!-- /content -->
+
+  <div class="footer-nav">
+    <span><a href="0007-AnimalFarm-Ch1-P2-Speech.html">← 上一课：革命演讲</a></span>
+    <a href="../index.html">返回主页</a>
+    <span><a href="0009-AnimalFarm-Ch2-P2-Rebellion.html">下一课：意外造反 →</a></span>
+  </div>
+
+</div>
+<script src="../shared/lesson-tools.js"></script>
+</body>
+</html>

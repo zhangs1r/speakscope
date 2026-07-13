@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 0010 课：Ch.III 丰收与汗水 · Animal Farm · SpeakScope</title>
+<link rel="stylesheet" href="../shared/theme.css">
+<style>
+  body { background: var(--paper-light); }
+  .lesson { max-width: 880px; margin: 0 auto; padding: var(--space-8) var(--space-6); }
+  .lesson h1 { font-family: var(--font-serif); font-size: var(--text-4xl); margin-bottom: 0.2rem; }
+  .lesson .subtitle { font-size: var(--text-lg); color: var(--ink-60); font-family: var(--font-serif); }
+  .lesson .meta { display: flex; gap: var(--space-3); margin: var(--space-4) 0 var(--space-8); flex-wrap: wrap; }
+  .lesson .meta span { padding: 0.3rem 0.8rem; border-radius: 6px; background: var(--paper); border: 1px solid var(--border-light); font-size: var(--text-sm); color: var(--ink-60); }
+  .lesson .content { line-height: 1.8; font-size: var(--text-base); }
+  .lesson .content h2 { font-family: var(--font-serif); margin: var(--space-8) 0 var(--space-4); padding-bottom: var(--space-1); border-bottom: 1px solid var(--border); }
+  .back { display: inline-block; margin-bottom: var(--space-6); color: var(--accent); text-decoration: none; font-size: var(--text-sm); }
+  .back:hover { text-decoration: underline; }
+
+  .line-block { margin: var(--space-6) 0; }
+  .line-block .en { font-family: var(--font-serif); font-size: var(--text-base); line-height: 1.9; color: var(--ink); }
+  .line-block .cn { font-size: var(--text-sm); color: var(--ink-60); margin-top: var(--space-2); padding-left: var(--space-1); border-left: 3px solid var(--accent-light); padding-left: var(--space-3); }
+  .line-block .note { font-size: var(--text-sm); color: var(--accent-deep); margin-top: var(--space-2); padding: var(--space-2) var(--space-3); background: var(--accent-dim); border-radius: 6px; }
+  .line-block .play-cell { display: flex; align-items: flex-start; gap: 0.4rem; margin-top: var(--space-1); }
+  .line-block .play-cell .en { flex: 1; }
+
+  hr.line-split { border: none; border-top: 1px solid var(--border-light); margin: var(--space-3) 0; }
+
+  .play-btn { display: inline-flex; align-items: center; justify-content: center; background: var(--paper); border: 1px solid var(--accent-light); border-radius: 4px; cursor: pointer; font-size: 0.75rem; width: 1.6rem; height: 1.6rem; flex-shrink: 0; transition: background 0.15s, transform 0.1s; vertical-align: middle; line-height: 1; }
+  .play-btn:hover { background: var(--accent-dim); transform: scale(1.1); }
+  .play-btn:active { transform: scale(0.95); }
+  .play-btn.playing { background: #c8e6c9; border-color: var(--success); }
+
+  .highlight { background: #dbeafe; padding: 0.1rem 0.2rem; border-radius: 2px; }
+  .highlight-y { background: #fef3c7; padding: 0.1rem 0.2rem; border-radius: 2px; }
+
+  .footer-nav { margin-top: var(--space-10); padding-top: var(--space-6); border-top: 1px solid var(--border); display: flex; justify-content: space-between; font-size: var(--text-sm); }
+  .footer-nav a { color: var(--accent); text-decoration: none; }
+  .footer-nav a:hover { text-decoration: underline; }
+
+  .pre-box { background: var(--accent-dim); border-radius: 8px; padding: var(--space-4); margin: var(--space-5) 0; border: 1px dashed var(--accent-light); }
+  .pre-box strong { color: var(--accent-deep); }
+  .callout { background: var(--paper); border: 1px solid var(--border); border-radius: 8px; padding: var(--space-5); margin: var(--space-5) 0; }
+  .callout strong { color: var(--accent-deep); }
+</style>
+<script>
+const player = new Audio();
+let currentBtn = null;
+function playAudio(src, btnId) {
+  const btn = document.getElementById(btnId);
+  if (btn && btn.classList.contains('playing')) { player.pause(); player.currentTime = 0; btn.classList.remove('playing'); currentBtn = null; return; }
+  if (currentBtn) currentBtn.classList.remove('playing');
+  player.src = 'assets/audio/animal-farm/' + src; player.play();
+  if (btn) { btn.classList.add('playing'); currentBtn = btn; }
+  player.onended = () => { if (btn) btn.classList.remove('playing'); currentBtn = null; };
+}
+</script>
+</head>
+<body>
+<div class="lesson">
+
+  <a class="back" href="../index.html">← 返回 SpeakScope 主页</a>
+  <h1>📖 Ch.III 丰收与汗水（上）</h1>
+  <div class="subtitle">Chapter III Part 1: The Harvest — 动物们的第一场大丰收</div>
+  <div class="meta">
+    <span>⏱ 25-30 分钟</span>
+    <span>📚 英文原著 · Animal Farm · 全文带读</span>
+    <span>🏷️ Ch.III · 全文带读</span>
+  </div>
+
+  <div class="content">
+
+    <!-- ====== 读前激活 ====== -->
+    <div class="pre-box">
+      <strong>🎬 在读之前</strong><br>
+      革命成功了，琼斯被赶走了。动物们第一次自己当家作主——但庄园的经营可不是喊口号那么简单。<br><br>
+      <strong>带着这些问题读：</strong>
+      <ul style="margin-left:var(--space-5); margin-top:var(--space-2); line-height:2;">
+        <li>❓ 动物们的第一场大丰收怎么样？比琼斯时代好还是差？</li>
+        <li>❓ Boxer 在这章里说了什么名言？这反映了他什么性格？</li>
+        <li>❓ 注意 Mollie 和猫的行为——革命后它们真的变了吗？</li>
+        <li>❓ 猪在干草丰收中做了什么？什么"没做"？</li>
+      </ul>
+    </div>
+
+    <!-- ====== 全文带读 ====== -->
+    <h2>📖 原文带读</h2>
+    <p style="font-size:var(--text-sm); color:var(--ink-60);">逐段阅读，每段都有 英文原文 → 🔊 点听 → 中文翻译 → 偶尔的注释。跟着节奏慢慢来。</p>
+
+    <!-- 段落 1 -->
+    <div class="line-block">
+      <div class="play-cell">
+        <div class="en"><span class="highlight">How they toiled and sweated</span> to get the hay in! But their efforts were rewarded, for the harvest was an even bigger success than they had hoped.</div>
+        <button class="play-btn" id="pb-1" onclick="playAudio('0010-p1.mp3','pb-1')">🔊</button>
+      </div>
+      <div class="cn">为了把干草收进来，他们流了多少汗、出了多大力啊！但他们的努力得到了回报——收成比他们预想的还要成功。</div>
+      <div class="note">💡 <strong>toiled and sweated</strong>（辛苦劳作、汗流浃背）——一开篇就突出一个"累"字，但紧接着是"rewarded"，革命后的第一场丰收充满希望。作者用的是感叹句，语气热烈。</div>
+    </div>
+
+    <hr class="line-split">
+
+    <!-- 段落 2 -->
+    <div class="line-block">
+      <div class="play-cell">
+        <div class="en">Sometimes the work was hard; the <span class="highlight">implements</span> had been designed for human beings and not for animals, and it was a great <span class="highlight">drawback</span> that no animal was able to use any tool that involved standing on his hind legs. But the pigs were so clever that they could think of a way round every difficulty. As for the horses, they knew every inch of the field, and in fact understood the business of mowing and raking far better than Jones and his men had ever done. The pigs did not actually work, but directed and supervised the others. With their superior knowledge it was natural that they should <span class="highlight">assume the leadership</span>.</div>
+        <button class="play-btn" id="pb-2" onclick="playAudio('0010-p2.mp3','pb-2')">🔊</button>
+      </div>
+      <div class="cn">有时工作很艰苦：农具是为人类设计的，不是为动物的。一个很大的不利因素是没有动物能使用任何需要后腿站立才能操作的工具。但是猪太聪明了，总能想出办法绕过每个难题。至于马，它们对每一寸田地都了如指掌——割草和耙地的本事实际上比琼斯和他的工人们强多了。猪并不亲自劳动，而是指挥和监督其他动物。凭它们更优越的知识，由它们担任领导是理所当然的事。</div>
+      <div class="note">💡 <strong>三个关键点</strong>：<strong>implements</strong>（工具/农具）是动物面临的实际困难；<strong>it was natural that they should assume the leadership</strong>——注意 Orwell 用 "natural" 这个词，暗示猪的统治并非通过武力，而是通过"智力优越"被动物们自然接受了。这是全书中猪权力正当化的第一步。</div>
+    </div>
+
+    <hr class="line-split">
+
+    <!-- 段落 3 -->
+    <div class="line-block">
+      <div class="play-cell">
+        <div class="en">Boxer and Clover would harness themselves to the cutter or the horse-rake (no bits or reins were needed in these days, of course) and tramp steadily round and round the field with a pig walking behind and calling out "<span class="highlight">Gee up, comrade!</span>" or "<span class="highlight">Whoa back, comrade!</span>" as the case might be. And every animal down to the humblest worked at turning the hay and gathering it. Even the ducks and hens toiled to and fro all day in the sun, carrying tiny wisps of hay in their beaks. In the end they finished the harvest in two days' less time than it had usually taken Jones and his men. Moreover, it was the biggest harvest that the farm had ever seen. There was no <span class="highlight">wastage</span> whatever; the hens and ducks with their sharp eyes had gathered up the very last stalk. And not an animal on the farm had stolen so much as a mouthful.</div>
+        <button class="play-btn" id="pb-3" onclick="playAudio('0010-p3.mp3','pb-3')">🔊</button>
+      </div>
+      <div class="cn">Boxer 和 Clover 把自己套在收割机或马拉耙上（当然，这些日子里不需要嚼子和缰绳），一圈又一圈稳步地踏过田地，一头猪跟在后面喊着"驾，同志！"或"吁——退后，同志！"。从最高到最低微的动物都在翻晒干草、收集干草。连鸭子和母鸡都在太阳底下整日来回忙碌，用喙衔起一小缕一小缕的干草。最后，他们比琼斯和他的工人们通常所用的时间少了两天就完成了收割。而且，这是农场有史以来最大的丰收。没有任何浪费——母鸡和鸭子用它们敏锐的眼睛把最后一根秸秆都收起来了。农场里没有一个动物偷吃过哪怕一口。</div>
+      <div class="note">💡 <strong>Gee up / Whoa back</strong> 是赶马的吆喝声，前者是"往前走"，后者是"后退"。猪在后面指挥——这是"领导"的具体画面。注意 Orwell 在"no bits or reins"后的插入语"of course"——讽刺意味浓：革命前需要嚼子和缰绳管着，现在不需要了，但猪在后面吆喝，本质上是一种新的控制。</div>
+    </div>
+
+    <hr class="line-split">
+
+    <!-- 段落 4 -->
+    <div class="line-block">
+      <div class="play-cell">
+        <div class="en">All through that summer the work of the farm went like <span class="highlight">clockwork</span>. The animals were happy as they had never <span class="highlight">conceived</span> it possible to be. Every mouthful of food was an acute positive pleasure, now that it was truly their own food, produced by themselves and for themselves, not <span class="highlight">doled</span> out to them by a <span class="highlight">grudging</span> master.</div>
+        <button class="play-btn" id="pb-4" onclick="playAudio('0010-p4.mp3','pb-4')">🔊</button>
+      </div>
+      <div class="cn">整个夏天，农场的工作像上了发条一样有条不紊。动物们快乐到了他们从来想象不到的程度。每一口食物都是一种强烈的、实实在在的享受——因为现在食物真正属于他们自己了，由他们自己生产、为他们自己而生产，而不是从一个吝啬的主人手里一点一点施舍出来的。</div>
+      <div class="note">💡 <strong>clockwork</strong>（钟表装置般精确）——革命后一切运转良好的象征。<strong>doled out by a grudging master</strong>——短短几个词勾勒出了琼斯统治下的生活。对比此刻的快乐，后面的一切更显悲剧。</div>
+    </div>
+
+    <hr class="line-split">
+
+    <!-- 段落 5 -->
+    <div class="line-block">
+      <div class="play-cell">
+        <div class="en">With the worthless <span class="highlight">parasitical</span> human beings gone, there was more for everyone to eat. There was more leisure too, inexperienced though the animals were. They met with many difficulties—for instance, later in the year, when they harvested the corn, they had to tread it out in the ancient style and blow away the <span class="highlight">chaff</span> with their breath, since the farm possessed no threshing machine—but the pigs with their cleverness and Boxer with his <span class="highlight">tremendous</span> muscles always pulled them through.</div>
+        <button class="play-btn" id="pb-5" onclick="playAudio('0010-p5.mp3','pb-5')">🔊</button>
+      </div>
+      <div class="cn">那些毫无价值的寄生人类走了之后，每个人都有更多东西可吃。虽然动物们经验不足，空闲时间也更多了。他们遇到了很多困难——比如同年晚些时候收玉米时，因为没有脱粒机，他们只能用古老的方式踩踏脱粒，用嘴吹走谷壳——但猪的聪明才智和 Boxer 的巨大肌肉总能帮他们渡过难关。</div>
+      <div class="note">💡 <strong>parasitical</strong>（寄生的）——这是动物们眼中的人类形象。注意 Orwell 用了"worthless parasitical"这样强烈的贬义词，这是从动物视角叙述的。</div>
+    </div>
+
+    <hr class="line-split">
+
+    <!-- 段落 6 -->
+    <div class="line-block">
+      <div class="play-cell">
+        <div class="en">Boxer was the <span class="highlight">admiration</span> of everybody. He had been a hard worker even in Jones's time, but now he seemed more like three horses than one; there were days when the entire work of the farm seemed to rest on his mighty shoulders. From morning to night he was pushing and pulling, always at the spot where the work was hardest. He had made an arrangement with one of the cockerels to call him in the mornings half an hour earlier than anyone else, and would put in some <span class="highlight">volunteer labour</span> at whatever seemed to be most needed, before the regular day's work began. His answer to every problem, every setback, was "<span class="highlight">I will work harder!</span>"—which he had adopted as his personal motto.</div>
+        <button class="play-btn" id="pb-6" onclick="playAudio('0010-p6.mp3','pb-6')">🔊</button>
+      </div>
+      <div class="cn">Boxer 受到所有人的钦佩。即使在琼斯时代他也是勤劳肯干的，但现在他简直不像是一匹马，而是三匹马。有些日子整个农场的工作似乎都压在他那有力的肩膀上。从早到晚他都在推啊、拉啊，总是出现在工作最艰苦的地方。他和一只小公鸡约好了：每天早上比谁都提前半小时叫醒他，在一天正式工作开始之前，他就主动去干那些最需要干的活儿。他对每一个问题、每一次挫折的回答都是"我要更努力地工作！"——这成了他的个人座右铭。</div>
+      <div class="note">💡 <strong>这是全书最标志性的一句话！</strong> "I will work harder!"——Boxer 代表了忠诚、勤劳但盲目的劳动阶级。这句口号贯穿全书，每次重复都更加令人心碎。<strong>admiration</strong>（钦佩）、<strong>mighty shoulders</strong>（有力的肩膀）——Orwell 用近乎史诗的语言歌颂 Boxer，为后面的悲剧做足了铺垫。</div>
+    </div>
+
+    <hr class="line-split">
+
+    <!-- 段落 7 -->
+    <div class="line-block">
+      <div class="play-cell">
+        <div class="en">But everyone worked according to his capacity. The hens and ducks, for instance, saved five <span class="highlight">bushels</span> of corn at the harvest by gathering up the stray grains. Nobody stole, nobody <span class="highlight">grumbled</span> over his rations, the quarrelling and biting and jealousy which had been normal features of life in the old days had almost disappeared.</div>
+        <button class="play-btn" id="pb-7" onclick="playAudio('0010-p7.mp3','pb-7')">🔊</button>
+      </div>
+      <div class="cn">但每个人都按各自的能力工作。比如母鸡和鸭子，它们在收割时收集散落的谷粒，省下了五蒲式耳的玉米。没有人偷窃，没有人抱怨自己的口粮，旧日生活中那些争吵、撕咬和嫉妒几乎完全消失了。</div>
+      <div class="note">💡 <strong>bushels</strong>（蒲式耳）——谷物计量单位，1 蒲式耳约 25 公斤。这里 Orwell 用具体数字来彰显效果：母鸡和鸭子就能省下五蒲式耳，革命后效率之高可见一斑。</div>
+    </div>
+
+    <hr class="line-split">
+
+    <!-- 段落 8 -->
+    <div class="line-block">
+      <div class="play-cell">
+        <div class="en">Nobody <span class="highlight">shirked</span>—or almost nobody. Mollie, it was true, was not good at getting up in the mornings, and had a way of leaving work early on the ground that there was a stone in her hoof. And the behaviour of the cat was somewhat peculiar. It was soon noticed that when there was work to be done the cat could never be found. She would vanish for hours on end, and then reappear at meal-times, or in the evening after work was over, as though nothing had happened. But she always made such excellent excuses, and purred so affectionately, that it was impossible not to believe in her good intentions.</div>
+        <button class="play-btn" id="pb-8" onclick="playAudio('0010-p8.mp3','pb-8')">🔊</button>
+      </div>
+      <div class="cn">没有人偷懒——或者说几乎没有人。确实，Mollie 早上不太起得来，而且总有办法早退——借口是蹄子里有石头。猫的行为也有点古怪：很快就有人注意到，一有活要干，猫就找不到了。她会消失好几个小时，然后在吃饭时间，或晚上收工之后重新出现，好像什么都没发生过。但她总能编出极好的借口，而且咕噜咕噜叫得那么亲热，让人不得不相信她是好意。</div>
+      <div class="note">💡 <strong>shirked</strong>（偷懒）——Orwell 先斩钉截铁说"nobody shirked"，然后马上修正为"or almost nobody"。这种"即时的自我纠正"是 Orwell 标志性的叙述手法，既保持客观又暗藏讽刺。Mollie 和猫是革命内部觉醒的最早裂缝——不是所有人都愿意为集体牺牲个人舒适。</div>
+    </div>
+
+    <hr class="line-split">
+
+    <!-- 段落 9 -->
+    <div class="line-block">
+      <div class="play-cell">
+        <div class="en">Old Benjamin, the donkey, seemed quite unchanged since the Rebellion. He did his work in the same slow <span class="highlight">obstinate</span> way as he had done it in Jones's time, never shirking and never volunteering for extra work either. About the Rebellion and its results he would express no opinion. When asked whether he was not happier now that Jones was gone, he would say only "<span class="highlight">Donkeys live a long time. None of you has ever seen a dead donkey</span>," and the others had to be content with this <span class="highlight">cryptic</span> answer.</div>
+        <button class="play-btn" id="pb-9" onclick="playAudio('0010-p9.mp3','pb-9')">🔊</button>
+      </div>
+      <div class="cn">老驴 Benjamin 从革命以来似乎毫无变化。他干活还是像琼斯时代一样慢吞吞、固执己见——从不偷懒，也从不主动多干。对于革命和革命的结果，他不发表任何意见。当被问到琼斯走了以后他是不是更快乐时，他只说了一句："驴活得很长。你们谁也没见过死驴。"其他动物只能对这个谜一般的回答感到满足了。</div>
+      <div class="note">💡 <strong>Benjamin 是全书的先知角色。</strong> "Donkeys live a long time"——他的意思是"我活得够久，看够了世事变迁，所以我不轻易下结论。"他的犬儒主义不是懒惰，而是看透后的沉默。<strong>cryptic</strong>（神秘的、隐晦的）——这是对 Benjamin 所有对话的最佳概括。</div>
+    </div>
+
+    <hr class="line-split">
+
+    <!-- ====== 段落总结 ====== -->
+    <div class="callout">
+      <strong>🤔 你发现了吗？</strong><br>
+      这一节的核心是"革命后的蜜月期"：丰收、快乐、有序。但 Orwell 在里面埋下了多处伏笔：<br>
+      <ul style="margin-left:var(--space-5); margin-top:var(--space-2); line-height:2;">
+        <li>🐷 猪已经开始"指挥和监督"——它们不用干活</li>
+        <li>🐴 Boxer 的"I will work harder"——忠诚近乎盲目</li>
+        <li>🐱 猫和 Mollie 的偷懒——不是所有人都真的变了</li>
+        <li>🐴 Benjamin 的沉默——"活得够久"的人知道事情没那么简单</li>
+      </ul>
+      <strong>下一节我们继续：</strong>礼拜日会议、委员会的建立，以及"四条腿好，两条腿坏"这个震撼口号的诞生！
+    </div>
+
+  </div><!-- /content -->
+
+  <div class="footer-nav">
+    <span><a href="0009-AnimalFarm-Ch2-P2-Rebellion.html">← Ch.II 革命之夜</a></span>
+    <a href="../index.html">返回主页</a>
+    <span><a href="0011-AnimalFarm-Ch3-P2-Slogans.html">下一课：Ch.III 口号与分化 →</a></span>
+  </div>
+
+</div>
+<script src="../shared/lesson-tools.js"></script>
+</body>
+</html>

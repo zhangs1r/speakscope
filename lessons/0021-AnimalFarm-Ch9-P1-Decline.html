@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 0021 课：Ch.IX 走下坡路（上） · Animal Farm · SpeakScope</title>
+<link rel="stylesheet" href="../shared/theme.css">
+<style>
+  body { background: var(--paper-light); }
+  .lesson { max-width: 880px; margin: 0 auto; padding: var(--space-8) var(--space-6); }
+  .lesson h1 { font-family: var(--font-serif); font-size: var(--text-4xl); margin-bottom: 0.2rem; }
+  .lesson .subtitle { font-size: var(--text-lg); color: var(--ink-60); font-family: var(--font-serif); }
+  .lesson .meta { display: flex; gap: var(--space-3); margin: var(--space-4) 0 var(--space-8); flex-wrap: wrap; }
+  .lesson .meta span { padding: 0.3rem 0.8rem; border-radius: 6px; background: var(--paper); border: 1px solid var(--border-light); font-size: var(--text-sm); color: var(--ink-60); }
+  .lesson .content { line-height: 1.8; font-size: var(--text-base); }
+  .lesson .content h2 { font-family: var(--font-serif); margin: var(--space-8) 0 var(--space-4); padding-bottom: var(--space-1); border-bottom: 1px solid var(--border); }
+  .back { display: inline-block; margin-bottom: var(--space-6); color: var(--accent); text-decoration: none; font-size: var(--text-sm); }
+  .back:hover { text-decoration: underline; }
+  .line-block { margin: var(--space-6) 0; }
+  .line-block .en { font-family: var(--font-serif); font-size: var(--text-base); line-height: 1.9; color: var(--ink); }
+  .line-block .cn { font-size: var(--text-sm); color: var(--ink-60); margin-top: var(--space-2); padding-left: var(--space-1); border-left: 3px solid var(--accent-light); padding-left: var(--space-3); }
+  .line-block .note { font-size: var(--text-sm); color: var(--accent-deep); margin-top: var(--space-2); padding: var(--space-2) var(--space-3); background: var(--accent-dim); border-radius: 6px; }
+  .line-block .play-cell { display: flex; align-items: flex-start; gap: 0.4rem; margin-top: var(--space-1); }
+  .line-block .play-cell .en { flex: 1; }
+  hr.line-split { border: none; border-top: 1px solid var(--border-light); margin: var(--space-3) 0; }
+  .play-btn { display: inline-flex; align-items: center; justify-content: center; background: var(--paper); border: 1px solid var(--accent-light); border-radius: 4px; cursor: pointer; font-size: 0.75rem; width: 1.6rem; height: 1.6rem; flex-shrink: 0; transition: background 0.15s, transform 0.1s; vertical-align: middle; line-height: 1; }
+  .play-btn:hover { background: var(--accent-dim); transform: scale(1.1); }
+  .play-btn:active { transform: scale(0.95); }
+  .play-btn.playing { background: #c8e6c9; border-color: var(--success); }
+  .highlight { background: #dbeafe; padding: 0.1rem 0.2rem; border-radius: 2px; }
+  .highlight-y { background: #fef3c7; padding: 0.1rem 0.2rem; border-radius: 2px; }
+  .footer-nav { margin-top: var(--space-10); padding-top: var(--space-6); border-top: 1px solid var(--border); display: flex; justify-content: space-between; font-size: var(--text-sm); }
+  .footer-nav a { color: var(--accent); text-decoration: none; }
+  .footer-nav a:hover { text-decoration: underline; }
+  .pre-box { background: var(--accent-dim); border-radius: 8px; padding: var(--space-4); margin: var(--space-5) 0; border: 1px dashed var(--accent-light); }
+  .pre-box strong { color: var(--accent-deep); }
+  .callout { background: var(--paper); border: 1px solid var(--border); border-radius: 8px; padding: var(--space-5); margin: var(--space-5) 0; }
+  .callout strong { color: var(--accent-deep); }
+</style>
+<script>
+const player = new Audio();
+let currentBtn = null;
+function playAudio(src, btnId) {
+  const btn = document.getElementById(btnId);
+  if (btn && btn.classList.contains('playing')) { player.pause(); player.currentTime = 0; btn.classList.remove('playing'); currentBtn = null; return; }
+  if (currentBtn) currentBtn.classList.remove('playing');
+  player.src = 'assets/audio/animal-farm/' + src; player.play();
+  if (btn) { btn.classList.add('playing'); currentBtn = btn; }
+  player.onended = () => { if (btn) btn.classList.remove('playing'); currentBtn = null; };
+}
+</script>
+</head>
+<body>
+<div class="lesson">
+
+  <a class="back" href="../index.html">← 返回 SpeakScope 主页</a>
+  <h1>📖 Ch.IX 走下坡路（上）</h1>
+  <div class="subtitle">Chapter IX Part 1: The Decline — Boxer 的蹄伤、虚假承诺与猪的特权</div>
+  <div class="meta">
+    <span>⏱ 25-30 分钟</span>
+    <span>📚 英文原著 · Animal Farm · 全文带读</span>
+    <span>🏷️ Ch.IX · 全文带读</span>
+  </div>
+
+  <div class="content">
+
+    <!-- ====== 读前激活 ====== -->
+    <div class="pre-box">
+      <strong>🎬 在读之前</strong><br>
+      风车之战结束了——如果那可以叫作胜利的话。Boxer 受了伤，但他一天也不肯休息。而猪们……他们正在越过越来越多的界线。<br><br>
+      <strong>带着这些问题读：</strong>
+      <ul style="margin-left:var(--space-5); margin-top:var(--space-2); line-height:2;">
+        <li>❓ Boxer 为什么坚持不肯休息？他的"退休"承诺真实吗？</li>
+        <li>❓ 猪和狗的食物充足时，普通动物在挨饿。注意 Squealer 怎么解释这个现象。</li>
+        <li>❓ 猪获得了哪些新特权？这些特权怎么一步步摧毁了"所有动物一律平等"的原则？</li>
+      </ul>
+    </div>
+
+    <!-- ====== 全文带读 ====== -->
+    <h2>📖 原文带读</h2>
+    <p style="font-size:var(--text-sm); color:var(--ink-60);">逐段阅读，每段都有 英文原文 → 🔊 点听 → 中文翻译 → 注释。跟着节奏慢慢来。</p>
+
+    <!-- 段落 1：Boxer 蹄伤 -->
+    <div class="line-block">
+      <div class="play-cell">
+        <div class="en">Boxer's split hoof was a long time in healing. They had started the rebuilding of the windmill the day after the victory celebrations were ended. Boxer refused to take even a day off work, and made it a point of honour not to let it be seen that he was in pain. In the evenings he would admit privately to Clover that the hoof troubled him a great deal. Clover treated the hoof with <span class="highlight">poultices of herbs</span> which she prepared by chewing them, and both she and Benjamin urged Boxer to work less hard. "A horse's lungs do not last for ever," she said to him. But Boxer would not listen. He had, he said, only one real ambition left — to see the windmill well under way before he reached the age for retirement.</div>
+        <button class="play-btn" id="pb-1" onclick="playAudio('0021-p1.mp3','pb-1')">🔊</button>
+      </div>
+      <div class="cn">Boxer 裂开的蹄子很久都没有愈合。胜利庆典结束的第二天，他们就开始了风车的重建。Boxer 拒绝休息一天，而且把不让人看出自己痛苦当成了一种荣誉。到了晚上，他会私下向 Clover 承认蹄子让他非常难受。Clover 用嚼碎的药草给他敷蹄子，她和 Benjamin 都劝 Boxer 少干点活。"一匹马的肺不会永远撑得住，"她对他说。但 Boxer 不听。他说他只剩下一个真正的抱负——<strong>在他达到退休年龄之前，看到风车顺利运转起来。</strong></div>
+      <div class="note">💔 <strong>Boxer 的悲剧就此展开。</strong> <strong>split hoof</strong>（裂蹄）——这个伤在第九章开头就出现了，一直没好过。"a point of honour"——他把隐瞒痛苦当成荣誉感，这恰恰是压迫者最希望劳动者拥有的品质。<strong>poultices of herbs</strong>（草药敷剂）——Clover 用最原始的方法为他治疗，暗示了医疗条件的匮乏。"A horse's lungs do not last for ever"——这是全书最令人心碎的伏笔之一。</div>
+    </div>
+
+    <hr class="line-split">
+
+    <!-- 段落 2：退休年龄的承诺 -->
+    <div class="line-block">
+      <div class="play-cell">
+        <div class="en">At the beginning, when the laws of Animal Farm were first formulated, the retiring age had been fixed for horses and pigs at twelve, for cows at fourteen, for dogs at nine, for sheep at seven, and for hens and geese at five. Liberal old-age pensions had been agreed upon. As yet no animal had actually retired on pension, but of late the subject had been discussed more and more. Now that the small field beyond the orchard had been set aside for barley, it was rumoured that a corner of the large pasture was to be fenced off and turned into a grazing-ground for <span class="highlight">superannuated</span> animals. For a horse, it was said, the pension would be five pounds of corn a day and, in winter, fifteen pounds of hay, with a carrot or possibly an apple on public holidays. Boxer's twelfth birthday was due in the late summer of the following year.</div>
+        <button class="play-btn" id="pb-2" onclick="playAudio('0021-p2.mp3','pb-2')">🔊</button>
+      </div>
+      <div class="cn">最初，在动物农场的法律刚刚制定的时候，退休年龄被定为：马和猪十二岁，牛十四岁，狗九岁，羊七岁，母鸡和鹅五岁。慷慨的养老金已经商定好了。但到目前为止还没有动物真正领到养老金退休，不过近来这个话题被讨论得越来越多。自从果园外的那块小田地改种大麦之后，有传言说大牧场的一个角落将被围起来，作为<strong>超龄退休动物</strong>的牧场。据称，马的养老金是每天五磅谷物，冬天十五磅干草，公共假日再加一根胡萝卜或一个苹果。Boxer 的十二岁生日将在明年夏末到来。</div>
+      <div class="note">😢 <strong>虚假的希望。</strong> "Liberal old-age pensions had been agreed upon"——但请注意："As yet no animal had actually retired on pension." 这个承诺自革命以来从未兑现过。注意：果树外的小块田地被改种大麦了（猪要酿酒），所以"退休牧场"不得不另找地方——真相是：猪的酿酒比退休动物更重要。<strong>superannuated</strong>（年老退休的）——正式书面语。</div>
+    </div>
+
+    <hr class="line-split">
+
+    <!-- 段落 3：食物短缺与 Squealer 的辩解 -->
+    <div class="line-block">
+      <div class="play-cell">
+        <div class="en">Meanwhile life was hard. The winter was as cold as the last one had been, and food was even shorter. Once again all rations were reduced, except those of the pigs and the dogs. A too rigid equality in rations, Squealer explained, would have been contrary to the principles of Animalism. In any case he had no difficulty in proving to the other animals that they were NOT in reality short of food, whatever the appearances might be. For the time being, certainly, it had been found necessary to make a <span class="highlight">readjustment</span> of rations (Squealer always spoke of it as a "readjustment," never as a "reduction"), but in comparison with the days of Jones, the improvement was enormous.</div>
+        <button class="play-btn" id="pb-3" onclick="playAudio('0021-p3.mp3','pb-3')">🔊</button>
+      </div>
+      <div class="cn">与此同时，生活很艰难。冬天和去年一样冷，食物更加短缺。所有动物的口粮再次被削减——除了猪和狗的。Squealer 解释说，过于刻板的食物平均分配会违背动物主义的原则。无论如何，他毫不费力地就能向其他动物证明——他们实际上并<strong>不</strong>缺少食物，无论表面上看起来如何。当然，目前有必要对口粮进行一次"再调整"（Squealer 总是称之为"再调整"，从来不说"削减"），但与琼斯时代相比，改善是巨大的。</div>
+      <div class="note">📊 <strong>Orwell 对宣传语言的精准解构。</strong> "readjustment" 代替 "reduction"——这是 newspeak（新语）的雏形。把削减叫作"再调整"，把不平等解释为"原则需要"。Squealer 最厉害的地方：动物们明明饿着肚子，他居然能"prove"他们不缺食物。<strong>Animalism</strong>（动物主义）——革命意识形态，现在被曲解为压迫的工具。</div>
+    </div>
+
+    <hr class="line-split">
+
+    <!-- 段落 4：数字的欺骗 -->
+    <div class="line-block">
+      <div class="play-cell">
+        <div class="en">Reading out the figures in a shrill, rapid voice, he proved to them in detail that they had more oats, more hay, more turnips than they had had in Jones's day, that they worked shorter hours, that their drinking water was of better quality, that they lived longer, that a larger proportion of their young ones survived infancy, and that they had more straw in their stalls and suffered less from fleas. The animals believed every word of it. Truth to tell, Jones and all he stood for had almost faded out of their memories. They knew that life nowadays was harsh and bare, that they were often hungry and often cold, and that they were usually working when they were not asleep. But doubtless it had been worse in the old days. They were glad to believe so. Besides, in those days they had been slaves and now they were free, and that made all the difference, as Squealer did not fail to point out.</div>
+        <button class="play-btn" id="pb-4" onclick="playAudio('0021-p4.mp3','pb-4')">🔊</button>
+      </div>
+      <div class="cn">他用尖利而急促的声音朗读着一串串数字，详细地证明给他们看：他们比琼斯时代有更多的燕麦、更多的干草、更多的芜菁，工作时间更短，饮用水质量更好，寿命更长，幼崽存活率更高，棚圈里的稻草更多，跳蚤更少。动物们每个字都相信了。说实话，琼斯和他所代表的一切已经从他们的记忆中几乎消失了。他们知道现在的生活是严酷而贫瘠的，他们经常挨饿受冻，他们不是在干活就是在睡觉。但毫无疑问，过去的日子更糟。<strong>他们很乐意相信这一点。</strong>而且，那些日子里他们是奴隶，而现在是自由的——这一点就完全不同了——Squealer 不会忘记指出这一点。</div>
+      <div class="note">🔍 <strong>宣传的核心机制。</strong> 1️⃣ 用快速的数字轰炸让人无法核实；2️⃣ 利用无法证伪的"过去更糟"来麻醉当下；3️⃣ 用"自由"的概念来抵消物质的匮乏。最可悲的是："The animals believed every word of it"——不是因为他们被强迫相信，而是因为他们愿意相信。"There were days when they would sooner have had less figures and more food"——但他们不会说出来。</div>
+    </div>
+
+    <hr class="line-split">
+
+    <!-- 段落 5：小猪的教育 -->
+    <div class="line-block">
+      <div class="play-cell">
+        <div class="en">There were many more mouths to feed now. In the autumn the four sows had all <span class="highlight">littered</span> about simultaneously, producing thirty-one young pigs between them. The young pigs were <span class="highlight">piebald</span>, and as Napoleon was the only boar on the farm, it was possible to guess at their parentage. It was announced that later, when bricks and timber had been purchased, a schoolroom would be built in the farmhouse garden. For the time being, the young pigs were given their instruction by Napoleon himself in the farmhouse kitchen. They took their exercise in the garden, and were discouraged from playing with the other young animals.</div>
+        <button class="play-btn" id="pb-5" onclick="playAudio('0021-p5.mp3','pb-5')">🔊</button>
+      </div>
+      <div class="cn">现在有更多的嘴要喂了。秋天，四头母猪几乎同时产仔，共产下了三十一头小猪。这些小猪是花斑的——而 Napoleon 是农场上唯一的公猪，所以它们的父系一猜便知。据宣布，将来买了砖和木材之后，要在农舍花园里建一间教室。目前，小猪们由 Napoleon 本人在农舍厨房里亲自授课。他们在花园里活动，并被鼓励不要与其他小动物玩耍。</div>
+      <div class="note">⚠️ <strong>阶级划分从娃娃抓起。</strong> 31 头小猪！"it was possible to guess at their parentage"——Orwell 婉转地暗示这些小猪都是 Napoleon 的后代。"discouraged from playing with the other young animals"——这是种姓制度的雏形：猪从小就被隔离，接受特殊教育。<strong>littered</strong>（产仔）——动物的生育术语。<strong>piebald</strong>（花斑的）——Napoleon 的毛色特征遗传给了小猪。</div>
+    </div>
+
+    <hr class="line-split">
+
+    <!-- 段落 6：猪的绿缎带特权 -->
+    <div class="line-block">
+      <div class="play-cell">
+        <div class="en">About this time, too, it was laid down as a rule that when a pig and any other animal met on the path, the other animal must stand aside: and also that all pigs, of whatever degree, were to have the privilege of wearing green ribbons on their tails on Sundays.</div>
+        <button class="play-btn" id="pb-6" onclick="playAudio('0021-p6.mp3','pb-6')">🔊</button>
+      </div>
+      <div class="cn">大约在这个时期，还定下了一条规矩：当一头猪和任何其他动物在路上相遇时，其他动物必须让到一边；此外，所有猪——无论级别高低——都有权在周日尾巴上系绿色缎带。</div>
+      <div class="note">🎀 <strong>从"需要"到"特权"的转变。</strong> 绿缎带没有任何实际功能——这纯粹是身份象征（status symbol）。注意与第一章 Mollie 的红缎带的呼应：革命前，Mollie 因为喜欢缎带被批评为"虚荣的小资产阶级"；现在猪们自己戴上了绿缎带。更糟糕的是"stand aside"（让路）——这是法律明文规定的等级制度。</div>
+    </div>
+
+    <hr class="line-split">
+
+    <!-- 段落 7：农场的经济困境 -->
+    <div class="line-block">
+      <div class="play-cell">
+        <div class="en">The farm had had a fairly successful year, but was still short of money. There were the bricks, sand, and lime for the schoolroom to be purchased, and it would also be necessary to begin saving up again for the machinery for the windmill. Then there were lamp oil and candles for the house, sugar for Napoleon's own table (he forbade this to the other pigs, on the ground that it made them fat), and all the usual replacements such as tools, nails, string, coal, wire, scrap-iron, and dog biscuits. A stump of hay and part of the potato crop were sold off, and the contract for eggs was increased to six hundred a week, so that that year the hens barely hatched enough chicks to keep their numbers at the same level.</div>
+        <button class="play-btn" id="pb-7" onclick="playAudio('0021-p7.mp3','pb-7')">🔊</button>
+      </div>
+      <div class="cn">农场这一年的收成还算不错，但仍然缺钱。要为教室采购砖、沙子和石灰，还要重新开始为风车的机器攒钱。此外还有农舍的灯油和蜡烛、Napoleon 自己桌上的糖（他禁止其他猪吃糖，理由是糖让他们变胖）、以及所有通常的替换品——工具、钉子、绳子、煤、铁丝、废铁和狗饼干。卖掉了一捆干草和部分马铃薯收成；鸡蛋合同增加到了每周六百个——以至于那年母鸡孵出的小鸡只能勉强维持总数不变。</div>
+      <div class="note">💰 <strong>特权的代价。</strong> 注意 expense 清单中的 "dog biscuits"——狗的待遇比普通动物好得多。还有"dog biscuits"紧跟在"scrap-iron"后面，形成了黑色幽默。最可怕的是鸡蛋合同——母鸡们不仅自己吃不饱，连产下的蛋都要被卖掉，导致小鸡数量只够维持种群，无法增长。这个细节暗示了农场正在不可逆转地衰退。</div>
+    </div>
+
+    <hr class="line-split">
+
+    <!-- 段落 8：口粮第二次削减 -->
+    <div class="line-block">
+      <div class="play-cell">
+        <div class="en">Rations, reduced in December, were reduced again in February, and lanterns in the stalls were forbidden to save oil. But the pigs seemed comfortable enough, and in fact were putting on weight if anything. One afternoon in late February a warm, rich, appetising scent, such as the animals had never smelt before, wafted itself across the yard from the little brew-house, which had been disused in Jones's time, and which stood beyond the kitchen. Someone said it was the smell of cooking barley. The animals sniffed the air hungrily and wondered whether a warm mash was being prepared for their supper. But no warm mash appeared, and on the following Sunday it was announced that from now onwards all barley would be reserved for the pigs.</div>
+        <button class="play-btn" id="pb-8" onclick="playAudio('0021-p8.mp3','pb-8')">🔊</button>
+      </div>
+      <div class="cn">十二月削减过的口粮，二月又削减了一次。棚圈里禁止点灯笼以节省灯油。但猪们似乎过得相当舒适——事实上，他们反而在长胖。二月下旬的一个下午，一股温暖、浓郁、诱人的香味——动物们从未闻过的味道——从厨房后面的小酿酒坊飘过院子。琼斯时代这里早已废弃。有人说那是煮大麦的味道。动物们饥饿地嗅着空气，想知道是不是在为他们的晚饭准备热糊糊。但是没有什么热糊糊出现——接下来的周日，宣布了一条消息：<strong>从现在起，所有大麦都归猪所有。</strong></div>
+      <div class="note">😤 <strong>等级的极端分化。</strong> 普通动物的口粮被削减了两次，而猪在"长胖"（putting on weight）。brew-house（酿酒坊）飘出了香味——但那是大麦在酿酒，不是给动物做晚饭。注意：大麦本是用来种了给退休动物的，现在变成了猪的私人饮品。Orwell 用气味作为媒介——"smell of cooking barley"——对饥饿的动物来说，这香味是残忍的折磨。</div>
+    </div>
+
+    <hr class="line-split">
+
+    <!-- 段落 9：啤酒配给 -->
+    <div class="line-block">
+      <div class="play-cell">
+        <div class="en">And the news soon leaked out that every pig was now receiving a ration of a pint of beer daily, with half a gallon for Napoleon himself, which was always served to him in the Crown Derby soup tureen.</div>
+        <button class="play-btn" id="pb-9" onclick="playAudio('0021-p9.mp3','pb-9')">🔊</button>
+      </div>
+      <div class="cn">而且消息很快就泄露了出来：现在每头猪每天配给一品脱啤酒，Napoleon 本人半加仑——用 Crown Derby 汤碗盛装。</div>
+      <div class="note">🍺 <strong>记住第五章的诫命："No animal shall drink alcohol"（任何动物不得饮酒）。</strong> 现在已经被改成"TO EXCESS"，而且猪每天配给啤酒。Napoleon 半加仑≈1.9升——每天。Crown Derby 瓷器又一次出现——之前是用来吃饭的，现在变成了啤酒碗。Orwell 用反复出现的"器物细节"来暗示猪对人类生活方式的模仿和转化。</div>
+    </div>
+
+    <hr class="line-split">
+
+    <!-- 段落 10：自发游行 -->
+    <div class="line-block">
+      <div class="play-cell">
+        <div class="en">But if there were hardships to be borne, they were partly offset by the fact that life nowadays had a greater dignity than it had had before. There were more songs, more speeches, more processions. Napoleon had commanded that once a week there should be held something called a <span class="highlight">Spontaneous Demonstration</span>, the object of which was to celebrate the struggles and triumphs of Animal Farm. At the appointed time the animals would leave their work and march round the precincts of the farm in military formation, with the pigs leading, then the horses, then the cows, then the sheep, and then the poultry. The dogs flanked the procession and at the head of all marched Napoleon's black cockerel. Boxer and Clover always carried between them a green banner marked with the hoof and the horn and the caption, "Long live Comrade Napoleon!"</div>
+        <button class="play-btn" id="pb-10" onclick="playAudio('0021-p10.mp3','pb-10')">🔊</button>
+      </div>
+      <div class="cn">但如果要说有什么苦难需要忍受的话，它们在一定程度上被抵消了——因为现在的生活比以前更有"尊严"了。有更多的歌曲、更多的演讲、更多的游行。Napoleon 下令每周举行一次名为"<strong>自发游行</strong>"的活动，目的是庆祝动物农场的斗争和胜利。到了指定时间，动物们就放下工作，以军事队列绕农场行进——猪打头阵，然后是马、牛、羊、家禽。狗在队伍两侧护卫，队伍最前面是 Napoleon 的黑公鸡。Boxer 和 Clover 总是扛着一面绿色旗帜，上面画着蹄子和角，写着"Napoleon 同志万岁！"</div>
+      <div class="note">🪧 <strong>"Spontaneous Demonstration"——这是 Orwell 最精彩的 oxymoron（矛盾修辞）之一。</strong> 既然是"自发"的，为什么要"命令"举行？这些游行、口号和旗帜的作用是让动物们感到自己"有尊严"——用形式上的集体荣耀来掩盖实质上的物质匮乏。注意队列顺序：猪在最前面——社会等级通过游行仪式被强化和固化。</div>
+    </div>
+
+    <hr class="line-split">
+
+    <!-- 段落 11：羊的狂热 -->
+    <div class="line-block">
+      <div class="play-cell">
+        <div class="en">Afterwards there were recitations of poems composed in Napoleon's honour, and a speech by Squealer giving particulars of the latest increases in the production of foodstuffs, and on occasion a shot was fired from the gun. The sheep were the greatest devotees of the Spontaneous Demonstration, and if anyone complained (as a few animals sometimes did, when no pigs or dogs were near) that they wasted time and meant a lot of standing about in the cold, the sheep were sure to silence him with a tremendous bleating of "Four legs good, two legs bad!"</div>
+        <button class="play-btn" id="pb-11" onclick="playAudio('0021-p11.mp3','pb-11')">🔊</button>
+      </div>
+      <div class="cn">之后是朗诵为 Napoleon 创作的诗歌，Squealer 发表演讲公布粮食产量最新增长的数据，有时还会鸣枪。羊是自发游行最狂热的参与者。如果有人抱怨（当附近没有猪或狗时，偶尔有几个动物会抱怨）说这些活动浪费时间、要在冷风中站很久——羊们就会用震耳欲聋的"四条腿好，两条腿坏！"的咩叫来让他闭嘴。</div>
+      <div class="note">🐑 <strong>羊始终是盲从者的象征。</strong> "Four legs good, two legs bad!"——这个毫无意义的口号被羊反复使用，用来压制任何异议。注意括号里的内容："when no pigs or dogs were near"——只有在没有压迫者的时候，异议才会出现。但羊会充当"群众的监督者"，压制不同声音。</div>
+    </div>
+
+    <hr class="line-split">
+
+    <!-- 段落 12：被遗忘的饥饿 -->
+    <div class="line-block">
+      <div class="play-cell">
+        <div class="en">But by and large the animals enjoyed these celebrations. They found it comforting to be reminded that, after all, they were truly their own masters and that the work they did was for their own benefit. So that, what with the songs, the processions, Squealer's lists of figures, the thunder of the gun, the crowing of the cockerel, and the fluttering of the flag, they were able to forget that their bellies were empty, at least part of the time.</div>
+        <button class="play-btn" id="pb-12" onclick="playAudio('0021-p12.mp3','pb-12')">🔊</button>
+      </div>
+      <div class="cn">但总的来说，动物们还是喜欢这些庆祝活动的。他们发现，被提醒说他们真正是自己的主人、他们的劳动是为了自己的利益——这让人感到安慰。所以，靠着歌曲、游行、Squealer 的数据清单、枪声的轰鸣、公鸡的打鸣和旗帜的飘扬——<strong>他们至少能部分时间忘记自己的肚子是空的。</strong></div>
+      <div class="note">😞 <strong>全章最悲哀的句子之一。</strong> "They were able to forget that their bellies were empty, at least part of the time."——Orwell 用最平淡的语言描述了最深的悲剧：唱唱歌、看看旗子，就能暂时忘记饥饿。仪式和宣传的作用就在于此——不是为了让人相信什么，而是为了让人不去想什么。</div>
+    </div>
+
+    <hr class="line-split">
+
+    <div class="callout">
+      <strong>🤔 你发现了什么？</strong><br>
+      第九章第一部分展示了 <strong>革命理想一步步被掏空</strong>的过程：<br><br>
+      1️⃣ <strong>Boxer 的身体在崩溃</strong>——但他拒绝停下来，因为相信了"退休"的承诺<br>
+      2️⃣ <strong>口粮持续削减</strong>——但 Squealer 用"readjustment"和"与琼斯时代比较"来掩盖<br>
+      3️⃣ <strong>猪的特权公开化</strong>——绿缎带、让路规则、专属啤酒、特殊教育<br>
+      4️⃣ <strong>仪式取代实质</strong>——"Spontaneous Demonstration"让动物们暂时"忘记肚子是空的"<br><br>
+      Alexander Berkman 引用老话："The revolution is like a table — it must be set for everyone, or it's not a revolution at all." 到了第九章，动物农场的桌子只摆给了猪。<br><br>
+      <strong>Boxer 的故事还远没有结束。下半部分，我们将迎来全书最令人心碎的情节。</strong>
+    </div>
+
+    <!-- ====== 下一课预告 ====== -->
+    <div class="callout" style="background: var(--accent-dim); border-color: var(--accent);">
+      <strong>➡️ 下一节预告：</strong><br>
+      Boxer 越来越拼命地工作，直到有一天他倒下了。Napoleon 承诺送他去最好的医院——但那个写着"Alfred Simmonds, Horse Slaughterer and Glue Boiler"的马车，真的会把他送到医院吗？
+    </div>
+
+  </div><!-- /content -->
+
+  <div class="footer-nav">
+    <span><a href="0020-AnimalFarm-Ch8-P2-Battle.html">← 上一课：Ch.VIII（下）风车之战</a></span>
+    <a href="../index.html">返回主页</a>
+    <span><a href="0022-AnimalFarm-Ch9-P2-Knacker.html">下一课：Ch.IX（下）马肉屠夫 →</a></span>
+  </div>
+
+</div>
+<script src="../shared/lesson-tools.js"></script>
+</body>
+</html>
