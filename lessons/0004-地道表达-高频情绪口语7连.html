@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 0004 课：高频情绪口语 7 连 · 地道表达 #3 · SpeakScope</title>
+<link rel="stylesheet" href="../shared/theme.css">
+<style>
+  body { background: var(--paper-light); }
+  .lesson { max-width: 880px; margin: 0 auto; padding: var(--space-8) var(--space-6); }
+  .lesson h1 { font-family: var(--font-serif); font-size: var(--text-4xl); margin-bottom: 0.2rem; }
+  .lesson .subtitle { font-size: var(--text-lg); color: var(--ink-60); font-family: var(--font-serif); }
+  .lesson .meta { display: flex; gap: var(--space-3); margin: var(--space-4) 0 var(--space-8); flex-wrap: wrap; }
+  .lesson .meta span { padding: 0.3rem 0.8rem; border-radius: 6px; background: var(--paper); border: 1px solid var(--border-light); font-size: var(--text-sm); color: var(--ink-60); }
+  .lesson .content { line-height: 1.8; font-size: var(--text-base); }
+  .lesson .content h2 { font-family: var(--font-serif); margin: var(--space-8) 0 var(--space-4); padding-bottom: var(--space-1); border-bottom: 1px solid var(--border); }
+  .lesson .content h3 { font-family: var(--font-serif); margin: var(--space-6) 0 var(--space-3); }
+  .back { display: inline-block; margin-bottom: var(--space-6); color: var(--accent); text-decoration: none; font-size: var(--text-sm); }
+  .back:hover { text-decoration: underline; }
+
+  /* 表达卡片区 - 一套七张 */
+  .phrase-grid { display: flex; flex-direction: column; gap: var(--space-5); margin: var(--space-5) 0; }
+  .phrase-card {
+    background: var(--paper); border: 1px solid var(--border); border-radius: 12px;
+    padding: var(--space-6); border-left: 4px solid var(--accent);
+    transition: box-shadow 0.2s;
+  }
+  .phrase-card:hover { box-shadow: 0 2px 12px rgba(0,0,0,0.04); }
+  .phrase-card .phrase-header { display: flex; align-items: center; gap: var(--space-3); margin-bottom: var(--space-3); }
+  .phrase-card .phrase-num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 2rem; height: 2rem; border-radius: 50%;
+    background: var(--accent-dim); color: var(--accent-deep);
+    font-weight: 700; font-size: var(--text-sm); flex-shrink: 0;
+  }
+  .phrase-card .cn-source {
+    font-family: var(--font-serif); font-size: var(--text-lg); font-weight: 600; color: var(--ink-80);
+  }
+  .phrase-card .cn-source .arrow { color: var(--accent); margin: 0 var(--space-2); }
+  .phrase-card .en-target {
+    font-size: var(--text-2xl); font-weight: 700; font-family: var(--font-serif); color: var(--ink);
+    margin: var(--space-1) 0 var(--space-2);
+  }
+  .phrase-card .pron { font-size: var(--text-sm); color: var(--ink-40); font-style: italic; }
+  .phrase-card .usage { font-size: var(--text-sm); color: var(--ink-60); margin-top: var(--space-2); line-height: 1.7; }
+  .phrase-card .example-box {
+    margin-top: var(--space-4); padding: var(--space-4); background: var(--code-bg); border-radius: 8px;
+  }
+  .phrase-card .example-box .ex-en { font-weight: 600; font-size: var(--text-sm); }
+  .phrase-card .example-box .ex-cn { font-size: var(--text-sm); color: var(--ink-60); margin-top: var(--space-1); }
+  .phrase-card .example-box .ex-meta { font-size: var(--text-xs); color: var(--ink-40); margin-top: var(--space-1); }
+
+  /* 对比表格 */
+  .compare-table { width: 100%; border-collapse: collapse; margin: var(--space-4) 0; font-size: var(--text-sm); }
+  .compare-table th, .compare-table td { padding: var(--space-2) var(--space-3); border: 1px solid var(--border); text-align: left; }
+  .compare-table th { background: var(--accent-dim); font-weight: 600; color: var(--accent-deep); }
+  .compare-table tr:hover { background: var(--paper-light); }
+
+  .tip-box { background: var(--paper); border-left: 4px solid var(--accent); padding: var(--space-4); border-radius: 0 8px 8px 0; margin: var(--space-5) 0; }
+  .tip-box strong { color: var(--accent-deep); }
+  .callout { background: var(--paper); border: 1px solid var(--border); border-radius: 8px; padding: var(--space-5); margin: var(--space-5) 0; }
+  .callout strong { color: var(--accent-deep); }
+
+  .exercise-box { border: 1px solid var(--border); border-radius: 8px; padding: var(--space-5); margin: var(--space-6) 0; background: var(--paper); }
+  .exercise-box summary { cursor: pointer; font-weight: 600; color: var(--accent-deep); font-size: var(--text-base); }
+  .exercise-box .answer { margin-top: var(--space-4); padding-top: var(--space-4); border-top: 1px solid var(--border-light); }
+
+  .footer-nav { margin-top: var(--space-10); padding-top: var(--space-6); border-top: 1px solid var(--border); display: flex; justify-content: space-between; font-size: var(--text-sm); }
+  .footer-nav a { color: var(--accent); text-decoration: none; }
+  .footer-nav a:hover { text-decoration: underline; }
+
+  .story-block {
+    background: var(--paper); border: 1px solid var(--border); border-radius: 12px;
+    padding: var(--space-5); margin: var(--space-5) 0; position: relative;
+  }
+  .story-block::before {
+    content: "\201C"; font-size: 3rem; position: absolute; top: -0.5rem; left: 0.8rem;
+    color: var(--accent-light); font-family: Georgia, serif; line-height: 1;
+  }
+  .story-block p { margin-left: var(--space-4); font-style: italic; color: var(--ink-60); }
+
+  .level-tag { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 4px; font-size: 0.7rem; font-weight: 600; margin-right: 0.3rem; }
+  .level-must { background: #dbeafe; color: #1e40af; }
+  .level-gold { background: #fef3c7; color: #92400e; }
+  .level-pop { background: #e0e7ff; color: #3730a3; }
+
+  .dialog-box {
+    background: var(--paper); border: 1px solid var(--border); border-radius: 8px;
+    padding: var(--space-4); margin: var(--space-4) 0;
+    font-size: var(--text-sm);
+  }
+  .dialog-box .dialog-line { margin: var(--space-1) 0; }
+  .dialog-box .dialog-line .speaker { font-weight: 600; color: var(--accent-deep); }
+  .dialog-box .dialog-line.cn { color: var(--ink-60); font-size: var(--text-xs); margin-left: var(--space-5); }
+</style>
+</head>
+<body>
+<div class="lesson">
+
+  <a class="back" href="../index.html">← 返回 SpeakScope 主页</a>
+  <h1>🗣️ 地道表达 #3：高频情绪口语 7 连</h1>
+  <div class="subtitle">一个视频串起 7 个最常用的情绪回应——"我知道了"到"不要紧"，学会就能自然接话</div>
+  <div class="meta">
+    <span>⏱ 25 分钟</span>
+    <span>📅 日常口语 · 地道表达</span>
+    <span>🏷️ 高频短语 · 情绪回应 · 合拍短视频</span>
+  </div>
+
+  <div class="content">
+
+    <!-- ====== 开篇引入 ====== -->
+    <h2>🎬 这节课学什么</h2>
+    <p>抖音上有个很火的合拍玩法：对方说中文，你接英文。看似简单，但真正厉害的——是那些<strong>母语者脱口而出、翻译软件翻不出精髓</strong>的回应。</p>
+    <p>这节课来自博主 Fannie 和 @英语学习笔记本 的合拍视频。视频里一口气串了 7 个中文口头禅，每个都给了最地道的英文说法。</p>
+    <p>这 7 个表达有个共同点：<strong>你在课本上全学过，但人家在真实对话里用的版本可能跟你学的不一样。</strong></p>
+    <p><strong>学完这节课，你就能：</strong></p>
+    <ul style="margin-left:var(--space-5); line-height:2;">
+      <li>✅ 在 7 个日常场景中脱口而出最自然的英语回应</li>
+      <li>✅ 区分「课本英语」和「地道口语」之间的关键差异</li>
+      <li>✅ 听懂母语者用这些表达时的真实情绪（认可、无所谓、坚决、大方……）</li>
+      <li>✅ 下次看美剧/刷 TikTok 时，能听出这些高频回应的使用语境</li>
+    </ul>
+
+    <div class="tip-box">
+      <strong>💡 学习建议：</strong>
+      这 7 个表达不需要一次全记。先挑 2-3 个你最常说的中文口头禅（比如"我知道了""不要紧"），练到脱口而出，再补剩下的。
+    </div>
+
+    <!-- ====== 核心表达卡片 ====== -->
+    <h2>🔑 7 个高频表达</h2>
+    <p>每个表达先看原文怎么用，再拆使用场景、语气和替换方案。</p>
+
+    <div class="phrase-grid">
+
+      <!-- 1. 我知道了 -->
+      <div class="phrase-card">
+        <div class="phrase-header">
+          <span class="phrase-num">1</span>
+          <span class="cn-source">我知道了 <span class="arrow">→</span></span>
+        </div>
+        <div class="en-target">I got it. / Got it.</div>
+        <div class="pron">/aɪ ɡɑːt ɪt/ /ɡɑːt ɪt/</div>
+        <div class="usage">
+          <span class="level-tag level-must">🔵 必会</span>
+          最自然的"我明白了"。注意是 <strong>got</strong> 不是 <strong>understand</strong>。"I understand" 更像正式场合或书面语，日常对话里母语者几乎都说 "I got it" 或 "Got it"。单说 "Got it." 更简短更常见。
+        </div>
+        <div class="example-box">
+          <div class="ex-en">A: You need to save the file before closing it. <br> B: Got it. Thanks.</div>
+          <div class="ex-cn">A: 关之前要先保存文件。B: 明白了，谢谢。</div>
+          <div class="ex-meta">📌 注意：这个对话里用 "I understand" 会显得太正式，像在跟老板汇报</div>
+        </div>
+      </div>
+
+      <!-- 2. 让我试试 -->
+      <div class="phrase-card">
+        <div class="phrase-header">
+          <span class="phrase-num">2</span>
+          <span class="cn-source">让我试试 <span class="arrow">→</span></span>
+        </div>
+        <div class="en-target">Let me try it. / Let me try.</div>
+        <div class="pron">/let miː traɪ ɪt/</div>
+        <div class="usage">
+          <span class="level-tag level-must">🔵 必会</span>
+          视频里是 "Let me try it." 和 "Let me try." 两个版本。<strong>"Let me try."</strong>（不加 it）更利落，更常在口语里出现。你还可能听到 <strong>"Let me give it a shot."</strong> 或 <strong>"Let me have a go."</strong>——跟"让我试试看"的感觉一模一样。
+        </div>
+        <div class="example-box">
+          <div class="ex-en">A: This game is tricky. <br> B: Let me try.</div>
+          <div class="ex-cn">A: 这个游戏有点难。B: 让我试试。</div>
+          <div class="ex-meta">💡 更地道的进阶：<em>"Let me give it a shot."</em>——你可以在朋友说"这个好难"的时候接这句</div>
+        </div>
+      </div>
+
+      <!-- 3. 谁在乎呢 -->
+      <div class="phrase-card">
+        <div class="phrase-header">
+          <span class="phrase-num">3</span>
+          <span class="cn-source">谁在乎呢？ <span class="arrow">→</span></span>
+        </div>
+        <div class="en-target">Who cares?</div>
+        <div class="pron">/huː kɛrz/</div>
+        <div class="usage">
+          <span class="level-tag level-pop">🟣 高频</span>
+          最直接的"谁在乎啊"。"Who cares?" 带有轻微的不屑——不是恶意，而是表达"这事不重要、无所谓"。语气决定一切：<strong>耸肩说</strong>表示不在乎，<strong>故意拖长</strong>可能带情绪。
+          <strong>⚠️ 注意语气：</strong>用错了容易显得冷漠。建议在朋友间轻松话题上用。
+        </div>
+        <div class="example-box">
+          <div class="ex-en">A: Someone said my outfit is weird. <br> B: Who cares? You look great.</div>
+          <div class="ex-cn">A: 有人说我穿得奇怪。B: 谁在乎啊？你很好看。</div>
+          <div class="ex-meta">💡 这个是"安慰版"，语气是轻松的。如果语气变重，就可能变成"关我啥事"</div>
+        </div>
+      </div>
+
+      <!-- 4. 那又怎样 -->
+      <div class="phrase-card">
+        <div class="phrase-header">
+          <span class="phrase-num">4</span>
+          <span class="cn-source">那又怎样？ <span class="arrow">→</span></span>
+        </div>
+        <div class="en-target">So what?</div>
+        <div class="pron">/soʊ wʌt/</div>
+        <div class="usage">
+          <span class="level-tag level-pop">🟣 高频</span>
+          "那又怎样？""所以呢？"——跟 Who cares 的区别：<strong>So what 更倾向于"继续啊，我不觉得这有什么了不起"</strong>，有一种"你说完了？然后呢？"的感觉。可以友好也可以挑衅，全看语气。
+          朋友间开玩笑："I'm older than you." → "So what? I'm taller."
+        </div>
+        <div class="example-box">
+          <div class="ex-en">A: I got a promotion before you did. <br> B: So what? I'm working on something better.</div>
+          <div class="ex-cn">A: 我比你早升职了。B: 那又怎样？我在做一个更好的项目。</div>
+          <div class="ex-meta">📌 So what 可以是轻松的回怼，也可以是认真的反驳——除非你很确定对方在开玩笑，否则慎用</div>
+        </div>
+      </div>
+
+      <!-- 5. 绝对不行 -->
+      <div class="phrase-card">
+        <div class="phrase-header">
+          <span class="phrase-num">5</span>
+          <span class="cn-source">绝对不行 <span class="arrow">→</span></span>
+        </div>
+        <div class="en-target">No way.</div>
+        <div class="pron">/noʊ weɪ/</div>
+        <div class="usage">
+          <span class="level-tag level-must">🔵 必会</span>
+          "No way." 在口语里有两个完全相反的意思（<strong>语境决定一切</strong>）：<br>
+          ① <strong>拒绝/反对</strong>：相当于"绝对不行/没门"（视频里的用法）<br>
+          ② <strong>惊讶/不敢相信</strong>：相当于"不会吧！""真的假的？"<br><br>
+          区别方式：拒绝时语气<strong>短促、坚定</strong>；惊讶时声音<strong>上扬、拖长</strong>（Noooo way!）。
+        </div>
+        <div class="example-box">
+          <div class="ex-en" style="margin-bottom:var(--space-2);">
+            <span style="background:var(--accent-dim); padding:0.1rem 0.4rem; border-radius:3px;">拒绝用法</span><br>
+            A: Can I borrow your car for the weekend? <br> B: No way. You don't even have a license.
+          </div>
+          <div class="ex-cn">A: 我能借你的车过周末吗？B: 没门。你连驾照都没有。</div>
+          <div style="margin-top:var(--space-3);">
+            <div class="ex-en">
+              <span style="background:#fef3c7; padding:0.1rem 0.4rem; border-radius:3px;">惊讶用法</span><br>
+              A: I just won the lottery! <br> B: No way! That's amazing!
+            </div>
+            <div class="ex-cn">A: 我刚中了彩票！B: 不会吧！太棒了！</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. 我请客 -->
+      <div class="phrase-card">
+        <div class="phrase-header">
+          <span class="phrase-num">6</span>
+          <span class="cn-source">我请客 <span class="arrow">→</span></span>
+        </div>
+        <div class="en-target">It's on me. / It's my treat.</div>
+        <div class="pron">/ɪts ɑːn miː/ /ɪts maɪ triːt/</div>
+        <div class="usage">
+          <span class="level-tag level-gold">🟡 高频实用</span>
+          视频里给了两个版本。<strong>"It's on me."</strong> 是最口语化、最常用的——朋友间吃饭结账时脱口而出。<strong>"It's my treat."</strong> 稍微正式一丁点，但一样地道。<br><br>
+          还有一个高频说法：<strong>"I'll cover it."</strong>（我来付）——在职场聚餐或跟同事吃饭时也常用。<br><br>
+          <strong>注意！</strong>不要直译"我请客"为 "I invite you"——这在英语里是"我邀请你（来某场合）"，不是"我来买单"。
+        </div>
+        <div class="example-box">
+          <div class="ex-en">(At the restaurant, when the bill comes) <br> A: How much do I owe? <br> B: No, no — it's on me today. You got it last time.</div>
+          <div class="ex-cn">（餐厅结账时）A: 我该付多少？B: 不用不用，今天我请。上次你请的。</div>
+          <div class="ex-meta">💡 结账时说 "It's on me" 同时做个"别动"的手势，非常自然</div>
+        </div>
+      </div>
+
+      <!-- 7. 不要紧 -->
+      <div class="phrase-card">
+        <div class="phrase-header">
+          <span class="phrase-num">7</span>
+          <span class="cn-source">不要紧 <span class="arrow">→</span></span>
+        </div>
+        <div class="en-target">No biggie.</div>
+        <div class="pron">/noʊ ˈbɪɡ.i/</div>
+        <div class="usage">
+          <span class="level-tag level-gold">🟡 高频实用</span>
+          视频里用的是 <strong>"No biggie."</strong>——这是美国年轻人最常用的"不要紧/没事/没关系"。字面"不是什么大事"，语气轻松随意。<br><br>
+          其他常见版本（按轻松→正式排列）：
+        </div>
+        <table class="compare-table">
+          <tr><th style="width:25%;">表达</th><th style="width:20%;">语气</th><th>一句话判断场景</th></tr>
+          <tr><td><strong>No biggie.</strong></td><td>最随意</td><td>朋友打翻了水杯说"Oops"，你回"No biggie"→"没事儿"</td></tr>
+          <tr><td><strong>No worries.</strong></td><td>轻松</td><td>对方道歉问路时说"No worries"→"别放心上"</td></tr>
+          <tr><td><strong>No problem.</strong></td><td>中性</td><td>服务员说"没法换座位"，你回"No problem"→"没关系"</td></tr>
+          <tr><td><strong>Don't worry about it.</strong></td><td>安慰</td><td>对方明显很内疚时的安慰→"不用在意"</td></tr>
+          <tr><td><strong>It doesn't matter.</strong></td><td>正式/平淡</td><td>讨论选项时说"这都行"→"无所谓"</td></tr>
+          <tr><td><strong>Never mind.</strong></td><td>收回/算了</td><td>你问了个问题对方没听清，你说"Never mind"→"没事，算了"</td></tr>
+        </table>
+        <div class="example-box" style="margin-top:var(--space-3);">
+          <div class="ex-en">A: Sorry I'm 5 minutes late! <br> B: No biggie! We just ordered coffee.</div>
+          <div class="ex-cn">A: 对不起我迟到了5分钟！B: 没事儿！我们刚点了咖啡。</div>
+          <div class="ex-meta">💡 "No biggie" 年轻人最爱用，跟中老年长辈说 "No worries" 或 "No problem" 更得体</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ====== 发音要点 ====== -->
+    <h2>👄 发音要点</h2>
+
+    <div class="tip-box">
+      <strong>这几个音最容易读错：</strong><br><br>
+      <strong>1. "Got it" 的 /t/ 连读</strong><br>
+      "Got it" 在实际口语里经常变成 <strong>"Gotta"</strong> 或 <strong>"Goddit"</strong>——/ɡɑːt ɪt/ → /ɡɑːtɪt/ → 连读成一个词。不要一个词一个词地蹦。<br>
+      <span class="pron">/ˈɡɑːtɪt/ — 试试一口气说：gotta（类似中文"嘎提特"但很快）</span><br><br>
+      <strong>2. "No biggie" 的 /bɪɡi/</strong><br>
+      重音在 <strong>big</strong> 上，gie 轻轻带过。很多中文学习者会把 "biggie" 读成 "比格亿"（三个音节），其实只有两个：<strong>big-gie</strong>（/ˈbɪɡ.i/）。<br>
+      <span class="pron">/ˈnoʊ ˈbɪɡ.i/ — big 重读，gie 轻声</span><br><br>
+      <strong>3. "Who cares" 的连读</strong><br>
+      "Who cares" 说快了两词黏在一起：<strong>/huː kɛrz/ → /huːkɛrz/</strong>。不要分开说 "who" 停一下再说 "cares"。<br><br>
+      <strong>4. "It's on me" 的熔接</strong><br>
+      "It's on me" 三个词连读：<strong>/ɪts ɑːn miː/ → /ɪtˈsɑːn miː/</strong>。"It's" 的 s 和 "on" 的 o 黏在一起，听起来像 "it-son me"。
+    </div>
+
+    <!-- ====== 深度对比 ====== -->
+    <h2>🔍 课本 vs. 口语</h2>
+    <p>这 7 个表达里，好几个的「课本版」和「地道版」差了不止一个词——为什么课本不教这些？</p>
+
+    <table class="compare-table">
+      <tr><th>中文</th><th>课本/考试版</th><th style="background:rgba(204,120,92,0.12);">✅ 地道口头禅</th><th>为什么</th></tr>
+      <tr>
+        <td>我知道了</td>
+        <td>I understand.</td>
+        <td style="background:rgba(204,120,92,0.08);"><strong>Got it.</strong></td>
+        <td>understand 太正式，got it 像朋友聊天</td>
+      </tr>
+      <tr>
+        <td>不要紧</td>
+        <td>It doesn't matter.</td>
+        <td style="background:rgba(204,120,92,0.08);"><strong>No biggie.</strong></td>
+        <td>It doesn't matter 的语气偏"无所谓/算了"，no biggie 是"没事儿别放心上"</td>
+      </tr>
+      <tr>
+        <td>我请客</td>
+        <td>I invite you.</td>
+        <td style="background:rgba(204,120,92,0.08);"><strong>It's on me.</strong></td>
+        <td>I invite you 是邀请参加活动/派对，买单用 It's on me</td>
+      </tr>
+      <tr>
+        <td>绝对不行</td>
+        <td>Absolutely not.</td>
+        <td style="background:rgba(204,120,92,0.08);"><strong>No way.</strong></td>
+        <td>Absolutely not 太用力（像政治家的发言），No way 是日常拒绝</td>
+      </tr>
+    </table>
+
+    <div class="callout">
+      <strong>📌 核心原则：</strong>
+      学口语的时候，<strong>最短的那个往往是最好用的那个</strong>。母语者在日常对话里追求的是"快、省力、不突兀"——所以 Got it 代替 I understand，No biggie 代替 It doesn't matter。不是哪个更"正确"，而是哪个更"自然"。
+    </div>
+
+    <!-- ====== 场景对话 ====== -->
+    <h2>💬 场景串烧</h2>
+    <p>下面用一个完整的日常场景把这 7 个表达串起来——读完你会看到它们是怎么在真实对话里自然出现的：</p>
+
+    <div class="story-block">
+      <p><strong>午饭时间，朋友群里聊吃什么</strong></p>
+    </div>
+
+    <div class="dialog-box">
+      <div class="dialog-line"><span class="speaker">小明：</span>新开的那家泰国菜听说不错，要不要去试试？</div>
+      <div class="dialog-line"><span class="speaker">你：</span>Let me try! 我一直想吃泰国菜。</div>
+      <div class="dialog-line cn">（让我试试！）</div>
+
+      <div class="dialog-line" style="margin-top:var(--space-2);"><span class="speaker">小红：</span>But I heard it's super spicy...</div>
+      <div class="dialog-line"><span class="speaker">你：</span>So what? I love spicy food!</div>
+      <div class="dialog-line cn">（那又怎样？我爱吃辣！）</div>
+
+      <div class="dialog-line" style="margin-top:var(--space-2);"><span class="speaker">小明：</span>Wait, I checked — it says they require reservations 3 days in advance. We missed it.</div>
+      <div class="dialog-line"><span class="speaker">小红：</span>No way! That's too strict.</div>
+      <div class="dialog-line cn">（不会吧！也太严格了。）</div>
+
+      <div class="dialog-line" style="margin-top:var(--space-2);"><span class="speaker">小明：</span>Sorry, my bad. I should've checked earlier.</div>
+      <div class="dialog-line"><span class="speaker">你：</span>No biggie! We can try next week.</div>
+      <div class="dialog-line cn">（不要紧！下周再去也行。）</div>
+
+      <div class="dialog-line" style="margin-top:var(--space-2);"><span class="speaker">小红：</span>Well, I know a good hotpot place nearby. No reservation needed.</div>
+      <div class="dialog-line"><span class="speaker">小明：</span>Got it. Hotpot it is.</div>
+      <div class="dialog-line cn">（知道了，那就火锅。）</div>
+
+      <div class="dialog-line" style="margin-top:var(--space-2);"><span class="speaker">你：</span>Awesome! It's on me today! 🎉</div>
+      <div class="dialog-line cn">（太棒了，今天我请客！）</div>
+
+      <div class="dialog-line" style="margin-top:var(--space-2);"><span class="speaker">小红：</span>Who cares who pays? Let's just eat! 😂</div>
+      <div class="dialog-line cn">（谁付钱都行啦，先吃再说！）</div>
+    </div>
+
+    <div class="tip-box">
+      <strong>💡 学习技巧：</strong>
+      把这个对话读三遍。第一遍看中文找"如果是我我会怎么说"的直觉反应。第二遍聚焦英文原文，注意哪些表达跟你直觉不一样。第三遍出声朗读每个对话线。
+    </div>
+
+    <!-- ====== 练习 ====== -->
+    <h2>✍️ 课后练习</h2>
+
+    <details class="exercise-box">
+      <summary>📝 练习一：选词填空</summary>
+      <div class="answer">
+        <p>从以下 7 个表达中选择最合适的填入对话：</p>
+        <p style="font-size:var(--text-sm); background:var(--code-bg); padding:var(--space-3); border-radius:6px; margin:var(--space-2) 0;">
+          <strong>词库：</strong>Got it / Let me try / Who cares / So what / No way / It's on me / No biggie
+        </p>
+        <ol style="margin:var(--space-3) 0 var(--space-3) var(--space-5); line-height:2.2;">
+          <li>A: The password is "BlueSky2024". B: ______, thanks.</li>
+          <li>A: I can't believe you like pineapple on pizza. B: ______? It's delicious!</li>
+          <li>A: Can I borrow your car? B: ______! You crashed mine last time!</li>
+          <li>A: I forgot to bring your book. Sorry! B: ______. Bring it tomorrow.</li>
+          <li>A: The bill comes to $60. B: Don't worry, ______.</li>
+          <li>A: This puzzle is really hard. B: ______.</li>
+          <li>A: He said I'm too short for basketball. B: ______? Yao Ming is one of a kind.</li>
+        </ol>
+        <p><strong>参考答案：</strong></p>
+        <ol style="margin:var(--space-2) 0 0 var(--space-5); line-height:2; font-style:italic;">
+          <li>Got it</li>
+          <li>So what</li>
+          <li>No way</li>
+          <li>No biggie</li>
+          <li>It's on me</li>
+          <li>Let me try</li>
+          <li>Who cares</li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="exercise-box">
+      <summary>🎤 练习二：跟读训练</summary>
+      <div class="answer">
+        <p><strong>下面这些句子，先看完理解，然后出声读三遍：</strong></p>
+        <div style="background:var(--code-bg); border-radius:6px; padding:var(--space-4); margin:var(--space-3) 0; font-size:var(--text-sm); line-height:2;">
+          <p><strong>第一遍：慢读，注意每个音的完整性</strong></p>
+          <p>Got it. → /ɡɑːt ɪt/<br>
+          Let me try. → /let miː traɪ/<br>
+          Who cares? → /huː kɛrz/<br>
+          So what? → /soʊ wʌt/<br>
+          No way. → /noʊ weɪ/<br>
+          It's on me. → /ɪts ɑːn miː/<br>
+          No biggie. → /noʊ ˈbɪɡ.i/</p>
+          <p><strong>第二遍：加快语速，注意连读</strong></p>
+          <p>Gotta (got it) → 黏成一个词<br>
+          Whocares? → who+cares 连起来<br>
+          Itson me → it's+on 连起来</p>
+          <p><strong>第三遍：带情绪地读</strong></p>
+          <p>"Got it" 用轻快的、确认的语气<br>
+          "No way!" 拒绝时短促，惊讶时上扬<br>
+          "It's on me!" 豪爽地，加个拍胸口的动作更入味</p>
+        </div>
+      </div>
+    </details>
+
+    <details class="exercise-box">
+      <summary>🤖 练习三：AI 陪练场景模拟</summary>
+      <div class="answer">
+        <p><strong>复制这段 Prompt 给 AI 陪练（元宝/ChatGPT/其他）：</strong></p>
+        <div style="background:var(--code-bg); border-radius:6px; padding:var(--space-4); margin:var(--space-3) 0; font-size:var(--text-sm);">
+<pre style="white-space:pre-wrap; margin:0;">Let's do a roleplay. You play my friend, and we're planning an evening out. Naturally insert situations where I need to respond with these 7 phrases: "Got it", "Let me try", "Who cares", "So what", "No way", "It's on me", "No biggie". If I use them correctly, continue the conversation. If I don't, correct me gently and ask me to try again.</pre>
+        </div>
+        <p><strong>产出目标：</strong>在对话中至少自然使用 5 个表达（不需要 7 个全用），且 AI 反馈说"听起来自然"为止。</p>
+        <p style="margin-top:var(--space-2); font-size:var(--text-sm); color:var(--ink-60);">
+          💡 卡住了？可以从这几个场景切入：订什么吃的、谁买单、谁点菜、时间冲突怎么办。
+        </p>
+      </div>
+    </details>
+
+    <details class="exercise-box">
+      <summary>📋 练习四：中译英反射训练</summary>
+      <div class="answer">
+        <p><strong>看到中文，1 秒内说出最地道的英文回应：</strong></p>
+        <ol style="margin:var(--space-3) 0 var(--space-3) var(--space-5); line-height:2.2;">
+          <li>"好的知道了，我马上改。"</li>
+          <li>"没门！我才不去呢。"</li>
+          <li>"放心，这顿我请。"</li>
+          <li>"没事儿，晚点到也行。"</li>
+          <li>"谁在乎他们怎么想啊？"</li>
+          <li>"那又怎样？反正我不怕。"</li>
+          <li>"让我试试，说不定我会。"</li>
+        </ol>
+        <p><strong>参考答案：</strong></p>
+        <ol style="margin:var(--space-2) 0 0 var(--space-5); line-height:2; font-style:italic;">
+          <li>Got it, I'll fix it right away.</li>
+          <li>No way! I'm not going.</li>
+          <li>Don't worry, it's on me.</li>
+          <li>No biggie. You can come later.</li>
+          <li>Who cares what they think?</li>
+          <li>So what? I'm not scared anyway.</li>
+          <li>Let me try — maybe I can do it.</li>
+        </ol>
+      </div>
+    </details>
+
+    <!-- ====== 记忆钩子 ====== -->
+    <h2>🧠 记忆钩子 · 一句话总结</h2>
+
+    <table class="compare-table">
+      <tr><th style="width:30%;">中文</th><th>英语</th><th>一句话记住</th></tr>
+      <tr><td>我知道了</td><td><strong>Got it.</strong></td><td>不要说 understand，说 got it</td></tr>
+      <tr><td>让我试试</td><td><strong>Let me try.</strong></td><td>不加 it 更利落</td></tr>
+      <tr><td>谁在乎呢</td><td><strong>Who cares?</strong></td><td>耸肩 + 这个表情 → 地道</td></tr>
+      <tr><td>那又怎样</td><td><strong>So what?</strong></td><td>"所以呢？"的感觉</td></tr>
+      <tr><td>绝对不行</td><td><strong>No way.</strong></td><td>拒绝时短促，惊讶时上扬</td></tr>
+      <tr><td>我请客</td><td><strong>It's on me.</strong></td><td>别用 I invite you</td></tr>
+      <tr><td>不要紧</td><td><strong>No biggie.</strong></td><td>最年轻的"没关系"</td></tr>
+    </table>
+
+    <!-- ====== 来源 ====== -->
+    <h2>📺 课程来源</h2>
+    <p>本节内容基于抖音博主 <strong>Fannie</strong>（15 年英语教育经验，TESOL 持证教师）与 <strong>@英语学习笔记本</strong> 的合拍视频。原视频以"我说中文，你说英文"的形式，串讲了 7 个高频口头禅的英语对应表达。</p>
+    <p style="font-size:var(--text-sm); color:var(--ink-60);">
+      📱 原视频：<a href="https://v.douyin.com/zA2qvQ2o1Js/" style="color:var(--accent);" target="_blank">抖音合拍 · Fannie · 不要紧 用英语怎么说</a>
+    </p>
+
+    <!-- ====== 下一步 ====== -->
+    <h2>🔜 下一课预告</h2>
+    <p>这个「地道表达系列」会持续从真实英语学习/工作场景里拆出那些"课本不教但人人都在用"的表达。下一课我们来拆一个跟 Let me try 类似的高频动词搭配——"我来做某事的几种地道说法"。</p>
+    <p style="font-size:var(--text-sm); color:var(--ink-60); margin-top:var(--space-2);">
+      ⭐ 还没完——这节课的 7 个表达已经加入「<a href="../reference/daily-expressions-cheatsheet.html" style="color:var(--accent);">日常地道表达速查表</a>」，随时翻看。练完这节课记得跟 AI 陪练做场景模拟！
+    </p>
+
+  </div><!-- /content -->
+
+  <!-- ====== 底部导航 ====== -->
+  <div class="footer-nav">
+    <a href="0003-地道表达-For-Here-Take-Away-To-Go.html">← 上一课：For here / Take away / To go</a>
+    <a href="../index.html">🏠 回到主页</a>
+    <span style="color:var(--ink-20);">下一课：即将发布 →</span>
+  </div>
+
+</div>
+<script src="../shared/lesson-tools.js"></script>
+</body>
+</html>

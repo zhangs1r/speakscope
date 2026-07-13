@@ -81,6 +81,17 @@ window.SPEAKSCOPE_DATA = {
       duration: "20 分钟",
       tags: ["地道表达", "餐厅英语", "for here", "to go"],
       description: "「for here = 堂食」「take away = 打包带走」「to go 也可以」——从一张小红书截图出发，彻底搞懂在国外餐厅点餐打包的所有英语表达。含 TTS 跟读音频。"
+    },
+    {
+      id: "0004",
+      path: "lessons/0004-地道表达-高频情绪口语7连.html",
+      collection: "daily-expressions",
+      title: "地道表达 #3：高频情绪口语 7 连",
+      subtitle: "从抖音合拍视频串讲 7 个最自然的情绪回应",
+      emoji: "🗣️",
+      duration: "25 分钟",
+      tags: ["地道表达", "情绪回应", "got it", "no biggie"],
+      description: "「我知道了→Got it」「不要紧→No biggie」「我请客→It's on me」——从抖音合拍短视频出发，拆解 7 个最常用的中文口头禅怎么用英语脱口而出。含场景串烧对话、发音要点和 AI 陪练 Prompt。"
     }
   ],
   references: [
