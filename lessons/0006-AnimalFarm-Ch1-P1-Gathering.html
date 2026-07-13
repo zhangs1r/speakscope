@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 0006 课：Ch.I 夜色中的集会 · Animal Farm · SpeakScope</title>
+<link rel="stylesheet" href="../shared/theme.css">
+<style>
+  body { background: var(--paper-light); }
+  .lesson { max-width: 880px; margin: 0 auto; padding: var(--space-8) var(--space-6); }
+  .lesson h1 { font-family: var(--font-serif); font-size: var(--text-4xl); margin-bottom: 0.2rem; }
+  .lesson .subtitle { font-size: var(--text-lg); color: var(--ink-60); font-family: var(--font-serif); }
+  .lesson .meta { display: flex; gap: var(--space-3); margin: var(--space-4) 0 var(--space-8); flex-wrap: wrap; }
+  .lesson .meta span { padding: 0.3rem 0.8rem; border-radius: 6px; background: var(--paper); border: 1px solid var(--border-light); font-size: var(--text-sm); color: var(--ink-60); }
+  .lesson .content { line-height: 1.8; font-size: var(--text-base); }
+  .lesson .content h2 { font-family: var(--font-serif); margin: var(--space-8) 0 var(--space-4); padding-bottom: var(--space-1); border-bottom: 1px solid var(--border); }
+  .back { display: inline-block; margin-bottom: var(--space-6); color: var(--accent); text-decoration: none; font-size: var(--text-sm); }
+  .back:hover { text-decoration: underline; }
+
+  /* Full-text guided reading block */
+  .line-block { margin: var(--space-6) 0; }
+  .line-block .en { font-family: var(--font-serif); font-size: var(--text-base); line-height: 1.9; color: var(--ink); }
+  .line-block .cn { font-size: var(--text-sm); color: var(--ink-60); margin-top: var(--space-2); padding-left: var(--space-1); border-left: 3px solid var(--accent-light); padding-left: var(--space-3); }
+  .line-block .note { font-size: var(--text-sm); color: var(--accent-deep); margin-top: var(--space-2); padding: var(--space-2) var(--space-3); background: var(--accent-dim); border-radius: 6px; }
+  .line-block .play-cell { display: flex; align-items: flex-start; gap: 0.4rem; margin-top: var(--space-1); }
+  .line-block .play-cell .en { flex: 1; }
+
+  hr.line-split { border: none; border-top: 1px solid var(--border-light); margin: var(--space-3) 0; }
+
+  .play-btn { display: inline-flex; align-items: center; justify-content: center; background: var(--paper); border: 1px solid var(--accent-light); border-radius: 4px; cursor: pointer; font-size: 0.75rem; width: 1.6rem; height: 1.6rem; flex-shrink: 0; transition: background 0.15s, transform 0.1s; vertical-align: middle; line-height: 1; }
+  .play-btn:hover { background: var(--accent-dim); transform: scale(1.1); }
+  .play-btn:active { transform: scale(0.95); }
+  .play-btn.playing { background: #c8e6c9; border-color: var(--success); }
+
+  .highlight { background: #dbeafe; padding: 0.1rem 0.2rem; border-radius: 2px; }
+  .highlight-y { background: #fef3c7; padding: 0.1rem 0.2rem; border-radius: 2px; }
+
+  .footer-nav { margin-top: var(--space-10); padding-top: var(--space-6); border-top: 1px solid var(--border); display: flex; justify-content: space-between; font-size: var(--text-sm); }
+  .footer-nav a { color: var(--accent); text-decoration: none; }
+  .footer-nav a:hover { text-decoration: underline; }
+
+  .pre-box { background: var(--accent-dim); border-radius: 8px; padding: var(--space-4); margin: var(--space-5) 0; border: 1px dashed var(--accent-light); }
+  .pre-box strong { color: var(--accent-deep); }
+  .callout { background: var(--paper); border: 1px solid var(--border); border-radius: 8px; padding: var(--space-5); margin: var(--space-5) 0; }
+  .callout strong { color: var(--accent-deep); }
+  .word-cell { display: flex; align-items: center; gap: 0.3rem; flex-wrap: wrap; }
+  .vocab-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px,1fr)); gap: var(--space-3); margin: var(--space-4) 0; }
+  .vocab-card { background: var(--paper); border: 1px solid var(--border); border-radius: 8px; padding: var(--space-3); }
+  .vocab-card .v-word { font-weight: 700; font-family: var(--font-serif); font-size: var(--text-base); }
+  .vocab-card .v-cn { font-size: var(--text-xs); color: var(--ink-60); }
+  .level-must { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 4px; font-size: 0.7rem; font-weight: 600; background: #dbeafe; color: #1e40af; margin-right: 0.3rem; }
+  .level-know { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 4px; font-size: 0.7rem; font-weight: 600; background: #fef3c7; color: #92400e; margin-right: 0.3rem; }
+  .speak-card { background: var(--paper); border: 1px solid var(--border); border-radius: 8px; padding: var(--space-5); margin: var(--space-4) 0; }
+  .speak-card .s-framework { background: var(--accent-dim); padding: var(--space-3); border-radius: 6px; margin: var(--space-3) 0; font-family: var(--font-mono); font-size: var(--text-sm); }
+  .exercise-box { border: 1px solid var(--border); border-radius: 8px; padding: var(--space-5); margin: var(--space-6) 0; background: var(--paper); }
+</style>
+<script>
+const player = new Audio();
+let currentBtn = null;
+function playAudio(src, btnId) {
+  const btn = document.getElementById(btnId);
+  if (btn && btn.classList.contains('playing')) { player.pause(); player.currentTime = 0; btn.classList.remove('playing'); currentBtn = null; return; }
+  if (currentBtn) currentBtn.classList.remove('playing');
+  player.src = 'assets/audio/animal-farm/' + src; player.play();
+  if (btn) { btn.classList.add('playing'); currentBtn = btn; }
+  player.onended = () => { if (btn) btn.classList.remove('playing'); currentBtn = null; };
+}
+</script>
+</head>
+<body>
+<div class="lesson">
+
+  <a class="back" href="../index.html">← 返回 SpeakScope 主页</a>
+  <h1>📖 Ch.I 夜色中的集会（上）</h1>
+  <div class="subtitle">Chapter I Part 1: The Gathering — 动物们陆续登场</div>
+  <div class="meta">
+    <span>⏱ 25-30 分钟</span>
+    <span>📚 英文原著 · Animal Farm · 全文带读</span>
+    <span>🏷️ Ch.I · 全文带读</span>
+  </div>
+
+  <div class="content">
+
+    <!-- ====== 读前激活 ====== -->
+    <div class="pre-box">
+      <strong>🎬 在读之前</strong><br>
+      想象一下：你是一个在农场上生活的动物，每天天没亮就要干活，吃不饱、睡不够。突然有一天，农场里最年长、最受尊敬的老猪说——他昨晚做了一个奇怪的梦，要告诉大家。<br><br>
+      <strong>带着这些问题读：</strong>
+      <ul style="margin-left:var(--space-5); margin-top:var(--space-2); line-height:2;">
+        <li>❓ 第一个登场的角色是谁？他状态怎么样？</li>
+        <li>❓ 动物们怎么知道今晚有集会？</li>
+        <li>❓ 注意每类动物进谷仓时的姿态——这暗示了它们的什么性格？</li>
+      </ul>
+    </div>
+
+    <!-- ====== 全文带读 ====== -->
+    <h2>📖 原文带读</h2>
+    <p style="font-size:var(--text-sm); color:var(--ink-60);">逐段阅读，每段都有 英文原文 → 🔊 点听 → 中文翻译 → 偶尔的注释。跟着节奏慢慢来。</p>
+
+    <!-- 段落 1 -->
+    <div class="line-block">
+      <div class="play-cell">
+        <div class="en">Mr. Jones, of the Manor Farm, had locked the hen-houses for the night, but was too drunk to remember to shut the <span class="highlight">pop-holes</span>. With the ring of light from his lantern dancing from side to side, he <span class="highlight">lurched</span> across the yard, kicked off his boots at the back door, drew himself a last glass of beer from the barrel in the scullery, and made his way up to bed, where Mrs. Jones was already snoring.</div>
+        <button class="play-btn" id="pb-1" onclick="playAudio('0006-p1.mp3','pb-1')">🔊</button>
+      </div>
+      <div class="cn">庄园农场的琼斯先生已经锁好了鸡舍过夜，但他喝得太醉，忘了关上出人的小门。灯笼的光环左右摇晃，他踉踉跄跄穿过院子，在后门踢掉靴子，从洗碗间的桶里给自己倒了最后一杯啤酒，然后上楼上了床——琼斯太太已经在那里打鼾了。</div>
+      <div class="note">💡 <strong>pop-holes</strong> 是鸡舍上供鸡进出的小门。<strong>lurched</strong>（踉跄）暗示 Jones 已经醉得不轻。全书第一句话就奠定了基调——人类统治者是不称职的。</div>
+    </div>
+
+    <hr class="line-split">
+
+    <!-- 段落 2 -->
+    <div class="line-block">
+      <div class="play-cell">
+        <div class="en">As soon as the light in the bedroom went out there was a stirring and a <span class="highlight">fluttering</span> all through the farm buildings. Word had gone round during the day that old Major, the prize Middle White <span class="highlight">boar</span>, had had a strange dream on the previous night and wished to communicate it to the other animals.</div>
+        <button class="play-btn" id="pb-2" onclick="playAudio('0006-p2.mp3','pb-2')">🔊</button>
+      </div>
+      <div class="cn">卧室的灯一熄，整个农场就骚动起来。白天就传开了消息：老梅杰——那头得过奖的中白种公猪——昨晚做了一个奇怪的梦，想告诉其他动物。</div>
+    </div>
+
+    <hr class="line-split">
+
+    <!-- 段落 3 -->
+    <div class="line-block">
+      <div class="play-cell">
+        <div class="en">It had been agreed that they should all meet in the big <span class="highlight">barn</span> as soon as Mr. Jones was safely out of the way. Old Major (so he was always called, though the name under which he had been exhibited was Willingdon Beauty) was so highly regarded on the farm that everyone was quite ready to lose an hour's sleep in order to hear what he had to say.</div>
+        <button class="play-btn" id="pb-3" onclick="playAudio('0006-p3.mp3','pb-3')">🔊</button>
+      </div>
+      <div class="cn">他们约好了：等琼斯先生安全地离开视线，就到大谷仓集合。老梅杰（大家一直这么叫他，虽然他参展时用的名字叫"威灵顿美人"）在农场上威望极高，所有人都愿意牺牲一小时睡眠去听他讲话。</div>
+      <div class="note">💡 <strong>Willingdon Beauty</strong>——这个名字有反讽意味：一个革命先知，参展名却叫"美人"。</div>
+    </div>
+
+    <hr class="line-split">
+
+    <!-- 段落 4 -->
+    <div class="line-block">
+      <div class="play-cell">
+        <div class="en">At one end of the big barn, on a sort of raised platform, Major was already <span class="highlight">ensconced</span> on his bed of straw, under a lantern which hung from a beam. He was twelve years old and had lately grown rather stout, but he was still a <span class="highlight">majestic</span>-looking pig, with a wise and <span class="highlight">benevolent</span> appearance in spite of the fact that his <span class="highlight">tushes</span> had never been cut.</div>
+        <button class="play-btn" id="pb-4" onclick="playAudio('0006-p4.mp3','pb-4')">🔊</button>
+      </div>
+      <div class="cn">在大谷仓的一端，有一个像讲台一样的凸起平台。梅杰已经安坐在他的草铺上，头顶挂着灯笼。他十二岁了，最近胖了不少，但仍然是一头威严的猪——他的獠牙从未剪过，但这反而增添了他的智慧和慈祥。</div>
+      <div class="note">💡 <strong>ensconced</strong>（安坐）、<strong>majestic</strong>（威严的）、<strong>benevolent</strong>（慈祥的）——Orwell 用三个高密度形容词为 Old Major 塑造了先知形象。猪的獠牙<strong>（tushes）</strong>没剪过，暗示他保留了野性力量。</div>
+    </div>
+
+    <hr class="line-split">
+
+    <!-- 段落 5：动物进场 -->
+    <div class="line-block">
+      <div class="play-cell">
+        <div class="en">Before long the other animals began to arrive and make themselves comfortable after their different fashions. First came the three dogs, Bluebell, Jessie, and Pincher, and then the pigs, who settled down in the straw immediately in front of the platform. The hens perched themselves on the window-sills, the pigeons <span class="highlight">fluttered</span> up to the rafters, the sheep and cows lay down behind the pigs and began to <span class="highlight">chew the cud</span>.</div>
+        <button class="play-btn" id="pb-5" onclick="playAudio('0006-p5.mp3','pb-5')">🔊</button>
+      </div>
+      <div class="cn">不久其他动物开始陆续到达，各自以自己的方式安顿下来。先是三条狗——Bluebell、Jessie、Pincher——然后是猪，它们直接坐在平台前的稻草上。母鸡栖在窗台上，鸽子扑扑飞到橡子上，羊和牛躺在猪后面开始反刍。</div>
+    </div>
+
+    <hr class="line-split">
+
+    <!-- 段落 6：Boxer 和 Clover -->
+    <div class="line-block">
+      <div class="play-cell">
+        <div class="en">The two cart-horses, Boxer and Clover, came in together, walking very slowly and setting down their vast hairy hoofs with great care <span class="highlight">lest</span> there should be some small animal concealed in the straw. Clover was a stout motherly mare approaching middle life, who had never quite got her figure back after her fourth foal. Boxer was an enormous beast, nearly eighteen hands high, and as strong as any two ordinary horses put together. A white stripe down his nose gave him a somewhat stupid appearance, and in fact he was not of first-rate intelligence, but he was universally respected for his <span class="highlight">steadiness</span> of character and <span class="highlight">tremendous</span> powers of work.</div>
+        <button class="play-btn" id="pb-6" onclick="playAudio('0006-p6.mp3','pb-6')">🔊</button>
+      </div>
+      <div class="cn">两匹拉车的马——Boxer 和 Clover——一起走了进来。它们走得很慢，小心翼翼地放下巨大的毛蹄，生怕稻草里藏着什么小动物。Clover 是一匹结实的、母性十足的母马，接近中年，生完第四胎后身材再也没恢复。Boxer 是一头巨兽，将近 18 手高，力气抵得上任何两匹马。他鼻子上的白条纹让他看起来有点傻——实际上他的智商确实不属一流——但他因性格沉稳和极其强大的工作能力而受到普遍尊敬。</div>
+      <div class="note">💡 <strong>这是全书最重要的两个角色出场！</strong> Boxer 代表了忠诚的工人阶级——力量大但不太聪明；Clover 代表了善良却软弱的民众。注意 <strong>tremendous powers of work</strong>——这句话暗示了 Boxer 注定被耗尽一切的命运。</div>
+    </div>
+
+    <hr class="line-split">
+
+    <!-- 段落 7：Benjamin -->
+    <div class="line-block">
+      <div class="play-cell">
+        <div class="en">After the horses came Muriel, the white goat, and Benjamin, the donkey. Benjamin was the oldest animal on the farm, and the worst <span class="highlight">tempered</span>. He seldom talked, and when he did, it was usually to make some <span class="highlight">cynical</span> remark — for instance, he would say that God had given him a tail to keep the flies off, but that he would sooner have had no tail and no flies. Alone among the animals on the farm he never laughed. If asked why, he would say that he saw nothing to laugh at. Nevertheless, without openly admitting it, he was devoted to Boxer; the two of them usually spent their Sundays together in the small paddock beyond the orchard, grazing side by side and never speaking.</div>
+        <button class="play-btn" id="pb-7" onclick="playAudio('0006-p7.mp3','pb-7')">🔊</button>
+      </div>
+      <div class="cn">马之后走进来的是 Muriel（白色山羊）和 Benjamin（驴子）。Benjamin 是农场上年纪最大、脾气最坏的动物。他很少说话，一旦开口通常都是些冷嘲热讽的评论——比如他会说：上帝给了他一条尾巴驱赶苍蝇，但他宁愿没有尾巴也没有苍蝇。他是农场里唯一从不笑的动物。如果问为什么，他会说自己没什么好笑的。尽管如此——虽然没有明说——他对 Boxer 有很深的感情；他们俩通常在周日一起待在果园外的小围场里，并排吃草，一言不发。</div>
+      <div class="note">💡 <strong>Benjamin 是全书最复杂的角色之一。</strong> 他是知识分子犬儒主义者的化身——看透了一切，但选择什么都不做。"宁愿没有尾巴也没有苍蝇"这种黑色幽默是全书的基调缩影。他与 Boxer 的沉默友谊是全书最动人的关系之一。</div>
+    </div>
+
+    <hr class="line-split">
+
+    <!-- 段落 8：Ducklings -->
+    <div class="line-block">
+      <div class="play-cell">
+        <div class="en">The two horses had just lain down when a brood of ducklings, which had lost their mother, filed into the barn, <span class="highlight">cheeping feebly</span> and wandering from side to side to find some place where they would not be trodden on. Clover made a sort of wall round them with her great foreleg, and the ducklings nestled down inside it and promptly fell asleep.</div>
+        <button class="play-btn" id="pb-8" onclick="playAudio('0006-p8.mp3','pb-8')">🔊</button>
+      </div>
+      <div class="cn">两匹马刚躺下，一窝失去了母亲的小鸭子鱼贯而入，微弱地啾啾叫着，东张西望想找个不会被踩到的地方。Clover 用她的大前腿在它们周围围了一道墙，小鸭子们在里面安顿下来，立刻睡着了。</div>
+      <div class="note">💡 一个温暖的小细节——Clover 的母性本能。这是全书为数不多的温暖时刻之一。注意 Orwell 在描写革命前的动物生活时，有意加了一些温情的碎片，让后面的黑暗更加刺眼。</div>
+    </div>
+
+    <hr class="line-split">
+
+    <!-- 段落 9：Mollie -->
+    <div class="line-block">
+      <div class="play-cell">
+        <div class="en">At the last moment Mollie, the foolish, pretty white mare who drew Mr. Jones's trap, came <span class="highlight">mincing daintily</span> in, chewing at a lump of sugar. She took a place near the front and began flirting her white mane, hoping to draw attention to the red ribbons it was <span class="highlight">plaited</span> with.</div>
+        <button class="play-btn" id="pb-9" onclick="playAudio('0006-p9.mp3','pb-9')">🔊</button>
+      </div>
+      <div class="cn">最后一刻，Mollie——那匹拉Jones马车的中看不中用的漂亮白色母马——优雅地碎步走了进来，嚼着一块方糖。她在前排找了个位置，开始甩动自己的白色鬃毛，希望引起大家对上面编着的红色缎带的注意。</div>
+      <div class="note">💡 <strong>Mollie 是全书最有意思的小角色。</strong> 她关心的是缎带和方糖，而不是革命。后面她的命运会如何？注意这句"foolish, pretty"——Orwell 毫不掩饰对她的贬义。</div>
+    </div>
+
+    <hr class="line-split">
+
+    <!-- 段落 10：猫 -->
+    <div class="line-block">
+      <div class="play-cell">
+        <div class="en">Last of all came the cat, who looked round, as usual, for the warmest place, and finally squeezed herself in between Boxer and Clover; there she <span class="highlight">purred contentedly</span> throughout Major's speech without listening to a word of what he was saying.</div>
+        <button class="play-btn" id="pb-10" onclick="playAudio('0006-p10.mp3','pb-10')">🔊</button>
+      </div>
+      <div class="cn">最后进来的是猫。她像往常一样四处张望，找了最暖和的位置，最后挤在了 Boxer 和 Clover 之间。整场演讲她就窝在那里满足地咕噜咕噜叫——一个字都没听进去。</div>
+      <div class="note">💡 <strong>又是一个精彩的角色刻画。</strong> 猫代表了那些对政治漠不关心、只关心自己舒服的人。尤其注意"as usual"——这不是第一次，也不会是最后一次。</div>
+    </div>
+
+    <hr class="line-split">
+
+    <!-- 段落 11：Moses + 开场 -->
+    <div class="line-block">
+      <div class="play-cell">
+        <div class="en">All the animals were now present except Moses, the tame <span class="highlight">raven</span>, who slept on a <span class="highlight">perch</span> behind the back door. When Major saw that they had all made themselves comfortable and were waiting attentively, he cleared his throat and began:</div>
+        <button class="play-btn" id="pb-11" onclick="playAudio('0006-p11.mp3','pb-11')">🔊</button>
+      </div>
+      <div class="cn">所有动物都到齐了——除了 Moses，那只驯养的渡鸦，它睡在后门后的栖木上。梅杰看到大家都安顿好了，正在认真等待，于是清了清嗓子，开始了：</div>
+      <div class="note">💡 Moses（摩西）——这个名字有强烈的宗教影射。圣经中摩西带领以色列人出埃及，而这只乌鸦在后来的章节中会扮演什么角色？它代表宗教（"糖果山"的故事），后面会详细讲。</div>
+    </div>
+
+    <hr class="line-split">
+
+    <div class="callout">
+      <strong>🤔 你发现了吗？</strong><br>
+      第一部分的动物逐个登场，Orwell 写的其实是 <strong>一幅社会群像</strong>：<br>
+      狗（暴力工具）、猪（知识分子/领导者）、马（劳动阶级）、羊（盲目追随者）、猫（自私冷漠者）、Benjamin（看透一切的犬儒者）、Mollie（追求物质享受者）……<br><br>
+      <strong>每个动物都代表了一个社会阶层。</strong> 读完整本书再回头看这段，你会更加惊叹 Orwell 的精妙。
+    </div>
+
+    <!-- ====== 第二部分预告 ====== -->
+    <div class="callout" style="background: var(--accent-dim); border-color: var(--accent);">
+      <strong>➡️ 下一节预告：</strong><br>
+      梅杰清了清嗓子——<strong>"Comrades……"</strong> 革命演讲即将开始。下一节我们继续读 Ch.I 后半段：Old Major 的演讲和《Beasts of England》。
+    </div>
+
+  </div><!-- /content -->
+
+  <div class="footer-nav">
+    <span><a href="0005-AnimalFarm-导读.html">← 导读课</a></span>
+    <a href="../index.html">返回主页</a>
+    <span><a href="0007-AnimalFarm-Ch1-P2-Speech.html">下一课：Ch.I 革命演讲 →</a></span>
+  </div>
+
+</div>
+<script src="../shared/lesson-tools.js"></script>
+</body>
+</html>
