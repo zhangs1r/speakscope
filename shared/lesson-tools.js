@@ -4,7 +4,7 @@
  * 功能：
  *   1. 标记已学 ✅
  *   2. 滚动位置保存/恢复
- *   3. 行内生词收藏 ⭐（自动扫描英文表达加收藏按钮）
+ *   3. 行内生词收藏 ⭐（自动扫描英文表达加收藏按钮，支持 toggle 和状态持久化）
  *   4. 底部备选收藏按钮（prompt 输入）
  *
  * 所有 localStorage 操作均包裹 try-catch，不会阻塞页面渲染。
@@ -135,6 +135,33 @@
     safeSet('speakscope_vocab', JSON.stringify(list));
   }
 
+  /** 查找 speakscope_vocab 中 phrase 字段完全匹配的项，返回第一个匹配项或 null */
+  function findSavedVocab(text) {
+    var list = getVocabList();
+    for (var i = 0; i < list.length; i++) {
+      if (list[i].phrase === text) {
+        return list[i];
+      }
+    }
+    return null;
+  }
+
+  /** 删除 speakscope_vocab 中第一条 phrase 匹配的项，返回 true 表示删除了 */
+  function deleteVocabByPhrase(text) {
+    var list = getVocabList();
+    var idx = -1;
+    for (var i = 0; i < list.length; i++) {
+      if (list[i].phrase === text) {
+        idx = i;
+        break;
+      }
+    }
+    if (idx === -1) return false;
+    list.splice(idx, 1);
+    saveVocabList(list);
+    return true;
+  }
+
   function saveVocab(phrase, meaning, note) {
     var list = getVocabList();
     list.push({
@@ -203,34 +230,44 @@
       var text = (el.textContent || '').trim();
       if (!text || !/[a-zA-Z]/.test(text)) return;
 
+      // 页面加载时检查是否已收藏
+      var existing = findSavedVocab(text);
+      var isSaved = existing !== null;
+
       var btn = document.createElement('button');
       btn.className = 'ss-vocab-inline-btn';
-      btn.textContent = '⭐';
-      btn.title = '收藏此表达';
+      if (isSaved) {
+        btn.textContent = '✅';
+        btn.classList.add('saved');
+        btn.title = '点击取消收藏';
+      } else {
+        btn.textContent = '⭐';
+        btn.title = '收藏此表达';
+      }
       btn.setAttribute('aria-label', '收藏此表达');
 
       btn.addEventListener('click', function (e) {
         e.preventDefault();
         e.stopPropagation();
 
-        var vocabList = getVocabList();
-        var already = vocabList.some(function (item) { return item.phrase === text; });
-        if (already) {
-          showToast('✅ 已收藏过');
-          return;
+        var currentlySaved = btn.classList.contains('saved');
+
+        if (currentlySaved) {
+          // 已收藏 → 删除
+          if (deleteVocabByPhrase(text)) {
+            btn.textContent = '⭐';
+            btn.classList.remove('saved');
+            btn.title = '收藏此表达';
+            showToast('🗑️ 已取消收藏 "' + text + '"');
+          }
+        } else {
+          // 未收藏 → 保存
+          saveVocab(text, '', '行内收藏');
+          btn.textContent = '✅';
+          btn.classList.add('saved');
+          btn.title = '点击取消收藏';
+          showToast('✅ 已收藏 "' + text + '"');
         }
-
-        saveVocab(text, '', '行内收藏');
-        btn.textContent = '✅';
-        btn.classList.add('saved');
-        btn.title = '已收藏';
-
-        showToast('✅ 已收藏 "' + text + '"');
-        setTimeout(function () {
-          btn.textContent = '⭐';
-          btn.classList.remove('saved');
-          btn.title = '收藏此表达';
-        }, 2000);
       });
 
       el.parentNode.insertBefore(btn, el.nextSibling);
