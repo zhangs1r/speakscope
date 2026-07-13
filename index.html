@@ -285,6 +285,159 @@
   .workspace-topbar .current {
     color: var(--ink-60);
   }
+
+  /*** SpeakScope 学习工具组件 ***/
+  .lesson-item.done {
+    opacity: 0.55;
+    filter: grayscale(0.6);
+    pointer-events: none;
+  }
+  .lesson-item .done-badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    margin-left: 0.3rem;
+  }
+  .lesson-item .progress-dot {
+    display: inline-block;
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    margin-right: 6px;
+    flex-shrink: 0;
+    margin-top: 6px;
+  }
+  .lesson-item .progress-dot.done { background: var(--success, #5A9E6F); }
+  .lesson-item .progress-dot.pending { background: var(--ink-20, #BABAC6); }
+
+  /*** 生词本 ***/
+  .ss-vocab-section {
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: var(--space-7);
+    margin-top: var(--space-8);
+  }
+  .ss-vocab-section h3 {
+    font-family: var(--font-serif);
+    font-size: var(--text-xl);
+    margin: 0 0 var(--space-2);
+  }
+  .ss-vocab-section .ss-vocab-desc {
+    font-size: var(--text-sm);
+    color: var(--ink-60);
+    margin-bottom: var(--space-5);
+  }
+  .ss-vocab-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--text-sm);
+  }
+  .ss-vocab-table th {
+    text-align: left;
+    padding: var(--space-2) var(--space-3);
+    border-bottom: 2px solid var(--accent-light);
+    font-weight: 600;
+    color: var(--ink-60);
+    background: var(--paper-light);
+  }
+  .ss-vocab-table td {
+    padding: var(--space-2) var(--space-3);
+    border-bottom: 1px solid var(--border-light);
+    vertical-align: middle;
+  }
+  .ss-vocab-table .mastered { opacity: 0.4; text-decoration: line-through; }
+  .ss-vocab-master-btn {
+    padding: 2px 8px;
+    font-size: 0.75rem;
+    border: 1px solid var(--border-light);
+    border-radius: 4px;
+    cursor: pointer;
+    background: var(--paper);
+    color: var(--ink-60);
+  }
+  .ss-vocab-master-btn:hover { border-color: var(--accent-light); }
+  .ss-vocab-empty {
+    color: var(--ink-40);
+    font-size: var(--text-sm);
+    font-style: italic;
+    padding: var(--space-4) 0;
+    text-align: center;
+  }
+
+  /*** 每日目标 ***/
+  .ss-daily-goal {
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: var(--space-5);
+    margin-top: var(--space-5);
+    font-size: var(--text-sm);
+  }
+  .ss-daily-goal .ss-goal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-3);
+  }
+  .ss-daily-goal .ss-goal-stat {
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .ss-daily-goal .ss-goal-set {
+    padding: 4px 12px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: var(--paper-light);
+    cursor: pointer;
+    font-size: var(--text-sm);
+    color: var(--accent-deep);
+  }
+  .ss-daily-goal .ss-goal-set:hover { border-color: var(--accent-light); }
+  .ss-goal-progress-bar {
+    height: 6px;
+    background: var(--border-light);
+    border-radius: 3px;
+    margin-top: var(--space-2);
+    overflow: hidden;
+  }
+  .ss-goal-progress-bar .fill {
+    height: 100%;
+    background: var(--accent);
+    border-radius: 3px;
+    transition: width 0.3s ease;
+  }
+
+  /*** 学习偏好 ***/
+  .ss-prefs {
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: var(--space-5);
+    margin-top: var(--space-6);
+    font-size: var(--text-sm);
+  }
+  .ss-prefs h4 {
+    margin: 0 0 var(--space-3);
+    font-family: var(--font-serif);
+    font-size: var(--text-base);
+  }
+  .ss-prefs label {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    margin-bottom: var(--space-2);
+    cursor: pointer;
+    color: var(--ink-80);
+  }
+  .ss-prefs input[type="radio"] {
+    accent-color: var(--accent);
+    width: 16px; height: 16px;
+    cursor: pointer;
+  }
+  .ss-prefs .pf-hint {
+    font-size: 0.75rem;
+    color: var(--ink-40);
+    margin-top: var(--space-1);
+  }
 </style>
 </head>
 <body>
@@ -408,7 +561,7 @@
 
       colLessons.forEach((lesson, i) => {
         const tags = lesson.tags ? lesson.tags.map(t => `<span class="collection-tag">${t}</span>`).join('') : '';
-        html += `<a class="lesson-item" href="${lesson.path}">
+        html += `<a class="lesson-item" href="${lesson.path}" data-lesson-id="${lesson.id}">
           <span class="emoji">${lesson.emoji}</span>
           <div>
             <div class="title">${lesson.title}</div>
@@ -441,6 +594,305 @@
       `;
       refGrid.appendChild(card);
     });
+  }
+})();
+</script>
+
+<script src="shared/lesson-tools.js"></script>
+<script>
+/* ═══════════════════════════════════════════════════
+   SpeakScope 增强功能 — 进度可视化、生词本、每日目标、学习偏好
+   基于 localStorage，只做加法，不阻塞渲染
+   ═══════════════════════════════════════════════════ */
+(function () {
+  'use strict';
+
+  // ─── 安全工具 ───
+  var g = function (k, d) { try { var v = localStorage.getItem(k); return v !== null ? v : d; } catch (_) { return d; } };
+  var p = function (s, d) { try { return JSON.parse(s); } catch (_) { return d; } };
+  var s = function (k, v) { try { localStorage.setItem(k, v); } catch (_) {} };
+
+  // ─── 1. 进度可视化 ──────────────────────────────────────────
+  function applyProgress() {
+    try {
+      var doneRaw = g('speakscope_done', '[]');
+      var doneSet = new Set(p(doneRaw, []));
+
+      document.querySelectorAll('.lesson-item').forEach(function (el) {
+        var lid = el.getAttribute('data-lesson-id');
+        if (!lid) return;
+
+        // 加进度圆点
+        var dot = document.createElement('span');
+        dot.className = 'progress-dot ' + (doneSet.has(lid) ? 'done' : 'pending');
+        var emojiSpan = el.querySelector('.emoji');
+        if (emojiSpan) el.insertBefore(dot, emojiSpan);
+
+        // 已学标记
+        if (doneSet.has(lid)) {
+          el.classList.add('done');
+          var titleDiv = el.querySelector('.title');
+          if (titleDiv && !titleDiv.querySelector('.done-badge')) {
+            var badge = document.createElement('span');
+            badge.className = 'done-badge';
+            badge.textContent = '✅';
+            titleDiv.appendChild(badge);
+          }
+        }
+      });
+    } catch (_) {}
+  }
+
+  // ─── 2. 学习偏好 ────────────────────────────────────────────
+
+  // 排序：根据偏好调整课程渲染顺序（通过重新排列 DOM）
+  function applyPreference() {
+    try {
+      var pref = g('speakscope_pref_focus', 'all');
+      if (pref === 'all') return;
+
+      // collection IDs
+      var confColls = ['conference-prep'];
+      var dailyColls = ['daily-expressions'];
+
+      // 遍历所有 collection-block
+      document.querySelectorAll('.collection-block').forEach(function (block) {
+        var header = block.querySelector('.collection-header h3');
+        if (!header) return;
+        var title = header.textContent || '';
+
+        var isConf = confColls.some(function (id) { return title.indexOf(id.replace('-', ' ')) > -1 || title.indexOf('备战') > -1 || title.indexOf('SCoPE') > -1; });
+        var isDaily = dailyColls.some(function (id) { return title.indexOf('地道表达') > -1; });
+
+        if (pref === 'conference' && !isConf) {
+          block.style.display = 'none';
+        } else if (pref === 'daily' && !isDaily) {
+          block.style.display = 'none';
+        } else {
+          block.style.display = '';
+        }
+      });
+    } catch (_) {}
+  }
+
+  // ─── 3. 生词本 ──────────────────────────────────────────────
+  function buildVocabSection() {
+    try {
+      var vocab = p(g('speakscope_vocab', '[]'), []);
+      var mastered = new Set(p(g('speakscope_vocab_mastered', '[]'), []));
+
+      var refSection = document.getElementById('references-section');
+      if (!refSection) return;
+
+      var section = document.createElement('section');
+      section.className = 'section';
+      section.style.cssText = 'background:var(--paper-light);border-top:1px solid var(--border);padding-bottom:0;';
+      section.id = 'ss-vocab-section';
+
+      var html = '<div class="inner">';
+      html += '<div class="ss-vocab-section">';
+      html += '<h3>📖 我的生词本</h3>';
+      html += '<div class="ss-vocab-desc">从课程页面收藏的英语表达，点击「已掌握」标记。</div>';
+
+      if (vocab.length === 0) {
+        html += '<div class="ss-vocab-empty">还没有收藏任何表达 😴 在学习页面点击「⭐ 收藏这个表达」开始吧。</div>';
+      } else {
+        html += '<table class="ss-vocab-table"><thead><tr>' +
+          '<th>#</th><th>短语 / 句子</th><th>释义</th><th>备注</th><th>收藏时间</th><th></th>' +
+          '</tr></thead><tbody>';
+
+        vocab.forEach(function (item, idx) {
+          var isMastered = mastered.has(item.id);
+          html += '<tr class="' + (isMastered ? 'mastered' : '') + '" data-vocab-id="' + item.id + '">';
+          html += '<td>' + (idx + 1) + '</td>';
+          html += '<td><strong>' + escHtml(item.phrase) + '</strong></td>';
+          html += '<td>' + escHtml(item.meaning) + '</td>';
+          html += '<td>' + escHtml(item.note || '-') + '</td>';
+          html += '<td>' + fmtTime(item.timestamp) + '</td>';
+          html += '<td><button class="ss-vocab-master-btn" data-vocab-id="' + item.id + '">' +
+            (isMastered ? '✅ 已掌握' : '标记已掌握') + '</button></td>';
+          html += '</tr>';
+        });
+
+        html += '</tbody></table>';
+      }
+
+      html += '</div></div>';
+      section.innerHTML = html;
+
+      var parent = refSection.parentNode;
+      parent.insertBefore(section, refSection.nextSibling);
+
+      // 绑定"已掌握"按钮
+      section.querySelectorAll('.ss-vocab-master-btn').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var vid = this.getAttribute('data-vocab-id');
+          if (!vid) return;
+          toggleMastered(vid);
+        });
+      });
+    } catch (_) {}
+  }
+
+  function toggleMastered(vocabId) {
+    try {
+      var arr = p(g('speakscope_vocab_mastered', '[]'), []);
+      var set = new Set(arr);
+      if (set.has(vocabId)) {
+        set.delete(vocabId);
+      } else {
+        set.add(vocabId);
+      }
+      s('speakscope_vocab_mastered', JSON.stringify(Array.from(set)));
+
+      // 更新 UI
+      var row = document.querySelector('tr[data-vocab-id="' + vocabId + '"]');
+      var btn = row ? row.querySelector('.ss-vocab-master-btn') : null;
+      if (row) row.classList.toggle('mastered');
+      if (btn) {
+        btn.textContent = set.has(vocabId) ? '✅ 已掌握' : '标记已掌握';
+      }
+    } catch (_) {}
+  }
+
+  function escHtml(str) {
+    var d = document.createElement('div');
+    d.textContent = str;
+    return d.innerHTML;
+  }
+
+  function fmtTime(iso) {
+    try {
+      var d = new Date(iso);
+      return d.getFullYear() + '-' +
+        String(d.getMonth() + 1).padStart(2, '0') + '-' +
+        String(d.getDate()).padStart(2, '0') + ' ' +
+        String(d.getHours()).padStart(2, '0') + ':' +
+        String(d.getMinutes()).padStart(2, '0');
+    } catch (_) { return iso; }
+  }
+
+  // ─── 4. 每日目标 ────────────────────────────────────────────
+
+  function buildDailyGoal() {
+    try {
+      var heroBox = document.querySelector('.hero-feature-box');
+      if (!heroBox) return;
+
+      // 不重复添加
+      if (document.getElementById('ss-daily-goal')) return;
+
+      var goal = parseInt(g('speakscope_daily_goal', '1'), 10) || 1;
+      var tallyRaw = p(g('speakscope_vtally', '{}'), {});
+      var today = new Date();
+      var todayStr = today.getFullYear() + '-' +
+        String(today.getMonth() + 1).padStart(2, '0') + '-' +
+        String(today.getDate()).padStart(2, '0');
+
+      var doneToday = 0;
+      Object.keys(tallyRaw).forEach(function (k) {
+        if (tallyRaw[k] === todayStr) doneToday++;
+      });
+
+      var pct = Math.min(100, Math.round((doneToday / goal) * 100));
+
+      var el = document.createElement('div');
+      el.id = 'ss-daily-goal';
+      el.className = 'ss-daily-goal';
+      el.innerHTML =
+        '<div class="ss-goal-header">' +
+        '<span>🎯 <strong>今日目标</strong>：已学 <span class="ss-goal-stat" id="ss-goal-done">' + doneToday + '</span> / <span id="ss-goal-total">' + goal + '</span> 节课</span>' +
+        '<button class="ss-goal-set" id="ss-goal-set-btn">设置目标</button>' +
+        '</div>' +
+        '<div class="ss-goal-progress-bar"><div class="fill" style="width:' + pct + '%;"></div></div>';
+
+      heroBox.appendChild(el);
+
+      // 设置目标
+      document.getElementById('ss-goal-set-btn').addEventListener('click', function () {
+        var current = parseInt(g('speakscope_daily_goal', '1'), 10) || 1;
+        var input = prompt('每日目标：每天学多少节课？', String(current));
+        if (input === null) return;
+        var n = parseInt(input, 10);
+        if (isNaN(n) || n < 1) { alert('请输入一个大于 0 的数字'); return; }
+        s('speakscope_daily_goal', String(n));
+        document.getElementById('ss-goal-total').textContent = n;
+        updateGoalBar();
+      });
+    } catch (_) {}
+  }
+
+  function updateGoalBar() {
+    try {
+      var goal = parseInt(g('speakscope_daily_goal', '1'), 10) || 1;
+      var tallyRaw = p(g('speakscope_vtally', '{}'), {});
+      var today = new Date();
+      var todayStr = today.getFullYear() + '-' +
+        String(today.getMonth() + 1).padStart(2, '0') + '-' +
+        String(today.getDate()).padStart(2, '0');
+
+      var doneToday = 0;
+      Object.keys(tallyRaw).forEach(function (k) {
+        if (tallyRaw[k] === todayStr) doneToday++;
+      });
+
+      var pct = Math.min(100, Math.round((doneToday / goal) * 100));
+      document.getElementById('ss-goal-done').textContent = doneToday;
+      var fill = document.querySelector('.ss-goal-progress-bar .fill');
+      if (fill) fill.style.width = pct + '%';
+    } catch (_) {}
+  }
+
+  // ─── 5. 学习偏好 UI ─────────────────────────────────────────
+
+  function buildPrefs() {
+    try {
+      if (document.getElementById('ss-prefs')) return;
+
+      var footer = document.querySelector('.site-footer');
+      if (!footer) return;
+
+      var prefDiv = document.createElement('div');
+      prefDiv.id = 'ss-prefs';
+      prefDiv.className = 'ss-prefs';
+      prefDiv.style.cssText = 'max-width:var(--content-width);margin:0 auto var(--space-6);';
+
+      var current = g('speakscope_pref_focus', 'all');
+      prefDiv.innerHTML =
+        '<h4>⚙️ 学习偏好</h4>' +
+        '<label><input type="radio" name="ss-pref-focus" value="all" ' + (current === 'all' ? 'checked' : '') + '> 展示全部课程</label>' +
+        '<label><input type="radio" name="ss-pref-focus" value="conference" ' + (current === 'conference' ? 'checked' : '') + '> 优先展示会议备战课程</label>' +
+        '<label><input type="radio" name="ss-pref-focus" value="daily" ' + (current === 'daily' ? 'checked' : '') + '> 优先展示日常训练</label>' +
+        '<div class="pf-hint">选择后首页课程排序/筛选会相应调整</div>';
+
+      // 插入到 footer 前面
+      footer.parentNode.insertBefore(prefDiv, footer);
+
+      prefDiv.querySelectorAll('input[name="ss-pref-focus"]').forEach(function (radio) {
+        radio.addEventListener('change', function () {
+          s('speakscope_pref_focus', this.value);
+          applyPreference();
+        });
+      });
+    } catch (_) {}
+  }
+
+  // ─── 初始化 ──────────────────────────────────────────────────
+  function init() {
+    // 需要等现有渲染完成
+    setTimeout(function () {
+      applyProgress();
+      buildDailyGoal();
+      buildVocabSection();
+      buildPrefs();
+      applyPreference();
+    }, 50);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
   }
 })();
 </script>
