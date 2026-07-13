@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 0005 课：走进 Animal Farm · 导读 · SpeakScope</title>
+<link rel="stylesheet" href="../shared/theme.css">
+<style>
+  body { background: var(--paper-light); }
+  .lesson { max-width: 880px; margin: 0 auto; padding: var(--space-8) var(--space-6); }
+  .lesson h1 { font-family: var(--font-serif); font-size: var(--text-4xl); margin-bottom: 0.2rem; }
+  .lesson .subtitle { font-size: var(--text-lg); color: var(--ink-60); font-family: var(--font-serif); }
+  .lesson .meta { display: flex; gap: var(--space-3); margin: var(--space-4) 0 var(--space-8); flex-wrap: wrap; }
+  .lesson .meta span { padding: 0.3rem 0.8rem; border-radius: 6px; background: var(--paper); border: 1px solid var(--border-light); font-size: var(--text-sm); color: var(--ink-60); }
+  .lesson .content { line-height: 1.8; font-size: var(--text-base); }
+  .lesson .content h2 { font-family: var(--font-serif); margin: var(--space-8) 0 var(--space-4); padding-bottom: var(--space-1); border-bottom: 1px solid var(--border); }
+  .lesson .content h3 { font-family: var(--font-serif); margin: var(--space-6) 0 var(--space-3); }
+  .back { display: inline-block; margin-bottom: var(--space-6); color: var(--accent); text-decoration: none; font-size: var(--text-sm); }
+  .back:hover { text-decoration: underline; }
+  .passage-card { background: var(--paper); border: 1px solid var(--border); border-radius: 12px; padding: var(--space-6); margin: var(--space-5) 0; border-left: 4px solid var(--accent); }
+  .passage-card .p-en { font-family: var(--font-serif); font-size: var(--text-base); line-height: 1.8; color: var(--ink); }
+  .passage-card .p-cn { font-size: var(--text-sm); color: var(--ink-60); margin-top: var(--space-3); border-top: 1px dashed var(--border); padding-top: var(--space-3); }
+  .passage-card .p-pre { font-size: var(--text-sm); color: var(--accent-deep); font-style: italic; margin-bottom: var(--space-3); padding: var(--space-2) var(--space-3); background: var(--accent-dim); border-radius: 6px; }
+  .passage-card .p-note { font-size: var(--text-sm); color: var(--ink-60); margin-top: var(--space-3); border-top: 1px dashed var(--border-light); padding-top: var(--space-3); }
+  .highlight-blue { background: #dbeafe; padding: 0.1rem 0.2rem; border-radius: 2px; }
+  .highlight-yellow { background: #fef3c7; padding: 0.1rem 0.2rem; border-radius: 2px; }
+  .vocab-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: var(--space-4); margin: var(--space-5) 0; }
+  .vocab-card { background: var(--paper); border: 1px solid var(--border); border-radius: 8px; padding: var(--space-4); }
+  .vocab-card .v-word { font-weight: 700; font-family: var(--font-serif); font-size: var(--text-lg); display: flex; align-items: center; gap: 0.3rem; }
+  .vocab-card .v-pron { font-size: var(--text-xs); color: var(--ink-40); font-style: italic; }
+  .vocab-card .v-cn { font-size: var(--text-sm); color: var(--ink-80); margin-top: var(--space-1); }
+  .vocab-card .v-example { font-size: var(--text-xs); color: var(--ink-60); margin-top: var(--space-2); font-style: italic; }
+  .level-must { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 4px; font-size: 0.7rem; font-weight: 600; background: #dbeafe; color: #1e40af; margin-right: 0.3rem; }
+  .level-know { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 4px; font-size: 0.7rem; font-weight: 600; background: #fef3c7; color: #92400e; margin-right: 0.3rem; }
+  .map-table { width: 100%; border-collapse: collapse; margin: var(--space-5) 0; font-size: var(--text-sm); }
+  .map-table th { text-align: left; background: var(--accent-dim); padding: var(--space-2) var(--space-3); color: var(--accent-deep); font-weight: 600; }
+  .map-table td { padding: var(--space-2) var(--space-3); border-bottom: 1px solid var(--border-light); }
+  .pre-box { background: var(--accent-dim); border-radius: 8px; padding: var(--space-4); margin: var(--space-5) 0; border: 1px dashed var(--accent-light); }
+  .pre-box strong { color: var(--accent-deep); }
+  .retrieval-box { background: var(--paper); border: 2px dashed var(--accent-light); border-radius: 12px; padding: var(--space-5); margin: var(--space-5) 0; }
+  .retrieval-box details { margin-top: var(--space-3); }
+  .retrieval-box summary { cursor: pointer; font-weight: 600; color: var(--accent-deep); }
+  .speak-card { background: var(--paper); border: 1px solid var(--border); border-radius: 8px; padding: var(--space-5); margin: var(--space-4) 0; }
+  .speak-card .s-level { font-size: var(--text-xs); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: var(--space-2); }
+  .speak-card .s-level.mec { color: var(--accent); }
+  .speak-card .s-level.con { color: var(--accent-deep); }
+  .speak-card .s-level.free { color: #5a9e6f; }
+  .speak-card .s-framework { background: var(--accent-dim); padding: var(--space-3); border-radius: 6px; margin: var(--space-3) 0; font-family: var(--font-mono); font-size: var(--text-sm); }
+  .speak-card .s-model { background: #f0fdf4; border: 1px solid #bbf7d0; padding: var(--space-3); border-radius: 6px; margin: var(--space-2) 0; font-size: var(--text-sm); }
+  .exercise-box { border: 1px solid var(--border); border-radius: 8px; padding: var(--space-5); margin: var(--space-6) 0; background: var(--paper); }
+  .exercise-box summary { cursor: pointer; font-weight: 600; color: var(--accent-deep); font-size: var(--text-base); margin-bottom: var(--space-3); }
+  .exercise-box .ex-section { margin: var(--space-3) 0; }
+  .quiz-item { margin: var(--space-3) 0; padding: var(--space-2); border-left: 3px solid var(--accent-light); }
+  .play-btn { display: inline-flex; align-items: center; justify-content: center; background: var(--paper); border: 1px solid var(--accent-light); border-radius: 4px; cursor: pointer; font-size: 0.75rem; width: 1.6rem; height: 1.6rem; margin-left: 0.4rem; flex-shrink: 0; transition: background 0.15s, transform 0.1s; vertical-align: middle; line-height: 1; }
+  .play-btn:hover { background: var(--accent-dim); transform: scale(1.1); }
+  .play-btn:active { transform: scale(0.95); }
+  .play-btn.playing { background: #c8e6c9; border-color: var(--success); }
+  .callout { background: var(--paper); border: 1px solid var(--border); border-radius: 8px; padding: var(--space-5); margin: var(--space-5) 0; }
+  .callout strong { color: var(--accent-deep); }
+  .word-cell { display: flex; align-items: center; gap: 0.3rem; flex-wrap: wrap; }
+  .footer-nav { margin-top: var(--space-10); padding-top: var(--space-6); border-top: 1px solid var(--border); display: flex; justify-content: space-between; font-size: var(--text-sm); }
+  .footer-nav a { color: var(--accent); text-decoration: none; }
+  .footer-nav a:hover { text-decoration: underline; }
+  .track-table { width: 100%; border-collapse: collapse; margin: var(--space-4) 0; font-size: var(--text-sm); }
+  .track-table th { text-align: left; background: var(--accent-dim); padding: var(--space-2) var(--space-3); color: var(--accent-deep); font-weight: 600; }
+  .track-table td { padding: var(--space-2) var(--space-3); border-bottom: 1px solid var(--border-light); }
+  .who-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px,1fr)); gap: var(--space-3); margin: var(--space-4) 0; }
+  .who-card { background: var(--paper); border: 1px solid var(--border); border-radius: 8px; padding: var(--space-3); }
+  .who-card .w-name { font-weight: 600; }
+  .who-card .w-role { font-size: var(--text-xs); color: var(--ink-40); }
+  .who-card .w-desc { font-size: var(--text-sm); margin-top: var(--space-1); }
+</style>
+<script>
+const player = new Audio();
+let currentBtn = null;
+function playAudio(src, btnId) {
+  const btn = document.getElementById(btnId);
+  if (btn && btn.classList.contains('playing')) { player.pause(); player.currentTime = 0; btn.classList.remove('playing'); currentBtn = null; return; }
+  if (currentBtn) currentBtn.classList.remove('playing');
+  player.src = 'assets/audio/animal-farm/' + src; player.play();
+  if (btn) { btn.classList.add('playing'); currentBtn = btn; }
+  player.onended = () => { if (btn) btn.classList.remove('playing'); currentBtn = null; };
+}
+</script>
+</head>
+<body>
+<div class="lesson">
+
+  <a class="back" href="../index.html">← 返回 SpeakScope 主页</a>
+  <h1>📖 走进 Animal Farm</h1>
+  <div class="subtitle">George Orwell 经典寓言 · 阅读前的准备课</div>
+  <div class="meta">
+    <span>⏱ 35-40 分钟（核心 25 分钟）</span>
+    <span>📚 英文原著 · Animal Farm</span>
+    <span>🏷️ 英文原著 · Animal Farm · 导读</span>
+    <span>🔵 入门 🌱</span>
+  </div>
+
+  <div class="content">
+
+    <!-- ====== 第零步：读前激活 ====== -->
+    <h2>🎬 在读之前</h2>
+    <div class="pre-box">
+      <strong>🤔 先问自己：</strong><br>
+      你知道《动物农场》这本书吗？有没有听过 "All animals are equal, but some are more equal than others" 这句话？
+      你觉得为什么一本讲动物的书能成为世界名著？<br><br>
+      <strong>这节课你将了解：</strong>
+      <ul style="margin-left:var(--space-5); margin-top:var(--space-2); line-height:2;">
+        <li>✅ George Orwell 是谁，他为什么写这本书</li>
+        <li>✅ 什么是"政治寓言"——为什么用动物讲故事</li>
+        <li>✅ 全书的核心设定：农场、动物、七诫</li>
+        <li>✅ 主要角色一览（谁对应谁）</li>
+        <li>✅ 阅读方法和学习计划</li>
+      </ul>
+    </div>
+
+    <!-- ====== 1. Orwell 与这本书 ====== -->
+    <h2>📜 作者：George Orwell</h2>
+
+    <div class="passage-card">
+      <div class="word-cell">
+        <div class="p-en"><strong>George Orwell</strong> (1903–1950) was an English novelist, essayist, and critic. He is best known for two novels: <em>Animal Farm</em> (1945) and <em>Nineteen Eighty-Four</em> (1949). Orwell's writing is famous for its <span class="highlight-blue">clear, direct style</span> and its strong <span class="highlight-blue">criticism of tyranny</span>.</div>
+        <button class="play-btn" id="pb-intro" onclick="playAudio('0005-intro-orwell.mp3','pb-intro')">🔊</button>
+      </div>
+      <div class="p-cn">George Orwell（乔治·奥威尔）是英国小说家、散文家和评论家。他以《动物农场》和《一九八四》闻名。他的写作以清晰直接的风格和对暴政的强烈批评著称。</div>
+      <div class="p-note">💡 Orwell 参加过西班牙内战，亲眼目睹了革命理想如何被独裁者扭曲——这段经历直接影响了《动物农场》的创作。</div>
+    </div>
+
+    <p><strong>Orwell 的两个关键经历塑造了这本书：</strong></p>
+    <ul style="margin-left:var(--space-5); line-height:2;">
+      <li>🇪🇸 <strong>西班牙内战（1936-1939）</strong>——他加入共和军与法西斯作战，但看到苏联操控的革命阵营内部清洗，理想破灭</li>
+      <li>🇧🇩 <strong>缅甸殖民经历</strong>——作为帝国警察在缅甸服役，亲身体验了殖民压迫，成为坚定的反帝国主义者</li>
+    </ul>
+
+    <p>Orwell 在 1943 年写完《动物农场》，1945 年出版。当时正值二战末期，苏联是英国的盟友，所以没有出版社敢出版这本讽刺苏联的书——直到战争结束。</p>
+
+    <!-- ====== 2. 什么是寓言 ====== -->
+    <h2>🎭 政治寓言（Political Allegory）</h2>
+
+    <div class="passage-card">
+      <div class="word-cell">
+        <div class="p-en">An <span class="highlight-blue">allegory</span> is a story that has a hidden meaning. On the surface it is a simple tale about animals — but underneath, every character and event represents something real in human politics and history. <em>Animal Farm</em> is a <span class="highlight-blue">political allegory</span> about the Russian Revolution and its aftermath.</div>
+        <button class="play-btn" id="pb-allegory" onclick="playAudio('0005-intro-allegory.mp3','pb-allegory')">🔊</button>
+      </div>
+      <div class="p-cn">寓言（allegory）是一个有隐藏含义的故事。表面上是关于动物的简单故事——但底下每个角色和事件都代表真实的人类政治和历史。《动物农场》是关于俄国革命及其后果的政治寓言。</div>
+    </div>
+
+    <div class="passage-card">
+      <div class="word-cell">
+        <div class="p-en"><span class="highlight-yellow">Satire</span> is a way of using humor, irony, or exaggeration to criticize people or ideas. Orwell uses satire to show how revolutions can be betrayed, how power corrupts, and how propaganda controls people.</div>
+        <button class="play-btn" id="pb-satire" onclick="playAudio('0005-intro-satire.mp3','pb-satire')">🔊</button>
+      </div>
+      <div class="p-cn">讽刺（satire）是用幽默、反讽或夸张来批评人或思想的表达方式。Orwell 用讽刺来展示革命如何被背叛、权力如何腐化、宣传如何控制人。</div>
+    </div>
+
+    <div class="callout">
+      <strong>🎯 读这本书的正确姿势：</strong><br>
+      不要只把它当成"动物童话"来读。每读一页，都问自己一个问题：<br>
+      <em>"这如果是真实的（不是动物的）历史，它在讲什么？"</em>
+    </div>
+
+    <!-- ====== 3. 核心设定 ====== -->
+    <h2>🏡 全书设定一览</h2>
+
+    <p><strong>故事发生地：</strong>Manor Farm（庄园农场）—— 一个普通的英国农场，主人是 Mr. Jones</p>
+    <p><strong>核心逻辑链：</strong></p>
+    <div class="callout">
+      <strong>动物受压迫 → 老猪 Major 提出革命理想 → 动物起义成功 → 建立"动物主义"(Animalism) 新秩序 → 猪逐渐掌权 → 权力腐化 → 猪变成比人更坏的统治者</strong>
+    </div>
+
+    <h3>📜 七诫（The Seven Commandments）</h3>
+    <p>动物起义后建立了七条戒律，是动物社会的根本大法。但——<strong>这是一条一条被修改的</strong>。每读一章，注意看看墙上的字有没有变化。</p>
+    <table class="track-table">
+      <tr><th>原版</th><th>最终变成</th></tr>
+      <tr><td>1. 两脚行走的是敌人</td><td>（未变）</td></tr>
+      <tr><td>2. 四脚行走的是朋友</td><td>（未变）</td></tr>
+      <tr><td>3. 不得穿衣服</td><td>（未变）</td></tr>
+      <tr><td>4. 不得睡床</td><td>不得睡床<strong>铺被单</strong></td></tr>
+      <tr><td>5. 不得饮酒</td><td>不得饮酒<strong>过量</strong></td></tr>
+      <tr><td>6. 不得杀生</td><td>不得杀生<strong>无故</strong></td></tr>
+      <tr><td>7. 所有动物一律平等</td><td>所有动物一律平等，<strong>但有些动物更平等</strong></td></tr>
+    </table>
+
+    <!-- ====== 4. 角色一览 ====== -->
+    <h2>🐷 主要角色</h2>
+    <p>每个角色都映射真实历史人物。这里只列最关键的几个，剩下的随课程慢慢展开。</p>
+
+    <div class="who-grid">
+      <div class="who-card">
+        <div class="w-name">Old Major 🐗 <span class="w-role">→ 马克思/列宁</span></div>
+        <div class="w-desc">年老的公猪，提出革命理想，章 I 中发表重要演讲后去世。</div>
+      </div>
+      <div class="who-card">
+        <div class="w-name">Napoleon 🐽 <span class="w-role">→ 斯大林</span></div>
+        <div class="w-desc">篡权者、独裁者、大清洗的实施者。全书主角（反派）。</div>
+      </div>
+      <div class="who-card">
+        <div class="w-name">Snowball 🐷 <span class="w-role">→ 托洛茨基</span></div>
+        <div class="w-desc">理想主义者、演讲家、军事策略家。后被驱逐并污名化。</div>
+      </div>
+      <div class="who-card">
+        <div class="w-name">Squealer 🐖 <span class="w-role">→ 宣传机器</span></div>
+        <div class="w-desc">Napoleon 的喉舌，能把黑的说成白的，操纵数据。</div>
+      </div>
+      <div class="who-card">
+        <div class="w-name">Boxer 🐴 <span class="w-role">→ 工人阶级</span></div>
+        <div class="w-desc">最忠实的劳动者。"我会更努力！"是他的座右铭。</div>
+      </div>
+      <div class="who-card">
+        <div class="w-name">Benjamin 🐴 <span class="w-role">→ 犬儒的知识分子</span></div>
+        <div class="w-desc">看透一切但选择沉默的老驴。</div>
+      </div>
+    </div>
+
+    <!-- ====== 5. Orwell 写作风格 ====== -->
+    <h2>✍️ Orwell 的写作风格</h2>
+    <div class="callout">
+      <strong>Orwell 的 "Plain Style"（简洁风格）</strong><br>
+      Orwell 有一句名言：<em>"Never use a long word where a short one will do."</em>（能用短词就别用长词。）
+      <br><br>
+      <strong>他的几个特点：</strong>
+      <ol style="margin-left: var(--space-5); line-height: 2; margin-top: var(--space-2);">
+        <li><strong>看似简单实则不简单</strong>——句子短、词汇基础，但承载了深刻的政治讽刺</li>
+        <li><strong>反讽（Irony）</strong>——表面说"动物们多么幸福"，实际在说它们多么不幸福</li>
+        <li><strong>寓言体裁</strong>——用儿童故事的外壳包裹成人政治内核</li>
+        <li><strong>有限视角</strong>——读者知道动物的想法，但不知道猪的真正意图</li>
+      </ol>
+    </div>
+
+    <!-- ====== 6. 关键词汇 ====== -->
+    <h2>🔑 这节课的关键词</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card">
+        <div class="word-cell"><span class="v-word"><span class="level-must">🔵</span> allegory <button class="play-btn" id="pb-v1" onclick="playAudio('0005-key-allegory.mp3','pb-v1')">🔊</button></span></div>
+        <div class="v-pron">/ˈæl.ə.ɡɔːr.i/</div>
+        <div class="v-cn">寓言——有隐藏含义的故事</div>
+        <div class="v-example">"Animal Farm is a political allegory."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="word-cell"><span class="v-word"><span class="level-know">🟡</span> satire <button class="play-btn" id="pb-v2" onclick="playAudio('0005-key-satire.mp3','pb-v2')">🔊</button></span></div>
+        <div class="v-pron">/ˈsæt.aɪər/</div>
+        <div class="v-cn">讽刺——用幽默批评社会</div>
+        <div class="v-example">"Orwell uses satire to criticize tyranny."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="word-cell"><span class="v-word"><span class="level-must">🔵</span> rebellion <button class="play-btn" id="pb-v3" onclick="playAudio('0005-key-rebellion.mp3','pb-v3')">🔊</button></span></div>
+        <div class="v-pron">/rɪˈbel.jən/</div>
+        <div class="v-cn">造反、起义——全书核心事件</div>
+        <div class="v-example">"The animals planned a rebellion against Mr. Jones."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="word-cell"><span class="v-word"><span class="level-must">🔵</span> tyranny <button class="play-btn" id="pb-v4" onclick="playAudio('0005-key-tyranny.mp3','pb-v4')">🔊</button></span></div>
+        <div class="v-pron">/ˈtɪr.ə.ni/</div>
+        <div class="v-cn">暴政——全书批判的核心对象</div>
+        <div class="v-example">"The animals suffered under human tyranny."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="word-cell"><span class="v-word"><span class="level-must">🔵</span> comrades <button class="play-btn" id="pb-v5" onclick="playAudio('0005-key-comrades.mp3','pb-v5')">🔊</button></span></div>
+        <div class="v-pron">/ˈkɑːm.rædz/</div>
+        <div class="v-cn">同志们——动物间的称呼，借自共产主义运动</div>
+        <div class="v-example">"Comrades, listen to my speech!"</div>
+      </div>
+      <div class="vocab-card">
+        <div class="word-cell"><span class="v-word"><span class="level-must">🔵</span> manifesto <button class="play-btn" id="pb-v6" onclick="playAudio('0005-key-manifesto.mp3','pb-v6')">🔊</button></span></div>
+        <div class="v-pron">/ˌmæn.ɪˈfes.toʊ/</div>
+        <div class="v-cn">宣言——Old Major 的演讲就是一份革命宣言</div>
+        <div class="v-example">"Old Major's speech was a manifesto for the animals."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="word-cell"><span class="v-word"><span class="level-know">🟡</span> propaganda <button class="play-btn" id="pb-v7" onclick="playAudio('0005-key-propaganda.mp3','pb-v7')">🔊</button></span></div>
+        <div class="v-pron">/ˌprɑːp.əˈɡæn.də/</div>
+        <div class="v-cn">宣传——书中猪操纵舆论的方式</div>
+        <div class="v-example">"Squealer was a master of propaganda."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="word-cell"><span class="v-word"><span class="level-know">🟡</span> revolution <button class="play-btn" id="pb-v8" onclick="playAudio('0005-key-revolution.mp3','pb-v8')">🔊</button></span></div>
+        <div class="v-pron">/ˌrev.əˈluː.ʃən/</div>
+        <div class="v-cn">革命——全书的总背景</div>
+        <div class="v-example">"The revolution began when the animals took over the farm."</div>
+      </div>
+    </div>
+
+    <!-- Retrieval practice -->
+    <div class="retrieval-box">
+      <strong>🔍 检索练习（先试着自己回忆，再点开看答案）</strong><br>
+      <span style="font-size:var(--text-sm); color:var(--ink-60);">不看中文，你还记得这些词的意思吗？</span>
+      <details>
+        <summary>📌 点击核对答案</summary>
+        <ul style="margin-left:var(--space-5); line-height:2; margin-top:var(--space-3);">
+          <li><strong>allegory</strong> — 寓言（有隐藏含义的故事）</li>
+          <li><strong>satire</strong> — 讽刺（用幽默批评社会）</li>
+          <li><strong>rebellion</strong> — 造反、起义</li>
+          <li><strong>tyranny</strong> — 暴政</li>
+          <li><strong>comrades</strong> — 同志们</li>
+          <li><strong>manifesto</strong> — 宣言</li>
+          <li><strong>propaganda</strong> — 宣传</li>
+          <li><strong>revolution</strong> — 革命</li>
+        </ul>
+      </details>
+    </div>
+
+    <!-- ====== 7. 口语练习 ====== -->
+    <h2>💬 口语练习</h2>
+
+    <div class="speak-card">
+      <div class="s-level mec">🔰 MECHANICAL — 句型框架</div>
+      <p>用下面的框架回答：</p>
+      <div class="s-framework">"I think Animal Farm is about _____ because _____."</div>
+      <p style="font-size:var(--text-sm); color:var(--ink-60);">例：I think Animal Farm is about <strong>power and corruption</strong> because <strong>the pigs become like humans</strong>.</p>
+    </div>
+
+    <div class="speak-card">
+      <div class="s-level con">📝 CONTROLLED — 模仿示范</div>
+      <p><strong>问题：</strong>Why do you think Orwell chose to write about animals instead of humans?</p>
+      <div class="s-model"><strong>Model response:</strong> "I think Orwell chose animals because it makes the story simpler and more universal. When the characters are animals, readers from any country can understand the message without focusing on specific people."</div>
+      <p style="font-size:var(--text-sm); color:var(--ink-60); margin-top:var(--space-2);">👆 试着用自己的话模仿这个结构回答。</p>
+    </div>
+
+    <div class="speak-card">
+      <div class="s-level free">💭 FREE — 自由讨论</div>
+      <ol style="margin-left:var(--space-5); line-height:2.2;">
+        <li>Do you think it is possible for a revolution to create a truly equal society? Why or why not?</li>
+        <li>"Power corrupts; absolute power corrupts absolutely." Do you agree? Can you think of examples?</li>
+        <li>What do you expect to happen in the first chapter, when Old Major gives his speech?</li>
+      </ol>
+    </div>
+
+    <div class="callout">
+      <strong>🤖 AI 陪练 Prompt</strong><br>
+      复制下面的文字到元宝 AI：<br>
+      <div class="s-framework" style="margin-top:var(--space-2);">"我刚刚开始读 George Orwell 的 Animal Farm。我想跟你练习口语，请用英语问我关于这本书的问题——比如作者背景、寓言体裁、你的期待。一次问一个，回答后给我反馈。"</div>
+    </div>
+
+    <!-- ====== 8. 课后练习 ====== -->
+    <h2>📝 课后练习</h2>
+
+    <div class="exercise-box">
+      <summary>📝 词汇填空（必做）</summary>
+      <div class="ex-section">
+        <p>用以下词填空：<strong>allegory, satire, rebellion, tyranny, comrades, manifesto</strong></p>
+        <div class="quiz-item">1. "______, we must fight for our freedom!" called the pig.</div>
+        <div class="quiz-item">2. Animal Farm is a political ______ about the Russian Revolution.</div>
+        <div class="quiz-item">3. Old Major's speech was a ______ for revolution.</div>
+        <div class="quiz-item">4. The animals planned a ______ against Mr. Jones.</div>
+        <div class="quiz-item">5. Orwell uses ______ to criticize political leaders.</div>
+        <div class="quiz-item">6. The animals lived under the ______ of human beings.</div>
+      </div>
+    </div>
+
+    <div class="exercise-box">
+      <summary>📖 阅读理解（必做）</summary>
+      <div class="ex-section">
+        <div class="quiz-item"><strong>1.</strong> What is an allegory?<br>
+          A. A true story about real people<br>
+          B. A story with a hidden meaning<br>
+          C. A poem about animals<br>
+          D. A scientific article</div>
+        <div class="quiz-item"><strong>2.</strong> Why did Orwell write Animal Farm?<br>
+          A. To entertain children with animal stories<br>
+          B. To criticize tyranny and show how revolutions can fail<br>
+          C. To teach farming techniques<br>
+          D. To describe life in England</div>
+        <div class="quiz-item"><strong>3.</strong> Which character represents the working class?<br>
+          A. Napoleon<br>
+          B. Snowball<br>
+          C. Boxer<br>
+          D. Squealer</div>
+      </div>
+    </div>
+
+    <div class="exercise-box">
+      <details>
+        <summary>✍️ 写作任务（选做）</summary>
+        <div class="ex-section">
+          <p>用至少 3 个这节课学的生词，写一段 50 词左右的英文短文：<strong>"What I expect from reading Animal Farm"</strong></p>
+        </div>
+      </details>
+    </div>
+
+    <!-- ====== 9. 阅读计划 ====== -->
+    <h2>🗺️ 接下来的旅程</h2>
+    <p>全书共 10 章，我们将用 10 节课逐章精读：</p>
+    <table class="track-table">
+      <tr><th>课</th><th>章节</th><th>核心事件</th></tr>
+      <tr><td>0006</td><td>Ch.I</td><td>Old Major 的演讲——革命理想</td></tr>
+      <tr><td>0007</td><td>Ch.II</td><td>起义成功——七诫确立</td></tr>
+      <tr><td>0008</td><td>Ch.III</td><td>黄金时代——收获与口号</td></tr>
+      <tr><td>0009</td><td>Ch.IV</td><td>牛棚之战——英雄 Snowball</td></tr>
+      <tr><td>0010</td><td>Ch.V</td><td>Napoleon 政变——Snowball 被驱逐</td></tr>
+      <tr><td>0011</td><td>Ch.VI</td><td>风车建设——第一次篡改七诫</td></tr>
+      <tr><td>0012</td><td>Ch.VII</td><td>大清洗——恐怖统治</td></tr>
+      <tr><td>0013</td><td>Ch.VIII</td><td>风车之战——假钞与炸药</td></tr>
+      <tr><td>0014</td><td>Ch.IX</td><td>Boxer 之死——忠诚的代价</td></tr>
+      <tr><td>0015</td><td>Ch.X</td><td>最终变形——人猪不分</td></tr>
+    </table>
+
+    <div class="callout">
+      <strong>📌 预习 Ch.I：</strong>在读下一课之前，可以先自己打开原文读一遍第一章（约 2700 词，15 分钟可读完），注意 <strong>Old Major 的演讲</strong>——他是怎么说服其他动物的？
+    </div>
+
+  </div><!-- /content -->
+
+  <div class="footer-nav">
+    <span>← 上一课（无）</span>
+    <a href="../index.html">返回主页</a>
+    <span><a href="0006-AnimalFarm-Ch1-Old-Major-Dream.html">下一课：Ch.I Old Major's Dream →</a></span>
+  </div>
+
+</div>
+<script src="../shared/lesson-tools.js"></script>
+</body>
+</html>

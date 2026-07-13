@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 0006 课：Ch.I Old Major's Dream · Animal Farm · SpeakScope</title>
+<link rel="stylesheet" href="../shared/theme.css">
+<style>
+  body { background: var(--paper-light); }
+  .lesson { max-width: 880px; margin: 0 auto; padding: var(--space-8) var(--space-6); }
+  .lesson h1 { font-family: var(--font-serif); font-size: var(--text-4xl); margin-bottom: 0.2rem; }
+  .lesson .subtitle { font-size: var(--text-lg); color: var(--ink-60); font-family: var(--font-serif); }
+  .lesson .meta { display: flex; gap: var(--space-3); margin: var(--space-4) 0 var(--space-8); flex-wrap: wrap; }
+  .lesson .meta span { padding: 0.3rem 0.8rem; border-radius: 6px; background: var(--paper); border: 1px solid var(--border-light); font-size: var(--text-sm); color: var(--ink-60); }
+  .lesson .content { line-height: 1.8; font-size: var(--text-base); }
+  .lesson .content h2 { font-family: var(--font-serif); margin: var(--space-8) 0 var(--space-4); padding-bottom: var(--space-1); border-bottom: 1px solid var(--border); }
+  .lesson .content h3 { font-family: var(--font-serif); margin: var(--space-6) 0 var(--space-3); }
+  .back { display: inline-block; margin-bottom: var(--space-6); color: var(--accent); text-decoration: none; font-size: var(--text-sm); }
+  .back:hover { text-decoration: underline; }
+  .passage-card { background: var(--paper); border: 1px solid var(--border); border-radius: 12px; padding: var(--space-6); margin: var(--space-5) 0; border-left: 4px solid var(--accent); }
+  .passage-card .p-en { font-family: var(--font-serif); font-size: var(--text-base); line-height: 1.8; color: var(--ink); }
+  .passage-card .p-cn { font-size: var(--text-sm); color: var(--ink-60); margin-top: var(--space-3); border-top: 1px dashed var(--border); padding-top: var(--space-3); }
+  .passage-card .p-pre { font-size: var(--text-sm); color: var(--accent-deep); font-style: italic; margin-bottom: var(--space-3); padding: var(--space-2) var(--space-3); background: var(--accent-dim); border-radius: 6px; }
+  .passage-card .p-note { font-size: var(--text-sm); color: var(--ink-60); margin-top: var(--space-3); border-top: 1px dashed var(--border-light); padding-top: var(--space-3); }
+  .highlight-blue { background: #dbeafe; padding: 0.1rem 0.2rem; border-radius: 2px; }
+  .highlight-yellow { background: #fef3c7; padding: 0.1rem 0.2rem; border-radius: 2px; }
+  .vocab-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: var(--space-4); margin: var(--space-5) 0; }
+  .vocab-card { background: var(--paper); border: 1px solid var(--border); border-radius: 8px; padding: var(--space-4); }
+  .vocab-card .v-word { font-weight: 700; font-family: var(--font-serif); font-size: var(--text-lg); display: flex; align-items: center; gap: 0.3rem; }
+  .vocab-card .v-pron { font-size: var(--text-xs); color: var(--ink-40); font-style: italic; }
+  .vocab-card .v-cn { font-size: var(--text-sm); color: var(--ink-80); margin-top: var(--space-1); }
+  .vocab-card .v-example { font-size: var(--text-xs); color: var(--ink-60); margin-top: var(--space-2); font-style: italic; }
+  .level-must { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 4px; font-size: 0.7rem; font-weight: 600; background: #dbeafe; color: #1e40af; margin-right: 0.3rem; }
+  .level-know { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 4px; font-size: 0.7rem; font-weight: 600; background: #fef3c7; color: #92400e; margin-right: 0.3rem; }
+  .map-table { width: 100%; border-collapse: collapse; margin: var(--space-5) 0; font-size: var(--text-sm); }
+  .map-table th { text-align: left; background: var(--accent-dim); padding: var(--space-2) var(--space-3); color: var(--accent-deep); font-weight: 600; }
+  .map-table td { padding: var(--space-2) var(--space-3); border-bottom: 1px solid var(--border-light); }
+  .pre-box { background: var(--accent-dim); border-radius: 8px; padding: var(--space-4); margin: var(--space-5) 0; border: 1px dashed var(--accent-light); }
+  .pre-box strong { color: var(--accent-deep); }
+  .retrieval-box { background: var(--paper); border: 2px dashed var(--accent-light); border-radius: 12px; padding: var(--space-5); margin: var(--space-5) 0; }
+  .retrieval-box details { margin-top: var(--space-3); }
+  .retrieval-box summary { cursor: pointer; font-weight: 600; color: var(--accent-deep); }
+  .speak-card { background: var(--paper); border: 1px solid var(--border); border-radius: 8px; padding: var(--space-5); margin: var(--space-4) 0; }
+  .speak-card .s-level { font-size: var(--text-xs); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: var(--space-2); }
+  .speak-card .s-level.mec { color: var(--accent); }
+  .speak-card .s-level.con { color: var(--accent-deep); }
+  .speak-card .s-level.free { color: #5a9e6f; }
+  .speak-card .s-framework { background: var(--accent-dim); padding: var(--space-3); border-radius: 6px; margin: var(--space-3) 0; font-family: var(--font-mono); font-size: var(--text-sm); }
+  .speak-card .s-model { background: #f0fdf4; border: 1px solid #bbf7d0; padding: var(--space-3); border-radius: 6px; margin: var(--space-2) 0; font-size: var(--text-sm); }
+  .exercise-box { border: 1px solid var(--border); border-radius: 8px; padding: var(--space-5); margin: var(--space-6) 0; background: var(--paper); }
+  .exercise-box .ex-section { margin: var(--space-3) 0; }
+  .quiz-item { margin: var(--space-3) 0; padding: var(--space-2); border-left: 3px solid var(--accent-light); }
+  .play-btn { display: inline-flex; align-items: center; justify-content: center; background: var(--paper); border: 1px solid var(--accent-light); border-radius: 4px; cursor: pointer; font-size: 0.75rem; width: 1.6rem; height: 1.6rem; margin-left: 0.4rem; flex-shrink: 0; transition: background 0.15s, transform 0.1s; vertical-align: middle; line-height: 1; }
+  .play-btn:hover { background: var(--accent-dim); transform: scale(1.1); }
+  .play-btn:active { transform: scale(0.95); }
+  .play-btn.playing { background: #c8e6c9; border-color: var(--success); }
+  .callout { background: var(--paper); border: 1px solid var(--border); border-radius: 8px; padding: var(--space-5); margin: var(--space-5) 0; }
+  .callout strong { color: var(--accent-deep); }
+  .word-cell { display: flex; align-items: center; gap: 0.3rem; flex-wrap: wrap; }
+  .footer-nav { margin-top: var(--space-10); padding-top: var(--space-6); border-top: 1px solid var(--border); display: flex; justify-content: space-between; font-size: var(--text-sm); }
+  .footer-nav a { color: var(--accent); text-decoration: none; }
+  .footer-nav a:hover { text-decoration: underline; }
+  .track-table { width: 100%; border-collapse: collapse; margin: var(--space-4) 0; font-size: var(--text-sm); }
+  .track-table th { text-align: left; background: var(--accent-dim); padding: var(--space-2) var(--space-3); color: var(--accent-deep); font-weight: 600; }
+  .track-table td { padding: var(--space-2) var(--space-3); border-bottom: 1px solid var(--border-light); }
+</style>
+<script>
+const player = new Audio();
+let currentBtn = null;
+function playAudio(src, btnId) {
+  const btn = document.getElementById(btnId);
+  if (btn && btn.classList.contains('playing')) { player.pause(); player.currentTime = 0; btn.classList.remove('playing'); currentBtn = null; return; }
+  if (currentBtn) currentBtn.classList.remove('playing');
+  player.src = 'assets/audio/animal-farm/' + src; player.play();
+  if (btn) { btn.classList.add('playing'); currentBtn = btn; }
+  player.onended = () => { if (btn) btn.classList.remove('playing'); currentBtn = null; };
+}
+</script>
+</head>
+<body>
+<div class="lesson">
+
+  <a class="back" href="../index.html">← 返回 SpeakScope 主页</a>
+  <h1>📖 Ch.I：Old Major's Dream</h1>
+  <div class="subtitle">The vision that sparked a revolution</div>
+  <div class="meta">
+    <span>⏱ 35-40 分钟（核心 25 分钟）</span>
+    <span>📚 英文原著 · Animal Farm</span>
+    <span>🏷️ 英文原著 · Animal Farm · Ch.I</span>
+    <span>🔵 入门 🌱</span>
+  </div>
+
+  <div class="content">
+
+    <!-- ====== 1. 🎬 读前激活 ====== -->
+    <h2>🎬 读前激活</h2>
+
+    <div class="pre-box">
+      <strong>🤔 先问自己：</strong><br>
+      你有没有想过——在革命开始之前，那"第一把火"是谁点燃的？Old Major 的梦到底梦见了什么，能让所有动物聚精会神地听？<br><br>
+      <strong>这节课你将学到：</strong>
+      <ul style="margin-left:var(--space-5); margin-top:var(--space-2); line-height:2;">
+        <li>✅ 认识 Manor Farm 的各位动物角色</li>
+        <li>✅ 读懂 Old Major 的革命演讲——核心论点和修辞</li>
+        <li>✅ 学会 15 个核心词汇，听懂"Beasts of England"革命歌曲</li>
+        <li>✅ 理解这场演讲如何映射马克思/列宁的意识形态</li>
+      </ul>
+    </div>
+
+    <div class="callout">
+      <strong>🗺️ 故事地图：</strong><br>
+      Mr. Jones 喝醉忘记关门 → 动物们秘密集合到大谷仓 → Old Major 发表演讲，揭露人类是"唯一的敌人" → 提出"Rebellion"（造反）口号 → 教大家唱"Beasts of England" → 歌声吵醒 Jones，一枪打散会议。
+    </div>
+
+    <div class="callout">
+      <strong>🏛️ 历史映射：</strong>
+      <table class="map-table">
+        <tr><th>书中角色/元素</th><th>历史映射</th><th>说明</th></tr>
+        <tr><td>Old Major</td><td>马克思 / 列宁</td><td>革命理论的创始人，提出整套意识形态</td></tr>
+        <tr><td>Mr. Jones</td><td>沙皇尼古拉二世</td><td>无能腐败的旧统治者</td></tr>
+        <tr><td>"Beasts of England"</td><td>《国际歌》</td><td>革命歌曲，团结底层、召唤未来</td></tr>
+        <tr><td>"Man is the only real enemy"</td><td>阶级斗争理论</td><td>将矛盾归结为压迫者 vs 被压迫者</td></tr>
+      </table>
+    </div>
+
+    <!-- ====== 2. 📖 原文精读 ====== -->
+    <h2>📖 原文精读</h2>
+
+    <!-- Passage 1 -->
+    <div class="passage-card">
+      <div class="p-pre">🔍 Pre-reading：在这一段里，你会看到动物们第一次聚集起来听 Old Major 讲话。注意观察每类动物的行为——它们各自怎么找位置？这暗示了它们的什么性格？</div>
+      <div class="word-cell">
+        <div class="p-en">
+          At one end of the big barn, on a sort of raised platform, Major was already <span class="highlight-blue">ensconced</span> on his bed of straw, under a lantern which hung from a beam. He was twelve years old and had lately grown rather stout, but he was still a <span class="highlight-blue">majestic</span>-looking pig, with a wise and <span class="highlight-blue">benevolent</span> appearance in spite of the fact that his tushes had never been cut. Before long the other animals began to arrive and make themselves comfortable after their different fashions. […] The two cart-horses, Boxer and Clover, came in together, walking very slowly and setting down their vast hairy hoofs with great care lest there should be some small animal concealed in the straw. […] Boxer was an enormous beast, nearly eighteen hands high, and as strong as any two ordinary horses put together. A white stripe down his nose gave him a somewhat stupid appearance, and in fact he was not of first-rate intelligence, but he was universally respected for his <span class="highlight-blue">steadiness</span> of character and <span class="highlight-blue">tremendous</span> powers of work.
+        </div>
+        <button class="play-btn" id="pb-p1" onclick="playAudio('0006-passage-meeting.mp3','pb-p1')">🔊</button>
+      </div>
+      <div class="p-cn">在大谷仓的一端，有一个像讲台一样隆起的平台。Major 已经安坐在他的草铺上，头顶挂着一盏灯笼。他十二岁了，最近变得相当肥胖，但仍然是一头威严的猪，看起来充满智慧和慈祥。不久其他动物开始陆续到达，各自以不同的方式安顿下来。Boxer 和 Clover 一起走进来，走得非常慢，小心翼翼地放下巨大的毛蹄，生怕稻草里藏着什么小动物。Boxer 是一头巨大的牲口，将近 18 手高，力气抵得上任何两匹普通的马。他鼻子上的白条纹让他看起来有点傻乎乎的——实际上他的智商确实不算一流——但他因性格沉稳和极其强大的工作能力而受到普遍的尊敬。</div>
+      <div class="p-note">💡 这是全书对动物角色最集中的一次介绍。注意 Boxer——他是全书最令人心碎的角色。"tremendous powers of work" 暗示了他注定被榨干的命运。Orwell 在一段话里同时埋下了 Boxer 的性格（忠诚、强壮、不太聪明）和他最终的悲剧种子。</div>
+    </div>
+
+    <!-- Passage 2 -->
+    <div class="passage-card">
+      <div class="p-pre">🔍 Pre-reading：下面这段话是 Old Major 演讲最核心的部分——他在回答一个根本问题：动物的生活为什么这么悲惨？注意他用了什么修辞技巧来打动听众。</div>
+      <div class="word-cell">
+        <div class="p-en">
+          "Now, comrades, what is the nature of this life of ours? Let us face it: our lives are <span class="highlight-blue">miserable</span>, <span class="highlight-blue">laborious</span>, and short. We are born, we are given just so much food as will keep the breath in our bodies, and those of us who are capable of it are forced to work to the last atom of our strength; and the very instant that our usefulness has come to an end we are slaughtered with hideous cruelty. No animal in England knows the meaning of happiness or leisure after he is a year old. No animal in England is free. The life of an animal is misery and <span class="highlight-blue">slavery</span>: that is the plain truth."
+        </div>
+        <button class="play-btn" id="pb-p2" onclick="playAudio('0006-passage-speech1.mp3','pb-p2')">🔊</button>
+      </div>
+      <div class="p-cn">"同志们，我们这种生活的本质是什么？让我们面对现实：我们的生命是悲惨的、辛苦的、短暂的。我们出生后，只被给予勉强维持呼吸的食物，但凡有劳动能力的都被迫干到最后一口气；一旦用处耗尽，立刻被残忍地宰杀。英国的动物，一岁以后就不知道什么叫幸福或闲暇。英国的动物没有一个自由的。动物的生活就是苦难和奴役——这就是赤裸裸的真相。"</div>
+      <div class="p-note">💡 注意 Orwell 的修辞：三拍节奏（miserable, laborious, short）+ 层层递进 + "No animal in England… No animal in England…" 重复排比。这是标准的革命演讲模板。马克思的《共产党宣言》同样用了类似的"控诉—分析—号召"三段论。</div>
+    </div>
+
+    <!-- Passage 3 -->
+    <div class="passage-card">
+      <div class="p-pre">🔍 Pre-reading：Major 在分析了动物的苦难之后，开始指出"谁是敌人"。你觉得他会把矛头指向谁？注意他用了什么方法来把"人类"树立为共同敌人。</div>
+      <div class="word-cell">
+        <div class="p-en">
+          "Man is the only creature that consumes without producing. He does not give milk, he does not lay eggs, he is too weak to pull the plough, he cannot run fast enough to catch rabbits. Yet he is lord of all the animals. […] Our labour tills the soil, our dung fertilises it, and yet there is not one of us that owns more than his bare skin. […] Is it not crystal clear, then, comrades, that all the evils of this life of ours spring from the <span class="highlight-blue">tyranny</span> of human beings? Only get rid of Man, and the produce of our labour would be our own. […] That is my message to you, comrades: <span class="highlight-blue">Rebellion</span>!"
+        </div>
+        <button class="play-btn" id="pb-p3" onclick="playAudio('0006-passage-speech2.mp3','pb-p3')">🔊</button>
+      </div>
+      <div class="p-cn">"人类是唯一只消费不生产的生物。他不产奶，不下蛋，拉不动犁，跑不过兔子。但他却是所有动物的主宰。……我们的劳动耕作土地，我们的粪便让它肥沃，可我们中没有一个拥有比自己的皮更多的财产。……同志们，这还不清楚吗？我们生活中所有的罪恶都源于人类的暴政！只要除掉人类，我们的劳动果实就属于我们自己。……这就是我要传达给你们的：造反！"</div>
+      <div class="p-note">💡 "consumes without producing"——这是 Orwell 对统治阶级最精辟的概括。马克思在《资本论》中提出了"剩余价值"概念，而 Orwell 用一句大白话说清了同样的道理。"Rebellion"一词是本章的点题词。</div>
+    </div>
+
+    <!-- Passage 4 -->
+    <div class="passage-card">
+      <div class="p-pre">🔍 Pre-reading：Old Major 要唱一首歌了——这是他在梦里回忆起来的。注意这首歌在书里会被反复唱起，它的命运就是革命命运的缩影。</div>
+      <div class="word-cell">
+        <div class="p-en">
+          <span class="highlight-blue">"Beasts of England, beasts of Ireland,<br>
+          Beasts of every land and clime,<br>
+          Hearken to my joyful tidings<br>
+          Of the golden future time.</span><br><br>
+          Soon or late the day is coming,<br>
+          Tyrant Man shall be o'erthrown,<br>
+          And the fruitful fields of England<br>
+          Shall be trod by beasts alone."<br><br>
+          The singing of this song threw the animals into the wildest excitement. Almost before Major had reached the end, they had begun singing it for themselves. […] the whole farm burst out into 'Beasts of England' in <span class="highlight-blue">tremendous</span> unison.
+        </div>
+        <button class="play-btn" id="pb-p4" onclick="playAudio('0006-passage-beasts.mp3','pb-p4')">🔊</button>
+      </div>
+      <div class="p-cn">"英格兰之兽，爱尔兰之兽，/ 各地各方的群兽，/ 倾听我这喜悦的消息 / 关于那金色的未来！/ 迟早有一天会到来，/ 暴君人类将被推翻，/ 英格兰肥沃的田野 / 将只有兽类行走。" 歌声将动物们推入了狂喜的巅峰，几乎在 Major 唱完之前它们就开始跟着唱了——整座农场爆发出震天动地的齐唱。</div>
+      <div class="p-note">💡 "Beasts of England" 是全书最核心的重复性文学元素。它相当于苏联的《国际歌》。每次会议结束必唱，象征革命理想。注意这个歌在 Ch.VII 会被 Napoleon 废除，代替它的是赞颂 Napoleon 的诗。但在 Ch.X，动物们秘密哼唱它——暗示地下抵抗。</div>
+      <div class="p-note" style="border-top: 1px dashed var(--border-light); padding-top: var(--space-3); margin-top: var(--space-3);">
+        <strong>🤔 你发现了吗？</strong> 全书的第一个冲突也在本章埋下了种子——关于"老鼠算不算同志"的投票中，猫被发现在两边都投了票。这是全书唯一一次"投票"，以后再也不会有真正的投票了。而且猫——这个最自私的动物——从一开始就在操纵规则。
+      </div>
+    </div>
+
+    <!-- ====== 3. 🔑 关键词汇 ====== -->
+    <h2>🔑 关键词汇</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card">
+        <div class="word-cell"><span class="v-word"><span class="level-must">🔵</span> comrades <button class="play-btn" id="pb-v1" onclick="playAudio('0006-key-comrades.mp3','pb-v1')">🔊</button></span></div>
+        <div class="v-pron">/ˈkɑːm.rædz/</div>
+        <div class="v-cn">同志们（全书高频称呼，源自共产主义运动）</div>
+        <div class="v-example">"Comrades, you have heard already about the strange dream that I had last night."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="word-cell"><span class="v-word"><span class="level-must">🔵</span> slavery <button class="play-btn" id="pb-v2" onclick="playAudio('0006-key-slavery.mp3','pb-v2')">🔊</button></span></div>
+        <div class="v-pron">/ˈsleɪ.vər.i/</div>
+        <div class="v-cn">奴隶制（核心主题词）</div>
+        <div class="v-example">"The life of an animal is misery and slavery: that is the plain truth."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="word-cell"><span class="v-word"><span class="level-must">🔵</span> rebellion <button class="play-btn" id="pb-v3" onclick="playAudio('0006-key-rebellion.mp3','pb-v3')">🔊</button></span></div>
+        <div class="v-pron">/rɪˈbel.jən/</div>
+        <div class="v-cn">造反、起义（本章标题词和口号）</div>
+        <div class="v-example">"That is my message to you, comrades: Rebellion!"</div>
+      </div>
+      <div class="vocab-card">
+        <div class="word-cell"><span class="v-word"><span class="level-know">🟡</span> miserable <button class="play-btn" id="pb-v4" onclick="playAudio('0006-key-miserable.mp3','pb-v4')">🔊</button></span></div>
+        <div class="v-pron">/ˈmɪz.ər.ə.bəl/</div>
+        <div class="v-cn">悲惨的</div>
+        <div class="v-example">"Let us face it: our lives are miserable, laborious, and short."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="word-cell"><span class="v-word"><span class="level-know">🟡</span> laborious <button class="play-btn" id="pb-v5" onclick="playAudio('0006-key-laborious.mp3','pb-v5')">🔊</button></span></div>
+        <div class="v-pron">/ləˈbɔːr.i.əs/</div>
+        <div class="v-cn">辛苦的、费力的</div>
+        <div class="v-example">"Let us face it: our lives are miserable, laborious, and short."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="word-cell"><span class="v-word"><span class="level-know">🟡</span> ensconced <button class="play-btn" id="pb-v6" onclick="playAudio('0006-key-ensconced.mp3','pb-v6')">🔊</button></span></div>
+        <div class="v-pron">/ɪnˈskɒnst/</div>
+        <div class="v-cn">安坐、安顿（舒适地坐好）</div>
+        <div class="v-example">"Major was already ensconced on his bed of straw."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="word-cell"><span class="v-word"><span class="level-know">🟡</span> majestic <button class="play-btn" id="pb-v7" onclick="playAudio('0006-key-majestic.mp3','pb-v7')">🔊</button></span></div>
+        <div class="v-pron">/məˈdʒes.tɪk/</div>
+        <div class="v-cn">威严的、雄伟的</div>
+        <div class="v-example">"He was still a majestic-looking pig."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="word-cell"><span class="v-word"><span class="level-know">🟡</span> benevolent <button class="play-btn" id="pb-v8" onclick="playAudio('0006-key-benevolent.mp3','pb-v8')">🔊</button></span></div>
+        <div class="v-pron">/bəˈnev.əl.ənt/</div>
+        <div class="v-cn">慈祥的、仁慈的</div>
+        <div class="v-example">"He had a wise and benevolent appearance."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="word-cell"><span class="v-word"><span class="level-know">🟡</span> cynical <button class="play-btn" id="pb-v9" onclick="playAudio('0006-key-cynical.mp3','pb-v9')">🔊</button></span></div>
+        <div class="v-pron">/ˈsɪn.ɪ.kəl/</div>
+        <div class="v-cn">愤世嫉俗的、冷嘲的</div>
+        <div class="v-example">"He seldom talked, and when he did, it was to make some cynical remark."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="word-cell"><span class="v-word"><span class="level-must">🔵</span> tremendous <button class="play-btn" id="pb-v10" onclick="playAudio('0006-key-tremendous.mp3','pb-v10')">🔊</button></span></div>
+        <div class="v-pron">/trɪˈmen.dəs/</div>
+        <div class="v-cn">巨大的、惊人的</div>
+        <div class="v-example">"He was respected for his tremendous powers of work."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="word-cell"><span class="v-word"><span class="level-know">🟡</span> steady <button class="play-btn" id="pb-v11" onclick="playAudio('0006-key-steady.mp3','pb-v11')">🔊</button></span></div>
+        <div class="v-pron">/ˈsted.i/</div>
+        <div class="v-cn">稳定的、可靠的（形容性格）</div>
+        <div class="v-example">"He was universally respected for his steadiness of character."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="word-cell"><span class="v-word"><span class="level-must">🔵</span> manifest <button class="play-btn" id="pb-v12" onclick="playAudio('0006-key-manifest.mp3','pb-v12')">🔊</button></span></div>
+        <div class="v-pron">/ˈmæn.ɪ.fest/</div>
+        <div class="v-cn">明确宣告、显示（manifesto 的动词形式）</div>
+        <div class="v-example">"Major's speech manifested the principles of Animalism."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="word-cell"><span class="v-word"><span class="level-must">🔵</span> tyranny <button class="play-btn" id="pb-v13" onclick="playAudio('0006-key-tyranny.mp3','pb-v13')">🔊</button></span></div>
+        <div class="v-pron">/ˈtɪr.ə.ni/</div>
+        <div class="v-cn">暴政</div>
+        <div class="v-example">"All the evils of this life spring from the tyranny of human beings."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="word-cell"><span class="v-word"><span class="level-must">🔵</span> Beasts of England <button class="play-btn" id="pb-v14" onclick="playAudio('0006-key-beasts-of-england.mp3','pb-v14')">🔊</button></span></div>
+        <div class="v-pron">/biːsts əv ˈɪŋ.ɡlənd/</div>
+        <div class="v-cn">《英格兰之兽》（革命歌曲名）</div>
+        <div class="v-example">"It is called 'Beasts of England'."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="word-cell"><span class="v-word"><span class="level-know">🟡</span> slogan <button class="play-btn" id="pb-v15" onclick="playAudio('0006-key-slogan.mp3','pb-v15')">🔊</button></span></div>
+        <div class="v-pron">/ˈsloʊ.ɡən/</div>
+        <div class="v-cn">口号</div>
+        <div class="v-example">"All animals are comrades — this became their slogan."</div>
+      </div>
+    </div>
+
+    <!-- Retrieval practice -->
+    <div class="retrieval-box">
+      <strong>🔍 检索练习（先试着自己回忆，再点开看答案）</strong><br>
+      <span style="font-size:var(--text-sm); color:var(--ink-60);">不看中文，你还记得这些词的意思吗？</span>
+      <ul style="margin-left:var(--space-5); line-height:2.2; margin-top:var(--space-3);">
+        <li><strong>comrades</strong></li>
+        <li><strong>slavery</strong></li>
+        <li><strong>rebellion</strong></li>
+        <li><strong>miserable</strong></li>
+        <li><strong>laborious</strong></li>
+        <li><strong>ensconced</strong></li>
+        <li><strong>majestic</strong></li>
+        <li><strong>benevolent</strong></li>
+        <li><strong>cynical</strong></li>
+        <li><strong>tremendous</strong></li>
+        <li><strong>steady</strong></li>
+        <li><strong>manifest</strong></li>
+        <li><strong>tyranny</strong></li>
+        <li><strong>Beasts of England</strong></li>
+        <li><strong>slogan</strong></li>
+      </ul>
+      <details>
+        <summary>📌 点击核对答案</summary>
+        <ul style="margin-left:var(--space-5); line-height:2; margin-top:var(--space-3);">
+          <li><strong>comrades</strong> — 同志们</li>
+          <li><strong>slavery</strong> — 奴隶制</li>
+          <li><strong>rebellion</strong> — 造反、起义</li>
+          <li><strong>miserable</strong> — 悲惨的</li>
+          <li><strong>laborious</strong> — 辛苦的</li>
+          <li><strong>ensconced</strong> — 安坐、安顿</li>
+          <li><strong>majestic</strong> — 威严的</li>
+          <li><strong>benevolent</strong> — 慈祥的</li>
+          <li><strong>cynical</strong> — 愤世嫉俗的</li>
+          <li><strong>tremendous</strong> — 巨大的、惊人的</li>
+          <li><strong>steady</strong> — 稳定的、可靠的</li>
+          <li><strong>manifest</strong> — 明确宣告</li>
+          <li><strong>tyranny</strong> — 暴政</li>
+          <li><strong>Beasts of England</strong> — 《英格兰之兽》（革命歌曲）</li>
+          <li><strong>slogan</strong> — 口号</li>
+        </ul>
+      </details>
+    </div>
+
+    <!-- ====== 4. 💬 口语练习 ====== -->
+    <h2>💬 口语练习</h2>
+
+    <div class="speak-card">
+      <div class="s-level mec">🔰 MECHANICAL — 句型框架</div>
+      <p>用下面的框架回答：</p>
+      <div class="s-framework">"According to Old Major, animals' lives are _____ because _____. For example, he says that _____. This shows that _____."</div>
+      <p style="font-size:var(--text-sm); color:var(--ink-60);">例：According to Old Major, animals' lives are <strong>miserable and short</strong> because <strong>humans steal their labor</strong>. For example, he says that <strong>every drop of milk goes down human throats</strong>. This shows that <strong>animals are slaves to humans</strong>.</p>
+    </div>
+
+    <div class="speak-card">
+      <div class="s-level con">📝 CONTROLLED — 模仿示范</div>
+      <p><strong>问题：</strong>Why do the animals trust Old Major? What makes him a convincing leader?</p>
+      <div class="s-model"><strong>Model response:</strong> "The animals trust Old Major because he is the oldest and wisest animal on the farm. He says he has had a long life and much time for thought. He looks majestic and benevolent, which makes him seem trustworthy. Also, he speaks with great passion about things that matter to all animals — their suffering and their hope for freedom."</div>
+      <p style="font-size:var(--text-sm); color:var(--ink-60); margin-top:var(--space-2);">👆 试着用自己的话模仿这个结构回答。</p>
+    </div>
+
+    <div class="speak-card">
+      <div class="s-level free">💭 FREE — 自由讨论</div>
+      <ol style="margin-left:var(--space-5); line-height:2.2;">
+        <li>Old Major says "Man is the only real enemy." Do you agree that revolutions need a clear enemy to unite people? Why?</li>
+        <li>What do you think of the way Old Major uses the example of the milk and the eggs to convince his audience? Is this effective?</li>
+        <li>Can you think of any modern speech or advertisement that uses a similar "three-part list" technique (like "miserable, laborious, and short")?</li>
+      </ol>
+    </div>
+
+    <div class="speak-card">
+      <div class="s-level con" style="color:var(--accent);">🎧 跟读段落</div>
+      <p>跟读下面这段，注意节奏和重音：</p>
+      <div class="s-framework" style="font-style:normal;">
+        "Now, comrades, / what is the nature / of this life of ours? / Let us face it: / our lives are miserable, / laborious, / and short. // We are born, / we are given just so much food / as will keep the breath in our bodies, / and those of us who are capable of it / are forced to work / to the last atom of our strength."
+      </div>
+      <button class="play-btn" id="pb-shadow" onclick="playAudio('0006-shadowing.mp3','pb-shadow')" style="display:inline-flex; margin-top:var(--space-2);">🔊 听示范录音</button>
+    </div>
+
+    <div class="callout">
+      <strong>🤖 AI 陪练 Prompt</strong><br>
+      复制下面的文字到元宝 AI：<br>
+      <div class="s-framework" style="margin-top:var(--space-2);">"我刚读完 Animal Farm 第一章 (Old Major's Dream)。请用英语问我关于这章的问题——比如 Old Major 的演讲内容、他的说服技巧、'Beasts of England' 这首歌的意义。一次问一个，回答后给我反馈。如果你发现我的语法或用词有问题，请指出并告诉我正确的说法。"</div>
+    </div>
+
+    <!-- ====== 5. 📝 课后练习 ====== -->
+    <h2>📝 课后练习</h2>
+
+    <div class="exercise-box">
+      <strong>📝 词汇填空（必做）</strong>
+      <div class="ex-section">
+        <p>用以下词填空：<strong>comrades, miserable, tyranny, rebellion, majestic, slogans</strong></p>
+        <div class="quiz-item">1. "______, I have a dream to share with you," said Old Major.</div>
+        <div class="quiz-item">2. The animals lived under the ______ of human beings.</div>
+        <div class="quiz-item">3. Old Major looked ______ and wise on his platform of straw.</div>
+        <div class="quiz-item">4. "All animals are comrades" became one of their ______.</div>
+        <div class="quiz-item">5. Major called for a ______ to overthrow the humans.</div>
+      </div>
+    </div>
+
+    <div class="exercise-box">
+      <strong>📖 阅读理解（必做）</strong>
+      <div class="ex-section">
+        <div class="quiz-item"><strong>1.</strong> According to Old Major, what is the main cause of the animals' suffering?<br>
+          A. The poor soil of England<br>
+          B. Human beings who steal their labour<br>
+          C. The other animals who are lazy<br>
+          D. The bad weather on the farm</div>
+        <div class="quiz-item"><strong>2.</strong> What happened when the animals sang "Beasts of England"?<br>
+          A. They all fell asleep<br>
+          B. Mr. Jones woke up and fired a gun<br>
+          C. The pigs decided to stop the meeting<br>
+          D. Old Major died</div>
+        <div class="quiz-item"><strong>3.</strong> Which animal is described as cynical and never laughs?<br>
+          A. Boxer<br>
+          B. Clover<br>
+          C. Benjamin<br>
+          D. Moses</div>
+      </div>
+    </div>
+
+    <div class="exercise-box">
+      <details>
+        <summary>✍️ 写作任务（选做）</summary>
+        <div class="ex-section">
+          <p>用至少 3 个这节课学的生词，写一段 50 词左右的英文短文：<strong>"If I were an animal listening to Old Major's speech, how would I feel?"</strong></p>
+          <p style="font-size:var(--text-sm); color:var(--ink-60);">提示：可以用 comrades, rebellion, slavery, tremendous, miserable 等词。</p>
+        </div>
+      </details>
+    </div>
+
+    <!-- ====== 6. 🏠 底部导航 ====== -->
+  </div>
+
+  <div class="footer-nav">
+    <a href="0005-AnimalFarm-导读.html">← 上一课：导读</a>
+    <a href="../index.html">返回主页</a>
+    <a href="0007-AnimalFarm-Ch2-The-Rebellion.html">下一课：Ch.II The Rebellion →</a>
+  </div>
+
+</div>
+<script src="../shared/lesson-tools.js"></script>
+</body>
+</html>

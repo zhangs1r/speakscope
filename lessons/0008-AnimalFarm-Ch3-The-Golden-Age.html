@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 0008 课：Ch.III The Golden Age · Animal Farm · SpeakScope</title>
+<link rel="stylesheet" href="../shared/theme.css">
+<style>
+  body { background: var(--paper-light); }
+  .lesson { max-width: 880px; margin: 0 auto; padding: var(--space-8) var(--space-6); }
+  .lesson h1 { font-family: var(--font-serif); font-size: var(--text-4xl); margin-bottom: 0.2rem; }
+  .lesson .subtitle { font-size: var(--text-lg); color: var(--ink-60); font-family: var(--font-serif); }
+  .lesson .meta { display: flex; gap: var(--space-3); margin: var(--space-4) 0 var(--space-8); flex-wrap: wrap; }
+  .lesson .meta span { padding: 0.3rem 0.8rem; border-radius: 6px; background: var(--paper); border: 1px solid var(--border-light); font-size: var(--text-sm); color: var(--ink-60); }
+  .lesson .content { line-height: 1.8; font-size: var(--text-base); }
+  .lesson .content h2 { font-family: var(--font-serif); margin: var(--space-8) 0 var(--space-4); padding-bottom: var(--space-1); border-bottom: 1px solid var(--border); }
+  .lesson .content h3 { font-family: var(--font-serif); margin: var(--space-6) 0 var(--space-3); }
+  .back { display: inline-block; margin-bottom: var(--space-6); color: var(--accent); text-decoration: none; font-size: var(--text-sm); }
+  .back:hover { text-decoration: underline; }
+  .passage-card { background: var(--paper); border: 1px solid var(--border); border-radius: 12px; padding: var(--space-6); margin: var(--space-5) 0; border-left: 4px solid var(--accent); }
+  .passage-card .p-en { font-family: var(--font-serif); font-size: var(--text-base); line-height: 1.8; color: var(--ink); }
+  .passage-card .p-cn { font-size: var(--text-sm); color: var(--ink-60); margin-top: var(--space-3); border-top: 1px dashed var(--border); padding-top: var(--space-3); }
+  .passage-card .p-pre { font-size: var(--text-sm); color: var(--accent-deep); font-style: italic; margin-bottom: var(--space-3); padding: var(--space-2) var(--space-3); background: var(--accent-dim); border-radius: 6px; }
+  .passage-card .p-note { font-size: var(--text-sm); color: var(--ink-60); margin-top: var(--space-3); border-top: 1px dashed var(--border-light); padding-top: var(--space-3); }
+  .highlight-blue { background: #dbeafe; padding: 0.1rem 0.2rem; border-radius: 2px; }
+  .highlight-yellow { background: #fef3c7; padding: 0.1rem 0.2rem; border-radius: 2px; }
+  .vocab-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: var(--space-4); margin: var(--space-5) 0; }
+  .vocab-card { background: var(--paper); border: 1px solid var(--border); border-radius: 8px; padding: var(--space-4); }
+  .vocab-card .v-word { font-weight: 700; font-family: var(--font-serif); font-size: var(--text-lg); display: flex; align-items: center; gap: 0.3rem; }
+  .vocab-card .v-pron { font-size: var(--text-xs); color: var(--ink-40); font-style: italic; }
+  .vocab-card .v-cn { font-size: var(--text-sm); color: var(--ink-80); margin-top: var(--space-1); }
+  .vocab-card .v-example { font-size: var(--text-xs); color: var(--ink-60); margin-top: var(--space-2); font-style: italic; }
+  .level-must { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 4px; font-size: 0.7rem; font-weight: 600; background: #dbeafe; color: #1e40af; margin-right: 0.3rem; }
+  .level-know { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 4px; font-size: 0.7rem; font-weight: 600; background: #fef3c7; color: #92400e; margin-right: 0.3rem; }
+  .map-table { width: 100%; border-collapse: collapse; margin: var(--space-5) 0; font-size: var(--text-sm); }
+  .map-table th { text-align: left; background: var(--accent-dim); padding: var(--space-2) var(--space-3); color: var(--accent-deep); font-weight: 600; }
+  .map-table td { padding: var(--space-2) var(--space-3); border-bottom: 1px solid var(--border-light); }
+  .pre-box { background: var(--accent-dim); border-radius: 8px; padding: var(--space-4); margin: var(--space-5) 0; border: 1px dashed var(--accent-light); }
+  .pre-box strong { color: var(--accent-deep); }
+  .retrieval-box { background: var(--paper); border: 2px dashed var(--accent-light); border-radius: 12px; padding: var(--space-5); margin: var(--space-5) 0; }
+  .retrieval-box details { margin-top: var(--space-3); }
+  .retrieval-box summary { cursor: pointer; font-weight: 600; color: var(--accent-deep); }
+  .speak-card { background: var(--paper); border: 1px solid var(--border); border-radius: 8px; padding: var(--space-5); margin: var(--space-4) 0; }
+  .speak-card .s-level { font-size: var(--text-xs); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: var(--space-2); }
+  .speak-card .s-level.mec { color: var(--accent); }
+  .speak-card .s-level.con { color: var(--accent-deep); }
+  .speak-card .s-level.free { color: #5a9e6f; }
+  .speak-card .s-framework { background: var(--accent-dim); padding: var(--space-3); border-radius: 6px; margin: var(--space-3) 0; font-family: var(--font-mono); font-size: var(--text-sm); }
+  .speak-card .s-model { background: #f0fdf4; border: 1px solid #bbf7d0; padding: var(--space-3); border-radius: 6px; margin: var(--space-2) 0; font-size: var(--text-sm); }
+  .exercise-box { border: 1px solid var(--border); border-radius: 8px; padding: var(--space-5); margin: var(--space-6) 0; background: var(--paper); }
+  .exercise-box .ex-section { margin: var(--space-3) 0; }
+  .quiz-item { margin: var(--space-3) 0; padding: var(--space-2); border-left: 3px solid var(--accent-light); }
+  .play-btn { display: inline-flex; align-items: center; justify-content: center; background: var(--paper); border: 1px solid var(--accent-light); border-radius: 4px; cursor: pointer; font-size: 0.75rem; width: 1.6rem; height: 1.6rem; margin-left: 0.4rem; flex-shrink: 0; transition: background 0.15s, transform 0.1s; vertical-align: middle; line-height: 1; }
+  .play-btn:hover { background: var(--accent-dim); transform: scale(1.1); }
+  .play-btn:active { transform: scale(0.95); }
+  .play-btn.playing { background: #c8e6c9; border-color: var(--success); }
+  .callout { background: var(--paper); border: 1px solid var(--border); border-radius: 8px; padding: var(--space-5); margin: var(--space-5) 0; }
+  .callout strong { color: var(--accent-deep); }
+  .word-cell { display: flex; align-items: center; gap: 0.3rem; flex-wrap: wrap; }
+  .footer-nav { margin-top: var(--space-10); padding-top: var(--space-6); border-top: 1px solid var(--border); display: flex; justify-content: space-between; font-size: var(--text-sm); }
+  .footer-nav a { color: var(--accent); text-decoration: none; }
+  .footer-nav a:hover { text-decoration: underline; }
+  .track-table { width: 100%; border-collapse: collapse; margin: var(--space-4) 0; font-size: var(--text-sm); }
+  .track-table th { text-align: left; background: var(--accent-dim); padding: var(--space-2) var(--space-3); color: var(--accent-deep); font-weight: 600; }
+  .track-table td { padding: var(--space-2) var(--space-3); border-bottom: 1px solid var(--border-light); }
+</style>
+<script>
+const player = new Audio();
+let currentBtn = null;
+function playAudio(src, btnId) {
+  const btn = document.getElementById(btnId);
+  if (btn && btn.classList.contains('playing')) { player.pause(); player.currentTime = 0; btn.classList.remove('playing'); currentBtn = null; return; }
+  if (currentBtn) currentBtn.classList.remove('playing');
+  player.src = 'assets/audio/animal-farm/' + src; player.play();
+  if (btn) { btn.classList.add('playing'); currentBtn = btn; }
+  player.onended = () => { if (btn) btn.classList.remove('playing'); currentBtn = null; };
+}
+</script>
+</head>
+<body>
+<div class="lesson">
+
+  <a class="back" href="../index.html">← 返回 SpeakScope 主页</a>
+  <h1>📖 Ch.III：The Golden Age</h1>
+  <div class="subtitle">Hope, hard work, and the first cracks in paradise</div>
+  <div class="meta">
+    <span>⏱ 35-40 分钟（核心 25 分钟）</span>
+    <span>📚 英文原著 · Animal Farm</span>
+    <span>🏷️ 英文原著 · Animal Farm · Ch.III</span>
+    <span>🔵 入门 🌱</span>
+  </div>
+
+  <div class="content">
+
+    <!-- ====== 1. 🎬 读前激活 ====== -->
+    <h2>🎬 读前激活</h2>
+
+    <div class="pre-box">
+      <strong>🤔 先问自己：</strong><br>
+      上一章动物们赶走了 Jones，建立了七诫，改名为 Animal Farm。但"革命之后"的日子是什么样的？如果动物们真的自己管理农场，你觉得最困难的是什么？<br><br>
+      <strong>这节课你将学到：</strong>
+      <ul style="margin-left:var(--space-5); margin-top:var(--space-2); line-height:2;">
+        <li>✅ 动物们第一次大丰收——勤劳能创造奇迹吗？</li>
+        <li>✅ Boxer — "I will work harder!" 全书最动人的角色</li>
+        <li>✅ "Four legs good, two legs bad" 口号的诞生</li>
+        <li>✅ 猪开始显露特权——牛奶和苹果的归属问题</li>
+        <li>✅ Snowball vs Napoleon 的首次分歧伏笔</li>
+      </ul>
+    </div>
+
+    <div class="callout">
+      <strong>🗺️ 故事地图：</strong><br>
+      动物们全力投入收割 → 收成比 Jones 时代更好更高效 → Boxer 成为劳动模范（"I will work harder!"） → 周日升旗仪式+大会 → Snowball 组织各种委员会 → "Four legs good, two legs bad" 口号诞生 → Napoleon 悄悄训练小狗 → Squealer 用"科学"为猪的特权辩护（牛奶和苹果归猪所有）。
+    </div>
+
+    <div class="callout">
+      <strong>🏛️ 历史映射：</strong>
+      <table class="map-table">
+        <tr><th>书中角色/元素</th><th>历史映射</th><th>说明</th></tr>
+        <tr><td>Boxer</td><td>工人阶级 / 普罗大众</td><td>被剥削至死仍忠诚不二</td></tr>
+        <tr><td>"Four legs good"</td><td>政治口号简化</td><td>将复杂意识形态简化为朗朗上口的口号</td></tr>
+        <tr><td>Snowball 的委员会</td><td>托洛茨基的群众组织</td><td>理想主义的制度设计，但效率低下</td></tr>
+        <tr><td>Napoleon 训练小狗</td><td>斯大林秘密警察（NKVD）</td><td>用暴力工具巩固权力的开端</td></tr>
+        <tr><td>牛奶和苹果归猪</td><td>革命后特权阶层的出现</td><td>"为了集体利益"的谎言——阶级分化开始</td></tr>
+      </table>
+    </div>
+
+    <!-- ====== 2. 📖 原文精读 ====== -->
+    <h2>📖 原文精读</h2>
+
+    <!-- Passage 1: The harvest -->
+    <div class="passage-card">
+      <div class="p-pre">🔍 Pre-reading：革命后的第一个大任务是收割干草。你觉得动物们能成功吗？它们没有人的双手和工具——但注意 Orwell 怎么描写它们的效率和精神状态。</div>
+      <div class="word-cell">
+        <div class="p-en">
+          How they <span class="highlight-blue">toiled</span> and sweated to get the hay in! But their efforts were rewarded, for the <span class="highlight-blue">harvest</span> was an even bigger success than they had hoped. […] The pigs did not actually work, but directed and <span class="highlight-blue">supervised</span> the others. With their superior knowledge it was natural that they should assume the <span class="highlight-blue">leadership</span>. Boxer and Clover would harness themselves to the cutter or the horse-rake and tramp steadily round and round the field with a pig walking behind and calling out "Gee up, comrade!" or "Whoa back, comrade!" […] In the end they finished the harvest in two days' less time than it had usually taken Jones and his men. Moreover, it was the biggest harvest that the farm had ever seen.
+        </div>
+        <button class="play-btn" id="pb-p1" onclick="playAudio('0008-passage-harvest.mp3','pb-p1')">🔊</button>
+      </div>
+      <div class="p-cn">它们为收割干草付出了多少辛劳和汗水！但努力得到了回报——收成甚至比它们预想的还要好。猪并不实际干活，而是指挥和监督其他动物。凭着它们更优越的知识，由它们担任领导似乎是自然而然的。Boxer 和 Clover 把自己套在收割机或耙子上，一圈又一圈稳步地绕着田地走，一头猪跟在后面喊"驾，同志！"或"吁，同志！"。最后它们比 Jones 和他的手下通常用的时间少了两天完成了收割。而且，这是农场有史以来最大的丰收。</div>
+      <div class="p-note">💡 注意这句话——"With their superior knowledge it was natural that they should assume the leadership."（以它们更优越的知识，由它们担任领导是自然而然的。）这是一个极其关键的话术。Orwell 用"it was natural"（自然而然的）暗示了一种不言而喻的假设——但"是否自然"正是全书要质疑的核心问题。猪因为"更聪明"就有权发号施令吗？</div>
+    </div>
+
+    <!-- Passage 2: Boxer -->
+    <div class="passage-card">
+      <div class="p-pre">🔍 Pre-reading：下面这段描写 Boxer——全书最受人喜爱的角色。读的时候注意他的座右铭。这个座右铭第一次听很感人，但结合后面的故事——它是幸运还是不幸？</div>
+      <div class="word-cell">
+        <div class="p-en">
+          Boxer was the <span class="highlight-blue">admiration</span> of everybody. He had been a hard worker even in Jones's time, but now he seemed more like three horses than one; there were days when the entire work of the farm seemed to rest on his mighty shoulders. From morning to night he was pushing and pulling, always at the spot where the work was hardest. He had made an arrangement with one of the cockerels to call him in the mornings half an hour earlier than anyone else, and would put in some <span class="highlight-blue">voluntary</span> labour at whatever seemed to be most needed, before the regular day's work began. His answer to every problem, every setback, was "I will work harder!" — which he had adopted as his personal <span class="highlight-blue">motto</span>.
+        </div>
+        <button class="play-btn" id="pb-p2" onclick="playAudio('0008-passage-boxer.mp3','pb-p2')">🔊</button>
+      </div>
+      <div class="p-cn">Boxer 受到所有动物的钦佩。即使在 Jones 时代他就是个勤劳的工人，但现在他更像三匹马而不是一匹——有些日子整个农场的工作似乎都压在他那有力的肩膀上。从早到晚他推着拉着，永远在最艰苦的地方。他和一只小公鸡说好，每天提前半小时叫醒他，在正式工作开始之前就自愿干一些最需要做的事。他面对所有问题和挫折的回答就是"我会更努力地工作！"——这句话成了他的个人座右铭。</div>
+      <div class="p-note">💡 "I will work harder!" 是全书最著名也最令人心碎的台词之一。Boxer 代表了被压迫阶级的最高美德：忠诚、勤劳、不知疲倦。但正是这种品质使他最容易被剥削。"I will work harder" 到 Ch.IX 会变成一场悲剧——他虽然无比忠诚，但他的忠诚被猪无耻地利用了。</div>
+    </div>
+
+    <!-- Passage 3: Sunday meetings and the flag -->
+    <div class="passage-card">
+      <div class="p-pre">🔍 Pre-reading：革命后的周日是怎么过的？升旗、开会、唱歌——注意这个流程的象征意义。也注意 Snowball 和 Napoleon 之间已经开始出现分歧。</div>
+      <div class="word-cell">
+        <div class="p-en">
+          On Sundays there was no work. Breakfast was an hour later than usual, and after breakfast there was a ceremony which was observed every week without fail. First came the <span class="highlight-blue">hoisting</span> of the flag. Snowball had found in the harness-room an old green tablecloth of Mrs. Jones's and had painted on it a hoof and a horn in white. This was run up the flagstaff in the farmhouse garden every Sunday morning. The flag was green, Snowball explained, to represent the green fields of England, while the hoof and horn signified the future Republic of the Animals. […] Here the work of the coming week was planned out and <span class="highlight-blue">resolutions</span> were put forward and debated. It was always the pigs who put forward the resolutions. The other animals understood how to vote, but could never think of any <span class="highlight-blue">resolutions</span> of their own. Snowball and Napoleon were by far the most active in the debates. But it was noticed that these two were never in agreement.
+        </div>
+        <button class="play-btn" id="pb-p3" onclick="playAudio('0008-passage-sundays.mp3','pb-p3')">🔊</button>
+      </div>
+      <div class="p-cn">周日不工作。早餐比平时晚一个小时，之后是一个每周必行的仪式。首先是升旗。Snowball 在工具间找到了一张 Mrs. Jones 的旧绿色桌布，在上面画了一只蹄子和一只角。每到周日早晨，它就升到农舍花园的旗杆上。Snowball 解释说，绿色代表英格兰的绿色田野，蹄子和角象征未来的动物共和国。会上制定下周工作计划，提出决议并进行辩论。永远是猪提出决议。其他动物知道如何投票，但从来想不出自己的决议。Snowball 和 Napoleon 是辩论中最活跃的。但大家注意到——这两个家伙从来意见不一致。</div>
+      <div class="p-note">💡 注意两件事：第一，动物们虽然会"投票"，但提不出自己的决议——这正是被动民主的写照。你只能对别人提出的选项投票。第二，Snowball 和 Napoleon 的公开分歧——这为第五章的政变埋下了伏笔。</div>
+    </div>
+
+    <!-- Passage 4: Four legs good -->
+    <div class="passage-card">
+      <div class="p-pre">🔍 Pre-reading：Snowball 提出了一个"简化版"的 Animalism——四个字的口号。你觉得把复杂思想简化成口号是好是坏？</div>
+      <div class="word-cell">
+        <div class="p-en">
+          After much thought Snowball declared that the Seven Commandments could in effect be reduced to a single maxim, namely: "Four legs good, two legs bad." This, he said, contained the essential <span class="highlight-blue">principle</span> of Animalism. […] <strong>FOUR LEGS GOOD, TWO LEGS BAD</strong>, was inscribed on the end wall of the barn, above the Seven Commandments and in bigger letters. When they had once got it by heart, the sheep developed a great liking for this maxim, and often as they lay in the field they would all start bleating "Four legs good, two legs bad! Four legs good, two legs bad!" and keep it up for hours on end, never growing tired of it.
+        </div>
+        <button class="play-btn" id="pb-p4" onclick="playAudio('0008-passage-fourlegs.mp3','pb-p4')">🔊</button>
+      </div>
+      <div class="p-cn">经过深思熟虑，Snowball 宣布七诫实际上可以简化为一条格言，即："四腿好，两腿坏。"他说，这包含了 Animalism 的核心原则。这行字被写在大谷仓的山墙上，在七诫的上方，字体更大。一旦羊们记住了这条格言，它们就非常喜欢，经常躺在田野里时齐声高喊"四腿好，两腿坏！四腿好，两腿坏！"——一喊就是几个小时，从不厌倦。</div>
+      <div class="p-note">💡 "Four legs good, two legs bad" 是全书最著名的口号。注意它是写在七诫上方的，字体更大——暗示"口号"正在凌驾于"法律"之上。羊的机械重复预示了一个可怕的现象：当复杂的思想被压缩成简单的口号，人们就会停止思考。后面章节中，羊会被猪利用来在关键时刻喊口号打断不同意见。</div>
+    </div>
+
+    <!-- Passage 5: Squealer's justification -->
+    <div class="passage-card">
+      <div class="p-pre">🔍 Pre-reading：上一章结尾牛奶神秘消失了。现在真相大白——但 Squealer 是怎么解释的？注意他用了什么话术来让其他动物接受"牛奶和苹果归猪"。</div>
+      <div class="word-cell">
+        <div class="p-en">
+          "Comrades!" he cried. "You do not imagine, I hope, that we pigs are doing this in a spirit of selfishness and privilege? […] Our sole object in taking these things is to preserve our health. Milk and apples (this has been proved by Science, comrades) contain substances absolutely necessary to the well-being of a pig. We pigs are brainworkers. The whole management and organisation of this farm depend on us. Day and night we are watching over your welfare. It is for YOUR sake that we drink that milk and eat those apples. Do you know what would happen if we pigs failed in our duty? Jones would come back! Yes, Jones would come back!"
+        </div>
+        <button class="play-btn" id="pb-p5" onclick="playAudio('0008-passage-squealer.mp3','pb-p5')">🔊</button>
+      </div>
+      <div class="p-cn">"同志们！"他喊道，"你们该不会以为我们猪这样做是出于自私和特权吧？我们拿这些东西的唯一目的是保持健康！牛奶和苹果——这是被科学证实的，同志们——含有对猪的健康绝对必要的物质。我们猪是脑力劳动者，农场的全部管理和组织工作都靠我们。我们日日夜夜为你们的福祉操心。我们喝牛奶、吃苹果是为了你们啊！你们知道如果我们猪失职会有什么后果吗？Jones 会回来的！没错，Jones 会回来的！"</div>
+      <div class="p-note">💡 这是全书第一次展示 Squealer 的话术，也是 Orwell 对宣传技巧最精妙的剖析。注意几个要素：(1)先把对方的可能观点说成"该不会以为我们是自私的吧"——先发制人；(2)用"科学"背书；(3)用"脑力劳动"制造阶层差异；(4)"为了你们"——把特权的受益者说成是牺牲者；(5)"Jones 会回来的"——恐吓战术。这套话术在今天的世界仍然在广泛使用。</div>
+      <div class="p-note" style="border-top: 1px dashed var(--border-light); padding-top: var(--space-3); margin-top: var(--space-3);">
+        <strong>🤔 你发现了吗？</strong> 这一章结束时，猪不仅占有了牛奶和苹果，Napoleon 还把九只小狗带走"秘密教育"了。这两件事同时发生不是偶然的——一边用宣传巩固意识形态控制，一边用暴力准备物理控制。到第五、七章，这两样东西会同时派上用场。
+      </div>
+    </div>
+
+    <!-- ====== 3. 🔑 关键词汇 ====== -->
+    <h2>🔑 关键词汇</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card">
+        <div class="word-cell"><span class="v-word"><span class="level-must">🔵</span> harvest <button class="play-btn" id="pb-v1" onclick="playAudio('0008-key-harvest.mp3','pb-v1')">🔊</button></span></div>
+        <div class="v-pron">/ˈhɑːr.vɪst/</div>
+        <div class="v-cn">收获、收割</div>
+        <div class="v-example">"The harvest was an even bigger success than they had hoped."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="word-cell"><span class="v-word"><span class="level-must">🔵</span> toil <button class="play-btn" id="pb-v2" onclick="playAudio('0008-key-toil.mp3','pb-v2')">🔊</button></span></div>
+        <div class="v-pron">/tɔɪl/</div>
+        <div class="v-cn">辛苦劳作（动词/名词）</div>
+        <div class="v-example">"How they toiled and sweated to get the hay in!"</div>
+      </div>
+      <div class="vocab-card">
+        <div class="word-cell"><span class="v-word"><span class="level-must">🔵</span> motto <button class="play-btn" id="pb-v3" onclick="playAudio('0008-key-motto.mp3','pb-v3')">🔊</button></span></div>
+        <div class="v-pron">/ˈmɒt.oʊ/</div>
+        <div class="v-cn">座右铭（Boxer 的"I will work harder!"）</div>
+        <div class="v-example">"His answer to every problem was 'I will work harder!' — his personal motto."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="word-cell"><span class="v-word"><span class="level-must">🔵</span> Four legs good, two legs bad <button class="play-btn" id="pb-v4" onclick="playAudio('0008-key-fourlegs.mp3','pb-v4')">🔊</button></span></div>
+        <div class="v-pron">/fɔːr lɛɡz ɡʊd tuː lɛɡz bæd/</div>
+        <div class="v-cn">四腿好，两腿坏（全书最著名的口号）</div>
+        <div class="v-example">"'Four legs good, two legs bad' was inscribed on the wall above the Seven Commandments."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="word-cell"><span class="v-word"><span class="level-know">🟡</span> supervise <button class="play-btn" id="pb-v5" onclick="playAudio('0008-key-supervise.mp3','pb-v5')">🔊</button></span></div>
+        <div class="v-pron">/ˈsuː.pər.vaɪz/</div>
+        <div class="v-cn">监督、管理</div>
+        <div class="v-example">"The pigs did not actually work, but directed and supervised the others."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="word-cell"><span class="v-word"><span class="level-must">🔵</span> admiration <button class="play-btn" id="pb-v6" onclick="playAudio('0008-key-admiration.mp3','pb-v6')">🔊</button></span></div>
+        <div class="v-pron">/ˌæd.məˈreɪ.ʃən/</div>
+        <div class="v-cn">钦佩、赞赏</div>
+        <div class="v-example">"Boxer was the admiration of everybody."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="word-cell"><span class="v-word"><span class="level-know">🟡</span> voluntary <button class="play-btn" id="pb-v7" onclick="playAudio('0008-key-voluntary.mp3','pb-v7')">🔊</button></span></div>
+        <div class="v-pron">/ˈvɒl.ən.ter.i/</div>
+        <div class="v-cn">自愿的</div>
+        <div class="v-example">"He would put in some volunteer labour before the regular day's work began."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="word-cell"><span class="v-word"><span class="level-know">🟡</span> parasitical <button class="play-btn" id="pb-v8" onclick="playAudio('0008-key-parasitical.mp3','pb-v8')">🔊</button></span></div>
+        <div class="v-pron">/ˌpær.əˈsɪt.ɪ.kəl/</div>
+        <div class="v-cn">寄生的（形容人类只消费不生产）</div>
+        <div class="v-example">"With the worthless parasitical human beings gone, there was more for everyone to eat."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="word-cell"><span class="v-word"><span class="level-know">🟡</span> literacy <button class="play-btn" id="pb-v9" onclick="playAudio('0008-key-literacy.mp3','pb-v9')">🔊</button></span></div>
+        <div class="v-pron">/ˈlɪt.ər.ə.si/</div>
+        <div class="v-cn">读写能力（扫盲运动）</div>
+        <div class="v-example">"The reading and writing classes were a great success. By the autumn almost every animal was literate in some degree."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="word-cell"><span class="v-word"><span class="level-know">🟡</span> hoist <button class="play-btn" id="pb-v10" onclick="playAudio('0008-key-hoist.mp3','pb-v10')">🔊</button></span></div>
+        <div class="v-pron">/hɔɪst/</div>
+        <div class="v-cn">升起（旗帜）</div>
+        <div class="v-example">"First came the hoisting of the flag."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="word-cell"><span class="v-word"><span class="level-know">🟡</span> committees <button class="play-btn" id="pb-v11" onclick="playAudio('0008-key-committees.mp3','pb-v11')">🔊</button></span></div>
+        <div class="v-pron">/kəˈmɪt.iz/</div>
+        <div class="v-cn">委员会（Snowball 组织的各类小组）</div>
+        <div class="v-example">"Snowball busied himself with organising the other animals into what he called Animal Committees."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="word-cell"><span class="v-word"><span class="level-know">🟡</span> resolution <button class="play-btn" id="pb-v12" onclick="playAudio('0008-key-resolution.mp3','pb-v12')">🔊</button></span></div>
+        <div class="v-pron">/ˌrez.əˈluː.ʃən/</div>
+        <div class="v-cn">决议（复现词，周日大会的议程）</div>
+        <div class="v-example">"Resolutions were put forward and debated. It was always the pigs who put forward the resolutions."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="word-cell"><span class="v-word"><span class="level-know">🟡</span> dignity <button class="play-btn" id="pb-v13" onclick="playAudio('0008-key-dignity.mp3','pb-v13')">🔊</button></span></div>
+        <div class="v-pron">/ˈdɪɡ.nə.ti/</div>
+        <div class="v-cn">尊严（Old Major 曾提到动物应有的尊严）</div>
+        <div class="v-example">"All of them living in a comfort and a dignity beyond our imagining."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="word-cell"><span class="v-word"><span class="level-know">🟡</span> clever <button class="play-btn" id="pb-v14" onclick="playAudio('0008-key-clever.mp3','pb-v14')">🔊</button></span></div>
+        <div class="v-pron">/ˈklev.ər/</div>
+        <div class="v-cn">聪明的</div>
+        <div class="v-example">"The pigs were so clever that they could think of a way round every difficulty."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="word-cell"><span class="v-word"><span class="level-know">🟡</span> leadership <button class="play-btn" id="pb-v15" onclick="playAudio('0008-key-leadership.mp3','pb-v15')">🔊</button></span></div>
+        <div class="v-pron">/ˈliː.dər.ʃɪp/</div>
+        <div class="v-cn">领导地位</div>
+        <div class="v-example">"With their superior knowledge it was natural that they should assume the leadership."</div>
+      </div>
+    </div>
+
+    <!-- Retrieval practice -->
+    <div class="retrieval-box">
+      <strong>🔍 检索练习（先试着自己回忆，再点开看答案）</strong><br>
+      <span style="font-size:var(--text-sm); color:var(--ink-60);">不看中文，你还记得这些词的意思吗？</span>
+      <ul style="margin-left:var(--space-5); line-height:2.2; margin-top:var(--space-3);">
+        <li><strong>harvest</strong></li>
+        <li><strong>toil</strong></li>
+        <li><strong>motto</strong></li>
+        <li><strong>Four legs good, two legs bad</strong></li>
+        <li><strong>supervise</strong></li>
+        <li><strong>admiration</strong></li>
+        <li><strong>voluntary</strong></li>
+        <li><strong>parasitical</strong></li>
+        <li><strong>literacy</strong></li>
+        <li><strong>hoist</strong></li>
+        <li><strong>committees</strong></li>
+        <li><strong>resolution</strong></li>
+        <li><strong>dignity</strong></li>
+        <li><strong>clever</strong></li>
+        <li><strong>leadership</strong></li>
+      </ul>
+      <details>
+        <summary>📌 点击核对答案</summary>
+        <ul style="margin-left:var(--space-5); line-height:2; margin-top:var(--space-3);">
+          <li><strong>harvest</strong> — 收获、收割</li>
+          <li><strong>toil</strong> — 辛苦劳作</li>
+          <li><strong>motto</strong> — 座右铭</li>
+          <li><strong>Four legs good, two legs bad</strong> — 四腿好，两腿坏</li>
+          <li><strong>supervise</strong> — 监督、管理</li>
+          <li><strong>admiration</strong> — 钦佩</li>
+          <li><strong>voluntary</strong> — 自愿的</li>
+          <li><strong>parasitical</strong> — 寄生的</li>
+          <li><strong>literacy</strong> — 读写能力</li>
+          <li><strong>hoist</strong> — 升起</li>
+          <li><strong>committees</strong> — 委员会</li>
+          <li><strong>resolution</strong> — 决议</li>
+          <li><strong>dignity</strong> — 尊严</li>
+          <li><strong>clever</strong> — 聪明的</li>
+          <li><strong>leadership</strong> — 领导地位</li>
+        </ul>
+      </details>
+    </div>
+
+    <!-- ====== 4. 💬 口语练习 ====== -->
+    <h2>💬 口语练习</h2>
+
+    <div class="speak-card">
+      <div class="s-level mec">🔰 MECHANICAL — 句型框架</div>
+      <p>用下面的框架描述本章中猪开始享受特权的现象：</p>
+      <div class="s-framework">"At first, the pigs said _____. But later, they _____. This shows that _____."</div>
+      <p style="font-size:var(--text-sm); color:var(--ink-60);">例：At first, the pigs said <strong>all animals are equal</strong>. But later, they <strong>kept the milk and apples for themselves and justified it by saying it was 'for everyone's good'</strong>. This shows that <strong>the pigs were already creating a privileged class, even though they talked about equality</strong>.</p>
+    </div>
+
+    <div class="speak-card">
+      <div class="s-level con">📝 CONTROLLED — 模仿示范</div>
+      <p><strong>问题：</strong>Why is Boxer's motto "I will work harder" both inspiring and tragic?</p>
+      <div class="s-model"><strong>Model response:</strong> "Boxer's motto is inspiring because it shows his dedication and selflessness — he always volunteers for the hardest work. But it is also tragic because he never questions whether working harder will actually solve the problems. He blindly trusts the pigs, and his hard work is exploited. By the end of the story, his loyalty leads to his death."</div>
+      <p style="font-size:var(--text-sm); color:var(--ink-60); margin-top:var(--space-2);">👆 试着用自己的话模仿这个结构回答。</p>
+    </div>
+
+    <div class="speak-card">
+      <div class="s-level free">💭 FREE — 自由讨论</div>
+      <ol style="margin-left:var(--space-5); line-height:2.2;">
+        <li>Squealer uses "Science" to justify giving the pigs special food. Can you think of real-world examples where "science" or "expert knowledge" is used to justify inequality?</li>
+        <li>The sheep repeat "Four legs good, two legs bad" endlessly. What modern equivalents can you think of — slogans or catchphrases that people repeat without thinking?</li>
+        <li>Napoleon takes the puppies away for "education." This seems harmless here but becomes crucial later. Why do you think controlling education is so important for those in power?</li>
+      </ol>
+    </div>
+
+    <div class="speak-card">
+      <div class="s-level con" style="color:var(--accent);">🎧 跟读段落</div>
+      <p>跟读下面这段，注意节奏和重音：</p>
+      <div class="s-framework" style="font-style:normal;">
+        "Boxer was the admiration / of everybody. // He had been a hard worker / even in Jones's time, / but now he seemed more like three horses than one; / there were days / when the entire work of the farm / seemed to rest on his mighty shoulders. // His answer to every problem, / every setback, / was 'I will work harder!'"
+      </div>
+      <button class="play-btn" id="pb-shadow" onclick="playAudio('0008-shadowing.mp3','pb-shadow')" style="display:inline-flex; margin-top:var(--space-2);">🔊 听示范录音</button>
+    </div>
+
+    <div class="callout">
+      <strong>🤖 AI 陪练 Prompt</strong><br>
+      复制下面的文字到元宝 AI：<br>
+      <div class="s-framework" style="margin-top:var(--space-2);">"我刚读完 Animal Farm 第三章 (The Golden Age)。请用英语问我关于这章的问题——比如 Boxer 的座右铭、Squealer 的话术、'Four legs good' 口号的意义、Napoleon 训练小狗的用意。一次问一个，回答后给我反馈，帮我提高英语表达能力。"</div>
+    </div>
+
+    <!-- ====== 5. 📝 课后练习 ====== -->
+    <h2>📝 课后练习</h2>
+
+    <div class="exercise-box">
+      <strong>📝 词汇填空（必做）</strong>
+      <div class="ex-section">
+        <p>用以下词填空：<strong>toil, harvest, motto, admiration, supervised, literacy</strong></p>
+        <div class="quiz-item">1. The animals ______ in the fields all summer to bring in the hay.</div>
+        <div class="quiz-item">2. This year's ______ was the biggest the farm had ever seen.</div>
+        <div class="quiz-item">3. "I will work harder!" was Boxer's personal ______.</div>
+        <div class="quiz-item">4. The pigs ______ the work while the other animals did the heavy labour.</div>
+        <div class="quiz-item">5. The reading and writing classes improved the animals' ______.</div>
+      </div>
+    </div>
+
+    <div class="exercise-box">
+      <strong>📖 阅读理解（必做）</strong>
+      <div class="ex-section">
+        <div class="quiz-item"><strong>1.</strong> How did the animals finish the harvest compared to Jones's time?<br>
+          A. Two days slower<br>
+          B. The same speed<br>
+          C. Two days faster<br>
+          D. They didn't finish it at all</div>
+        <div class="quiz-item"><strong>2.</strong> What was Boxer's answer to every problem?<br>
+          A. "I need a rest"<br>
+          B. "I will work harder"<br>
+          C. "Let's ask the pigs"<br>
+          D. "This is unfair"</div>
+        <div class="quiz-item"><strong>3.</strong> What did Napoleon do with the nine puppies?<br>
+          A. He gave them to the other animals<br>
+          B. He sold them to the humans<br>
+          C. He took them away for private education<br>
+          D. He set them free</div>
+      </div>
+    </div>
+
+    <div class="exercise-box">
+      <details>
+        <summary>✍️ 写作任务（选做）</summary>
+        <div class="ex-section">
+          <p>用至少 3 个这节课学的生词，写一段 50 词左右的英文短文：<strong>"Was the 'Golden Age' really golden? What do you think about how the pigs started acting in this chapter?"</strong></p>
+          <p style="font-size:var(--text-sm); color:var(--ink-60);">提示：可以用 leadership, motto, supervise, voluntary, toil 等词。</p>
+        </div>
+      </details>
+    </div>
+
+  </div>
+
+  <div class="footer-nav">
+    <a href="0007-AnimalFarm-Ch2-The-Rebellion.html">← 上一课：Ch.II The Rebellion</a>
+    <a href="../index.html">返回主页</a>
+    <a href="0009-AnimalFarm-Ch4-The-Battle-of-the-Cowshed.html">下一课：Ch.IV The Battle of the Cowshed →</a>
+  </div>
+
+</div>
+<script src="../shared/lesson-tools.js"></script>
+</body>
+</html>

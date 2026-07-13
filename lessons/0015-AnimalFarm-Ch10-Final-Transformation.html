@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 0015 课：Chapter X — The Final Transformation · SpeakScope</title>
+<style>
+  body { background: #f8f7f4; font-family: Georgia, 'Noto Serif SC', serif; margin: 0; padding: 0; color: #2c2c2c; }
+  .lesson { max-width: 880px; margin: 0 auto; padding: 3rem 1.5rem; }
+  .lesson h1 { font-size: 2rem; margin-bottom: 0.2rem; }
+  .lesson .subtitle { font-size: 1.1rem; color: #666; }
+  .lesson .meta { display: flex; gap: 0.75rem; margin: 1rem 0 2.5rem; flex-wrap: wrap; }
+  .lesson .meta span { padding: 0.3rem 0.8rem; border-radius: 6px; background: #fff; border: 1px solid #e0ddd5; font-size: 0.85rem; color: #666; }
+  .lesson .content { line-height: 1.8; font-size: 1rem; }
+  .lesson .content h2 { margin: 2.5rem 0 1rem; padding-bottom: 0.25rem; border-bottom: 1px solid #e0ddd5; }
+  .lesson .content h3 { margin: 1.5rem 0 0.75rem; }
+  .back { display: inline-block; margin-bottom: 1.5rem; color: #7c3aed; text-decoration: none; font-size: 0.85rem; }
+  .back:hover { text-decoration: underline; }
+  .passage-card { background: #fff; border: 1px solid #e0ddd5; border-radius: 12px; padding: 1.5rem; margin: 1.25rem 0; border-left: 4px solid #7c3aed; }
+  .passage-card .p-en { font-family: Georgia, serif; font-size: 1rem; line-height: 1.8; color: #2c2c2c; }
+  .passage-card .p-cn { font-size: 0.875rem; color: #666; margin-top: 0.75rem; border-top: 1px dashed #e0ddd5; padding-top: 0.75rem; }
+  .passage-card .p-pre { font-size: 0.85rem; color: #5b21b6; font-style: italic; margin-bottom: 0.75rem; padding: 0.5rem 0.75rem; background: #f5f3ff; border-radius: 6px; }
+  .passage-card .p-note { font-size: 0.85rem; color: #666; margin-top: 0.75rem; border-top: 1px dashed #e0ddd5; padding-top: 0.75rem; }
+  .highlight-blue { background: #dbeafe; padding: 0.1rem 0.2rem; border-radius: 2px; }
+  .highlight-yellow { background: #fef3c7; padding: 0.1rem 0.2rem; border-radius: 2px; }
+  .vocab-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; margin: 1.25rem 0; }
+  .vocab-card { background: #fff; border: 1px solid #e0ddd5; border-radius: 8px; padding: 1rem; }
+  .vocab-card .v-word { font-weight: 700; font-family: Georgia, serif; font-size: 1.1rem; display: flex; align-items: center; gap: 0.3rem; }
+  .vocab-card .v-pron { font-size: 0.75rem; color: #999; font-style: italic; }
+  .vocab-card .v-cn { font-size: 0.85rem; color: #444; margin-top: 0.25rem; }
+  .vocab-card .v-example { font-size: 0.8rem; color: #666; margin-top: 0.5rem; font-style: italic; }
+  .level-must { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 4px; font-size: 0.7rem; font-weight: 600; background: #dbeafe; color: #1e40af; margin-right: 0.3rem; }
+  .level-know { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 4px; font-size: 0.7rem; font-weight: 600; background: #fef3c7; color: #92400e; margin-right: 0.3rem; }
+  .map-table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; font-size: 0.85rem; }
+  .map-table th { text-align: left; background: #f5f3ff; padding: 0.5rem 0.75rem; color: #5b21b6; font-weight: 600; }
+  .map-table td { padding: 0.5rem 0.75rem; border-bottom: 1px solid #e0ddd5; }
+  .pre-box { background: #f5f3ff; border-radius: 8px; padding: 1rem; margin: 1.25rem 0; border: 1px dashed #c4b5fd; }
+  .pre-box strong { color: #5b21b6; }
+  .retrieval-box { background: #fff; border: 2px dashed #c4b5fd; border-radius: 12px; padding: 1.25rem; margin: 1.25rem 0; }
+  .retrieval-box details { margin-top: 0.75rem; }
+  .retrieval-box summary { cursor: pointer; font-weight: 600; color: #5b21b6; }
+  .speak-card { background: #fff; border: 1px solid #e0ddd5; border-radius: 8px; padding: 1.25rem; margin: 1rem 0; }
+  .speak-card .s-level { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  .speak-card .s-level.mec { color: #7c3aed; }
+  .speak-card .s-level.con { color: #5b21b6; }
+  .speak-card .s-level.free { color: #5a9e6f; }
+  .speak-card .s-framework { background: #f5f3ff; padding: 0.75rem; border-radius: 6px; margin: 0.75rem 0; font-family: 'Courier New', monospace; font-size: 0.85rem; }
+  .speak-card .s-model { background: #f0fdf4; border: 1px solid #bbf7d0; padding: 0.75rem; border-radius: 6px; margin: 0.5rem 0; font-size: 0.85rem; }
+  .exercise-box { border: 1px solid #e0ddd5; border-radius: 8px; padding: 1.25rem; margin: 1.5rem 0; background: #fff; }
+  .exercise-box summary { cursor: pointer; font-weight: 600; color: #5b21b6; font-size: 1rem; margin-bottom: 0.75rem; }
+  .exercise-box .ex-section { margin: 0.75rem 0; }
+  .quiz-item { margin: 0.75rem 0; padding: 0.5rem; border-left: 3px solid #c4b5fd; }
+  .play-btn { display: inline-flex; align-items: center; justify-content: center; background: #fff; border: 1px solid #c4b5fd; border-radius: 4px; cursor: pointer; font-size: 0.75rem; width: 1.6rem; height: 1.6rem; margin-left: 0.4rem; flex-shrink: 0; transition: background 0.15s, transform 0.1s; vertical-align: middle; line-height: 1; }
+  .play-btn:hover { background: #f5f3ff; transform: scale(1.1); }
+  .play-btn:active { transform: scale(0.95); }
+  .play-btn.playing { background: #c8e6c9; border-color: #4caf50; }
+  .callout { background: #fff; border: 1px solid #e0ddd5; border-radius: 8px; padding: 1.25rem; margin: 1.25rem 0; }
+  .callout strong { color: #5b21b6; }
+  .word-cell { display: flex; align-items: center; gap: 0.3rem; flex-wrap: wrap; }
+  .footer-nav { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #e0ddd5; display: flex; justify-content: space-between; font-size: 0.85rem; }
+  .footer-nav a { color: #7c3aed; text-decoration: none; }
+  .footer-nav a:hover { text-decoration: underline; }
+  .track-table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.85rem; }
+  .track-table th { text-align: left; background: #f5f3ff; padding: 0.5rem 0.75rem; color: #5b21b6; font-weight: 600; }
+  .track-table td { padding: 0.5rem 0.75rem; border-bottom: 1px solid #e0ddd5; }
+</style>
+<script>
+const player = new Audio();
+let currentBtn = null;
+function playAudio(src, btnId) {
+  const btn = document.getElementById(btnId);
+  if (btn && btn.classList.contains('playing')) { player.pause(); player.currentTime = 0; btn.classList.remove('playing'); currentBtn = null; return; }
+  if (currentBtn) currentBtn.classList.remove('playing');
+  player.src = 'assets/audio/animal-farm/' + src; player.play();
+  if (btn) { btn.classList.add('playing'); currentBtn = btn; }
+  player.onended = () => { if (btn) btn.classList.remove('playing'); currentBtn = null; };
+}
+</script>
+</head>
+<body>
+<div class="lesson">
+
+  <a class="back" href="../index.html">← 返回 SpeakScope 主页</a>
+  <h1>📖 Ch.X：The Final Transformation</h1>
+  <div class="subtitle">最终变形 — 猪变成了人</div>
+  <div class="meta">
+    <span>⏱ 35-40 分钟（核心 25 分钟）</span>
+    <span>📚 英文原著 · Animal Farm</span>
+    <span>🏷️ 英文原著 · Animal Farm · 精读 · Ch.X</span>
+    <span>🔴 巅峰 🏆</span>
+  </div>
+
+  <div class="content">
+
+    <!-- ====== 读前激活 ====== -->
+    <h2>🎬 读前激活</h2>
+    <div class="pre-box">
+      <strong>🤔 先问自己：</strong><br>
+      当革命领袖穿着人的衣服、拿着鞭子、用两条腿走路——他们和当初推翻的"人"还有什么区别？<br><br>
+      <strong>历史映射提示：</strong> 本章是全书终局。七年过去了，猪已经彻底变成了曾经的"人"。Napoleon 与人类农民把酒言欢，宣布农场恢复原名"Manor Farm"，并废除了"同志"的称呼。这对应着斯大林时期苏联官僚体制的完全固化——革命彻底蜕变为新的暴政。<br><br>
+      <strong>本节学习目标：</strong>
+      <ul style="margin-left:1.25rem; margin-top:0.5rem; line-height:2;">
+        <li>✅ 追踪七诫的最终结局——只剩一条</li>
+        <li>✅ 精读全书最重要的段落：猪用后腿走路、持鞭、人与猪无法分辨</li>
+        <li>✅ 完成全书的历史映射总结</li>
+        <li>✅ 掌握 indistinguishable / transformation / more equal 等 15 个关键词汇</li>
+        <li>✅ 用英语完成全书主题总结</li>
+      </ul>
+    </div>
+
+    <h3>🐾 七诫终极追踪：只剩一条</h3>
+    <p>经过多次修改，七诫只剩最后一条——但这一条本身就是一个悖论。</p>
+    <table class="track-table">
+      <tr><th>#</th><th>原版</th><th>最终版本</th><th>修改章节</th></tr>
+      <tr><td>1</td><td>两脚行走的是敌人</td><td>未修改</td><td>—</td></tr>
+      <tr><td>2</td><td>四脚行走的是朋友</td><td>未修改</td><td>—</td></tr>
+      <tr><td>3</td><td>不得穿衣服</td><td>未修改</td><td>—</td></tr>
+      <tr><td>4</td><td>不得睡床</td><td>不得睡床<strong>铺被单</strong></td><td>Ch.VI</td></tr>
+      <tr><td>5</td><td>不得饮酒</td><td>不得饮酒<strong>过量</strong></td><td>Ch.VIII</td></tr>
+      <tr><td>6</td><td>不得杀生</td><td>不得杀生<strong>无故</strong></td><td>Ch.VIII</td></tr>
+      <tr><td><strong>7</strong></td><td><strong>所有动物一律平等</strong></td><td><strong>所有动物一律平等，但有些动物更平等</strong></td><td><strong>Ch.X</strong></td></tr>
+    </table>
+    <div class="callout">
+      <strong>📌 总结：</strong> 七诫从 7 条具体的道德戒律，经过逐条修改/淡化，最终只剩下一条——但这条在逻辑上已经自我毁灭（"更平等"本身否定了"平等"）。墙上的文字从七条变成了一条："<strong>ALL ANIMALS ARE EQUAL BUT SOME ANIMALS ARE MORE EQUAL THAN OTHERS</strong>"——这是全书最著名的一句话，也是 Orwell 对一切不平等体制的终极讽刺。
+    </div>
+
+    <h3>🎵 "Beasts of England" 最终追踪</h3>
+    <table class="track-table">
+      <tr><th>章节</th><th>状态</th></tr>
+      <tr><td>Ch.I</td><td>🎵 Old Major 首次唱出——革命理想诞生</td></tr>
+      <tr><td>Ch.II–VI</td><td>🎵 每次会议结束必唱——革命的日常仪式</td></tr>
+      <tr><td>Ch.VII</td><td>🚫 被 Napoleon 正式废除</td></tr>
+      <tr><td>Ch.VIII</td><td>🥴 Napoleon 醉酒后无意哼唱</td></tr>
+      <tr><td><strong>Ch.X</strong></td><td><strong>🎵 动物们秘密哼唱——地下抵抗的精神火种</strong></td></tr>
+    </table>
+    <p>虽然被禁止，但"Beasts of England"的旋律从未真正消失——它在地下流传，成为动物们心中最后的希望。这个细节给了全书最黑暗的结局一丝微弱的光明。</p>
+
+    <!-- ====== 原文精读 ====== -->
+
+    <h2>📖 原文精读</h2>
+
+    <!-- Passage 1: Pigs walking on hind legs + whip -->
+    <h3>段落一：用后腿走路的猪 + 鞭子</h3>
+    <div class="passage-card">
+      <div class="p-pre">💡 微预测：七年过去了。有一天，Clover 发出了恐怖的嘶鸣——她看到了什么？你能想象那画面吗？</div>
+      <div class="word-cell">
+        <div class="p-en">It was a pig walking on his <span class="highlight-blue">hind legs</span>. Yes, it was Squealer. ... And finally there was a tremendous baying of dogs and a shrill crowing from the black cockerel, and out came Napoleon himself, majestically upright, casting haughty glances from side to side, and with his dogs gambolling round him. <strong>He carried a <span class="highlight-blue">whip</span> in his trotter.</strong></div>
+        <button class="play-btn" id="pb15-p1" onclick="playAudio('0015-passage-final.mp3','pb15-p1')">🔊</button>
+      </div>
+      <div class="p-cn">Squealer 在用两条后腿走路！接着一排猪都走了出来，都用两条后腿。最后 Napoleon 本人出现了——庄严直立，傲慢地左右扫视，手里拿着鞭子。</div>
+      <div class="p-note">🏛️ <strong>历史映射：</strong> 这是全书最震撼的画面。"用后腿走路"和"拿鞭子"是两个关键象征——猪已经彻底变成了他们当初推翻的那种"人"。更讽刺的是，墙上的第一条诫命就是"两脚行走的是敌人"——现在猪们自己用两条腿走路，却没有人提出异议。<br><br>
+      <strong>为什么 Orwell 选择"两条腿走路"作为终局的标志？</strong> 因为在 Ch.II 中，动物起义成功后的第一件事就是把人类赶走，所有的动物都是用四条腿走路的。用两条腿走路，代表他们已经变成了"人"——而"人"是动物革命的敌人。这个视觉象征的力量远超任何文字描述。</div>
+      <div class="p-note">💡 <strong>你发现了吗？</strong> 羊群的口号变了！从"Four legs good, two legs bad"变成了"<strong>Four legs good, two legs BETTER</strong>"。这一字之差，是 Orwell 的经典讽刺——群众口号可以被轻易操纵来为任何立场服务。</div>
+    </div>
+
+    <!-- Passage 2: The final commandment - "more equal" -->
+    <h3>段落二：七诫的最终状态</h3>
+    <div class="passage-card">
+      <div class="p-pre">💡 微预测：Clover 感到墙上的字变了，但她看不清楚。Benjamin 终于愿意读给她听——你猜，七诫还剩几条？那条写了什么？</div>
+      <div class="word-cell">
+        <div class="p-en">For once Benjamin consented to break his rule, and he read out to her what was written on the wall. There was nothing there now except a single Commandment. It ran: <br><br>
+        <strong>ALL ANIMALS ARE EQUAL<br>
+        BUT SOME ANIMALS ARE <span class="highlight-blue">MORE EQUAL</span> THAN OTHERS</strong></div>
+        <button class="play-btn" id="pb15-p2" onclick="playAudio('0015-key-more-equal.mp3','pb15-p2')">🔊</button>
+      </div>
+      <div class="p-cn">Benjamin 终于读了出来：墙上只有一条诫命——"所有动物一律平等，但有些动物更平等。"</div>
+      <div class="p-note">📌 <strong>全书最著名的反讽：</strong> "more equal" 在英语中是一个逻辑悖论——"平等"是不可分级的概念，就像"更死了"或"更怀孕了"一样荒谬。Orwell 用这个不合语法的短语来揭示：极权体制下的"平等"已经是一个空洞的谎言。"更平等"意味着有些人可以被定义为比其他"更"平等——这恰恰是平等观念的对立面。</div>
+      <div class="p-note">💡 <strong>英语语言分析：</strong> "more equal" 故意违反了英语语法规则（一般来说，equal 作为形容词没有比较级）。这种语法错误本身就是政治讽刺——当语言被扭曲，真理也随之扭曲。这和 Orwell 的著名论文《政治与英语语言》（Politics and the English Language）中的观点一脉相承：语言腐败是政治腐败的工具和症状。</div>
+    </div>
+
+    <!-- Passage 3: The dinner party - pig and man indistinguishable -->
+    <h3>段落三：盛宴 & 最终画面——人与猪无法分辨</h3>
+    <div class="passage-card">
+      <div class="p-pre">💡 微预测：Napoleon 邀请人类邻居来农场做客。他们一起喝酒打牌。当动物们透过窗户看进去时——他们发现了一件令人震惊的事。猜猜是什么？</div>
+      <div class="word-cell">
+        <div class="p-en">The creatures outside looked from pig to man, and from man to pig, and from pig to man again; <strong>but already it was impossible to say which was which</strong>.</div>
+        <button class="play-btn" id="pb15-p3" onclick="playAudio('0015-passage-pig-men.mp3','pb15-p3')">🔊</button>
+      </div>
+      <div class="p-cn">窗外的动物们看看猪，看看人，再看看猪——但已经无法分辨谁是谁了。</div>
+      <div class="p-note">🏛️ <strong>全书的历史映射总结：</strong><br>
+      <table class="map-table">
+        <tr><th>动物/角色</th><th>历史映射</th><th>最终命运</th></tr>
+        <tr><td>Napoleon</td><td>斯大林</td><td>完全变成了独裁者，与人类平起平坐</td></tr>
+        <tr><td>Squealer</td><td>宣传机器（莫洛托夫）</td><td>肥胖到几乎看不见眼睛，依旧在撒谎</td></tr>
+        <tr><td>Snowball</td><td>托洛茨基</td><td>被遗忘——历史被完全篡改</td></tr>
+        <tr><td>Boxer</td><td>工人阶级</td><td>被剥削至死，被"英雄叙事"覆盖真相</td></tr>
+        <tr><td>Benjamin</td><td>犬儒知识分子</td><td>看透一切但保持沉默——最终只做了"读墙"这件事</td></tr>
+        <tr><td>Clover</td><td>善良的普通人</td><td>垂垂老矣，是唯一还隐约记得革命初心的人</td></tr>
+        <tr><td>羊群</td><td>被操控的群众</td><td>机械地重复新口号，压制任何异议</td></tr>
+        <tr><td>Pilkington</td><td>英美资本主义</td><td>与猪称兄道弟——剥削者不分种属</td></tr>
+        <tr><td>Frederick</td><td>纳粹德国</td><td>欺骗后消失——像真实历史中的苏德互不侵犯条约</td></tr>
+        <tr><td>Moses</td><td>俄罗斯东正教会</td><td>被允许留在农场不工作——宗教作为麻醉剂被容忍</td></tr>
+      </table>
+      </div>
+      <div class="p-note">📌 <strong>全书的循环结构：</strong> Animal Farm 以 Manor Farm 开始，以 Manor Farm 结束。猪变成了人，鞭子重新出现，七诫不复存在，革命理想完全破灭。<strong>革命没有消灭不平等——只是更换了不平等的主宰者。</strong> Orwell 在全书结尾传达的信息是：如果不从根本上改变权力结构，任何革命最终都会产生新的精英阶层，而普通人的处境不会真正改变。</div>
+      <div class="p-note">💡 <strong>最后的修辞技法：</strong> 全书最后一句——"impossible to say which was which"——是全书的点睛之笔。它不是一个"结论"，而是一幅画面。Orwell 没有说教，而是让读者亲眼看到这个恐怖的画面：当革命领袖与旧统治阶级合流，革命已无迹可寻。这个画面会永远留在读者脑海中，比任何说教都更有力量。</div>
+    </div>
+
+    <!-- ====== 关键词汇 ====== -->
+    <h2>🔑 关键词汇</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card">
+        <div class="word-cell"><span class="v-word"><span class="level-must">🔵</span> indistinguishable <button class="play-btn" id="pb-v1" onclick="playAudio('0015-key-indistinguishable.mp3','pb-v1')">🔊</button></span></div>
+        <div class="v-pron">/ˌɪn.dɪˈstɪŋ.ɡwɪ.ʃə.bəl/</div>
+        <div class="v-cn">难以区分的——终局关键：猪和人已无法分辨</div>
+        <div class="v-example">"It was impossible to say which was which — pig and man were indistinguishable."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="word-cell"><span class="v-word"><span class="level-must">🔵</span> transformation <button class="play-btn" id="pb-v2" onclick="playAudio('0015-key-transformation.mp3','pb-v2')">🔊</button></span></div>
+        <div class="v-pron">/ˌtræns.fərˈmeɪ.ʃən/</div>
+        <div class="v-cn">转变——猪到人的完全蜕变</div>
+        <div class="v-example">"The transformation of the pigs into humans was complete."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="word-cell"><span class="v-word"><span class="level-must">🔵</span> more equal <button class="play-btn" id="pb-v3" onclick="playAudio('0015-key-more-equal.mp3','pb-v3')">🔊</button></span></div>
+        <div class="v-pron">/mɔːr ˈiː.kwəl/</div>
+        <div class="v-cn">更平等——全书最著名的反讽短语</div>
+        <div class="v-example">"All animals are equal, but some are more equal than others."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="word-cell"><span class="v-word"><span class="level-know">🟡</span> prosperity <button class="play-btn" id="pb-v4" onclick="playAudio('0015-key-prosperity.mp3','pb-v4')">🔊</button></span></div>
+        <div class="v-pron">/prɑːˈsper.ə.ti/</div>
+        <div class="v-cn">繁荣（虚假的——只针对猪和狗）</div>
+        <div class="v-example">"The farm prospered, but the animals remained hungry."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="word-cell"><span class="v-word"><span class="level-must">🔵</span> seven commandments reduced <button class="play-btn" id="pb-v5" onclick="playAudio('0015-key-commandments-reduced.mp3','pb-v5')">🔊</button></span></div>
+        <div class="v-pron">— 短语</div>
+        <div class="v-cn">七诫被缩减为一条——全书最终章的核心事件</div>
+        <div class="v-example">"The seven commandments had been reduced to a single, self-contradictory sentence."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="word-cell"><span class="v-word"><span class="level-must">🔵</span> tyranny returns <button class="play-btn" id="pb-v6" onclick="playAudio('0015-key-tyranny-returns.mp3','pb-v6')">🔊</button></span></div>
+        <div class="v-pron">/ˈtɪr.ə.ni rɪˈtɜːrnz/</div>
+        <div class="v-cn">暴政回归——全书循环结构</div>
+        <div class="v-example">"The tyranny of Jones was replaced by the tyranny of Napoleon."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="word-cell"><span class="v-word"><span class="level-know">🟡</span> card playing <button class="play-btn" id="pb-v7" onclick="playAudio('0015-key-transformation.mp3','pb-v7')">🔊</button></span></div>
+        <div class="v-pron">/kɑːrd ˈpleɪ.ɪŋ/</div>
+        <div class="v-cn">打牌——Napoleon 与人类打牌（对应德黑兰会议）</div>
+        <div class="v-example">"Napoleon and Pilkington played cards together at the banquet."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="word-cell"><span class="v-word"><span class="level-must">🔵</span> walking on hind legs <button class="play-btn" id="pb-v8" onclick="playAudio('0015-key-transformation.mp3','pb-v8')">🔊</button></span></div>
+        <div class="v-pron">— 短语</div>
+        <div class="v-cn">用后腿行走——猪的最终蜕变标志</div>
+        <div class="v-example">"The pigs walking on their hind legs was the final sign of transformation."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="word-cell"><span class="v-word"><span class="level-know">🟡</span> whip <button class="play-btn" id="pb-v9" onclick="playAudio('0015-key-tyranny-returns.mp3','pb-v9')">🔊</button></span></div>
+        <div class="v-pron">/wɪp/</div>
+        <div class="v-cn">鞭子——猪拿起了鞭子，变成了新的压迫者</div>
+        <div class="v-example">"Napoleon carried a whip in his trotter, just like Mr. Jones once had."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="word-cell"><span class="v-word"><span class="level-know">🟡</span> bargain <button class="play-btn" id="pb-v10" onclick="playAudio('0015-key-transformation.mp3','pb-v10')">🔊</button></span></div>
+        <div class="v-pron">/ˈbɑːr.ɡɪn/</div>
+        <div class="v-cn">讨价还价——猪与人类做交易</div>
+        <div class="v-example">"Napoleon struck a bargain with the neighbouring farmers."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="word-cell"><span class="v-word"><span class="level-know">🟡</span> forgotten <button class="play-btn" id="pb-v11" onclick="playAudio('0015-key-forgotten.mp3','pb-v11')">🔊</button></span></div>
+        <div class="v-pron">/fərˈɡɑːt.ən/</div>
+        <div class="v-cn">被遗忘的——Snowball、Boxer 都被遗忘</div>
+        <div class="v-example">"Snowball was forgotten. Boxer was forgotten, except by the few who had known him."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="word-cell"><span class="v-word"><span class="level-know">🟡</span> secretly hums <button class="play-btn" id="pb-v12" onclick="playAudio('0015-key-forgotten.mp3','pb-v12')">🔊</button></span></div>
+        <div class="v-pron">— 短语</div>
+        <div class="v-cn">秘密哼唱——"Beasts of England"在地下流传</div>
+        <div class="v-example">"Even the tune of 'Beasts of England' was perhaps hummed secretly here and there."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="word-cell"><span class="v-word"><span class="level-must">🔵</span> Manor Farm <button class="play-btn" id="pb-v13" onclick="playAudio('0015-key-prosperity.mp3','pb-v13')">🔊</button></span></div>
+        <div class="v-pron">/ˈmæn.ər fɑːrm/</div>
+        <div class="v-cn">庄园农场——农场改回原名，历史回到了起点</div>
+        <div class="v-example">"The name 'Animal Farm' had been abolished. Henceforward the farm was to be known as 'The Manor Farm.'"</div>
+      </div>
+      <div class="vocab-card">
+        <div class="word-cell"><span class="v-word"><span class="level-know">🟡</span> "Comrade" suppressed <button class="play-btn" id="pb-v14" onclick="playAudio('0015-key-transformation.mp3','pb-v14')">🔊</button></span></div>
+        <div class="v-pron">— 短语</div>
+        <div class="v-cn">"同志"被废除——革命语言被清理</div>
+        <div class="v-example">"The custom of addressing one another as 'Comrade' was to be suppressed."</div>
+      </div>
+      <div class="vocab-card">
+        <div class="word-cell"><span class="v-word"><span class="level-know">🟡</span> title-deeds <button class="play-btn" id="pb-v15" onclick="playAudio('0015-key-prosperity.mp3','pb-v15')">🔊</button></span></div>
+        <div class="v-pron">/ˈtaɪ.təl diːdz/</div>
+        <div class="v-cn">地契、产权证书——权力最终落在猪手里</div>
+        <div class="v-example">"The title-deeds were owned by the pigs jointly."</div>
+      </div>
+    </div>
+
+    <!-- Retrieval -->
+    <div class="retrieval-box">
+      <strong>🔍 检索练习（先试着自己回忆，再点开看答案）</strong><br>
+      <span style="font-size:0.85rem; color:#666;">不看中文，你还记得这些词的意思吗？</span>
+      <details>
+        <summary>📌 点击核对答案</summary>
+        <ul style="margin-left:1.25rem; line-height:2; margin-top:0.75rem;">
+          <li><strong>indistinguishable</strong> — 难以区分的</li>
+          <li><strong>transformation</strong> — 转变</li>
+          <li><strong>more equal</strong> — 更平等</li>
+          <li><strong>prosperity</strong> — 繁荣</li>
+          <li><strong>tyranny returns</strong> — 暴政回归</li>
+          <li><strong>Manor Farm</strong> — 庄园农场（原名）</li>
+          <li><strong>forgotten</strong> — 被遗忘的</li>
+          <li><strong>whip</strong> — 鞭子</li>
+        </ul>
+      </details>
+    </div>
+
+    <!-- ====== 口语练习 ====== -->
+    <h2>💬 口语练习</h2>
+
+    <div class="speak-card">
+      <div class="s-level mec">🔰 MECHANICAL — 句型框架</div>
+      <p>用下面的框架总结全书：</p>
+      <div class="s-framework">"Animal Farm began with _____ and ended with _____. In the beginning _____, but in the end _____. The pigs turned into _____."</div>
+      <p style="font-size:0.85rem; color:#666;">例：Animal Farm began with <strong>a revolution against Mr. Jones</strong> and ended with <strong>the pigs becoming just like humans</strong>. In the beginning <strong>all animals were equal</strong>, but in the end <strong>some were more equal than others</strong>. The pigs turned into <strong>tyrants who were indistinguishable from men</strong>.</p>
+    </div>
+
+    <div class="speak-card">
+      <div class="s-level con">📝 CONTROLLED — 模仿示范</div>
+      <p><strong>问题：</strong>What is the most important lesson of Animal Farm?</p>
+      <div class="s-model"><strong>Model response:</strong> "I think the most important lesson of Animal Farm is that revolution alone does not guarantee freedom or equality. The animals overthrew Jones, but they simply replaced one set of oppressors with another. Without strong institutions that distribute power fairly — without democracy, rule of law, and free speech — any revolution can be hijacked by a small group. Power corrupts, and as the book shows, it corrupts absolutely when there are no checks and balances."</div>
+      <p style="font-size:0.85rem; color:#666; margin-top:0.5rem;">👆 试着用自己的话模仿这个结构回答。</p>
+    </div>
+
+    <div class="speak-card">
+      <div class="s-level free">💭 FREE — 自由讨论</div>
+      <ol style="margin-left:1.25rem; line-height:2.2;">
+        <li>Do you think the ending of Animal Farm is pessimistic or realistic? Does Orwell leave any room for hope?</li>
+        <li>The secret humming of "Beasts of England" suggests that the revolutionary spirit is not entirely dead. What do you think this means for the future?</li>
+        <li>Can you see any parallels between Animal Farm and societies today? What "commandments" do modern societies have that might be quietly changing?</li>
+      </ol>
+    </div>
+
+    <!-- Shadowing -->
+    <div class="callout">
+      <strong>🎯 跟读段落：</strong> 跟着音频朗读全书最后一段，注意 / 处的停顿。<br><br>
+      <div class="s-framework">"The creatures outside / looked from pig to man, / and from man to pig, / and from pig to man again; / but already it was impossible / to say / which was which."</div>
+      <button class="play-btn" id="pb-shadow" onclick="playAudio('0015-passage-pig-men.mp3','pb-shadow')">🔊 听音频</button>
+    </div>
+
+    <div class="callout">
+      <strong>🤖 AI 陪练 Prompt</strong><br>
+      复制下面的文字到元宝 AI：<br>
+      <div class="s-framework" style="margin-top:0.5rem;">"我刚读完 Animal Farm 最后一章'Final Transformation'。我想和你用英语讨论整本书的主题——比如革命为什么失败、'更平等'的悖论、猪和人类合流的意义。请先问我一些问题，每个问题我回答后给我反馈。"</div>
+    </div>
+
+    <!-- ====== 课后练习 ====== -->
+    <h2>📝 课后练习</h2>
+
+    <div class="exercise-box">
+      <summary>📝 词汇填空（必做）</summary>
+      <div class="ex-section">
+        <p>用以下词填空：<strong>indistinguishable, transformation, prosperity, more equal, forgotten, whip, tyranny, Manor Farm</strong></p>
+        <div class="quiz-item">1. Napoleon carried a ______ in his trotter, just like Mr. Jones.</div>
+        <div class="quiz-item">2. The final commandment read: "All animals are equal, but some are ______ ______ than others."</div>
+        <div class="quiz-item">3. In the end, pig and man were ______.</div>
+        <div class="quiz-item">4. The name of the farm was changed back to ______ ______.</div>
+        <div class="quiz-item">5. Snowball and Boxer were both ______.</div>
+        <div class="quiz-item">6. The ______ of the pigs into humans was complete when they walked on hind legs.</div>
+        <div class="quiz-item">7. The farm had achieved ______, but only for the pigs and dogs.</div>
+        <div class="quiz-item">8. ______ had returned to Animal Farm in a new form.</div>
+      </div>
+    </div>
+
+    <div class="exercise-box">
+      <summary>📖 阅读理解（必做）</summary>
+      <div class="ex-section">
+        <div class="quiz-item"><strong>1.</strong> What was the most significant change in the animals' lives by the end of Chapter X?<br>
+          A. They had more food than ever<br>
+          B. The pigs had become indistinguishable from human beings<br>
+          C. All animals could now read<br>
+          D. The windmill was generating electricity</div>
+        <div class="quiz-item"><strong>2.</strong> What did Napoleon announce at the dinner with the farmers?<br>
+          A. The farm would be sold to Pilkington<br>
+          B. The name "Animal Farm" was abolished — it was now "Manor Farm" again<br>
+          C. All animals would receive equal rations<br>
+          D. Snowball had returned</div>
+        <div class="quiz-item"><strong>3.</strong> What was the final state of the Seven Commandments?<br>
+          A. All seven were still on the wall<br>
+          B. They had been completely erased<br>
+          C. Only one remained: "All animals are equal, but some are more equal than others"<br>
+          D. They were replaced by a portrait of Napoleon</div>
+      </div>
+    </div>
+
+    <div class="exercise-box">
+      <details>
+        <summary>✍️ 全书回顾写作（选做）</summary>
+        <div class="ex-section">
+          <p>用至少 5 个这节课学到的生词，写一段 100 词左右的英文短文：<strong>"What is the message of Animal Farm? Was the revolution a failure?"</strong></p>
+        </div>
+      </details>
+    </div>
+
+    <!-- ====== 全书总结 ====== -->
+    <h2>🏁 全书总结</h2>
+    <div class="callout">
+      <strong>📖 你已完成 Animal Farm 全部 10 章的精读！</strong>
+      <p style="margin-top:0.5rem;">让我们回顾全书的核心主题：</p>
+      <ol style="margin-left:1.25rem; line-height:2; margin-top:0.5rem;">
+        <li><strong>革命循环论：</strong> Manor Farm → Animal Farm → Manor Farm。革命没能打破压迫的循环，只是换了压迫者。</li>
+        <li><strong>权力腐化：</strong> Napoleon 从革命领袖变成独裁者——"Absolute power corrupts absolutely."</li>
+        <li><strong>语言与真相：</strong> Squealer 的谎言、七诫的修改、"more equal"的悖论——语言被武器化来操纵现实。</li>
+        <li><strong>宣传与集体记忆：</strong> 统计数字、历史篡改、Snowball 的形象转变——谁控制过去，谁就控制未来。</li>
+        <li><strong>沉默的多数：</strong> Clover、Benjamin、羊群——对不公的不同反应：困惑、犬儒与盲从。</li>
+        <li><strong>希望的种子：</strong> "Beasts of England"的秘密哼唱——革命理想虽然被镇压，但没有被彻底消灭。</li>
+      </ol>
+    </div>
+
+  </div><!-- /content -->
+
+  <div class="footer-nav">
+    <span><a href="0014-AnimalFarm-Ch9-Boxers-Fall.html">← 上一课：Ch.IX Boxer's Fall</a></span>
+    <a href="../index.html">返回主页</a>
+    <span>下一课（无）— 全书完 🏁</span>
+  </div>
+
+</div>
+<script src="../shared/lesson-tools.js"></script>
+</body>
+</html>

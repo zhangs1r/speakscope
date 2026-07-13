@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 0009 课：Ch.IV — The Battle of the Cowshed · SpeakScope</title>
+<link rel="stylesheet" href="../shared/theme.css">
+<style>
+  body { background: var(--paper-light); }
+  .lesson { max-width: 880px; margin: 0 auto; padding: var(--space-8) var(--space-6); }
+  .lesson h1 { font-family: var(--font-serif); font-size: var(--text-4xl); margin-bottom: 0.2rem; }
+  .lesson .subtitle { font-size: var(--text-lg); color: var(--ink-60); font-family: var(--font-serif); }
+  .lesson .meta { display: flex; gap: var(--space-3); margin: var(--space-4) 0 var(--space-8); flex-wrap: wrap; }
+  .lesson .meta span { padding: 0.3rem 0.8rem; border-radius: 6px; background: var(--paper); border: 1px solid var(--border-light); font-size: var(--text-sm); color: var(--ink-60); }
+  .lesson .content { line-height: 1.8; font-size: var(--text-base); }
+  .lesson .content h2 { font-family: var(--font-serif); margin: var(--space-8) 0 var(--space-4); padding-bottom: var(--space-1); border-bottom: 1px solid var(--border); }
+  .lesson .content h3 { font-family: var(--font-serif); margin: var(--space-6) 0 var(--space-3); }
+  .back { display: inline-block; margin-bottom: var(--space-6); color: var(--accent); text-decoration: none; font-size: var(--text-sm); }
+  .back:hover { text-decoration: underline; }
+  .passage-card { background: var(--paper); border: 1px solid var(--border); border-radius: 12px; padding: var(--space-6); margin: var(--space-5) 0; border-left: 4px solid var(--accent); }
+  .passage-card .p-en { font-family: var(--font-serif); font-size: var(--text-base); line-height: 1.8; color: var(--ink); }
+  .passage-card .p-cn { font-size: var(--text-sm); color: var(--ink-60); margin-top: var(--space-3); border-top: 1px dashed var(--border); padding-top: var(--space-3); }
+  .passage-card .p-pre { font-size: var(--text-sm); color: var(--accent-deep); font-style: italic; margin-bottom: var(--space-3); padding: var(--space-2) var(--space-3); background: var(--accent-dim); border-radius: 6px; }
+  .passage-card .p-note { font-size: var(--text-sm); color: var(--ink-60); margin-top: var(--space-3); border-top: 1px dashed var(--border-light); padding-top: var(--space-3); }
+  .highlight-blue { background: #dbeafe; padding: 0.1rem 0.2rem; border-radius: 2px; }
+  .highlight-yellow { background: #fef3c7; padding: 0.1rem 0.2rem; border-radius: 2px; }
+  .vocab-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: var(--space-4); margin: var(--space-5) 0; }
+  .vocab-card { background: var(--paper); border: 1px solid var(--border); border-radius: 8px; padding: var(--space-4); }
+  .vocab-card .v-word { font-weight: 700; font-family: var(--font-serif); font-size: var(--text-lg); display: flex; align-items: center; gap: 0.3rem; }
+  .vocab-card .v-pron { font-size: var(--text-xs); color: var(--ink-40); font-style: italic; }
+  .vocab-card .v-cn { font-size: var(--text-sm); color: var(--ink-80); margin-top: var(--space-1); }
+  .vocab-card .v-example { font-size: var(--text-xs); color: var(--ink-60); margin-top: var(--space-2); font-style: italic; }
+  .level-must { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 4px; font-size: 0.7rem; font-weight: 600; background: #dbeafe; color: #1e40af; margin-right: 0.3rem; }
+  .level-know { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 4px; font-size: 0.7rem; font-weight: 600; background: #fef3c7; color: #92400e; margin-right: 0.3rem; }
+  .map-table { width: 100%; border-collapse: collapse; margin: var(--space-5) 0; font-size: var(--text-sm); }
+  .map-table th { text-align: left; background: var(--accent-dim); padding: var(--space-2) var(--space-3); color: var(--accent-deep); font-weight: 600; }
+  .map-table td { padding: var(--space-2) var(--space-3); border-bottom: 1px solid var(--border-light); }
+  .pre-box { background: var(--accent-dim); border-radius: 8px; padding: var(--space-4); margin: var(--space-5) 0; border: 1px dashed var(--accent-light); }
+  .pre-box strong { color: var(--accent-deep); }
+  .retrieval-box { background: var(--paper); border: 2px dashed var(--accent-light); border-radius: 12px; padding: var(--space-5); margin: var(--space-5) 0; }
+  .retrieval-box details { margin-top: var(--space-3); }
+  .retrieval-box summary { cursor: pointer; font-weight: 600; color: var(--accent-deep); }
+  .speak-card { background: var(--paper); border: 1px solid var(--border); border-radius: 8px; padding: var(--space-5); margin: var(--space-4) 0; }
+  .speak-card .s-level { font-size: var(--text-xs); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: var(--space-2); }
+  .speak-card .s-level.mec { color: var(--accent); }
+  .speak-card .s-level.con { color: var(--accent-deep); }
+  .speak-card .s-level.free { color: #5a9e6f; }
+  .speak-card .s-framework { background: var(--accent-dim); padding: var(--space-3); border-radius: 6px; margin: var(--space-3) 0; font-family: var(--font-mono); font-size: var(--text-sm); }
+  .speak-card .s-model { background: #f0fdf4; border: 1px solid #bbf7d0; padding: var(--space-3); border-radius: 6px; margin: var(--space-2) 0; font-size: var(--text-sm); }
+  .exercise-box { border: 1px solid var(--border); border-radius: 8px; padding: var(--space-5); margin: var(--space-6) 0; background: var(--paper); }
+  .exercise-box summary { cursor: pointer; font-weight: 600; color: var(--accent-deep); font-size: var(--text-base); margin-bottom: var(--space-3); }
+  .exercise-box .ex-section { margin: var(--space-3) 0; }
+  .quiz-item { margin: var(--space-3) 0; padding: var(--space-2); border-left: 3px solid var(--accent-light); }
+  .play-btn { display: inline-flex; align-items: center; justify-content: center; background: var(--paper); border: 1px solid var(--accent-light); border-radius: 4px; cursor: pointer; font-size: 0.75rem; width: 1.6rem; height: 1.6rem; margin-left: 0.4rem; flex-shrink: 0; transition: background 0.15s, transform 0.1s; vertical-align: middle; line-height: 1; }
+  .play-btn:hover { background: var(--accent-dim); transform: scale(1.1); }
+  .play-btn:active { transform: scale(0.95); }
+  .play-btn.playing { background: #c8e6c9; border-color: var(--success); }
+  .callout { background: var(--paper); border: 1px solid var(--border); border-radius: 8px; padding: var(--space-5); margin: var(--space-5) 0; }
+  .callout strong { color: var(--accent-deep); }
+  .word-cell { display: flex; align-items: center; gap: 0.3rem; flex-wrap: wrap; }
+  .footer-nav { margin-top: var(--space-10); padding-top: var(--space-6); border-top: 1px solid var(--border); display: flex; justify-content: space-between; font-size: var(--text-sm); }
+  .footer-nav a { color: var(--accent); text-decoration: none; }
+  .footer-nav a:hover { text-decoration: underline; }
+  .track-table { width: 100%; border-collapse: collapse; margin: var(--space-4) 0; font-size: var(--text-sm); }
+  .track-table th { text-align: left; background: var(--accent-dim); padding: var(--space-2) var(--space-3); color: var(--accent-deep); font-weight: 600; }
+  .track-table td { padding: var(--space-2) var(--space-3); border-bottom: 1px solid var(--border-light); }
+</style>
+<script>
+const player = new Audio();
+let currentBtn = null;
+function playAudio(src, btnId) {
+  const btn = document.getElementById(btnId);
+  if (btn && btn.classList.contains('playing')) { player.pause(); player.currentTime = 0; btn.classList.remove('playing'); currentBtn = null; return; }
+  if (currentBtn) currentBtn.classList.remove('playing');
+  player.src = 'assets/audio/animal-farm/' + src; player.play();
+  if (btn) { btn.classList.add('playing'); currentBtn = btn; }
+  player.onended = () => { if (btn) btn.classList.remove('playing'); currentBtn = null; };
+}
+</script>
+</head>
+<body>
+<div class="lesson">
+
+  <a class="back" href="../index.html">← 返回 SpeakScope 主页</a>
+  <h1>📖 Ch.IV：The Battle of the Cowshed</h1>
+  <div class="subtitle">The first battle for Animal Farm — and Snowball becomes a hero</div>
+  <div class="meta">
+    <span>⏱ 35-40 分钟（核心 25 分钟）</span>
+    <span>📚 英文原著 · Animal Farm</span>
+    <span>🏷️ 英文原著 · Animal Farm · Ch.IV</span>
+    <span>🟡 进阶中 📈</span>
+  </div>
+
+  <div class="content">
+
+    <!-- ====== 1. 🎬 读前激活 ====== -->
+    <h2>🎬 读前激活</h2>
+    <div class="pre-box">
+      <strong>🤔 先问自己：</strong><br>
+      人类邻居们听说了动物起义的消息后会怎么做？他们会害怕、嘲笑还是进攻？如果有人来攻打你们的家园，你们会怎么防御？<br><br>
+      <strong>📌 故事地图</strong><br>
+      革命的消息传遍乡间 → 人类邻居 Fredrick 和 Pilkington 散布谣言 → Jones 带领人类反攻 → Snowball 指挥防御战 → 动物们在牛棚设伏 → Boxer 击毙一名马夫 → 人类溃败 → 庆祝胜利，命名"牛棚之战"
+    </div>
+
+    <div class="callout">
+      <strong>🎯 学习目标</strong>
+      <ul style="margin-left:var(--space-5); margin-top:var(--space-2); line-height:2;">
+        <li>✅ 理解本章的"战斗叙事"——谁指挥了防御？谁成了英雄？</li>
+        <li>✅ 掌握 15 个关键词汇（战争、宣传类词汇）</li>
+        <li>✅ 能用自己的话复述"牛棚之战"的经过</li>
+      </ul>
+    </div>
+
+    <div class="callout">
+      <strong>🏛️ 历史映射</strong><br>
+      本章的"牛棚之战"对应 <strong>俄国内战（1918-1921）</strong>——革命后的布尔什维克面临白军和外国势力的围攻。Snowball 的军事指挥对应托洛茨基在红军中的领导角色。Boxer 无意中杀人反映战争的残酷性。
+    </div>
+
+    <!-- ====== 2. 📖 原文精读 ====== -->
+    <h2>📖 原文精读</h2>
+
+    <!-- Passage 1: News spreads -->
+    <div class="passage-card">
+      <div class="p-pre">💡 读之前猜猜：革命的消息传到人类世界后，他们是什么反应？是害怕、愤怒还是嘲笑？</div>
+      <div class="word-cell">
+        <div class="p-en">By the late summer the news of what had happened on Animal Farm had spread across half the county. Every day Snowball and Napoleon sent out flights of pigeons whose instructions were to mingle with the animals on <span class="highlight-blue">neighbouring</span> farms, tell them the story of the Rebellion, and teach them the tune of 'Beasts of England'. ... <span class="highlight-yellow">Rumours</span> of a wonderful farm, where the human beings had been turned out and the animals managed their own affairs, continued to <span class="highlight-blue">circulate</span> in vague and <span class="highlight-yellow">distorted</span> forms ... the tune and even the words of 'Beasts of England' were known everywhere. It had spread with astonishing speed.</div>
+      </div>
+      <div class="p-cn">到夏末时，动物农场发生的事已经传遍了半个郡。Snowball 和 Napoleon 每天放出成群的鸽子，让它们混入邻近农场的动物中，讲述起义的故事，教它们《英格兰之兽》的旋律……有关一个神奇农场的谣言继续以模糊而扭曲的形式传播……《英格兰之兽》的旋律甚至歌词已经家喻户晓，以惊人的速度传播开来。</div>
+      <div class="p-note">💡 <strong>你发现了吗？</strong> Orwell 在这里展示了"消息传播"的两种途径：官方渠道（鸽子）和民间渠道（谣言/rumours）。后者虽然被扭曲（distorted），但影响力反而更大——革命思想和歌曲像野火一样蔓延。这反映了人类对信息的恐惧：他们可以控制官方说法，却无法阻止民间歌声。注意最后一句的预言性——人类听到这首歌时"secretly trembled"。</div>
+    </div>
+
+    <!-- Passage 2: The Battle -->
+    <div class="passage-card">
+      <div class="p-pre">💡 下面这段是全书第一次战斗场面。读的时候注意：Snowball 用了什么战术？关键设伏地点在哪里？</div>
+      <div class="word-cell">
+        <div class="p-en">This had long been expected, and all preparations had been made. Snowball, who had studied an old book of Julius Caesar's campaigns which he had found in the farmhouse, was in charge of the <span class="highlight-blue">defensive</span> operations. ... As soon as they were well inside the yard, the three horses, the three cows, and the rest of the pigs, who had been lying in <span class="highlight-yellow">ambush</span> in the cowshed, suddenly emerged in their rear, cutting them off. Snowball now gave the signal for the charge. He himself dashed straight for Jones. ... Without halting for an instant, Snowball flung his fifteen stone against Jones's legs. Jones was hurled into a pile of dung and his gun flew out of his hands.</div>
+        <button class="play-btn" id="pb-battle" onclick="playAudio('0009-passage-battle.mp3','pb-battle')">🔊</button>
+      </div>
+      <div class="p-cn">这场战斗早有预料，所有准备都已做好。Snowball 在农舍里找到了一本关于凯撒战役的古书并研读过了，他负责防御行动……等人类完全进入院子后，三匹马、三头牛和剩下的猪——一直埋伏在牛棚里——突然从背后冲出，切断了他们的退路。Snowball 发出冲锋信号，亲自冲向 Jones。Jones 被撞进一堆粪堆里，枪也脱了手。</div>
+      <div class="p-note">💡 <strong>你发现了吗？</strong> Snowball 使用了"诱敌深入+伏击"的战术：先假装溃败（第一道防线——鸽子和鹅），把人类引入院子，然后从牛棚（cowshed）发动伏击（ambush）。这正是"牛棚之战"名字的由来。Orwell 让 Snowball 研读凯撒的兵法，暗示他的军事才能——这在后来被 Napoleon 污蔑时会形成强烈对比。</div>
+    </div>
+
+    <!-- Passage 3: Boxer's regret -->
+    <div class="passage-card">
+      <div class="p-pre">💡 读这段时注意两个角色的对比——Boxer 和 Snowball 对"杀生"的态度有何不同？这预示了后面什么？</div>
+      <div class="word-cell">
+        <div class="p-en">"He is dead," said Boxer sorrowfully. "I had no intention of doing that. I forgot that I was wearing iron shoes. Who will believe that I did not do this on purpose?"<br><br>"No <span class="highlight-yellow">sentimentality</span>, comrade!" cried Snowball from whose wounds the blood was still dripping. "War is war. The only good human being is a dead one."<br><br>"I have no wish to take life, not even human life," repeated Boxer, and his eyes were full of tears.</div>
+      </div>
+      <div class="p-cn">"他死了，"Boxer 悲伤地说，"我不是故意的。我忘了自己穿着铁蹄。谁会相信我不是故意的？"<br><br>"别感情用事，同志！"Snowball 喊道，身上的伤口还在滴血。"战争就是战争。唯一的好人就是死人。"<br><br>"我不愿夺走生命，即使是人类的生命，"Boxer 重复道，眼里满是泪水。</div>
+      <div class="p-note">💡 <strong>你发现了吗？</strong> 这是全书最触动人心的一段对比。Boxer 的善良与 Snowball 的"现实政治"形成鲜明对比。Snowball 说的"War is war"和"The only good human being is a dead one"后来会被 Napoleon 用来对付动物自己。Boxer 的眼泪展现了他的纯真——他是真正"不想伤害任何人"的革命者，而这恰恰预示了他的悲剧结局。</div>
+    </div>
+
+    <!-- Passage 4: Victory celebration -->
+    <div class="passage-card">
+      <div class="p-pre">💡 战斗结束后，动物们怎么庆祝？猜猜这场战斗会被叫什么名字？</div>
+      <div class="word-cell">
+        <div class="p-en">The animals had now reassembled in the wildest excitement, each recounting his own exploits in the battle at the top of his voice. An <span class="highlight-yellow">impromptu</span> celebration of the <span class="highlight-yellow">victory</span> was held immediately. The flag was run up and 'Beasts of England' was sung a number of times ... There was much discussion as to what the battle should be called. In the end, it was named the Battle of the Cowshed, since that was where the ambush had been sprung. Mr. Jones's gun had been found lying in the mud, and it was known that there was a supply of cartridges in the farmhouse. It was decided to set the gun up at the foot of the Flagstaff, like a piece of artillery, and to fire it twice a year.</div>
+        <button class="play-btn" id="pb-victory" onclick="playAudio('0009-passage-victory.mp3','pb-victory')">🔊</button>
+      </div>
+      <div class="p-cn">动物们重新聚在一起，极度兴奋，每个人都大声讲述自己在战斗中的功绩。立即举行了一场即兴的胜利庆祝。旗帜升起了，《英格兰之兽》唱了好几遍……关于这场战斗该叫什么名字，大家讨论了很多。最后，它被命名为"牛棚之战"，因为伏击就是在那里发动的。Jones 的枪在泥里被找到，农舍里还有一批弹药。大家决定把这门炮立在旗杆脚下，像大炮一样，每年鸣放两次。</div>
+      <div class="p-note">💡 <strong>你发现了吗？</strong> 本章最后的"命名仪式"(naming) 暗示历史是如何被创造的——"牛棚之战"这个光辉名字掩盖了它不过是一场不大不小的冲突的事实。那把枪后来也会被改写历史。Snowball 在坟前的演讲强调"为动物农场牺牲"，但他自己后来却被污蔑为叛徒——这是 Orwell 对"胜利者书写历史"的辛辣讽刺。</div>
+    </div>
+
+    <!-- ====== 3. 🔑 关键词汇 ====== -->
+    <h2>🔑 关键词汇（本章 15 词）</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card">
+        <div class="word-cell"><span class="v-word"><span class="level-must">🔵</span> invasion <button class="play-btn" id="pb-v1" onclick="playAudio('0009-key-invasion.mp3','pb-v1')">🔊</button></span></div>
+        <div class="v-pron">/ɪnˈveɪ.ʒən/</div>
+        <div class="v-cn">入侵</div>
+        <div class="v-example">"within five minutes of their invasion they were in ignominious retreat"</div>
+      </div>
+      <div class="vocab-card">
+        <div class="word-cell"><span class="v-word"><span class="level-know">🟡</span> repulse <button class="play-btn" id="pb-v2" onclick="playAudio('0009-key-repulse.mp3','pb-v2')">🔊</button></span></div>
+        <div class="v-pron">/rɪˈpʌls/</div>
+        <div class="v-cn">击退</div>
+        <div class="v-example">"the animals successfully repulsed the human attack"</div>
+      </div>
+      <div class="vocab-card">
+        <div class="word-cell"><span class="v-word"><span class="level-know">🟡</span> valor <button class="play-btn" id="pb-v3" onclick="playAudio('0009-key-valor.mp3','pb-v3')">🔊</button></span></div>
+        <div class="v-pron">/ˈvæl.ɚ/</div>
+        <div class="v-cn">英勇、勇猛</div>
+        <div class="v-example">"Boxer's valor in battle was admired by all the animals"</div>
+      </div>
+      <div class="vocab-card">
+        <div class="word-cell"><span class="v-word"><span class="level-must">🔵</span> propaganda <button class="play-btn" id="pb-v4" onclick="playAudio('0009-key-propaganda.mp3','pb-v4')">🔊</button></span></div>
+        <div class="v-pron">/ˌprɑːp.əˈɡæn.də/</div>
+        <div class="v-cn">宣传（复现词）</div>
+        <div class="v-example">"Frederick and Pilkington spread propaganda about Animal Farm"</div>
+      </div>
+      <div class="vocab-card">
+        <div class="word-cell"><span class="v-word"><span class="level-know">🟡</span> distorted <button class="play-btn" id="pb-v5" onclick="playAudio('0009-key-distorted.mp3','pb-v5')">🔊</button></span></div>
+        <div class="v-pron">/dɪˈstɔːr.tɪd/</div>
+        <div class="v-cn">扭曲的、失真的</div>
+        <div class="v-example">"rumours continued to circulate in vague and distorted forms"</div>
+      </div>
+      <div class="vocab-card">
+        <div class="word-cell"><span class="v-word"><span class="level-know">🟡</span> circulate <button class="play-btn" id="pb-v6" onclick="playAudio('0009-key-circulate.mp3','pb-v6')">🔊</button></span></div>
+        <div class="v-pron">/ˈsɜːr.kjə.leɪt/</div>
+        <div class="v-cn">传播、流通</div>
+        <div class="v-example">"rumours of a wonderful farm continued to circulate"</div>
+      </div>
+      <div class="vocab-card">
+        <div class="word-cell"><span class="v-word"><span class="level-know">🟡</span> neighbouring <button class="play-btn" id="pb-v7" onclick="playAudio('0009-key-neighbouring.mp3','pb-v7')">🔊</button></span></div>
+        <div class="v-pron">/ˈneɪ.bər.ɪŋ/</div>
+        <div class="v-cn">邻近的</div>
+        <div class="v-example">"pigeons mingled with animals on neighbouring farms"</div>
+      </div>
+      <div class="vocab-card">
+        <div class="word-cell"><span class="v-word"><span class="level-know">🟡</span> monument <button class="play-btn" id="pb-v8" onclick="playAudio('0009-key-monument.mp3','pb-v8')">🔊</button></span></div>
+        <div class="v-pron">/ˈmɑːn.jə.mənt/</div>
+        <div class="v-cn">纪念碑</div>
+        <div class="v-example">"the gun at the foot of the flagstaff served as a monument to victory"</div>
+      </div>
+      <div class="vocab-card">
+        <div class="word-cell"><span class="v-word"><span class="level-know">🟡</span> cowshed <button class="play-btn" id="pb-v9" onclick="playAudio('0009-key-cowshed.mp3','pb-v9')">🔊</button></span></div>
+        <div class="v-pron">/ˈkaʊ.ʃed/</div>
+        <div class="v-cn">牛棚（本章标题词）</div>
+        <div class="v-example">"the ambush was sprung in the cowshed"</div>
+      </div>
+      <div class="vocab-card">
+        <div class="word-cell"><span class="v-word"><span class="level-must">🔵</span> defensive <button class="play-btn" id="pb-v10" onclick="playAudio('0009-key-defensive.mp3','pb-v10')">🔊</button></span></div>
+        <div class="v-pron">/dɪˈfen.sɪv/</div>
+        <div class="v-cn">防御的</div>
+        <div class="v-example">"Snowball was in charge of the defensive operations"</div>
+      </div>
+      <div class="vocab-card">
+        <div class="word-cell"><span class="v-word"><span class="level-know">🟡</span> tactics <button class="play-btn" id="pb-v11" onclick="playAudio('0009-key-tactics.mp3','pb-v11')">🔊</button></span></div>
+        <div class="v-pron">/ˈtæk.tɪks/</div>
+        <div class="v-cn">战术</div>
+        <div class="v-example">"Snowball's tactics were based on his study of Julius Caesar"</div>
+      </div>
+      <div class="vocab-card">
+        <div class="word-cell"><span class="v-word"><span class="level-know">🟡</span> heroism <button class="play-btn" id="pb-v12" onclick="playAudio('0009-key-heroism.mp3','pb-v12')">🔊</button></span></div>
+        <div class="v-pron">/ˈher.oʊ.ɪz.əm/</div>
+        <div class="v-cn">英雄主义（注意这个说法以后会变！）</div>
+        <div class="v-example">"Snowball was awarded Animal Hero, First Class for his heroism"</div>
+      </div>
+      <div class="vocab-card">
+        <div class="word-cell"><span class="v-word"><span class="level-know">🟡</span> rumour <button class="play-btn" id="pb-v13" onclick="playAudio('0009-key-rumour.mp3','pb-v13')">🔊</button></span></div>
+        <div class="v-pron">/ˈruː.mɚ/</div>
+        <div class="v-cn">谣言、传闻</div>
+        <div class="v-example">"rumours of cannibalism were spread about the animals"</div>
+      </div>
+      <div class="vocab-card">
+        <div class="word-cell"><span class="v-word"><span class="level-know">🟡</span> cannibalism <button class="play-btn" id="pb-v14" onclick="playAudio('0009-key-cannibalism.mp3','pb-v14')">🔊</button></span></div>
+        <div class="v-pron">/ˈkæn.ɪ.bəl.ɪz.əm/</div>
+        <div class="v-cn">同类相食（人类散布的谣言）</div>
+        <div class="v-example">"it was given out that the animals practised cannibalism"</div>
+      </div>
+      <div class="vocab-card">
+        <div class="word-cell"><span class="v-word"><span class="level-know">🟡</span> triumph <button class="play-btn" id="pb-v15" onclick="playAudio('0009-key-triumph.mp3','pb-v15')">🔊</button></span></div>
+        <div class="v-pron">/ˈtraɪ.əmf/</div>
+        <div class="v-cn">胜利、凯旋</div>
+        <div class="v-example">"the men gave a shout of triumph, but soon they were in retreat"</div>
+      </div>
+    </div>
+
+    <!-- Retrieval practice -->
+    <div class="retrieval-box">
+      <strong>🔍 检索练习（先试着自己回忆，再点开看答案）</strong><br>
+      <span style="font-size:var(--text-sm); color:var(--ink-60);">不看中文，你还记得这些词的意思吗？</span>
+      <details>
+        <summary>📌 点击核对答案</summary>
+        <ul style="margin-left:var(--space-5); line-height:2; margin-top:var(--space-3);">
+          <li><strong>invasion</strong> — 入侵</li>
+          <li><strong>repulse</strong> — 击退</li>
+          <li><strong>valor</strong> — 英勇</li>
+          <li><strong>propaganda</strong> — 宣传</li>
+          <li><strong>distorted</strong> — 扭曲的</li>
+          <li><strong>circulate</strong> — 传播</li>
+          <li><strong>neighbouring</strong> — 邻近的</li>
+          <li><strong>monument</strong> — 纪念碑</li>
+          <li><strong>cowshed</strong> — 牛棚</li>
+          <li><strong>defensive</strong> — 防御的</li>
+          <li><strong>tactics</strong> — 战术</li>
+          <li><strong>heroism</strong> — 英雄主义</li>
+          <li><strong>rumour</strong> — 谣言</li>
+          <li><strong>cannibalism</strong> — 同类相食</li>
+          <li><strong>triumph</strong> — 胜利</li>
+        </ul>
+      </details>
+    </div>
+
+    <!-- ====== 4. 💬 口语练习 ====== -->
+    <h2>💬 口语练习</h2>
+
+    <div class="speak-card">
+      <div class="s-level mec">🔰 MECHANICAL — 句型框架</div>
+      <p>用下面的框架描述 Boxer 在战斗中的表现：</p>
+      <div class="s-framework">"In the battle, Boxer showed great _____ because _____. He _____ (action), which shows that _____. But he also felt _____ when _____."</div>
+      <p style="font-size:var(--text-sm); color:var(--ink-60);">例：In the battle, Boxer showed great <strong>strength</strong> because <strong>he struck down a stable-lad with one blow</strong>. He <strong>fought fiercely</strong>, which shows that <strong>he was willing to defend the farm</strong>. But he also felt <strong>deep sorrow</strong> when <strong>he realised he had killed someone</strong>.</p>
+    </div>
+
+    <div class="speak-card">
+      <div class="s-level con">📝 CONTROLLED — 模仿示范</div>
+      <p><strong>问题：</strong>Why was Snowball considered a hero in Chapter IV? What made his leadership special?</p>
+      <div class="s-model"><strong>Model response:</strong> "Snowball was considered a hero because he planned the entire defence of the farm. He had studied Julius Caesar's military campaigns and used clever tactics like the ambush in the cowshed. He also showed personal courage by charging directly at Mr. Jones, even though he was shot in the back. His leadership was special because he combined intelligence with bravery."</div>
+      <p style="font-size:var(--text-sm); color:var(--ink-60); margin-top:var(--space-2);">👆 试着用自己的话模仿这个结构回答——先说为什么是英雄，再说做了什么，最后总结特点。</p>
+    </div>
+
+    <div class="speak-card">
+      <div class="s-level free">💭 FREE — 自由讨论</div>
+      <ol style="margin-left:var(--space-5); line-height:2.2;">
+        <li>Do you think Snowball's attitude ("War is war. The only good human being is a dead one") was justified? How does it compare to Boxer's regret?</li>
+        <li>The human neighbours spread false rumours about the animals (cannibalism, torture). Why do people in power spread lies about their enemies? Can you think of real-world examples?</li>
+        <li>Boxer says "I had no intention of doing that." Do you think intentions matter when someone causes harm accidentally? Why does Boxer care so much about what others will believe?</li>
+      </ol>
+    </div>
+
+    <div class="callout">
+      <strong>🎤 跟读段落</strong><br>
+      <p>跟读下面这段，注意 / 处停顿：</p>
+      <div class="s-framework">"He is dead,/ said Boxer sorrowfully./ I had no intention of doing that./ I forgot that I was wearing iron shoes./ Who will believe/ that I did not do this on purpose?"</div>
+      <p style="font-size:var(--text-sm); color:var(--ink-60); margin-top:var(--space-2);">🎧 听音频模仿 Boxer 的语气——悲伤、自责、无助。</p>
+    </div>
+
+    <div class="callout">
+      <strong>🤖 AI 陪练 Prompt</strong><br>
+      复制下面的文字到元宝 AI：<br>
+      <div class="s-framework" style="margin-top:var(--space-2);">"我正在读 Animal Farm 第四章（The Battle of the Cowshed）。请用英语问我关于这场战斗的问题——比如 Snowball 的战术、Boxer 的情感冲突、人类邻居的谣言。一次问一个，回答后给我纠正和反馈。"</div>
+    </div>
+
+    <!-- ====== 5. 📝 课后练习 ====== -->
+    <h2>📝 课后练习</h2>
+
+    <div class="exercise-box">
+      <summary>📝 词汇填空（必做）</summary>
+      <div class="ex-section">
+        <p>用以下词填空：<strong>invasion, repulse, propaganda, distorted, circulate, defensive, tactics, triumph, rumour, heroism</strong></p>
+        <div class="quiz-item">1. Snowball was in charge of the ______ operations, planning the ambush carefully.</div>
+        <div class="quiz-item">2. The human neighbours spread ______ about the animals, saying they practised cannibalism.</div>
+        <div class="quiz-item">3. Within five minutes of their ______, the men were in full retreat.</div>
+        <div class="quiz-item">4. News of the Rebellion continued to ______ in vague and ______ forms.</div>
+        <div class="quiz-item">5. Snowball's clever ______, based on his study of Julius Caesar, helped them ______ the attack.</div>
+      </div>
+    </div>
+
+    <div class="exercise-box">
+      <summary>📖 阅读理解（必做）</summary>
+      <div class="ex-section">
+        <div class="quiz-item"><strong>1.</strong> How did Snowball plan the defence of the farm?<br>
+          A. He built a wall around the farm<br>
+          B. He used a strategy of retreat and ambush from the cowshed<br>
+          C. He asked the neighbouring farms for help<br>
+          D. He hid all the animals in the barn</div>
+        <div class="quiz-item"><strong>2.</strong> How did Boxer feel after striking the stable-lad?<br>
+          A. Proud and victorious<br>
+          B. Guilty and sorrowful<br>
+          C. Angry and vengeful<br>
+          D. Indifferent</div>
+        <div class="quiz-item"><strong>3.</strong> Why was the battle called "the Battle of the Cowshed"?<br>
+          A. The fighting started in the cowshed<br>
+          B. The cows led the attack<br>
+          C. The ambush was set in the cowshed<br>
+          D. The cowshed was destroyed in the battle</div>
+      </div>
+    </div>
+
+    <div class="exercise-box">
+      <details>
+        <summary>✍️ 写作任务（选做）</summary>
+        <div class="ex-section">
+          <p>用至少 3 个这节课学的生词，写一段 60 词左右的英文短文：<strong>"Retell the Battle of the Cowshed from Boxer's point of view"</strong>（从 Boxer 的视角复述牛棚之战）</p>
+        </div>
+      </details>
+    </div>
+
+  </div><!-- /content -->
+
+  <div class="footer-nav">
+    <span><a href="0008-AnimalFarm-Ch3-Golden-Age.html">← 上一课：Ch.III The Golden Age</a></span>
+    <a href="../index.html">返回主页</a>
+    <span><a href="0010-AnimalFarm-Ch5-Napoleon-Coup.html">下一课：Ch.V Napoleon's Coup →</a></span>
+  </div>
+
+</div>
+<script src="../shared/lesson-tools.js"></script>
+</body>
+</html>

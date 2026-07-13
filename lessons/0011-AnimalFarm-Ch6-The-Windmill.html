@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 0011 课：Ch.VI — The Windmill · SpeakScope</title>
+<link rel="stylesheet" href="../shared/theme.css">
+<style>
+  body { background: var(--paper-light); }
+  .lesson { max-width: 880px; margin: 0 auto; padding: var(--space-8) var(--space-6); }
+  .lesson h1 { font-family: var(--font-serif); font-size: var(--text-4xl); margin-bottom: 0.2rem; }
+  .lesson .subtitle { font-size: var(--text-lg); color: var(--ink-60); font-family: var(--font-serif); }
+  .lesson .meta { display: flex; gap: var(--space-3); margin: var(--space-4) 0 var(--space-8); flex-wrap: wrap; }
+  .lesson .meta span { padding: 0.3rem 0.8rem; border-radius: 6px; background: var(--paper); border: 1px solid var(--border-light); font-size: var(--text-sm); color: var(--ink-60); }
+  .lesson .content { line-height: 1.8; font-size: var(--text-base); }
+  .lesson .content h2 { font-family: var(--font-serif); margin: var(--space-8) 0 var(--space-4); padding-bottom: var(--space-1); border-bottom: 1px solid var(--border); }
+  .lesson .content h3 { font-family: var(--font-serif); margin: var(--space-6) 0 var(--space-3); }
+  .back { display: inline-block; margin-bottom: var(--space-6); color: var(--accent); text-decoration: none; font-size: var(--text-sm); }
+  .back:hover { text-decoration: underline; }
+  .passage-card { background: var(--paper); border: 1px solid var(--border); border-radius: 12px; padding: var(--space-6); margin: var(--space-5) 0; border-left: 4px solid var(--accent); }
+  .passage-card .p-en { font-family: var(--font-serif); font-size: var(--text-base); line-height: 1.8; color: var(--ink); }
+  .passage-card .p-cn { font-size: var(--text-sm); color: var(--ink-60); margin-top: var(--space-3); border-top: 1px dashed var(--border); padding-top: var(--space-3); }
+  .passage-card .p-pre { font-size: var(--text-sm); color: var(--accent-deep); font-style: italic; margin-bottom: var(--space-3); padding: var(--space-2) var(--space-3); background: var(--accent-dim); border-radius: 6px; }
+  .passage-card .p-note { font-size: var(--text-sm); color: var(--ink-60); margin-top: var(--space-3); border-top: 1px dashed var(--border-light); padding-top: var(--space-3); }
+  .highlight-blue { background: #dbeafe; padding: 0.1rem 0.2rem; border-radius: 2px; }
+  .highlight-yellow { background: #fef3c7; padding: 0.1rem 0.2rem; border-radius: 2px; }
+  .vocab-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: var(--space-4); margin: var(--space-5) 0; }
+  .vocab-card { background: var(--paper); border: 1px solid var(--border); border-radius: 8px; padding: var(--space-4); }
+  .vocab-card .v-word { font-weight: 700; font-family: var(--font-serif); font-size: var(--text-lg); display: flex; align-items: center; gap: 0.3rem; }
+  .vocab-card .v-pron { font-size: var(--text-xs); color: var(--ink-40); font-style: italic; }
+  .vocab-card .v-cn { font-size: var(--text-sm); color: var(--ink-80); margin-top: var(--space-1); }
+  .vocab-card .v-example { font-size: var(--text-xs); color: var(--ink-60); margin-top: var(--space-2); font-style: italic; }
+  .level-must { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 4px; font-size: 0.7rem; font-weight: 600; background: #dbeafe; color: #1e40af; margin-right: 0.3rem; }
+  .level-know { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 4px; font-size: 0.7rem; font-weight: 600; background: #fef3c7; color: #92400e; margin-right: 0.3rem; }
+  .map-table { width: 100%; border-collapse: collapse; margin: var(--space-5) 0; font-size: var(--text-sm); }
+  .map-table th { text-align: left; background: var(--accent-dim); padding: var(--space-2) var(--space-3); color: var(--accent-deep); font-weight: 600; }
+  .map-table td { padding: var(--space-2) var(--space-3); border-bottom: 1px solid var(--border-light); }
+  .pre-box { background: var(--accent-dim); border-radius: 8px; padding: var(--space-4); margin: var(--space-5) 0; border: 1px dashed var(--accent-light); }
+  .pre-box strong { color: var(--accent-deep); }
+  .retrieval-box { background: var(--paper); border: 2px dashed var(--accent-light); border-radius: 12px; padding: var(--space-5); margin: var(--space-5) 0; }
+  .retrieval-box details { margin-top: var(--space-3); }
+  .retrieval-box summary { cursor: pointer; font-weight: 600; color: var(--accent-deep); }
+  .speak-card { background: var(--paper); border: 1px solid var(--border); border-radius: 8px; padding: var(--space-5); margin: var(--space-4) 0; }
+  .speak-card .s-level { font-size: var(--text-xs); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: var(--space-2); }
+  .speak-card .s-level.mec { color: var(--accent); }
+  .speak-card .s-level.con { color: var(--accent-deep); }
+  .speak-card .s-level.free { color: #5a9e6f; }
+  .speak-card .s-framework { background: var(--accent-dim); padding: var(--space-3); border-radius: 6px; margin: var(--space-3) 0; font-family: var(--font-mono); font-size: var(--text-sm); }
+  .speak-card .s-model { background: #f0fdf4; border: 1px solid #bbf7d0; padding: var(--space-3); border-radius: 6px; margin: var(--space-2) 0; font-size: var(--text-sm); }
+  .exercise-box { border: 1px solid var(--border); border-radius: 8px; padding: var(--space-5); margin: var(--space-6) 0; background: var(--paper); }
+  .exercise-box summary { cursor: pointer; font-weight: 600; color: var(--accent-deep); font-size: var(--text-base); margin-bottom: var(--space-3); }
+  .exercise-box .ex-section { margin: var(--space-3) 0; }
+  .quiz-item { margin: var(--space-3) 0; padding: var(--space-2); border-left: 3px solid var(--accent-light); }
+  .play-btn { display: inline-flex; align-items: center; justify-content: center; background: var(--paper); border: 1px solid var(--accent-light); border-radius: 4px; cursor: pointer; font-size: 0.75rem; width: 1.6rem; height: 1.6rem; margin-left: 0.4rem; flex-shrink: 0; transition: background 0.15s, transform 0.1s; vertical-align: middle; line-height: 1; }
+  .play-btn:hover { background: var(--accent-dim); transform: scale(1.1); }
+  .play-btn:active { transform: scale(0.95); }
+  .play-btn.playing { background: #c8e6c9; border-color: var(--success); }
+  .callout { background: var(--paper); border: 1px solid var(--border); border-radius: 8px; padding: var(--space-5); margin: var(--space-5) 0; }
+  .callout strong { color: var(--accent-deep); }
+  .word-cell { display: flex; align-items: center; gap: 0.3rem; flex-wrap: wrap; }
+  .footer-nav { margin-top: var(--space-10); padding-top: var(--space-6); border-top: 1px solid var(--border); display: flex; justify-content: space-between; font-size: var(--text-sm); }
+  .footer-nav a { color: var(--accent); text-decoration: none; }
+  .footer-nav a:hover { text-decoration: underline; }
+  .track-table { width: 100%; border-collapse: collapse; margin: var(--space-4) 0; font-size: var(--text-sm); }
+  .track-table th { text-align: left; background: var(--accent-dim); padding: var(--space-2) var(--space-3); color: var(--accent-deep); font-weight: 600; }
+  .track-table td { padding: var(--space-2) var(--space-3); border-bottom: 1px solid var(--border-light); }
+</style>
+<script>
+const player = new Audio();
+let currentBtn = null;
+function playAudio(src, btnId) {
+  const btn = document.getElementById(btnId);
+  if (btn && btn.classList.contains('playing')) { player.pause(); player.currentTime = 0; btn.classList.remove('playing'); currentBtn = null; return; }
+  if (currentBtn) currentBtn.classList.remove('playing');
+  player.src = 'assets/audio/animal-farm/' + src; player.play();
+  if (btn) { btn.classList.add('playing'); currentBtn = btn; }
+  player.onended = () => { if (btn) btn.classList.remove('playing'); currentBtn = null; };
+}
+</script>
+</head>
+<body>
+<div class="lesson">
+
+  <a class="back" href="../index.html">← 返回 SpeakScope 主页</a>
+  <h1>📖 Ch.VI：The Windmill</h1>
+  <div class="subtitle">Building a dream on broken promises — the first commandment is quietly rewritten</div>
+  <div class="meta">
+    <span>⏱ 35-40 分钟（核心 25 分钟）</span>
+    <span>📚 英文原著 · Animal Farm</span>
+    <span>🏷️ 英文原著 · Animal Farm · Ch.VI</span>
+    <span>🟡 进阶中 📈</span>
+  </div>
+
+  <div class="content">
+
+    <!-- ====== 1. 🎬 读前激活 ====== -->
+    <h2>🎬 读前激活</h2>
+    <div class="pre-box">
+      <strong>🤔 先问自己：</strong><br>
+      政变之后，Napoleon 又宣布要建风车了——但这次是他自己的主意。动物们为了建风车要付出什么代价？当革命的原则（如"不与人类交易"）和实际需求（建风车需要钱）冲突时，会怎样？<br><br>
+      <strong>📌 故事地图</strong><br>
+      动物们一周工作 60 小时 + 周日"自愿"加班 → 风车建设困难重重，Boxer 成为劳动模范 → Napoleon 宣布与人类交易（卖干草和鸡蛋）→ 猪搬进农舍睡床 → Clover 发现第四诫被改为"不得睡床铺被单" → 秋天暴风雨中，风车倒塌 → Napoleon 宣称是 Snowball 破坏的 → 悬赏捉拿 Snowball，决定重建
+    </div>
+
+    <div class="callout">
+      <strong>🎯 学习目标</strong>
+      <ul style="margin-left:var(--space-5); margin-top:var(--space-2); line-height:2;">
+        <li>✅ 理解"原则与现实"的冲突——革命早期的决议如何被一步步推翻</li>
+        <li>✅ 掌握 15 个关键词汇（劳动、贸易、欺骗类词汇）</li>
+        <li>✅ 追踪七诫的第一次修改——注意墙上的字什么时候变了</li>
+      </ul>
+    </div>
+
+    <div class="callout">
+      <strong>🏛️ 历史映射</strong><br>
+      本章的"自愿劳动"对应斯大林时期的 <strong>社会主义劳动竞赛</strong>和"斯达汉诺夫运动"——工人被要求"自愿"加班，不自愿就扣口粮。与人类交易对应 <strong>新经济政策（NEP）的扭曲</strong>：苏联不得不在保持革命口号的同时与资本主义国家做生意。猪搬进农舍对应 <strong>苏联官僚特权阶层</strong>的形成——革命精英开始享受以前属于沙皇的特权。
+    </div>
+
+    <!-- ====== 2. 📖 原文精读 ====== -->
+    <h2>📖 原文精读</h2>
+
+    <!-- Passage 1: Strictly voluntary work -->
+    <div class="passage-card">
+      <div class="p-pre">💡 读这段之前想一想："自愿"的反义词是什么？如果不去"自愿"就会受到惩罚，那还能叫自愿吗？</div>
+      <div class="word-cell">
+        <div class="p-en">Throughout the spring and summer they worked a sixty-hour week, and in August Napoleon announced that there would be work on Sunday afternoons as well. This work was <span class="highlight-blue">strictly voluntary</span>, but any animal who absented himself from it would have his <span class="highlight-blue">rations</span> reduced by half. ... The animals were not badly off throughout that summer, in spite of the hardness of their work. If they had no more food than they had had in Jones's day, at least they did not have less.</div>
+      </div>
+      <div class="p-cn">整个春夏他们每周工作 60 小时，八月份 Napoleon 宣布周日下午也要工作。这份工作是严格自愿的，但任何不参加者口粮减半……那个夏天尽管工作辛苦，动物们过得还不算太糟。如果说他们的食物不比 Jones 时代多，至少也没少。</div>
+      <div class="p-note">💡 <strong>你发现了吗？</strong> "Strictly voluntary, but ... ration reduced by half"——这是 Orwell 式的绝妙反讽。一句话里，"自愿"和"强迫"被并列使用。作者不直接评论，只展示事实，让读者自己感受其中的荒谬。动物们也没意识到，"不比 Jones 时代差"这个标准本身就在降低——他们曾经追求的是"远远好于 Jones 时代"。</div>
+    </div>
+
+    <!-- Passage 2: Trade with humans -->
+    <div class="passage-card">
+      <div class="p-pre">💡 革命初期动物们决议"绝不与人类交往、绝不做交易"——下面这段看看这个原则是怎么被推翻的。</div>
+      <div class="word-cell">
+        <div class="p-en">One Sunday morning, when the animals assembled to receive their orders, Napoleon announced that he had decided upon a new <span class="highlight-blue">policy</span>. From now onwards Animal Farm would engage in <span class="highlight-blue">trade</span> with the neighbouring farms ... The needs of the windmill must <span class="highlight-yellow">override</span> everything else, he said. He was therefore making arrangements to sell a stack of hay and part of the current year's wheat crop, and later on, if more money were needed, it would have to be made up by the sale of eggs.</div>
+        <button class="play-btn" id="pb-trade" onclick="playAudio('0011-passage-trade.mp3','pb-trade')">🔊</button>
+      </div>
+      <div class="p-cn">一个星期天早上，动物们集合接受命令时，Napoleon 宣布他决定了一项新政策：动物农场从此要与邻近农场进行交易……风车的需求必须高于一切，他说。因此他正在安排出售一堆干草和部分当年的小麦收成；如果以后还需要更多钱，就得靠卖鸡蛋来凑。</div>
+      <div class="p-note">💡 <strong>你发现了吗？</strong> 注意这个逻辑链条："风车的需求压倒一切"（override everything）——这是一个典型的"目的正当化手段"的论证。为了一个崇高的目标（风车=美好未来），动物们必须接受与人类交易（革命禁忌）。Squealer 后来用"你们确定这个决议真的存在过吗？有书面记录吗？"来让动物们相信自己的记忆不可靠。这是对"煤气灯效应"（gaslighting）的天才描绘。</div>
+    </div>
+
+    <!-- Passage 3: Boxer and the boulder -->
+    <div class="passage-card">
+      <div class="p-pre">💡 下面这段展示了一个角色最光辉（也最心酸）的时刻——Boxer 是如何参与建设的？</div>
+      <div class="word-cell">
+        <div class="p-en">Nothing could have been achieved without Boxer, whose strength seemed equal to that of all the rest of the animals put together. When the boulder began to slip and the animals cried out in despair at finding themselves dragged down the hill, it was always Boxer who strained himself against the rope and brought the boulder to a stop. To see him toiling up the slope inch by inch, his breath coming fast, the tips of his hoofs clawing at the ground, and his great sides matted with sweat, filled everyone with <span class="highlight-blue">admiration</span>. ... His two slogans, "I will work harder" and "Napoleon is always right," seemed to him a sufficient answer to all problems.</div>
+        <button class="play-btn" id="pb-boxer" onclick="playAudio('0011-passage-boxer-boulder.mp3','pb-boxer')">🔊</button>
+      </div>
+      <div class="p-cn">没有 Boxer 就什么都做不成，他的力气似乎等于所有其他动物加在一起。当巨石开始滑动、动物们绝望地尖叫着发现自己被一起拖下山时，总是 Boxer 拼尽全力抵住绳索让巨石停下来。看着他一寸一寸地艰难爬坡，呼吸急促，蹄尖扒着地面，宽阔的身躯上汗水浸透，所有人都充满敬佩。……他的两句座右铭"我会更努力"和"Napoleon 总是对的"在他看来足以回答所有问题。</div>
+      <div class="p-note">💡 <strong>你发现了吗？</strong> Boxer 在这段中被塑造成一个近乎悲壮的英雄。但注意他的两个口号放在一起的讽刺意味："I will work harder"是无产阶级的奉献精神，"Napoleon is always right"则意味着他放弃了自己的判断力。他越勤劳、越忠诚，就越是在帮一个暴君巩固权力。Orwell 通过 Boxer 这个角色提出了一个深刻的道德问题：盲目的忠诚是美德还是愚蠢？</div>
+    </div>
+
+    <!-- Passage 4: The Commandment amended -->
+    <div class="passage-card">
+      <div class="p-pre">💡 下面这段是全书第一个重大转折点——墙上的字被改了！读的时候注意：是谁发现的？修改了什么？</div>
+      <div class="word-cell">
+        <div class="p-en">Clover, who thought she remembered a definite ruling against beds, went to the end of the barn and tried to puzzle out the Seven Commandments which were inscribed there. Finding herself unable to read more than individual letters, she fetched Muriel. ... "Muriel," she said, "read me the Fourth Commandment. Does it not say something about never sleeping in a bed?" With some difficulty Muriel spelt it out. "It says, 'No animal shall sleep in a bed <span class="highlight-yellow">with sheets</span>,'" she announced finally. Curiously enough, Clover had not remembered that the Fourth Commandment mentioned sheets; but as it was there on the wall, it must have done so.</div>
+      </div>
+      <div class="p-cn">Clover 以为自己记得有不许睡床的规定，于是走到谷仓尽头费力辨认墙上刻着的七诫。她只能认出单个字母，于是找来了 Muriel。"Muriel，给我读第四条诫命。它是不是说永远不能睡床？"Muriel 费了半天劲才拼了出来："它说'任何动物不得睡床铺被单'。""奇怪的是，Clover 不记得第四条诫命提到过被单；但既然墙上这么写着，那就一定是这样了。</div>
+      <div class="p-note">💡 <strong>你发现了吗？</strong> 这句话里隐藏着 Orwell 最锋利的讽刺："Curiously enough, Clover had not remembered that the Fourth Commandment mentioned sheets; but as it was there on the wall, it must have done so."——"她记不得了，但墙上这么写，那肯定就是这样的。" 这完美地展示了当权威篡改历史时，普通人如何在自我怀疑中接受"新的现实"。Squealer 随后用更精妙的诡辩来"澄清"——"床只是睡觉的地方，之前反对的是床单，我们已经把床单撤掉了"。</div>
+    </div>
+
+    <!-- ====== 七诫修改追踪表 ====== -->
+    <h2>📜 七诫修改追踪表（本章更新）</h2>
+    <div class="callout">
+      <strong>📌 读完本章后更新：七诫中的第四条已经被改了！</strong><br>
+      <span style="font-size:var(--text-sm); color:var(--ink-60);">注意：这只是一个开始——后面的章节中还会有更多修改。</span>
+    </div>
+    <table class="track-table">
+      <tr><th>诫命</th><th>原版</th><th>当前版本</th><th>修改章节</th></tr>
+      <tr><td>①</td><td>两脚行走的是敌人</td><td>未修改</td><td>—</td></tr>
+      <tr><td>②</td><td>四脚行走的是朋友</td><td>未修改</td><td>—</td></tr>
+      <tr><td>③</td><td>不得穿衣服</td><td>未修改</td><td>—</td></tr>
+      <tr><td>④</td><td>不得睡床</td><td><strong>不得睡床铺被单 ← 🆕</strong></td><td><strong>Ch.VI</strong></td></tr>
+      <tr><td>⑤</td><td>不得饮酒</td><td>未修改</td><td>—</td></tr>
+      <tr><td>⑥</td><td>不得杀生</td><td>未修改</td><td>—</td></tr>
+      <tr><td>⑦</td><td>所有动物一律平等</td><td>未修改</td><td>—</td></tr>
+    </table>
+    <div class="callout">
+      <strong>🔮 预告：</strong>随着故事发展，后面的诫命也会逐渐被修改。你有没有注意到——每次猪做了"违规"的事，墙上的字就会变？
+    </div>
+
+    <!-- ====== 3. 🔑 关键词汇 ====== -->
+    <h2>🔑 关键词汇（本章 15 词）</h2>
+
+    <div class="vocab-grid">
+      <div class="vocab-card">
+        <div class="word-cell"><span class="v-word"><span class="level-must">🔵</span> sabotage <button class="play-btn" id="pb-v1" onclick="playAudio('0011-key-sabotage.mp3','pb-v1')">🔊</button></span></div>
+        <div class="v-pron">/ˈsæb.ə.tɑːʒ/</div>
+        <div class="v-cn">蓄意破坏（Snowball 被指控）</div>
+        <div class="v-example">"Napoleon accused Snowball of sabotaging the windmill"</div>
+      </div>
+      <div class="vocab-card">
+        <div class="word-cell"><span class="v-word"><span class="level-must">🔵</span> exploitation <button class="play-btn" id="pb-v2" onclick="playAudio('0011-key-exploitation.mp3','pb-v2')">🔊</button></span></div>
+        <div class="v-pron">/ˌek.splɔɪˈteɪ.ʃən/</div>
+        <div class="v-cn">剥削</div>
+        <div class="v-example">"the animals worked like slaves, yet they did not see it as exploitation"</div>
+      </div>
+      <div class="vocab-card">
+        <div class="word-cell"><span class="v-word"><span class="level-must">🔵</span> ration <button class="play-btn" id="pb-v3" onclick="playAudio('0011-key-ration.mp3','pb-v3')">🔊</button></span></div>
+        <div class="v-pron">/ˈræʃ.ən/</div>
+        <div class="v-cn">配给、定量</div>
+        <div class="v-example">"any animal absent from Sunday work would have his rations reduced by half"</div>
+      </div>
+      <div class="vocab-card">
+        <div class="word-cell"><span class="v-word"><span class="level-know">🟡</span> override <button class="play-btn" id="pb-v4" onclick="playAudio('0011-key-override.mp3','pb-v4')">🔊</button></span></div>
+        <div class="v-pron">/ˌoʊ.vɚˈraɪd/</div>
+        <div class="v-cn">凌驾于……之上</div>
+        <div class="v-example">"the needs of the windmill must override everything else"</div>
+      </div>
+      <div class="vocab-card">
+        <div class="word-cell"><span class="v-word"><span class="level-must">🔵</span> trade <button class="play-btn" id="pb-v5" onclick="playAudio('0011-key-trade.mp3','pb-v5')">🔊</button></span></div>
+        <div class="v-pron">/treɪd/</div>
+        <div class="v-cn">交易（与人类贸易）</div>
+        <div class="v-example">"Animal Farm would engage in trade with the neighbouring farms"</div>
+      </div>
+      <div class="vocab-card">
+        <div class="word-cell"><span class="v-word"><span class="level-know">🟡</span> consent <button class="play-btn" id="pb-v6" onclick="playAudio('0011-key-consent.mp3','pb-v6')">🔊</button></span></div>
+        <div class="v-pron">/kənˈsent/</div>
+        <div class="v-cn">同意（表面的）</div>
+        <div class="v-example">"the animals gave their consent without fully understanding what they agreed to"</div>
+      </div>
+      <div class="vocab-card">
+        <div class="word-cell"><span class="v-word"><span class="level-know">🟡</span> deceive <button class="play-btn" id="pb-v7" onclick="playAudio('0011-key-deceive.mp3','pb-v7')">🔊</button></span></div>
+        <div class="v-pron">/dɪˈsiːv/</div>
+        <div class="v-cn">欺骗</div>
+        <div class="v-example">"Squealer deceived the animals into thinking the Fourth Commandment had always mentioned sheets"</div>
+      </div>
+      <div class="vocab-card">
+        <div class="word-cell"><span class="v-word"><span class="level-must">🔵</span> policy <button class="play-btn" id="pb-v8" onclick="playAudio('0011-key-policy.mp3','pb-v8')">🔊</button></span></div>
+        <div class="v-pron">/ˈpɑː.lə.si/</div>
+        <div class="v-cn">政策</div>
+        <div class="v-example">"Napoleon announced a new policy of trading with humans"</div>
+      </div>
+      <div class="vocab-card">
+        <div class="word-cell"><span class="v-word"><span class="level-must">🔵</span> sacrifice <button class="play-btn" id="pb-v9" onclick="playAudio('0011-key-sacrifice.mp3','pb-v9')">🔊</button></span></div>
+        <div class="v-pron">/ˈsæk.rɪ.faɪs/</div>
+        <div class="v-cn">牺牲</div>
+        <div class="v-example">"the hens should welcome this sacrifice for the building of the windmill"</div>
+      </div>
+      <div class="vocab-card">
+        <div class="word-cell"><span class="v-word"><span class="level-must">🔵</span> commandments amended <button class="play-btn" id="pb-v10" onclick="playAudio('0011-key-commandment-amended.mp3','pb-v10')">🔊</button></span></div>
+        <div class="v-pron">/kəˈmænd.mənts əˈmen.dɪd/</div>
+        <div class="v-cn">诫命被篡改（第四诫+"铺被单"）</div>
+        <div class="v-example">"the Fourth Commandment was quietly amended to include 'with sheets'"</div>
+      </div>
+      <div class="vocab-card">
+        <div class="word-cell"><span class="v-word"><span class="level-know">🟡</span> categorically <button class="play-btn" id="pb-v11" onclick="playAudio('0011-key-categorically.mp3','pb-v11')">🔊</button></span></div>
+        <div class="v-pron">/ˌkæt.əˈɡɔːr.ɪ.kli/</div>
+        <div class="v-cn">明确地、断然地</div>
+        <div class="v-example">"Squealer categorically denied that any resolution against trade had ever existed"</div>
+      </div>
+      <div class="vocab-card">
+        <div class="word-cell"><span class="v-word"><span class="level-know">🟡</span> unanimous <button class="play-btn" id="pb-v12" onclick="playAudio('0011-key-unanimous.mp3','pb-v12')">🔊</button></span></div>
+        <div class="v-pron">/juːˈnæn.ɪ.məs/</div>
+        <div class="v-cn">一致同意的（虚假的）</div>
+        <div class="v-example">"the animals pretended to be unanimous in their support of Napoleon's policies"</div>
+      </div>
+      <div class="vocab-card">
+        <div class="word-cell"><span class="v-word"><span class="level-know">🟡</span> arrangement <button class="play-btn" id="pb-v13" onclick="playAudio('0011-key-arrangement.mp3','pb-v13')">🔊</button></span></div>
+        <div class="v-pron">/əˈreɪndʒ.mənt/</div>
+        <div class="v-cn">安排</div>
+        <div class="v-example">"Napoleon had already made all the arrangements for selling the hay and eggs"</div>
+      </div>
+      <div class="vocab-card">
+        <div class="word-cell"><span class="v-word"><span class="level-know">🟡</span> reduction <button class="play-btn" id="pb-v14" onclick="playAudio('0011-key-reduction.mp3','pb-v14')">🔊</button></span></div>
+        <div class="v-pron">/rɪˈdʌk.ʃən/</div>
+        <div class="v-cn">减少（被重新定义为"重新调整"）</div>
+        <div class="v-example">"the reduction in rations was called a 'readjustment' by Squealer"</div>
+      </div>
+      <div class="vocab-card">
+        <div class="word-cell"><span class="v-word"><span class="level-must">🔵</span> strictly voluntary <button class="play-btn" id="pb-v15" onclick="playAudio('0011-key-strictly-voluntary.mp3','pb-v15')">🔊</button></span></div>
+        <div class="v-pron">/ˈstrɪkt.li ˈvɑː.lən.ter.i/</div>
+        <div class="v-cn">严格自愿的（反讽——不自愿就扣口粮）</div>
+        <div class="v-example">"the Sunday work was strictly voluntary, but absent animals lost half their rations"</div>
+      </div>
+    </div>
+
+    <!-- Retrieval practice -->
+    <div class="retrieval-box">
+      <strong>🔍 检索练习（先试着自己回忆，再点开看答案）</strong><br>
+      <span style="font-size:var(--text-sm); color:var(--ink-60);">不看中文，你还记得这些词的意思吗？</span>
+      <details>
+        <summary>📌 点击核对答案</summary>
+        <ul style="margin-left:var(--space-5); line-height:2; margin-top:var(--space-3);">
+          <li><strong>sabotage</strong> — 蓄意破坏</li>
+          <li><strong>exploitation</strong> — 剥削</li>
+          <li><strong>ration</strong> — 配给、定量</li>
+          <li><strong>override</strong> — 凌驾于……之上</li>
+          <li><strong>trade</strong> — 交易</li>
+          <li><strong>consent</strong> — 同意</li>
+          <li><strong>deceive</strong> — 欺骗</li>
+          <li><strong>policy</strong> — 政策</li>
+          <li><strong>sacrifice</strong> — 牺牲</li>
+          <li><strong>commandments amended</strong> — 诫命被篡改</li>
+          <li><strong>categorically</strong> — 明确地</li>
+          <li><strong>unanimous</strong> — 一致同意的</li>
+          <li><strong>arrangement</strong> — 安排</li>
+          <li><strong>reduction</strong> — 减少</li>
+          <li><strong>strictly voluntary</strong> — 严格自愿的</li>
+        </ul>
+      </details>
+    </div>
+
+    <!-- ====== 4. 💬 口语练习 ====== -->
+    <h2>💬 口语练习</h2>
+
+    <div class="speak-card">
+      <div class="s-level mec">🔰 MECHANICAL — 句型框架</div>
+      <p>用下面的框架分析本章中的"矛盾修辞"：</p>
+      <div class="s-framework">"The phrase '_____' is ironic because _____. On the surface it means _____, but in reality _____."</div>
+      <p style="font-size:var(--text-sm); color:var(--ink-60);">例：The phrase <strong>"strictly voluntary"</strong> is ironic because <strong>it is followed by a threat</strong>. On the surface it means <strong>animals can choose whether to work</strong>, but in reality <strong>any animal who refuses will have its food cut in half</strong>.</p>
+    </div>
+
+    <div class="speak-card">
+      <div class="s-level con">📝 CONTROLLED — 模仿示范</div>
+      <p><strong>问题：</strong>How did Squealer convince the animals that the Fourth Commandment had always mentioned "with sheets"?</p>
+      <div class="s-model"><strong>Model response:</strong> "Squealer used several clever tricks. First, he redefined the word 'bed' to mean any place to sleep, so sleeping in a farmhouse bed was acceptable. Second, he claimed the original rule was only about sheets, which are a 'human invention' that the pigs had already removed. Third, he changed the subject by asking the animals if they wanted Jones back — a question they could never say yes to. This combination of redefinition, misdirection, and fear was very effective."</div>
+      <p style="font-size:var(--text-sm); color:var(--ink-60); margin-top:var(--space-2);">👆 试着分析 Squealer 的说服技巧——他用了哪些"诡辩"方法？</p>
+    </div>
+
+    <div class="speak-card">
+      <div class="s-level free">💭 FREE — 自由讨论</div>
+      <ol style="margin-left:var(--space-5); line-height:2.2;">
+        <li>When Clover reads the amended commandment, she thinks "it must have been that way" because it's written on the wall. How does this reflect real-life attitudes toward written laws and official histories?</li>
+        <li>The eggs are sold to humans to fund the windmill. The hens must "sacrifice" for the greater good. At what point does asking for sacrifice become exploitation? How do you tell the difference?</li>
+        <li>Boxer works harder than anyone and believes "Napoleon is always right." Is his loyalty admirable or dangerous? Can loyalty to a leader ever be a bad thing?</li>
+      </ol>
+    </div>
+
+    <div class="callout">
+      <strong>🎤 跟读段落</strong><br>
+      <p>跟读下面这段 Clover 发现修改后的诫命的段落，注意 / 处停顿：</p>
+      <div class="s-framework">"It says,/ 'No animal shall sleep in a bed/ WITH SHEETS,'/ she announced finally./ Curiously enough,/ Clover had not remembered/ that the Fourth Commandment mentioned sheets;/ but as it was there on the wall,/ it must have done so."</div>
+      <p style="font-size:var(--text-sm); color:var(--ink-60); margin-top:var(--space-2);">🎧 模仿叙述者的语气——带一点讽刺和悲凉。</p>
+    </div>
+
+    <div class="callout">
+      <strong>🤖 AI 陪练 Prompt</strong><br>
+      复制下面的文字到元宝 AI：<br>
+      <div class="s-framework" style="margin-top:var(--space-2);">"我正在读 Animal Farm 第六章（The Windmill）。请用英语和我讨论：为什么动物们接受了越来越差的条件？第七诫被修改的经过和意义是什么？Boxer 的勤劳是在帮谁？一次问一个，然后纠正我的语法和用词。"</div>
+    </div>
+
+    <!-- ====== 5. 📝 课后练习 ====== -->
+    <h2>📝 课后练习</h2>
+
+    <div class="exercise-box">
+      <summary>📝 词汇填空（必做）</summary>
+      <div class="ex-section">
+        <p>用以下词填空：<strong>sabotage, exploitation, ration, override, trade, deceive, policy, sacrifice, strictly voluntary, amended</strong></p>
+        <div class="quiz-item">1. The Sunday work was ______, but anyone who didn't come had their ______ cut by half.</div>
+        <div class="quiz-item">2. Napoleon's new ______ allowed ______ with human farms to fund the windmill.</div>
+        <div class="quiz-item">3. Squealer tried to ______ the animals by saying the Fourth Commandment had been ______ to include "with sheets."</div>
+        <div class="quiz-item">4. Napoleon argued that the windmill's needs must ______ everything else, even the hens' eggs.</div>
+        <div class="quiz-item">5. When the windmill collapsed, Napoleon blamed Snowball for ______.</div>
+      </div>
+    </div>
+
+    <div class="exercise-box">
+      <summary>📖 阅读理解（必做）</summary>
+      <div class="ex-section">
+        <div class="quiz-item"><strong>1.</strong> Which commandment was changed in this chapter?<br>
+          A. No animal shall drink alcohol<br>
+          B. No animal shall sleep in a bed with sheets<br>
+          C. No animal shall kill another animal<br>
+          D. All animals are equal</div>
+        <div class="quiz-item"><strong>2.</strong> How did Napoleon get money for the windmill?<br>
+          A. He found treasure on the farm<br>
+          B. He sold hay, wheat, and eggs to humans<br>
+          C. He asked the neighbouring farmers for a loan<br>
+          D. He printed his own money</div>
+        <div class="quiz-item"><strong>3.</strong> What explanation did Squealer give for the pigs trading with humans?<br>
+          A. They had always traded with humans<br>
+          B. The resolution against trade had never really existed<br>
+          C. It was only temporary<br>
+          D. Snowball had forced them to do it</div>
+      </div>
+    </div>
+
+    <div class="exercise-box">
+      <details>
+        <summary>✍️ 写作任务（选做）</summary>
+        <div class="ex-section">
+          <p>用至少 3 个这节课学的生词，写一段 60 词左右的英文短文：<strong>"What do you think of the pigs moving into the farmhouse? Is this a small change or a big betrayal?"</strong>（猪搬进农舍是小变化还是大背叛？）</p>
+        </div>
+      </details>
+    </div>
+
+  </div><!-- /content -->
+
+  <div class="footer-nav">
+    <span><a href="0010-AnimalFarm-Ch5-Napoleon-Coup.html">← 上一课：Ch.V Napoleon's Coup</a></span>
+    <a href="../index.html">返回主页</a>
+    <span><a href="0012-AnimalFarm-Ch7-The-Purge.html">下一课：Ch.VII The Purge →</a></span>
+  </div>
+
+</div>
+<script src="../shared/lesson-tools.js"></script>
+</body>
+</html>
