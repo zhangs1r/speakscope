@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <defs>
+    <style>
+      @keyframes draw-1 { 0% { stroke-dashoffset: 64; } 100% { stroke-dashoffset: 0; } }
+      @keyframes draw-2 { 0% { stroke-dashoffset: 40; } 100% { stroke-dashoffset: 0; } }
+      @keyframes draw-3 { 0% { stroke-dashoffset: 8; } 100% { stroke-dashoffset: 0; } }
+      @keyframes bounce-1 { 0% { transform: scale(1) rotate(0deg); } 30% { transform: scale(1.18) rotate(3deg); } 55% { transform: scale(0.92) rotate(-2deg); } 78% { transform: scale(1.06) rotate(1deg); } 100% { transform: scale(1) rotate(0deg); } }
+      .p1 { fill: none; stroke: #CC785C; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 64; stroke-dashoffset: 64; }
+      .p2 { fill: none; stroke: #CC785C; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 40; stroke-dashoffset: 40; }
+      .p3 { fill: none; stroke: #CC785C; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 8; stroke-dashoffset: 8; }
+      .p1 { animation: draw-1 0.8s cubic-bezier(0.42,0,0.58,1) forwards; }
+      .p2 { animation: draw-2 0.6s cubic-bezier(0.42,0,0.58,1) 0.15s forwards; }
+      .p3 { animation: draw-3 0.3s cubic-bezier(0.42,0,0.58,1) 0.15s forwards; }
+      .bounce { animation: bounce-1 0.6s cubic-bezier(0.34,1.56,0.64,1) 1.0s forwards; transform-origin: 12px 12px; }
+    </style>
+  </defs>
+  <g class="bounce">
+    <path class="p1" d="M12,22 C17.5228,22 22,17.5228 22,12 C22,6.47715 17.5228,2 12,2 C6.47715,2 2,6.47715 2,12 C2,17.5228 6.47715,22 12,22 Z"/>
+    <path class="p2" d="M9.5,9.5 C9.5,7.9 10.5,7 12,7 C13.5,7 14.5,7.9 14.5,9.5 C14.5,11 13,11.5 13,13 L13,14"/>
+    <path class="p3" d="M12,17 L12,18"/>
+  </g>
+</svg>
