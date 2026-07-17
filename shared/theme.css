@@ -421,6 +421,38 @@ li { margin-bottom: var(--space-2); }
   img:hover {
     opacity: 1;
   }
+
+  /* ─── 课程页面通用组件暗色适配 ─── */
+  .play-btn.playing {
+    background: rgba(90, 158, 111, 0.25) !important;
+    border-color: var(--success) !important;
+  }
+  .highlight, .level-must, .region-us, .highlight-blue {
+    background: rgba(59, 130, 246, 0.15) !important;
+    color: #93c5fd !important;
+  }
+  .highlight-y, .highlight-yellow, .level-know, .level-gold, .level-nice {
+    background: rgba(234, 179, 8, 0.12) !important;
+    color: #fde68a !important;
+  }
+  .level-pop {
+    background: rgba(139, 92, 246, 0.15) !important;
+    color: #c4b5fd !important;
+  }
+  .warning-box {
+    background: rgba(239, 68, 68, 0.08) !important;
+    border-color: rgba(239, 68, 68, 0.3) !important;
+  }
+  .warning-box strong {
+    color: #f87171 !important;
+  }
+  .commandment-box {
+    background: rgba(234, 179, 8, 0.08) !important;
+    border-color: rgba(234, 179, 8, 0.4) !important;
+  }
+  .commandment-box .old-line {
+    color: #fca5a5 !important;
+  }
 }
 
 /* ─── 2. Reduced motion（动效降级） ─── */

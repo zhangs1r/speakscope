@@ -182,8 +182,8 @@
     el.textContent = msg;
     el.style.cssText =
       'position:fixed;bottom:80px;left:50%;transform:translateX(-50%);' +
-      'background:#555555;color:#FFFFFF;padding:8px 18px;border-radius:20px;' +
-      'font-size:0.85rem;z-index:10000;box-shadow:0 2px 10px rgba(0,0,0,0.2);' +
+      'background:#444466;color:#EDEDEE;padding:8px 18px;border-radius:20px;' +
+      'font-size:0.85rem;z-index:10000;box-shadow:0 2px 10px rgba(0,0,0,0.3);' +
       'opacity:1;transition:opacity 0.3s ease;';
     document.body.appendChild(el);
     setTimeout(function () {
